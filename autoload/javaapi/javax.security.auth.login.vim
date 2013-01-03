@@ -1,21 +1,21 @@
 call javaapi#namespace('javax.security.auth.login')
 
-call javaapi#class('AccountException', '', [
+call javaapi#class('AccountException', 'LoginException', [
   \ javaapi#method(0,'AccountException(', ')', 'public'),
   \ javaapi#method(0,'AccountException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('AccountExpiredException', '', [
+call javaapi#class('AccountExpiredException', 'AccountException', [
   \ javaapi#method(0,'AccountExpiredException(', ')', 'public'),
   \ javaapi#method(0,'AccountExpiredException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('AccountLockedException', '', [
+call javaapi#class('AccountLockedException', 'AccountException', [
   \ javaapi#method(0,'AccountLockedException(', ')', 'public'),
   \ javaapi#method(0,'AccountLockedException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('AccountNotFoundException', '', [
+call javaapi#class('AccountNotFoundException', 'AccountException', [
   \ javaapi#method(0,'AccountNotFoundException(', ')', 'public'),
   \ javaapi#method(0,'AccountNotFoundException(', 'String)', 'public'),
   \ ])
@@ -50,7 +50,7 @@ call javaapi#class('3', 'Configuration>', [
   \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('ConfigDelegate', '', [
+call javaapi#class('ConfigDelegate', 'Configuration', [
   \ javaapi#method(0,'getType(', ')', 'String'),
   \ javaapi#method(0,'getParameters(', ')', 'Parameters'),
   \ javaapi#method(0,'getProvider(', ')', 'Provider'),
@@ -78,22 +78,22 @@ call javaapi#class('ConfigurationSpi', '', [
   \ javaapi#method(0,'ConfigurationSpi(', ')', 'public'),
   \ ])
 
-call javaapi#class('CredentialException', '', [
+call javaapi#class('CredentialException', 'LoginException', [
   \ javaapi#method(0,'CredentialException(', ')', 'public'),
   \ javaapi#method(0,'CredentialException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('CredentialExpiredException', '', [
+call javaapi#class('CredentialExpiredException', 'CredentialException', [
   \ javaapi#method(0,'CredentialExpiredException(', ')', 'public'),
   \ javaapi#method(0,'CredentialExpiredException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('CredentialNotFoundException', '', [
+call javaapi#class('CredentialNotFoundException', 'CredentialException', [
   \ javaapi#method(0,'CredentialNotFoundException(', ')', 'public'),
   \ javaapi#method(0,'CredentialNotFoundException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('FailedLoginException', '', [
+call javaapi#class('FailedLoginException', 'LoginException', [
   \ javaapi#method(0,'FailedLoginException(', ')', 'public'),
   \ javaapi#method(0,'FailedLoginException(', 'String)', 'public'),
   \ ])
@@ -146,7 +146,7 @@ call javaapi#class('LoginContext', '', [
   \ javaapi#method(0,'getSubject(', ')', 'Subject'),
   \ ])
 
-call javaapi#class('LoginException', '', [
+call javaapi#class('LoginException', 'GeneralSecurityException', [
   \ javaapi#method(0,'LoginException(', ')', 'public'),
   \ javaapi#method(0,'LoginException(', 'String)', 'public'),
   \ ])

@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.xml.crypto.dsig.keyinfo')
 
-call javaapi#interface('KeyInfo', '', [
+call javaapi#interface('KeyInfo', 'XMLStructure', [
   \ javaapi#method(0,'getContent(', ')', 'List'),
   \ javaapi#method(0,'getId(', ')', 'String'),
   \ javaapi#method(0,'marshal(', 'XMLStructure, XMLCryptoContext) throws MarshalException', 'void'),
@@ -29,36 +29,36 @@ call javaapi#class('KeyInfoFactory', '', [
   \ javaapi#method(0,'unmarshalKeyInfo(', 'XMLStructure) throws MarshalException', 'KeyInfo'),
   \ ])
 
-call javaapi#interface('KeyName', '', [
+call javaapi#interface('KeyName', 'XMLStructure', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#interface('KeyValue', '', [
+call javaapi#interface('KeyValue', 'XMLStructure', [
   \ javaapi#field(1,'DSA_TYPE', 'String'),
   \ javaapi#field(1,'RSA_TYPE', 'String'),
   \ javaapi#method(0,'getPublicKey(', ') throws KeyException', 'PublicKey'),
   \ ])
 
-call javaapi#interface('PGPData', '', [
+call javaapi#interface('PGPData', 'XMLStructure', [
   \ javaapi#field(1,'TYPE', 'String'),
   \ javaapi#method(0,'getKeyId(', ')', 'byte[]'),
   \ javaapi#method(0,'getKeyPacket(', ')', 'byte[]'),
   \ javaapi#method(0,'getExternalElements(', ')', 'List'),
   \ ])
 
-call javaapi#interface('RetrievalMethod', '', [
+call javaapi#interface('RetrievalMethod', 'XMLStructure', [
   \ javaapi#method(0,'getTransforms(', ')', 'List'),
   \ javaapi#method(0,'getURI(', ')', 'String'),
   \ javaapi#method(0,'dereference(', 'XMLCryptoContext) throws URIReferenceException', 'Data'),
   \ ])
 
-call javaapi#interface('X509Data', '', [
+call javaapi#interface('X509Data', 'XMLStructure', [
   \ javaapi#field(1,'TYPE', 'String'),
   \ javaapi#field(1,'RAW_X509_CERTIFICATE_TYPE', 'String'),
   \ javaapi#method(0,'getContent(', ')', 'List'),
   \ ])
 
-call javaapi#interface('X509IssuerSerial', '', [
+call javaapi#interface('X509IssuerSerial', 'XMLStructure', [
   \ javaapi#method(0,'getIssuerName(', ')', 'String'),
   \ javaapi#method(0,'getSerialNumber(', ')', 'BigInteger'),
   \ ])

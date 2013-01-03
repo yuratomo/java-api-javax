@@ -34,7 +34,7 @@ call javaapi#class('ContinuationContext', 'Resolver', [
   \ javaapi#method(0,'close(', ') throws NamingException', 'void'),
   \ ])
 
-call javaapi#class('ContinuationDirContext', '', [
+call javaapi#class('ContinuationDirContext', 'ContinuationContext', [
   \ javaapi#method(0,'getAttributes(', 'String) throws NamingException', 'Attributes'),
   \ javaapi#method(0,'getAttributes(', 'String, String[]) throws NamingException', 'Attributes'),
   \ javaapi#method(0,'getAttributes(', 'Name) throws NamingException', 'Attributes'),
@@ -69,7 +69,7 @@ call javaapi#class('DirContextNamePair', '', [
 call javaapi#class('DirContextStringPair', '', [
   \ ])
 
-call javaapi#interface('DirObjectFactory', '', [
+call javaapi#interface('DirObjectFactory', 'ObjectFactory', [
   \ javaapi#method(0,'getObjectInstance(', 'Object, Name, Context, Hashtable<?, ?>, Attributes) throws Exception', 'Object'),
   \ ])
 
@@ -79,11 +79,11 @@ call javaapi#class('Result', '', [
   \ javaapi#method(0,'getAttributes(', ')', 'Attributes'),
   \ ])
 
-call javaapi#interface('DirStateFactory', '', [
+call javaapi#interface('DirStateFactory', 'StateFactory', [
   \ javaapi#method(0,'getStateToBind(', 'Object, Name, Context, Hashtable<?, ?>, Attributes) throws NamingException', 'Result'),
   \ ])
 
-call javaapi#class('DirectoryManager', '', [
+call javaapi#class('DirectoryManager', 'NamingManager', [
   \ javaapi#method(1,'getContinuationDirContext(', 'CannotProceedException) throws NamingException', 'DirContext'),
   \ javaapi#method(1,'getObjectInstance(', 'Object, Name, Context, Hashtable<?, ?>, Attributes) throws Exception', 'Object'),
   \ javaapi#method(1,'getStateToBind(', 'Object, Name, Context, Hashtable<?, ?>, Attributes) throws NamingException', 'Result'),

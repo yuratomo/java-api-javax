@@ -113,7 +113,7 @@ call javaapi#interface('DTDConstants', '', [
   \ javaapi#field(1,'PARAMETER', 'int'),
   \ ])
 
-call javaapi#class('DocumentParser', '', [
+call javaapi#class('DocumentParser', 'Parser', [
   \ javaapi#method(0,'DocumentParser(', 'DTD)', 'public'),
   \ javaapi#method(0,'parse(', 'Reader, ParserCallback, boolean) throws IOException', 'void'),
   \ ])
@@ -157,7 +157,7 @@ call javaapi#class('Entity', 'DTDConstants', [
   \ javaapi#method(1,'name2type(', 'String)', 'int'),
   \ ])
 
-call javaapi#class('NPrintWriter', '', [
+call javaapi#class('NPrintWriter', 'PrintWriter', [
   \ javaapi#method(0,'NPrintWriter(', 'int)', 'public'),
   \ javaapi#method(0,'println(', 'char[])', 'void'),
   \ ])
@@ -168,7 +168,7 @@ call javaapi#class('Parser', 'DTDConstants', [
   \ javaapi#method(0,'parse(', 'Reader) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ParserDelegator', '', [
+call javaapi#class('ParserDelegator', 'Parser', [
   \ javaapi#method(0,'ParserDelegator(', ')', 'public'),
   \ javaapi#method(0,'parse(', 'Reader, ParserCallback, boolean) throws IOException', 'void'),
   \ ])

@@ -1,20 +1,20 @@
 call javaapi#namespace('javax.print.attribute.standard')
 
-call javaapi#class('Chromaticity', '', [
+call javaapi#class('Chromaticity', 'EnumSyntax', [
   \ javaapi#field(1,'MONOCHROME', 'Chromaticity'),
   \ javaapi#field(1,'COLOR', 'Chromaticity'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('ColorSupported', '', [
+call javaapi#class('ColorSupported', 'EnumSyntax', [
   \ javaapi#field(1,'NOT_SUPPORTED', 'ColorSupported'),
   \ javaapi#field(1,'SUPPORTED', 'ColorSupported'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('Compression', '', [
+call javaapi#class('Compression', 'EnumSyntax', [
   \ javaapi#field(1,'NONE', 'Compression'),
   \ javaapi#field(1,'DEFLATE', 'Compression'),
   \ javaapi#field(1,'GZIP', 'Compression'),
@@ -23,14 +23,14 @@ call javaapi#class('Compression', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('Copies', '', [
+call javaapi#class('Copies', 'IntegerSyntax', [
   \ javaapi#method(0,'Copies(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('CopiesSupported', '', [
+call javaapi#class('CopiesSupported', 'SetOfIntegerSyntax', [
   \ javaapi#method(0,'CopiesSupported(', 'int)', 'public'),
   \ javaapi#method(0,'CopiesSupported(', 'int, int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
@@ -38,56 +38,56 @@ call javaapi#class('CopiesSupported', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('DateTimeAtCompleted', '', [
+call javaapi#class('DateTimeAtCompleted', 'DateTimeSyntax', [
   \ javaapi#method(0,'DateTimeAtCompleted(', 'Date)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('DateTimeAtCreation', '', [
+call javaapi#class('DateTimeAtCreation', 'DateTimeSyntax', [
   \ javaapi#method(0,'DateTimeAtCreation(', 'Date)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('DateTimeAtProcessing', '', [
+call javaapi#class('DateTimeAtProcessing', 'DateTimeSyntax', [
   \ javaapi#method(0,'DateTimeAtProcessing(', 'Date)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('Destination', '', [
+call javaapi#class('Destination', 'URISyntax', [
   \ javaapi#method(0,'Destination(', 'URI)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('DialogTypeSelection', '', [
+call javaapi#class('DialogTypeSelection', 'EnumSyntax', [
   \ javaapi#field(1,'NATIVE', 'DialogTypeSelection'),
   \ javaapi#field(1,'COMMON', 'DialogTypeSelection'),
   \ javaapi#method(0,'getCategory(', ')', 'Class'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('DocumentName', '', [
+call javaapi#class('DocumentName', 'TextSyntax', [
   \ javaapi#method(0,'DocumentName(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('Fidelity', '', [
+call javaapi#class('Fidelity', 'EnumSyntax', [
   \ javaapi#field(1,'FIDELITY_TRUE', 'Fidelity'),
   \ javaapi#field(1,'FIDELITY_FALSE', 'Fidelity'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('Finishings', '', [
+call javaapi#class('Finishings', 'EnumSyntax', [
   \ javaapi#field(1,'NONE', 'Finishings'),
   \ javaapi#field(1,'STAPLE', 'Finishings'),
   \ javaapi#field(1,'COVER', 'Finishings'),
@@ -110,119 +110,119 @@ call javaapi#class('Finishings', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobHoldUntil', '', [
+call javaapi#class('JobHoldUntil', 'DateTimeSyntax', [
   \ javaapi#method(0,'JobHoldUntil(', 'Date)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobImpressions', '', [
+call javaapi#class('JobImpressions', 'IntegerSyntax', [
   \ javaapi#method(0,'JobImpressions(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobImpressionsCompleted', '', [
+call javaapi#class('JobImpressionsCompleted', 'IntegerSyntax', [
   \ javaapi#method(0,'JobImpressionsCompleted(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobImpressionsSupported', '', [
+call javaapi#class('JobImpressionsSupported', 'SetOfIntegerSyntax', [
   \ javaapi#method(0,'JobImpressionsSupported(', 'int, int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobKOctets', '', [
+call javaapi#class('JobKOctets', 'IntegerSyntax', [
   \ javaapi#method(0,'JobKOctets(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobKOctetsProcessed', '', [
+call javaapi#class('JobKOctetsProcessed', 'IntegerSyntax', [
   \ javaapi#method(0,'JobKOctetsProcessed(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobKOctetsSupported', '', [
+call javaapi#class('JobKOctetsSupported', 'SetOfIntegerSyntax', [
   \ javaapi#method(0,'JobKOctetsSupported(', 'int, int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobMediaSheets', '', [
+call javaapi#class('JobMediaSheets', 'IntegerSyntax', [
   \ javaapi#method(0,'JobMediaSheets(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobMediaSheetsCompleted', '', [
+call javaapi#class('JobMediaSheetsCompleted', 'IntegerSyntax', [
   \ javaapi#method(0,'JobMediaSheetsCompleted(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobMediaSheetsSupported', '', [
+call javaapi#class('JobMediaSheetsSupported', 'SetOfIntegerSyntax', [
   \ javaapi#method(0,'JobMediaSheetsSupported(', 'int, int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobMessageFromOperator', '', [
+call javaapi#class('JobMessageFromOperator', 'TextSyntax', [
   \ javaapi#method(0,'JobMessageFromOperator(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobName', '', [
+call javaapi#class('JobName', 'TextSyntax', [
   \ javaapi#method(0,'JobName(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobOriginatingUserName', '', [
+call javaapi#class('JobOriginatingUserName', 'TextSyntax', [
   \ javaapi#method(0,'JobOriginatingUserName(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobPriority', '', [
+call javaapi#class('JobPriority', 'IntegerSyntax', [
   \ javaapi#method(0,'JobPriority(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobPrioritySupported', '', [
+call javaapi#class('JobPrioritySupported', 'IntegerSyntax', [
   \ javaapi#method(0,'JobPrioritySupported(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobSheets', '', [
+call javaapi#class('JobSheets', 'EnumSyntax', [
   \ javaapi#field(1,'NONE', 'JobSheets'),
   \ javaapi#field(1,'STANDARD', 'JobSheets'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobState', '', [
+call javaapi#class('JobState', 'EnumSyntax', [
   \ javaapi#field(1,'UNKNOWN', 'JobState'),
   \ javaapi#field(1,'PENDING', 'JobState'),
   \ javaapi#field(1,'PENDING_HELD', 'JobState'),
@@ -235,7 +235,7 @@ call javaapi#class('JobState', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobStateReason', '', [
+call javaapi#class('JobStateReason', 'EnumSyntax', [
   \ javaapi#field(1,'JOB_INCOMING', 'JobStateReason'),
   \ javaapi#field(1,'JOB_DATA_INSUFFICIENT', 'JobStateReason'),
   \ javaapi#field(1,'DOCUMENT_ACCESS_ERROR', 'JobStateReason'),
@@ -269,7 +269,7 @@ call javaapi#class('JobStateReason', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobStateReasons', '', [
+call javaapi#class('JobStateReasons', 'JobStateReason>', [
   \ javaapi#method(0,'JobStateReasons(', ')', 'public'),
   \ javaapi#method(0,'JobStateReasons(', 'int)', 'public'),
   \ javaapi#method(0,'JobStateReasons(', 'int, float)', 'public'),
@@ -280,13 +280,13 @@ call javaapi#class('JobStateReasons', '', [
   \ javaapi#method(0,'add(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('Media', '', [
+call javaapi#class('Media', 'EnumSyntax', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('MediaName', '', [
+call javaapi#class('MediaName', 'Media', [
   \ javaapi#field(1,'NA_LETTER_WHITE', 'MediaName'),
   \ javaapi#field(1,'NA_LETTER_TRANSPARENT', 'MediaName'),
   \ javaapi#field(1,'ISO_A4_WHITE', 'MediaName'),
@@ -420,7 +420,7 @@ call javaapi#class('Other', '', [
   \ javaapi#field(1,'JAPANESE_DOUBLE_POSTCARD', 'MediaSize'),
   \ ])
 
-call javaapi#class('MediaSize', '', [
+call javaapi#class('MediaSize', 'Size2DSyntax', [
   \ javaapi#method(0,'MediaSize(', 'float, float, int)', 'public'),
   \ javaapi#method(0,'MediaSize(', 'int, int, int)', 'public'),
   \ javaapi#method(0,'MediaSize(', 'float, float, int, MediaSizeName)', 'public'),
@@ -433,7 +433,7 @@ call javaapi#class('MediaSize', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('MediaSizeName', '', [
+call javaapi#class('MediaSizeName', 'Media', [
   \ javaapi#field(1,'ISO_A0', 'MediaSizeName'),
   \ javaapi#field(1,'ISO_A1', 'MediaSizeName'),
   \ javaapi#field(1,'ISO_A2', 'MediaSizeName'),
@@ -509,7 +509,7 @@ call javaapi#class('MediaSizeName', '', [
   \ javaapi#field(1,'NA_8X10', 'MediaSizeName'),
   \ ])
 
-call javaapi#class('MediaTray', '', [
+call javaapi#class('MediaTray', 'Media', [
   \ javaapi#field(1,'TOP', 'MediaTray'),
   \ javaapi#field(1,'MIDDLE', 'MediaTray'),
   \ javaapi#field(1,'BOTTOM', 'MediaTray'),
@@ -520,7 +520,7 @@ call javaapi#class('MediaTray', '', [
   \ javaapi#field(1,'SIDE', 'MediaTray'),
   \ ])
 
-call javaapi#class('MultipleDocumentHandling', '', [
+call javaapi#class('MultipleDocumentHandling', 'EnumSyntax', [
   \ javaapi#field(1,'SINGLE_DOCUMENT', 'MultipleDocumentHandling'),
   \ javaapi#field(1,'SEPARATE_DOCUMENTS_UNCOLLATED_COPIES', 'MultipleDocumentHandling'),
   \ javaapi#field(1,'SEPARATE_DOCUMENTS_COLLATED_COPIES', 'MultipleDocumentHandling'),
@@ -529,28 +529,28 @@ call javaapi#class('MultipleDocumentHandling', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('NumberOfDocuments', '', [
+call javaapi#class('NumberOfDocuments', 'IntegerSyntax', [
   \ javaapi#method(0,'NumberOfDocuments(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('NumberOfInterveningJobs', '', [
+call javaapi#class('NumberOfInterveningJobs', 'IntegerSyntax', [
   \ javaapi#method(0,'NumberOfInterveningJobs(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('NumberUp', '', [
+call javaapi#class('NumberUp', 'IntegerSyntax', [
   \ javaapi#method(0,'NumberUp(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('NumberUpSupported', '', [
+call javaapi#class('NumberUpSupported', 'SetOfIntegerSyntax', [
   \ javaapi#method(0,'NumberUpSupported(', 'int[][])', 'public'),
   \ javaapi#method(0,'NumberUpSupported(', 'int)', 'public'),
   \ javaapi#method(0,'NumberUpSupported(', 'int, int)', 'public'),
@@ -559,7 +559,7 @@ call javaapi#class('NumberUpSupported', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('OrientationRequested', '', [
+call javaapi#class('OrientationRequested', 'EnumSyntax', [
   \ javaapi#field(1,'PORTRAIT', 'OrientationRequested'),
   \ javaapi#field(1,'LANDSCAPE', 'OrientationRequested'),
   \ javaapi#field(1,'REVERSE_LANDSCAPE', 'OrientationRequested'),
@@ -568,21 +568,21 @@ call javaapi#class('OrientationRequested', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('OutputDeviceAssigned', '', [
+call javaapi#class('OutputDeviceAssigned', 'TextSyntax', [
   \ javaapi#method(0,'OutputDeviceAssigned(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PDLOverrideSupported', '', [
+call javaapi#class('PDLOverrideSupported', 'EnumSyntax', [
   \ javaapi#field(1,'NOT_ATTEMPTED', 'PDLOverrideSupported'),
   \ javaapi#field(1,'ATTEMPTED', 'PDLOverrideSupported'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PageRanges', '', [
+call javaapi#class('PageRanges', 'SetOfIntegerSyntax', [
   \ javaapi#method(0,'PageRanges(', 'int[][])', 'public'),
   \ javaapi#method(0,'PageRanges(', 'String)', 'public'),
   \ javaapi#method(0,'PageRanges(', 'int)', 'public'),
@@ -592,21 +592,21 @@ call javaapi#class('PageRanges', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PagesPerMinute', '', [
+call javaapi#class('PagesPerMinute', 'IntegerSyntax', [
   \ javaapi#method(0,'PagesPerMinute(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PagesPerMinuteColor', '', [
+call javaapi#class('PagesPerMinuteColor', 'IntegerSyntax', [
   \ javaapi#method(0,'PagesPerMinuteColor(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PresentationDirection', '', [
+call javaapi#class('PresentationDirection', 'EnumSyntax', [
   \ javaapi#field(1,'TOBOTTOM_TORIGHT', 'PresentationDirection'),
   \ javaapi#field(1,'TOBOTTOM_TOLEFT', 'PresentationDirection'),
   \ javaapi#field(1,'TOTOP_TORIGHT', 'PresentationDirection'),
@@ -619,7 +619,7 @@ call javaapi#class('PresentationDirection', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrintQuality', '', [
+call javaapi#class('PrintQuality', 'EnumSyntax', [
   \ javaapi#field(1,'DRAFT', 'PrintQuality'),
   \ javaapi#field(1,'NORMAL', 'PrintQuality'),
   \ javaapi#field(1,'HIGH', 'PrintQuality'),
@@ -627,70 +627,70 @@ call javaapi#class('PrintQuality', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterInfo', '', [
+call javaapi#class('PrinterInfo', 'TextSyntax', [
   \ javaapi#method(0,'PrinterInfo(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterIsAcceptingJobs', '', [
+call javaapi#class('PrinterIsAcceptingJobs', 'EnumSyntax', [
   \ javaapi#field(1,'NOT_ACCEPTING_JOBS', 'PrinterIsAcceptingJobs'),
   \ javaapi#field(1,'ACCEPTING_JOBS', 'PrinterIsAcceptingJobs'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterLocation', '', [
+call javaapi#class('PrinterLocation', 'TextSyntax', [
   \ javaapi#method(0,'PrinterLocation(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterMakeAndModel', '', [
+call javaapi#class('PrinterMakeAndModel', 'TextSyntax', [
   \ javaapi#method(0,'PrinterMakeAndModel(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterMessageFromOperator', '', [
+call javaapi#class('PrinterMessageFromOperator', 'TextSyntax', [
   \ javaapi#method(0,'PrinterMessageFromOperator(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterMoreInfo', '', [
+call javaapi#class('PrinterMoreInfo', 'URISyntax', [
   \ javaapi#method(0,'PrinterMoreInfo(', 'URI)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterMoreInfoManufacturer', '', [
+call javaapi#class('PrinterMoreInfoManufacturer', 'URISyntax', [
   \ javaapi#method(0,'PrinterMoreInfoManufacturer(', 'URI)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterName', '', [
+call javaapi#class('PrinterName', 'TextSyntax', [
   \ javaapi#method(0,'PrinterName(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterResolution', '', [
+call javaapi#class('PrinterResolution', 'ResolutionSyntax', [
   \ javaapi#method(0,'PrinterResolution(', 'int, int, int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterState', '', [
+call javaapi#class('PrinterState', 'EnumSyntax', [
   \ javaapi#field(1,'UNKNOWN', 'PrinterState'),
   \ javaapi#field(1,'IDLE', 'PrinterState'),
   \ javaapi#field(1,'PROCESSING', 'PrinterState'),
@@ -699,7 +699,7 @@ call javaapi#class('PrinterState', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterStateReason', '', [
+call javaapi#class('PrinterStateReason', 'EnumSyntax', [
   \ javaapi#field(1,'OTHER', 'PrinterStateReason'),
   \ javaapi#field(1,'MEDIA_NEEDED', 'PrinterStateReason'),
   \ javaapi#field(1,'MEDIA_JAM', 'PrinterStateReason'),
@@ -737,7 +737,7 @@ call javaapi#class('PrinterStateReason', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterStateReasonSet', '', [
+call javaapi#class('PrinterStateReasonSet', 'PrinterStateReason>', [
   \ javaapi#method(0,'PrinterStateReasonSet(', 'PrinterStateReasons, Severity, Set)', 'public'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'iterator(', ')', 'Iterator'),
@@ -750,7 +750,7 @@ call javaapi#class('PrinterStateReasonSetIterator', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('PrinterStateReasons', '', [
+call javaapi#class('PrinterStateReasons', 'Severity>', [
   \ javaapi#method(0,'PrinterStateReasons(', ')', 'public'),
   \ javaapi#method(0,'PrinterStateReasons(', 'int)', 'public'),
   \ javaapi#method(0,'PrinterStateReasons(', 'int, float)', 'public'),
@@ -762,21 +762,21 @@ call javaapi#class('PrinterStateReasons', '', [
   \ javaapi#method(0,'put(', 'Object, Object)', 'Object'),
   \ ])
 
-call javaapi#class('PrinterURI', '', [
+call javaapi#class('PrinterURI', 'URISyntax', [
   \ javaapi#method(0,'PrinterURI(', 'URI)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('QueuedJobCount', '', [
+call javaapi#class('QueuedJobCount', 'IntegerSyntax', [
   \ javaapi#method(0,'QueuedJobCount(', 'int)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('ReferenceUriSchemesSupported', '', [
+call javaapi#class('ReferenceUriSchemesSupported', 'EnumSyntax', [
   \ javaapi#field(1,'FTP', 'ReferenceUriSchemesSupported'),
   \ javaapi#field(1,'HTTP', 'ReferenceUriSchemesSupported'),
   \ javaapi#field(1,'HTTPS', 'ReferenceUriSchemesSupported'),
@@ -789,14 +789,14 @@ call javaapi#class('ReferenceUriSchemesSupported', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('RequestingUserName', '', [
+call javaapi#class('RequestingUserName', 'TextSyntax', [
   \ javaapi#method(0,'RequestingUserName(', 'String, Locale)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('Severity', '', [
+call javaapi#class('Severity', 'EnumSyntax', [
   \ javaapi#field(1,'REPORT', 'Severity'),
   \ javaapi#field(1,'WARNING', 'Severity'),
   \ javaapi#field(1,'ERROR', 'Severity'),
@@ -804,14 +804,14 @@ call javaapi#class('Severity', '', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SheetCollate', '', [
+call javaapi#class('SheetCollate', 'EnumSyntax', [
   \ javaapi#field(1,'UNCOLLATED', 'SheetCollate'),
   \ javaapi#field(1,'COLLATED', 'SheetCollate'),
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('Sides', '', [
+call javaapi#class('Sides', 'EnumSyntax', [
   \ javaapi#field(1,'ONE_SIDED', 'Sides'),
   \ javaapi#field(1,'TWO_SIDED_LONG_EDGE', 'Sides'),
   \ javaapi#field(1,'TWO_SIDED_SHORT_EDGE', 'Sides'),

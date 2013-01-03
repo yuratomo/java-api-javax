@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.naming.directory')
 
-call javaapi#interface('Attribute', '', [
+call javaapi#interface('Attribute', 'Serializable', [
   \ javaapi#field(1,'serialVersionUID', 'long'),
   \ javaapi#method(0,'getAll(', ') throws NamingException', 'NamingEnumeration<?>'),
   \ javaapi#method(0,'get(', ') throws NamingException', 'Object'),
@@ -20,12 +20,12 @@ call javaapi#interface('Attribute', '', [
   \ javaapi#method(0,'set(', 'int, Object)', 'Object'),
   \ ])
 
-call javaapi#class('AttributeInUseException', '', [
+call javaapi#class('AttributeInUseException', 'NamingException', [
   \ javaapi#method(0,'AttributeInUseException(', 'String)', 'public'),
   \ javaapi#method(0,'AttributeInUseException(', ')', 'public'),
   \ ])
 
-call javaapi#class('AttributeModificationException', '', [
+call javaapi#class('AttributeModificationException', 'NamingException', [
   \ javaapi#method(0,'AttributeModificationException(', 'String)', 'public'),
   \ javaapi#method(0,'AttributeModificationException(', ')', 'public'),
   \ javaapi#method(0,'setUnexecutedModifications(', 'ModificationItem[])', 'void'),
@@ -33,7 +33,7 @@ call javaapi#class('AttributeModificationException', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Attributes', '', [
+call javaapi#interface('Attributes', 'Serializable', [
   \ javaapi#method(0,'isCaseIgnored(', ')', 'boolean'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'get(', 'String)', 'Attribute'),
@@ -120,7 +120,7 @@ call javaapi#class('BasicAttributes', 'Attributes', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#interface('DirContext', '', [
+call javaapi#interface('DirContext', 'Context', [
   \ javaapi#field(1,'ADD_ATTRIBUTE', 'int'),
   \ javaapi#field(1,'REPLACE_ATTRIBUTE', 'int'),
   \ javaapi#field(1,'REMOVE_ATTRIBUTE', 'int'),
@@ -152,7 +152,7 @@ call javaapi#interface('DirContext', '', [
   \ javaapi#method(0,'search(', 'String, String, Object[], SearchControls) throws NamingException', 'SearchResult>'),
   \ ])
 
-call javaapi#class('InitialDirContext', '', [
+call javaapi#class('InitialDirContext', 'InitialContext', [
   \ javaapi#method(0,'InitialDirContext(', ') throws NamingException', 'public'),
   \ javaapi#method(0,'InitialDirContext(', 'Hashtable<?, ?>) throws NamingException', 'public'),
   \ javaapi#method(0,'getAttributes(', 'String) throws NamingException', 'Attributes'),
@@ -183,27 +183,27 @@ call javaapi#class('InitialDirContext', '', [
   \ javaapi#method(0,'search(', 'Name, String, Object[], SearchControls) throws NamingException', 'SearchResult>'),
   \ ])
 
-call javaapi#class('InvalidAttributeIdentifierException', '', [
+call javaapi#class('InvalidAttributeIdentifierException', 'NamingException', [
   \ javaapi#method(0,'InvalidAttributeIdentifierException(', 'String)', 'public'),
   \ javaapi#method(0,'InvalidAttributeIdentifierException(', ')', 'public'),
   \ ])
 
-call javaapi#class('InvalidAttributeValueException', '', [
+call javaapi#class('InvalidAttributeValueException', 'NamingException', [
   \ javaapi#method(0,'InvalidAttributeValueException(', 'String)', 'public'),
   \ javaapi#method(0,'InvalidAttributeValueException(', ')', 'public'),
   \ ])
 
-call javaapi#class('InvalidAttributesException', '', [
+call javaapi#class('InvalidAttributesException', 'NamingException', [
   \ javaapi#method(0,'InvalidAttributesException(', 'String)', 'public'),
   \ javaapi#method(0,'InvalidAttributesException(', ')', 'public'),
   \ ])
 
-call javaapi#class('InvalidSearchControlsException', '', [
+call javaapi#class('InvalidSearchControlsException', 'NamingException', [
   \ javaapi#method(0,'InvalidSearchControlsException(', ')', 'public'),
   \ javaapi#method(0,'InvalidSearchControlsException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('InvalidSearchFilterException', '', [
+call javaapi#class('InvalidSearchFilterException', 'NamingException', [
   \ javaapi#method(0,'InvalidSearchFilterException(', ')', 'public'),
   \ javaapi#method(0,'InvalidSearchFilterException(', 'String)', 'public'),
   \ ])
@@ -215,12 +215,12 @@ call javaapi#class('ModificationItem', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('NoSuchAttributeException', '', [
+call javaapi#class('NoSuchAttributeException', 'NamingException', [
   \ javaapi#method(0,'NoSuchAttributeException(', 'String)', 'public'),
   \ javaapi#method(0,'NoSuchAttributeException(', ')', 'public'),
   \ ])
 
-call javaapi#class('SchemaViolationException', '', [
+call javaapi#class('SchemaViolationException', 'NamingException', [
   \ javaapi#method(0,'SchemaViolationException(', ')', 'public'),
   \ javaapi#method(0,'SchemaViolationException(', 'String)', 'public'),
   \ ])
@@ -245,7 +245,7 @@ call javaapi#class('SearchControls', 'Serializable', [
   \ javaapi#method(0,'setReturningAttributes(', 'String[])', 'void'),
   \ ])
 
-call javaapi#class('SearchResult', '', [
+call javaapi#class('SearchResult', 'Binding', [
   \ javaapi#method(0,'SearchResult(', 'String, Object, Attributes)', 'public'),
   \ javaapi#method(0,'SearchResult(', 'String, Object, Attributes, boolean)', 'public'),
   \ javaapi#method(0,'SearchResult(', 'String, String, Object, Attributes)', 'public'),

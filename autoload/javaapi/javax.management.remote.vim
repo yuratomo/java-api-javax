@@ -8,7 +8,7 @@ call javaapi#interface('JMXAuthenticator', '', [
   \ javaapi#method(0,'authenticate(', 'Object)', 'Subject'),
   \ ])
 
-call javaapi#class('JMXConnectionNotification', '', [
+call javaapi#class('JMXConnectionNotification', 'Notification', [
   \ javaapi#field(1,'OPENED', 'String'),
   \ javaapi#field(1,'CLOSED', 'String'),
   \ javaapi#field(1,'FAILED', 'String'),
@@ -17,7 +17,7 @@ call javaapi#class('JMXConnectionNotification', '', [
   \ javaapi#method(0,'getConnectionId(', ')', 'String'),
   \ ])
 
-call javaapi#interface('JMXConnector', '', [
+call javaapi#interface('JMXConnector', 'Closeable', [
   \ javaapi#field(1,'CREDENTIALS', 'String'),
   \ javaapi#method(0,'connect(', ') throws IOException', 'void'),
   \ javaapi#method(0,'connect(', 'Map<String, ?>) throws IOException', 'void'),
@@ -53,7 +53,7 @@ call javaapi#interface('JMXConnectorProvider', '', [
   \ javaapi#method(0,'newJMXConnector(', 'JMXServiceURL, Map<String, ?>) throws IOException', 'JMXConnector'),
   \ ])
 
-call javaapi#class('JMXConnectorServer', '', [
+call javaapi#class('JMXConnectorServer', 'NotificationBroadcasterSupport', [
   \ javaapi#field(1,'AUTHENTICATOR', 'String'),
   \ javaapi#method(0,'JMXConnectorServer(', ')', 'public'),
   \ javaapi#method(0,'JMXConnectorServer(', 'MBeanServer)', 'public'),
@@ -99,14 +99,14 @@ call javaapi#class('JMXPrincipal', 'Serializable', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('JMXProviderException', '', [
+call javaapi#class('JMXProviderException', 'IOException', [
   \ javaapi#method(0,'JMXProviderException(', ')', 'public'),
   \ javaapi#method(0,'JMXProviderException(', 'String)', 'public'),
   \ javaapi#method(0,'JMXProviderException(', 'String, Throwable)', 'public'),
   \ javaapi#method(0,'getCause(', ')', 'Throwable'),
   \ ])
 
-call javaapi#class('JMXServerErrorException', '', [
+call javaapi#class('JMXServerErrorException', 'IOException', [
   \ javaapi#method(0,'JMXServerErrorException(', 'String, Error)', 'public'),
   \ javaapi#method(0,'getCause(', ')', 'Throwable'),
   \ ])
@@ -124,7 +124,7 @@ call javaapi#class('JMXServiceURL', 'Serializable', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#interface('MBeanServerForwarder', '', [
+call javaapi#interface('MBeanServerForwarder', 'MBeanServer', [
   \ javaapi#method(0,'getMBeanServer(', ')', 'MBeanServer'),
   \ javaapi#method(0,'setMBeanServer(', 'MBeanServer)', 'void'),
   \ ])
@@ -137,7 +137,7 @@ call javaapi#class('NotificationResult', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SubjectDelegationPermission', '', [
+call javaapi#class('SubjectDelegationPermission', 'BasicPermission', [
   \ javaapi#method(0,'SubjectDelegationPermission(', 'String)', 'public'),
   \ javaapi#method(0,'SubjectDelegationPermission(', 'String, String)', 'public'),
   \ ])

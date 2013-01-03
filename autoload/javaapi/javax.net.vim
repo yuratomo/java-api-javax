@@ -1,13 +1,13 @@
 call javaapi#namespace('javax.net')
 
-call javaapi#class('DefaultServerSocketFactory', '', [
+call javaapi#class('DefaultServerSocketFactory', 'ServerSocketFactory', [
   \ javaapi#method(0,'createServerSocket(', ') throws IOException', 'ServerSocket'),
   \ javaapi#method(0,'createServerSocket(', 'int) throws IOException', 'ServerSocket'),
   \ javaapi#method(0,'createServerSocket(', 'int, int) throws IOException', 'ServerSocket'),
   \ javaapi#method(0,'createServerSocket(', 'int, int, InetAddress) throws IOException', 'ServerSocket'),
   \ ])
 
-call javaapi#class('DefaultSocketFactory', '', [
+call javaapi#class('DefaultSocketFactory', 'SocketFactory', [
   \ javaapi#method(0,'createSocket(', ')', 'Socket'),
   \ javaapi#method(0,'createSocket(', 'String, int) throws IOException, UnknownHostException', 'Socket'),
   \ javaapi#method(0,'createSocket(', 'InetAddress, int) throws IOException', 'Socket'),

@@ -15,7 +15,7 @@ call javaapi#class('AbstractScriptEngine', 'ScriptEngine', [
   \ javaapi#method(0,'eval(', 'String) throws ScriptException', 'Object'),
   \ ])
 
-call javaapi#interface('Bindings', '', [
+call javaapi#interface('Bindings', 'Object>', [
   \ javaapi#method(0,'put(', 'String, Object)', 'Object'),
   \ javaapi#method(0,'putAll(', 'Map<? extends String, ? extends Object>)', 'void'),
   \ javaapi#method(0,'containsKey(', 'Object)', 'boolean'),
@@ -121,7 +121,7 @@ call javaapi#class('ScriptEngineManager', '', [
   \ javaapi#method(0,'registerEngineExtension(', 'String, ScriptEngineFactory)', 'void'),
   \ ])
 
-call javaapi#class('ScriptException', '', [
+call javaapi#class('ScriptException', 'Exception', [
   \ javaapi#method(0,'ScriptException(', 'String)', 'public'),
   \ javaapi#method(0,'ScriptException(', 'Exception)', 'public'),
   \ javaapi#method(0,'ScriptException(', 'String, String, int)', 'public'),

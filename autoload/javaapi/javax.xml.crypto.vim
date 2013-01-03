@@ -20,7 +20,7 @@ call javaapi#class('1', 'KeySelectorResult', [
   \ javaapi#method(0,'getKey(', ')', 'Key'),
   \ ])
 
-call javaapi#class('SingletonKeySelector', '', [
+call javaapi#class('SingletonKeySelector', 'KeySelector', [
   \ javaapi#method(0,'select(', 'KeyInfo, Purpose, AlgorithmMethod, XMLCryptoContext) throws KeySelectorException', 'KeySelectorResult'),
   \ ])
 
@@ -29,7 +29,7 @@ call javaapi#class('KeySelector', '', [
   \ javaapi#method(1,'singletonKeySelector(', 'Key)', 'KeySelector'),
   \ ])
 
-call javaapi#class('KeySelectorException', '', [
+call javaapi#class('KeySelectorException', 'Exception', [
   \ javaapi#method(0,'KeySelectorException(', ')', 'public'),
   \ javaapi#method(0,'KeySelectorException(', 'String)', 'public'),
   \ javaapi#method(0,'KeySelectorException(', 'String, Throwable)', 'public'),
@@ -44,7 +44,7 @@ call javaapi#interface('KeySelectorResult', '', [
   \ javaapi#method(0,'getKey(', ')', 'Key'),
   \ ])
 
-call javaapi#class('MarshalException', '', [
+call javaapi#class('MarshalException', 'Exception', [
   \ javaapi#method(0,'MarshalException(', ')', 'public'),
   \ javaapi#method(0,'MarshalException(', 'String)', 'public'),
   \ javaapi#method(0,'MarshalException(', 'String, Throwable)', 'public'),
@@ -55,7 +55,7 @@ call javaapi#class('MarshalException', '', [
   \ javaapi#method(0,'printStackTrace(', 'PrintWriter)', 'void'),
   \ ])
 
-call javaapi#class('NoSuchMechanismException', '', [
+call javaapi#class('NoSuchMechanismException', 'RuntimeException', [
   \ javaapi#method(0,'NoSuchMechanismException(', ')', 'public'),
   \ javaapi#method(0,'NoSuchMechanismException(', 'String)', 'public'),
   \ javaapi#method(0,'NoSuchMechanismException(', 'String, Throwable)', 'public'),
@@ -66,7 +66,7 @@ call javaapi#class('NoSuchMechanismException', '', [
   \ javaapi#method(0,'printStackTrace(', 'PrintWriter)', 'void'),
   \ ])
 
-call javaapi#interface('NodeSetData', '', [
+call javaapi#interface('NodeSetData', 'Data', [
   \ javaapi#method(0,'iterator(', ')', 'Iterator'),
   \ ])
 
@@ -87,7 +87,7 @@ call javaapi#interface('URIReference', '', [
   \ javaapi#method(0,'getType(', ')', 'String'),
   \ ])
 
-call javaapi#class('URIReferenceException', '', [
+call javaapi#class('URIReferenceException', 'Exception', [
   \ javaapi#method(0,'URIReferenceException(', ')', 'public'),
   \ javaapi#method(0,'URIReferenceException(', 'String)', 'public'),
   \ javaapi#method(0,'URIReferenceException(', 'String, Throwable)', 'public'),

@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.activation')
 
-call javaapi#class('ActivationDataFlavor', '', [
+call javaapi#class('ActivationDataFlavor', 'DataFlavor', [
   \ javaapi#method(0,'ActivationDataFlavor(', 'Class, String, String)', 'public'),
   \ javaapi#method(0,'ActivationDataFlavor(', 'Class, String)', 'public'),
   \ javaapi#method(0,'ActivationDataFlavor(', 'String, String)', 'public'),
@@ -117,7 +117,7 @@ call javaapi#class('FileTypeMap', '', [
   \ javaapi#method(1,'getDefaultFileTypeMap(', ')', 'FileTypeMap'),
   \ ])
 
-call javaapi#class('MailcapCommandMap', '', [
+call javaapi#class('MailcapCommandMap', 'CommandMap', [
   \ javaapi#method(0,'MailcapCommandMap(', ')', 'public'),
   \ javaapi#method(0,'MailcapCommandMap(', 'String) throws IOException', 'public'),
   \ javaapi#method(0,'MailcapCommandMap(', 'InputStream)', 'public'),
@@ -162,12 +162,12 @@ call javaapi#class('MimeTypeParameterList', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('MimeTypeParseException', '', [
+call javaapi#class('MimeTypeParseException', 'Exception', [
   \ javaapi#method(0,'MimeTypeParseException(', ')', 'public'),
   \ javaapi#method(0,'MimeTypeParseException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('MimetypesFileTypeMap', '', [
+call javaapi#class('MimetypesFileTypeMap', 'FileTypeMap', [
   \ javaapi#method(0,'MimetypesFileTypeMap(', ')', 'public'),
   \ javaapi#method(0,'MimetypesFileTypeMap(', 'String) throws IOException', 'public'),
   \ javaapi#method(0,'MimetypesFileTypeMap(', 'InputStream)', 'public'),
@@ -222,7 +222,7 @@ call javaapi#class('URLDataSource', 'DataSource', [
   \ javaapi#method(0,'getURL(', ')', 'URL'),
   \ ])
 
-call javaapi#class('UnsupportedDataTypeException', '', [
+call javaapi#class('UnsupportedDataTypeException', 'IOException', [
   \ javaapi#method(0,'UnsupportedDataTypeException(', ')', 'public'),
   \ javaapi#method(0,'UnsupportedDataTypeException(', 'String)', 'public'),
   \ ])

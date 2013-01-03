@@ -24,7 +24,7 @@ call javaapi#class('SchemaFactory', '', [
   \ javaapi#method(0,'newSchema(', ') throws SAXException', 'Schema'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'SingleIterator', [
   \ ])
 
 call javaapi#class('2', 'Iterator', [

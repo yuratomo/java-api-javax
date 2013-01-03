@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.transaction.xa')
 
-call javaapi#class('XAException', '', [
+call javaapi#class('XAException', 'Exception', [
   \ javaapi#field(0,'errorCode', 'int'),
   \ javaapi#field(1,'XA_RBBASE', 'int'),
   \ javaapi#field(1,'XA_RBROLLBACK', 'int'),

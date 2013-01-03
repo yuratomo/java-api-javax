@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.xml.crypto.dsig.dom')
 
-call javaapi#class('DOMSignContext', '', [
+call javaapi#class('DOMSignContext', 'DOMCryptoContext', [
   \ javaapi#method(0,'DOMSignContext(', 'Key, Node)', 'public'),
   \ javaapi#method(0,'DOMSignContext(', 'Key, Node, Node)', 'public'),
   \ javaapi#method(0,'DOMSignContext(', 'KeySelector, Node)', 'public'),
@@ -11,7 +11,7 @@ call javaapi#class('DOMSignContext', '', [
   \ javaapi#method(0,'getNextSibling(', ')', 'Node'),
   \ ])
 
-call javaapi#class('DOMValidateContext', '', [
+call javaapi#class('DOMValidateContext', 'DOMCryptoContext', [
   \ javaapi#method(0,'DOMValidateContext(', 'KeySelector, Node)', 'public'),
   \ javaapi#method(0,'DOMValidateContext(', 'Key, Node)', 'public'),
   \ javaapi#method(0,'setNode(', 'Node)', 'void'),

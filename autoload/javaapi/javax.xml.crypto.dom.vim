@@ -26,7 +26,7 @@ call javaapi#class('DOMStructure', 'XMLStructure', [
   \ javaapi#method(0,'isFeatureSupported(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#interface('DOMURIReference', '', [
+call javaapi#interface('DOMURIReference', 'URIReference', [
   \ javaapi#method(0,'getHere(', ')', 'Node'),
   \ ])
 

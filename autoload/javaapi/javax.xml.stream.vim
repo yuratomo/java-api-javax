@@ -4,7 +4,7 @@ call javaapi#interface('EventFilter', '', [
   \ javaapi#method(0,'accept(', 'XMLEvent)', 'boolean'),
   \ ])
 
-call javaapi#class('FactoryConfigurationError', '', [
+call javaapi#class('FactoryConfigurationError', 'Error', [
   \ javaapi#method(0,'FactoryConfigurationError(', ')', 'public'),
   \ javaapi#method(0,'FactoryConfigurationError(', 'Exception)', 'public'),
   \ javaapi#method(0,'FactoryConfigurationError(', 'Exception, String)', 'public'),
@@ -15,7 +15,7 @@ call javaapi#class('FactoryConfigurationError', '', [
   \ javaapi#method(0,'getMessage(', ')', 'String'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ javaapi#method(0,'getCause(', ')', 'Throwable'),
   \ ])
 
@@ -90,7 +90,7 @@ call javaapi#class('XMLEventFactory', '', [
   \ javaapi#method(0,'createDTD(', 'String)', 'DTD'),
   \ ])
 
-call javaapi#interface('XMLEventReader', '', [
+call javaapi#interface('XMLEventReader', 'Iterator', [
   \ javaapi#method(0,'nextEvent(', ') throws XMLStreamException', 'XMLEvent'),
   \ javaapi#method(0,'hasNext(', ')', 'boolean'),
   \ javaapi#method(0,'peek(', ') throws XMLStreamException', 'XMLEvent'),
@@ -100,7 +100,7 @@ call javaapi#interface('XMLEventReader', '', [
   \ javaapi#method(0,'close(', ') throws XMLStreamException', 'void'),
   \ ])
 
-call javaapi#interface('XMLEventWriter', '', [
+call javaapi#interface('XMLEventWriter', 'XMLEventConsumer', [
   \ javaapi#method(0,'flush(', ') throws XMLStreamException', 'void'),
   \ javaapi#method(0,'close(', ') throws XMLStreamException', 'void'),
   \ javaapi#method(0,'add(', 'XMLEvent) throws XMLStreamException', 'void'),
@@ -197,7 +197,7 @@ call javaapi#interface('XMLStreamConstants', '', [
   \ javaapi#field(1,'ENTITY_DECLARATION', 'int'),
   \ ])
 
-call javaapi#class('XMLStreamException', '', [
+call javaapi#class('XMLStreamException', 'Exception', [
   \ javaapi#method(0,'XMLStreamException(', ')', 'public'),
   \ javaapi#method(0,'XMLStreamException(', 'String)', 'public'),
   \ javaapi#method(0,'XMLStreamException(', 'Throwable)', 'public'),
@@ -208,7 +208,7 @@ call javaapi#class('XMLStreamException', '', [
   \ javaapi#method(0,'getLocation(', ')', 'Location'),
   \ ])
 
-call javaapi#interface('XMLStreamReader', '', [
+call javaapi#interface('XMLStreamReader', 'XMLStreamConstants', [
   \ javaapi#method(0,'getProperty(', 'String) throws IllegalArgumentException', 'Object'),
   \ javaapi#method(0,'next(', ') throws XMLStreamException', 'int'),
   \ javaapi#method(0,'require(', 'int, String, String) throws XMLStreamException', 'void'),

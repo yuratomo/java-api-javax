@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.xml.crypto.dsig')
 
-call javaapi#interface('CanonicalizationMethod', '', [
+call javaapi#interface('CanonicalizationMethod', 'Transform', [
   \ javaapi#field(1,'INCLUSIVE', 'String'),
   \ javaapi#field(1,'INCLUSIVE_WITH_COMMENTS', 'String'),
   \ javaapi#field(1,'EXCLUSIVE', 'String'),
@@ -8,7 +8,7 @@ call javaapi#interface('CanonicalizationMethod', '', [
   \ javaapi#method(0,'getParameterSpec(', ')', 'AlgorithmParameterSpec'),
   \ ])
 
-call javaapi#interface('DigestMethod', '', [
+call javaapi#interface('DigestMethod', 'AlgorithmMethod', [
   \ javaapi#field(1,'SHA1', 'String'),
   \ javaapi#field(1,'SHA256', 'String'),
   \ javaapi#field(1,'SHA512', 'String'),
@@ -16,13 +16,13 @@ call javaapi#interface('DigestMethod', '', [
   \ javaapi#method(0,'getParameterSpec(', ')', 'AlgorithmParameterSpec'),
   \ ])
 
-call javaapi#interface('Manifest', '', [
+call javaapi#interface('Manifest', 'XMLStructure', [
   \ javaapi#field(1,'TYPE', 'String'),
   \ javaapi#method(0,'getId(', ')', 'String'),
   \ javaapi#method(0,'getReferences(', ')', 'List'),
   \ ])
 
-call javaapi#interface('Reference', '', [
+call javaapi#interface('Reference', 'XMLStructure', [
   \ javaapi#method(0,'getTransforms(', ')', 'List'),
   \ javaapi#method(0,'getDigestMethod(', ')', 'DigestMethod'),
   \ javaapi#method(0,'getId(', ')', 'String'),
@@ -33,26 +33,26 @@ call javaapi#interface('Reference', '', [
   \ javaapi#method(0,'getDigestInputStream(', ')', 'InputStream'),
   \ ])
 
-call javaapi#interface('SignatureMethod', '', [
+call javaapi#interface('SignatureMethod', 'AlgorithmMethod', [
   \ javaapi#field(1,'DSA_SHA1', 'String'),
   \ javaapi#field(1,'RSA_SHA1', 'String'),
   \ javaapi#field(1,'HMAC_SHA1', 'String'),
   \ javaapi#method(0,'getParameterSpec(', ')', 'AlgorithmParameterSpec'),
   \ ])
 
-call javaapi#interface('SignatureProperties', '', [
+call javaapi#interface('SignatureProperties', 'XMLStructure', [
   \ javaapi#field(1,'TYPE', 'String'),
   \ javaapi#method(0,'getId(', ')', 'String'),
   \ javaapi#method(0,'getProperties(', ')', 'List'),
   \ ])
 
-call javaapi#interface('SignatureProperty', '', [
+call javaapi#interface('SignatureProperty', 'XMLStructure', [
   \ javaapi#method(0,'getTarget(', ')', 'String'),
   \ javaapi#method(0,'getId(', ')', 'String'),
   \ javaapi#method(0,'getContent(', ')', 'List'),
   \ ])
 
-call javaapi#interface('SignedInfo', '', [
+call javaapi#interface('SignedInfo', 'XMLStructure', [
   \ javaapi#method(0,'getCanonicalizationMethod(', ')', 'CanonicalizationMethod'),
   \ javaapi#method(0,'getSignatureMethod(', ')', 'SignatureMethod'),
   \ javaapi#method(0,'getReferences(', ')', 'List'),
@@ -60,7 +60,7 @@ call javaapi#interface('SignedInfo', '', [
   \ javaapi#method(0,'getCanonicalizedData(', ')', 'InputStream'),
   \ ])
 
-call javaapi#interface('Transform', '', [
+call javaapi#interface('Transform', 'AlgorithmMethod', [
   \ javaapi#field(1,'BASE64', 'String'),
   \ javaapi#field(1,'ENVELOPED', 'String'),
   \ javaapi#field(1,'XPATH', 'String'),
@@ -71,7 +71,7 @@ call javaapi#interface('Transform', '', [
   \ javaapi#method(0,'transform(', 'Data, XMLCryptoContext, OutputStream) throws TransformException', 'Data'),
   \ ])
 
-call javaapi#class('TransformException', '', [
+call javaapi#class('TransformException', 'Exception', [
   \ javaapi#method(0,'TransformException(', ')', 'public'),
   \ javaapi#method(0,'TransformException(', 'String)', 'public'),
   \ javaapi#method(0,'TransformException(', 'String, Throwable)', 'public'),
@@ -102,7 +102,7 @@ call javaapi#class('TransformService', 'Transform', [
   \ javaapi#method(0,'init(', 'XMLStructure, XMLCryptoContext) throws InvalidAlgorithmParameterException', 'void'),
   \ ])
 
-call javaapi#interface('XMLObject', '', [
+call javaapi#interface('XMLObject', 'XMLStructure', [
   \ javaapi#field(1,'TYPE', 'String'),
   \ javaapi#method(0,'getContent(', ')', 'List'),
   \ javaapi#method(0,'getId(', ')', 'String'),
@@ -110,16 +110,16 @@ call javaapi#interface('XMLObject', '', [
   \ javaapi#method(0,'getEncoding(', ')', 'String'),
   \ ])
 
-call javaapi#interface('XMLSignContext', '', [
+call javaapi#interface('XMLSignContext', 'XMLCryptoContext', [
   \ ])
 
-call javaapi#interface('SignatureValue', '', [
+call javaapi#interface('SignatureValue', 'XMLStructure', [
   \ javaapi#method(0,'getId(', ')', 'String'),
   \ javaapi#method(0,'getValue(', ')', 'byte[]'),
   \ javaapi#method(0,'validate(', 'XMLValidateContext) throws XMLSignatureException', 'boolean'),
   \ ])
 
-call javaapi#interface('XMLSignature', '', [
+call javaapi#interface('XMLSignature', 'XMLStructure', [
   \ javaapi#field(1,'XMLNS', 'String'),
   \ javaapi#method(0,'validate(', 'XMLValidateContext) throws XMLSignatureException', 'boolean'),
   \ javaapi#method(0,'getKeyInfo(', ')', 'KeyInfo'),
@@ -131,7 +131,7 @@ call javaapi#interface('XMLSignature', '', [
   \ javaapi#method(0,'getKeySelectorResult(', ')', 'KeySelectorResult'),
   \ ])
 
-call javaapi#class('XMLSignatureException', '', [
+call javaapi#class('XMLSignatureException', 'Exception', [
   \ javaapi#method(0,'XMLSignatureException(', ')', 'public'),
   \ javaapi#method(0,'XMLSignatureException(', 'String)', 'public'),
   \ javaapi#method(0,'XMLSignatureException(', 'String, Throwable)', 'public'),
@@ -175,6 +175,6 @@ call javaapi#class('XMLSignatureFactory', '', [
   \ javaapi#method(0,'getURIDereferencer(', ')', 'URIDereferencer'),
   \ ])
 
-call javaapi#interface('XMLValidateContext', '', [
+call javaapi#interface('XMLValidateContext', 'XMLCryptoContext', [
   \ ])
 

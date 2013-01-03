@@ -19,7 +19,7 @@ call javaapi#class('ElementInfo', '', [
   \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
   \ ])
 
-call javaapi#class('HTMLAccessibleContext', '', [
+call javaapi#class('HTMLAccessibleContext', 'AccessibleContext', [
   \ javaapi#method(0,'HTMLAccessibleContext(', 'AccessibleHTML, ElementInfo)', 'public'),
   \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ javaapi#method(0,'getAccessibleStateSet(', ')', 'AccessibleStateSet'),
@@ -57,7 +57,7 @@ call javaapi#class('HTMLAccessibleContext', '', [
   \ javaapi#method(0,'removeFocusListener(', 'FocusListener)', 'void'),
   \ ])
 
-call javaapi#class('IconAccessibleContext', '', [
+call javaapi#class('IconAccessibleContext', 'HTMLAccessibleContext', [
   \ javaapi#method(0,'IconAccessibleContext(', 'IconElementInfo, ElementInfo)', 'public'),
   \ javaapi#method(0,'getAccessibleName(', ')', 'String'),
   \ javaapi#method(0,'getAccessibleDescription(', ')', 'String'),
@@ -69,7 +69,7 @@ call javaapi#class('IconAccessibleContext', '', [
   \ javaapi#method(0,'getAccessibleIconHeight(', ')', 'int'),
   \ ])
 
-call javaapi#class('IconElementInfo', '', [
+call javaapi#class('IconElementInfo', 'ElementInfo', [
   \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ ])
 
@@ -77,7 +77,7 @@ call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('RootHTMLAccessibleContext', '', [
+call javaapi#class('RootHTMLAccessibleContext', 'HTMLAccessibleContext', [
   \ javaapi#method(0,'RootHTMLAccessibleContext(', 'AccessibleHTML, ElementInfo)', 'public'),
   \ javaapi#method(0,'getAccessibleName(', ')', 'String'),
   \ javaapi#method(0,'getAccessibleDescription(', ')', 'String'),
@@ -110,7 +110,7 @@ call javaapi#class('AccessibleHeadersTable', 'AccessibleTable', [
   \ javaapi#method(0,'getSelectedAccessibleColumns(', ')', 'int[]'),
   \ ])
 
-call javaapi#class('TableAccessibleContext', '', [
+call javaapi#class('TableAccessibleContext', 'HTMLAccessibleContext', [
   \ javaapi#method(0,'TableAccessibleContext(', 'TableElementInfo, ElementInfo)', 'public'),
   \ javaapi#method(0,'getAccessibleName(', ')', 'String'),
   \ javaapi#method(0,'getAccessibleDescription(', ')', 'String'),
@@ -180,19 +180,19 @@ call javaapi#class('TableAccessibleContext', '', [
   \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ ])
 
-call javaapi#class('TableCellElementInfo', '', [
+call javaapi#class('TableCellElementInfo', 'ElementInfo', [
   \ javaapi#method(0,'isHeaderCell(', ')', 'boolean'),
   \ javaapi#method(0,'getAccessible(', ')', 'Accessible'),
   \ javaapi#method(0,'getRowCount(', ')', 'int'),
   \ javaapi#method(0,'getColumnCount(', ')', 'int'),
   \ ])
 
-call javaapi#class('TableRowElementInfo', '', [
+call javaapi#class('TableRowElementInfo', 'ElementInfo', [
   \ javaapi#method(0,'getRowCount(', ')', 'int'),
   \ javaapi#method(0,'getColumnCount(', ')', 'int'),
   \ ])
 
-call javaapi#class('TableElementInfo', '', [
+call javaapi#class('TableElementInfo', 'ElementInfo', [
   \ javaapi#method(0,'getCaptionInfo(', ')', 'ElementInfo'),
   \ javaapi#method(0,'getRow(', 'int)', 'TableRowElementInfo'),
   \ javaapi#method(0,'getCell(', 'int, int)', 'TableCellElementInfo'),
@@ -203,11 +203,11 @@ call javaapi#class('TableElementInfo', '', [
   \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ ])
 
-call javaapi#class('IndexedSegment', '', [
+call javaapi#class('IndexedSegment', 'Segment', [
   \ javaapi#field(0,'modelOffset', 'int'),
   \ ])
 
-call javaapi#class('TextAccessibleContext', '', [
+call javaapi#class('TextAccessibleContext', 'HTMLAccessibleContext', [
   \ javaapi#method(0,'TextAccessibleContext(', 'TextElementInfo, ElementInfo)', 'public'),
   \ javaapi#method(0,'getAccessibleText(', ')', 'AccessibleText'),
   \ javaapi#method(0,'getAccessibleName(', ')', 'String'),
@@ -260,7 +260,7 @@ call javaapi#class('TextAccessibleContext', '', [
   \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ ])
 
-call javaapi#class('TextElementInfo', '', [
+call javaapi#class('TextElementInfo', 'ElementInfo', [
   \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ ])
 
@@ -269,12 +269,12 @@ call javaapi#class('AccessibleHTML', 'Accessible', [
   \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ ])
 
-call javaapi#class('BRView', '', [
+call javaapi#class('BRView', 'InlineView', [
   \ javaapi#method(0,'BRView(', 'Element)', 'public'),
   \ javaapi#method(0,'getBreakWeight(', 'int, float, float)', 'int'),
   \ ])
 
-call javaapi#class('BlockView', '', [
+call javaapi#class('BlockView', 'BoxView', [
   \ javaapi#method(0,'BlockView(', 'Element, int)', 'public'),
   \ javaapi#method(0,'setParent(', 'View)', 'void'),
   \ javaapi#method(0,'paint(', 'Graphics, Shape)', 'void'),
@@ -354,35 +354,35 @@ call javaapi#class('Attribute', '', [
   \ javaapi#method(0,'isInherited(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('BackgroundImage', '', [
+call javaapi#class('BackgroundImage', 'CssValue', [
   \ ])
 
-call javaapi#class('BackgroundPosition', '', [
+call javaapi#class('BackgroundPosition', 'CssValue', [
   \ ])
 
-call javaapi#class('BorderStyle', '', [
+call javaapi#class('BorderStyle', 'CssValue', [
   \ ])
 
-call javaapi#class('BorderWidthValue', '', [
+call javaapi#class('BorderWidthValue', 'LengthValue', [
   \ ])
 
-call javaapi#class('ColorValue', '', [
+call javaapi#class('ColorValue', 'CssValue', [
   \ ])
 
 call javaapi#class('CssValue', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('CssValueMapper', '', [
+call javaapi#class('CssValueMapper', 'CssValue', [
   \ ])
 
-call javaapi#class('FontFamily', '', [
+call javaapi#class('FontFamily', 'CssValue', [
   \ ])
 
-call javaapi#class('FontSize', '', [
+call javaapi#class('FontSize', 'CssValue', [
   \ ])
 
-call javaapi#class('FontWeight', '', [
+call javaapi#class('FontWeight', 'CssValue', [
   \ ])
 
 call javaapi#interface('LayoutIterator', '', [
@@ -406,7 +406,7 @@ call javaapi#class('LengthUnit', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('LengthValue', '', [
+call javaapi#class('LengthValue', 'CssValue', [
   \ ])
 
 call javaapi#class('ShorthandBackgroundParser', '', [
@@ -421,7 +421,7 @@ call javaapi#class('ShorthandFontParser', '', [
 call javaapi#class('ShorthandMarginParser', '', [
   \ ])
 
-call javaapi#class('StringValue', '', [
+call javaapi#class('StringValue', 'CssValue', [
   \ ])
 
 call javaapi#class('Value', '', [
@@ -438,19 +438,19 @@ call javaapi#interface('BorderPainter', '', [
   \ javaapi#method(0,'paint(', 'Polygon, Graphics, Color, int)', 'void'),
   \ ])
 
-call javaapi#class('DottedDashedPainter', '', [
+call javaapi#class('DottedDashedPainter', 'StrokePainter', [
   \ javaapi#method(0,'paint(', 'Polygon, Graphics, Color, int)', 'void'),
   \ ])
 
-call javaapi#class('DoublePainter', '', [
+call javaapi#class('DoublePainter', 'StrokePainter', [
   \ javaapi#method(0,'paint(', 'Polygon, Graphics, Color, int)', 'void'),
   \ ])
 
-call javaapi#class('GrooveRidgePainter', '', [
+call javaapi#class('GrooveRidgePainter', 'ShadowLightPainter', [
   \ javaapi#method(0,'paint(', 'Polygon, Graphics, Color, int)', 'void'),
   \ ])
 
-call javaapi#class('InsetOutsetPainter', '', [
+call javaapi#class('InsetOutsetPainter', 'ShadowLightPainter', [
   \ javaapi#method(0,'paint(', 'Polygon, Graphics, Color, int)', 'void'),
   \ ])
 
@@ -458,7 +458,7 @@ call javaapi#class('NullPainter', 'BorderPainter', [
   \ javaapi#method(0,'paint(', 'Polygon, Graphics, Color, int)', 'void'),
   \ ])
 
-call javaapi#class('ShadowLightPainter', '', [
+call javaapi#class('ShadowLightPainter', 'StrokePainter', [
   \ ])
 
 call javaapi#class('SolidPainter', 'BorderPainter', [
@@ -468,7 +468,7 @@ call javaapi#class('SolidPainter', 'BorderPainter', [
 call javaapi#class('StrokePainter', 'BorderPainter', [
   \ ])
 
-call javaapi#class('CSSBorder', '', [
+call javaapi#class('CSSBorder', 'AbstractBorder', [
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ ])
@@ -485,16 +485,16 @@ call javaapi#interface('CSSParserCallback', '', [
 call javaapi#class('CSSParser', '', [
   \ ])
 
-call javaapi#class('CommentBorder', '', [
+call javaapi#class('CommentBorder', 'LineBorder', [
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ javaapi#method(0,'isBorderOpaque(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('CommentView', '', [
+call javaapi#class('CommentView', 'HiddenTagView', [
   \ ])
 
-call javaapi#class('EditableView', '', [
+call javaapi#class('EditableView', 'ComponentView', [
   \ javaapi#method(0,'getMinimumSpan(', 'int)', 'float'),
   \ javaapi#method(0,'getPreferredSpan(', 'int)', 'float'),
   \ javaapi#method(0,'getMaximumSpan(', 'int)', 'float'),
@@ -503,14 +503,14 @@ call javaapi#class('EditableView', '', [
   \ javaapi#method(0,'isVisible(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('MethodType', '', [
+call javaapi#class('MethodType', 'MethodType>', [
   \ javaapi#field(1,'GET', 'MethodType'),
   \ javaapi#field(1,'POST', 'MethodType'),
   \ javaapi#method(1,'values(', ')', 'MethodType[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'MethodType'),
   \ ])
 
-call javaapi#class('FormSubmitEvent', '', [
+call javaapi#class('FormSubmitEvent', 'HTMLFrameHyperlinkEvent', [
   \ javaapi#method(0,'getMethod(', ')', 'MethodType'),
   \ javaapi#method(0,'getData(', ')', 'String'),
   \ ])
@@ -523,11 +523,11 @@ call javaapi#class('BrowseFileAction', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('MouseEventListener', '', [
+call javaapi#class('MouseEventListener', 'MouseAdapter', [
   \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('FormView', '', [
+call javaapi#class('FormView', 'ComponentView', [
   \ javaapi#field(1,'SUBMIT', 'String'),
   \ javaapi#field(1,'RESET', 'String'),
   \ javaapi#method(0,'FormView(', 'Element)', 'public'),
@@ -535,15 +535,15 @@ call javaapi#class('FormView', '', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('FrameSetView', '', [
+call javaapi#class('FrameSetView', 'BoxView', [
   \ javaapi#method(0,'FrameSetView(', 'Element, int)', 'public'),
   \ ])
 
-call javaapi#class('FrameEditorPane', '', [
+call javaapi#class('FrameEditorPane', 'JEditorPane', [
   \ javaapi#method(0,'getEditorKitForContentType(', 'String)', 'EditorKit'),
   \ ])
 
-call javaapi#class('FrameView', '', [
+call javaapi#class('FrameView', 'ComponentView', [
   \ javaapi#method(0,'FrameView(', 'Element)', 'public'),
   \ javaapi#method(0,'setParent(', 'View)', 'void'),
   \ javaapi#method(0,'paint(', 'Graphics, Shape)', 'void'),
@@ -553,7 +553,7 @@ call javaapi#class('FrameView', '', [
   \ javaapi#method(0,'getMaximumSpan(', 'int)', 'float'),
   \ ])
 
-call javaapi#class('HRuleView', '', [
+call javaapi#class('HRuleView', 'View', [
   \ javaapi#method(0,'HRuleView(', 'Element)', 'public'),
   \ javaapi#method(0,'paint(', 'Graphics, Shape)', 'void'),
   \ javaapi#method(0,'getPreferredSpan(', 'int)', 'float'),
@@ -734,7 +734,7 @@ call javaapi#class('Tag', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('UnknownTag', '', [
+call javaapi#class('UnknownTag', 'Tag', [
   \ javaapi#method(0,'UnknownTag(', 'String)', 'public'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
@@ -753,111 +753,111 @@ call javaapi#class('HTML', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('BlockElement', '', [
+call javaapi#class('BlockElement', 'BranchElement', [
   \ javaapi#method(0,'BlockElement(', 'HTMLDocument, Element, AttributeSet)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getResolveParent(', ')', 'AttributeSet'),
   \ ])
 
-call javaapi#class('FixedLengthDocument', '', [
+call javaapi#class('FixedLengthDocument', 'PlainDocument', [
   \ javaapi#method(0,'FixedLengthDocument(', 'int)', 'public'),
   \ javaapi#method(0,'insertString(', 'int, String, AttributeSet) throws BadLocationException', 'void'),
   \ ])
 
-call javaapi#class('AnchorAction', '', [
+call javaapi#class('AnchorAction', 'CharacterAction', [
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('AreaAction', '', [
+call javaapi#class('AreaAction', 'TagAction', [
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('BaseAction', '', [
+call javaapi#class('BaseAction', 'TagAction', [
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ ])
 
-call javaapi#class('BlockAction', '', [
+call javaapi#class('BlockAction', 'TagAction', [
   \ javaapi#method(0,'BlockAction(', 'HTMLReader)', 'public'),
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('CharacterAction', '', [
+call javaapi#class('CharacterAction', 'TagAction', [
   \ javaapi#method(0,'CharacterAction(', 'HTMLReader)', 'public'),
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('ConvertAction', '', [
+call javaapi#class('ConvertAction', 'TagAction', [
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('FormAction', '', [
+call javaapi#class('FormAction', 'SpecialAction', [
   \ javaapi#method(0,'FormAction(', 'HTMLReader)', 'public'),
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('FormTagAction', '', [
+call javaapi#class('FormTagAction', 'BlockAction', [
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('HeadAction', '', [
+call javaapi#class('HeadAction', 'BlockAction', [
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('HiddenAction', '', [
+call javaapi#class('HiddenAction', 'TagAction', [
   \ javaapi#method(0,'HiddenAction(', 'HTMLReader)', 'public'),
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('IsindexAction', '', [
+call javaapi#class('IsindexAction', 'TagAction', [
   \ javaapi#method(0,'IsindexAction(', 'HTMLReader)', 'public'),
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ ])
 
-call javaapi#class('LinkAction', '', [
+call javaapi#class('LinkAction', 'HiddenAction', [
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ ])
 
-call javaapi#class('MapAction', '', [
-  \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
-  \ javaapi#method(0,'end(', 'Tag)', 'void'),
-  \ ])
-
-call javaapi#class('MetaAction', '', [
-  \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
-  \ ])
-
-call javaapi#class('ObjectAction', '', [
+call javaapi#class('MapAction', 'TagAction', [
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('ParagraphAction', '', [
+call javaapi#class('MetaAction', 'HiddenAction', [
+  \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
+  \ ])
+
+call javaapi#class('ObjectAction', 'SpecialAction', [
+  \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
+  \ javaapi#method(0,'end(', 'Tag)', 'void'),
+  \ ])
+
+call javaapi#class('ParagraphAction', 'BlockAction', [
   \ javaapi#method(0,'ParagraphAction(', 'HTMLReader)', 'public'),
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('PreAction', '', [
+call javaapi#class('PreAction', 'BlockAction', [
   \ javaapi#method(0,'PreAction(', 'HTMLReader)', 'public'),
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('SpecialAction', '', [
+call javaapi#class('SpecialAction', 'TagAction', [
   \ javaapi#method(0,'SpecialAction(', 'HTMLReader)', 'public'),
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ ])
 
-call javaapi#class('StyleAction', '', [
+call javaapi#class('StyleAction', 'TagAction', [
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
@@ -868,12 +868,12 @@ call javaapi#class('TagAction', '', [
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('TitleAction', '', [
+call javaapi#class('TitleAction', 'HiddenAction', [
   \ javaapi#method(0,'start(', 'Tag, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,'end(', 'Tag)', 'void'),
   \ ])
 
-call javaapi#class('HTMLReader', '', [
+call javaapi#class('HTMLReader', 'ParserCallback', [
   \ javaapi#method(0,'HTMLReader(', 'HTMLDocument, int)', 'public'),
   \ javaapi#method(0,'HTMLReader(', 'HTMLDocument, int, int, int, Tag)', 'public'),
   \ javaapi#method(0,'flush(', ') throws BadLocationException', 'void'),
@@ -895,7 +895,7 @@ call javaapi#class('Iterator', '', [
   \ javaapi#method(0,'getTag(', ')', 'Tag'),
   \ ])
 
-call javaapi#class('LeafIterator', '', [
+call javaapi#class('LeafIterator', 'Iterator', [
   \ javaapi#method(0,'getAttributes(', ')', 'AttributeSet'),
   \ javaapi#method(0,'getStartOffset(', ')', 'int'),
   \ javaapi#method(0,'getEndOffset(', ')', 'int'),
@@ -904,16 +904,16 @@ call javaapi#class('LeafIterator', '', [
   \ javaapi#method(0,'isValid(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('RunElement', '', [
+call javaapi#class('RunElement', 'LeafElement', [
   \ javaapi#method(0,'RunElement(', 'HTMLDocument, Element, AttributeSet, int, int)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getResolveParent(', ')', 'AttributeSet'),
   \ ])
 
-call javaapi#class('TaggedAttributeSet', '', [
+call javaapi#class('TaggedAttributeSet', 'SimpleAttributeSet', [
   \ ])
 
-call javaapi#class('HTMLDocument', '', [
+call javaapi#class('HTMLDocument', 'DefaultStyledDocument', [
   \ javaapi#field(1,'AdditionalComments', 'String'),
   \ javaapi#method(0,'HTMLDocument(', ')', 'public'),
   \ javaapi#method(0,'HTMLDocument(', 'StyleSheet)', 'public'),
@@ -942,16 +942,16 @@ call javaapi#class('HTMLDocument', '', [
   \ javaapi#method(0,'getElement(', 'Element, Object, Object)', 'Element'),
   \ ])
 
-call javaapi#class('ActivateLinkAction', '', [
+call javaapi#class('ActivateLinkAction', 'TextAction', [
   \ javaapi#method(0,'ActivateLinkAction(', 'String)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('BeginAction', '', [
+call javaapi#class('BeginAction', 'TextAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'BlockView', [
   \ javaapi#method(0,'getPreferredSpan(', 'int)', 'float'),
   \ javaapi#method(0,'getMinimumSpan(', 'int)', 'float'),
   \ javaapi#method(0,'getMaximumSpan(', 'int)', 'float'),
@@ -959,7 +959,7 @@ call javaapi#class('1', '', [
   \ javaapi#method(0,'getNextVisualPositionFrom(', 'int, Bias, Shape, int, Bias[])', 'int'),
   \ ])
 
-call javaapi#class('BodyBlockView', '', [
+call javaapi#class('BodyBlockView', 'BlockView', [
   \ javaapi#method(0,'BodyBlockView(', 'Element)', 'public'),
   \ javaapi#method(0,'setParent(', 'View)', 'void'),
   \ javaapi#method(0,'componentResized(', 'ComponentEvent)', 'void'),
@@ -973,32 +973,32 @@ call javaapi#class('HTMLFactory', 'ViewFactory', [
   \ javaapi#method(0,'create(', 'Element)', 'View'),
   \ ])
 
-call javaapi#class('HTMLTextAction', '', [
+call javaapi#class('HTMLTextAction', 'StyledTextAction', [
   \ javaapi#method(0,'HTMLTextAction(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('InsertHRAction', '', [
+call javaapi#class('InsertHRAction', 'InsertHTMLTextAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('InsertHTMLTextAction', '', [
+call javaapi#class('InsertHTMLTextAction', 'HTMLTextAction', [
   \ javaapi#method(0,'InsertHTMLTextAction(', 'String, String, Tag, Tag)', 'public'),
   \ javaapi#method(0,'InsertHTMLTextAction(', 'String, String, Tag, Tag, Tag, Tag)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('LinkController', '', [
+call javaapi#class('LinkController', 'MouseAdapter', [
   \ javaapi#method(0,'LinkController(', ')', 'public'),
   \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('FocusHighlightPainter', '', [
+call javaapi#class('FocusHighlightPainter', 'DefaultHighlightPainter', [
   \ javaapi#method(0,'paintLayer(', 'Graphics, int, int, Shape, JTextComponent, View)', 'Shape'),
   \ ])
 
-call javaapi#class('NavigateLinkAction', '', [
+call javaapi#class('NavigateLinkAction', 'TextAction', [
   \ javaapi#method(0,'NavigateLinkAction(', 'String)', 'public'),
   \ javaapi#method(0,'caretUpdate(', 'CaretEvent)', 'void'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
@@ -1022,7 +1022,7 @@ call javaapi#class('ParserCallback', '', [
   \ javaapi#method(0,'handleEndOfLineString(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('HTMLEditorKit', '', [
+call javaapi#class('HTMLEditorKit', 'StyledEditorKit', [
   \ javaapi#field(1,'DEFAULT_CSS', 'String'),
   \ javaapi#field(1,'BOLD_ACTION', 'String'),
   \ javaapi#field(1,'ITALIC_ACTION', 'String'),
@@ -1059,7 +1059,7 @@ call javaapi#class('HTMLEditorKit', '', [
   \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ ])
 
-call javaapi#class('HTMLFrameHyperlinkEvent', '', [
+call javaapi#class('HTMLFrameHyperlinkEvent', 'HyperlinkEvent', [
   \ javaapi#method(0,'HTMLFrameHyperlinkEvent(', 'Object, EventType, URL, String)', 'public'),
   \ javaapi#method(0,'HTMLFrameHyperlinkEvent(', 'Object, EventType, URL, String, String)', 'public'),
   \ javaapi#method(0,'HTMLFrameHyperlinkEvent(', 'Object, EventType, URL, Element, String)', 'public'),
@@ -1068,7 +1068,7 @@ call javaapi#class('HTMLFrameHyperlinkEvent', '', [
   \ javaapi#method(0,'getTarget(', ')', 'String'),
   \ ])
 
-call javaapi#class('HTMLWriter', '', [
+call javaapi#class('HTMLWriter', 'AbstractWriter', [
   \ javaapi#method(0,'HTMLWriter(', 'Writer, HTMLDocument)', 'public'),
   \ javaapi#method(0,'HTMLWriter(', 'Writer, HTMLDocument, int, int)', 'public'),
   \ javaapi#method(0,'write(', ') throws IOException, BadLocationException', 'void'),
@@ -1094,7 +1094,7 @@ call javaapi#class('StartTagBorder', 'Serializable', [
   \ javaapi#method(0,'isBorderOpaque(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('HiddenTagView', '', [
+call javaapi#class('HiddenTagView', 'EditableView', [
   \ javaapi#method(0,'getAlignment(', 'int)', 'float'),
   \ javaapi#method(0,'getMinimumSpan(', 'int)', 'float'),
   \ javaapi#method(0,'getPreferredSpan(', 'int)', 'float'),
@@ -1113,7 +1113,7 @@ call javaapi#class('ImageHandler', 'ImageObserver', [
   \ javaapi#method(0,'imageUpdate(', 'Image, int, int, int, int, int)', 'boolean'),
   \ ])
 
-call javaapi#class('ImageLabelView', '', [
+call javaapi#class('ImageLabelView', 'InlineView', [
   \ javaapi#method(0,'reset(', 'String)', 'void'),
   \ javaapi#method(0,'paint(', 'Graphics, Shape)', 'void'),
   \ javaapi#method(0,'getText(', 'int, int)', 'Segment'),
@@ -1123,7 +1123,7 @@ call javaapi#class('ImageLabelView', '', [
   \ javaapi#method(0,'getForeground(', ')', 'Color'),
   \ ])
 
-call javaapi#class('ImageView', '', [
+call javaapi#class('ImageView', 'View', [
   \ javaapi#method(0,'ImageView(', 'Element)', 'public'),
   \ javaapi#method(0,'getAltText(', ')', 'String'),
   \ javaapi#method(0,'getImageURL(', ')', 'URL'),
@@ -1144,7 +1144,7 @@ call javaapi#class('ImageView', '', [
   \ javaapi#method(0,'setSize(', 'float, float)', 'void'),
   \ ])
 
-call javaapi#class('InlineView', '', [
+call javaapi#class('InlineView', 'LabelView', [
   \ javaapi#method(0,'InlineView(', 'Element)', 'public'),
   \ javaapi#method(0,'insertUpdate(', 'DocumentEvent, Shape, ViewFactory)', 'void'),
   \ javaapi#method(0,'removeUpdate(', 'DocumentEvent, Shape, ViewFactory)', 'void'),
@@ -1154,13 +1154,13 @@ call javaapi#class('InlineView', '', [
   \ javaapi#method(0,'breakView(', 'int, int, float, float)', 'View'),
   \ ])
 
-call javaapi#class('IsindexView', '', [
+call javaapi#class('IsindexView', 'ComponentView', [
   \ javaapi#method(0,'IsindexView(', 'Element)', 'public'),
   \ javaapi#method(0,'createComponent(', ')', 'Component'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('LineView', '', [
+call javaapi#class('LineView', 'ParagraphView', [
   \ javaapi#method(0,'LineView(', 'Element)', 'public'),
   \ javaapi#method(0,'isVisible(', ')', 'boolean'),
   \ javaapi#method(0,'getMinimumSpan(', 'int)', 'float'),
@@ -1169,7 +1169,7 @@ call javaapi#class('LineView', '', [
   \ javaapi#method(0,'nextTabStop(', 'float, int)', 'float'),
   \ ])
 
-call javaapi#class('ListView', '', [
+call javaapi#class('ListView', 'BlockView', [
   \ javaapi#method(0,'ListView(', 'Element)', 'public'),
   \ javaapi#method(0,'getAlignment(', 'int)', 'float'),
   \ javaapi#method(0,'paint(', 'Graphics, Shape)', 'void'),
@@ -1185,7 +1185,7 @@ call javaapi#class('DefaultRegionContainment', 'RegionContainment', [
   \ javaapi#method(0,'contains(', 'int, int, int, int)', 'boolean'),
   \ ])
 
-call javaapi#class('PolygonRegionContainment', '', [
+call javaapi#class('PolygonRegionContainment', 'Polygon', [
   \ javaapi#method(0,'PolygonRegionContainment(', 'AttributeSet)', 'public'),
   \ javaapi#method(0,'contains(', 'int, int, int, int)', 'boolean'),
   \ ])
@@ -1210,7 +1210,7 @@ call javaapi#class('Map', 'Serializable', [
   \ javaapi#method(0,'getArea(', 'int, int, int, int)', 'AttributeSet'),
   \ ])
 
-call javaapi#class('MinimalHTMLWriter', '', [
+call javaapi#class('MinimalHTMLWriter', 'AbstractWriter', [
   \ javaapi#method(0,'MinimalHTMLWriter(', 'Writer, StyledDocument)', 'public'),
   \ javaapi#method(0,'MinimalHTMLWriter(', 'Writer, StyledDocument, int, int)', 'public'),
   \ javaapi#method(0,'write(', ') throws IOException, BadLocationException', 'void'),
@@ -1234,7 +1234,7 @@ call javaapi#class('MuxingAttributeSet', 'Serializable', [
   \ javaapi#method(0,'getResolveParent(', ')', 'AttributeSet'),
   \ ])
 
-call javaapi#class('NoFramesView', '', [
+call javaapi#class('NoFramesView', 'BlockView', [
   \ javaapi#method(0,'NoFramesView(', 'Element, int)', 'public'),
   \ javaapi#method(0,'paint(', 'Graphics, Shape)', 'void'),
   \ javaapi#method(0,'setParent(', 'View)', 'void'),
@@ -1244,7 +1244,7 @@ call javaapi#class('NoFramesView', '', [
   \ javaapi#method(0,'getMaximumSpan(', 'int)', 'float'),
   \ ])
 
-call javaapi#class('ObjectView', '', [
+call javaapi#class('ObjectView', 'ComponentView', [
   \ javaapi#method(0,'ObjectView(', 'Element)', 'public'),
   \ ])
 
@@ -1258,12 +1258,12 @@ call javaapi#class('Option', 'Serializable', [
   \ javaapi#method(0,'getValue(', ')', 'String'),
   \ ])
 
-call javaapi#class('OptionComboBoxModel', '', [
+call javaapi#class('OptionComboBoxModel', 'DefaultComboBoxModel', [
   \ javaapi#method(0,'setInitialSelection(', 'Option)', 'void'),
   \ javaapi#method(0,'getInitialSelection(', ')', 'Option'),
   \ ])
 
-call javaapi#class('OptionListModel', '', [
+call javaapi#class('OptionListModel', 'DefaultListModel', [
   \ javaapi#method(0,'getMinSelectionIndex(', ')', 'int'),
   \ javaapi#method(0,'getMaxSelectionIndex(', ')', 'int'),
   \ javaapi#method(0,'getValueIsAdjusting(', ')', 'boolean'),
@@ -1293,7 +1293,7 @@ call javaapi#class('OptionListModel', '', [
   \ javaapi#method(0,'getInitialSelection(', ')', 'BitSet'),
   \ ])
 
-call javaapi#class('ParagraphView', '', [
+call javaapi#class('ParagraphView', 'ParagraphView', [
   \ javaapi#method(0,'ParagraphView(', 'Element)', 'public'),
   \ javaapi#method(0,'setParent(', 'View)', 'void'),
   \ javaapi#method(0,'getAttributes(', ')', 'AttributeSet'),
@@ -1315,7 +1315,7 @@ call javaapi#class('1', '', [
 call javaapi#class('BackgroundImagePainter', 'Serializable', [
   \ ])
 
-call javaapi#class('HorizontalMargin', '', [
+call javaapi#class('HorizontalMargin', 'HorizontalMargin>', [
   \ javaapi#field(1,'LEFT', 'HorizontalMargin'),
   \ javaapi#field(1,'RIGHT', 'HorizontalMargin'),
   \ javaapi#method(1,'values(', ')', 'HorizontalMargin[]'),
@@ -1339,7 +1339,7 @@ call javaapi#class('CssParser', 'CSSParserCallback', [
   \ javaapi#method(0,'endRule(', ')', 'void'),
   \ ])
 
-call javaapi#class('LargeConversionSet', '', [
+call javaapi#class('LargeConversionSet', 'SimpleAttributeSet', [
   \ javaapi#method(0,'LargeConversionSet(', 'StyleSheet, AttributeSet)', 'public'),
   \ javaapi#method(0,'LargeConversionSet(', 'StyleSheet)', 'public'),
   \ javaapi#method(0,'isDefined(', 'Object)', 'boolean'),
@@ -1350,7 +1350,7 @@ call javaapi#class('ListPainter', 'Serializable', [
   \ javaapi#method(0,'paint(', 'Graphics, float, float, float, float, View, int)', 'void'),
   \ ])
 
-call javaapi#class('ResolvedStyle', '', [
+call javaapi#class('ResolvedStyle', 'MuxingAttributeSet', [
   \ javaapi#method(0,'addAttribute(', 'Object, Object)', 'void'),
   \ javaapi#method(0,'addAttributes(', 'AttributeSet)', 'void'),
   \ javaapi#method(0,'removeAttribute(', 'Object)', 'void'),
@@ -1374,19 +1374,19 @@ call javaapi#class('SelectorMapping', 'Serializable', [
   \ javaapi#method(0,'getChildSelectorMapping(', 'String, boolean)', 'SelectorMapping'),
   \ ])
 
-call javaapi#class('SmallConversionSet', '', [
+call javaapi#class('SmallConversionSet', 'SmallAttributeSet', [
   \ javaapi#method(0,'SmallConversionSet(', 'StyleSheet, AttributeSet)', 'public'),
   \ javaapi#method(0,'isDefined(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getAttribute(', 'Object)', 'Object'),
   \ ])
 
-call javaapi#class('ViewAttributeSet', '', [
+call javaapi#class('ViewAttributeSet', 'MuxingAttributeSet', [
   \ javaapi#method(0,'isDefined(', 'Object)', 'boolean'),
   \ javaapi#method(0,'getAttribute(', 'Object)', 'Object'),
   \ javaapi#method(0,'getResolveParent(', ')', 'AttributeSet'),
   \ ])
 
-call javaapi#class('StyleSheet', '', [
+call javaapi#class('StyleSheet', 'StyleContext', [
   \ javaapi#method(0,'StyleSheet(', ')', 'public'),
   \ javaapi#method(0,'getRule(', 'Tag, Element)', 'Style'),
   \ javaapi#method(0,'getRule(', 'String)', 'Style'),
@@ -1422,7 +1422,7 @@ call javaapi#class('StyleSheet', '', [
   \ javaapi#method(0,'stringToColor(', 'String)', 'Color'),
   \ ])
 
-call javaapi#class('CellView', '', [
+call javaapi#class('CellView', 'BlockView', [
   \ javaapi#method(0,'CellView(', 'TableView, Element)', 'public'),
   \ ])
 
@@ -1459,7 +1459,7 @@ call javaapi#class('RowIterator', 'LayoutIterator', [
   \ javaapi#method(0,'getAdjustmentWeight(', ')', 'int'),
   \ ])
 
-call javaapi#class('RowView', '', [
+call javaapi#class('RowView', 'BoxView', [
   \ javaapi#method(0,'RowView(', 'TableView, Element)', 'public'),
   \ javaapi#method(0,'getAttributes(', ')', 'AttributeSet'),
   \ javaapi#method(0,'preferenceChanged(', 'View, boolean, boolean)', 'void'),
@@ -1472,7 +1472,7 @@ call javaapi#class('RowView', '', [
   \ javaapi#method(0,'getResizeWeight(', 'int)', 'int'),
   \ ])
 
-call javaapi#class('TableView', '', [
+call javaapi#class('TableView', 'BoxView', [
   \ javaapi#method(0,'TableView(', 'Element)', 'public'),
   \ javaapi#method(0,'getColumnCount(', ')', 'int'),
   \ javaapi#method(0,'getColumnSpan(', 'int)', 'int'),
@@ -1490,6 +1490,6 @@ call javaapi#class('TableView', '', [
   \ javaapi#method(0,'create(', 'Element)', 'View'),
   \ ])
 
-call javaapi#class('TextAreaDocument', '', [
+call javaapi#class('TextAreaDocument', 'PlainDocument', [
   \ ])
 

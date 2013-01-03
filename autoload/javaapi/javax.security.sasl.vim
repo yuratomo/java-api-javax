@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.security.sasl')
 
-call javaapi#class('AuthenticationException', '', [
+call javaapi#class('AuthenticationException', 'SaslException', [
   \ javaapi#method(0,'AuthenticationException(', ')', 'public'),
   \ javaapi#method(0,'AuthenticationException(', 'String)', 'public'),
   \ javaapi#method(0,'AuthenticationException(', 'String, Throwable)', 'public'),
@@ -16,12 +16,12 @@ call javaapi#class('AuthorizeCallback', 'Serializable', [
   \ javaapi#method(0,'setAuthorizedID(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('RealmCallback', '', [
+call javaapi#class('RealmCallback', 'TextInputCallback', [
   \ javaapi#method(0,'RealmCallback(', 'String)', 'public'),
   \ javaapi#method(0,'RealmCallback(', 'String, String)', 'public'),
   \ ])
 
-call javaapi#class('RealmChoiceCallback', '', [
+call javaapi#class('RealmChoiceCallback', 'ChoiceCallback', [
   \ javaapi#method(0,'RealmChoiceCallback(', 'String, String[], int, boolean)', 'public'),
   \ ])
 
@@ -73,7 +73,7 @@ call javaapi#interface('SaslClientFactory', '', [
   \ javaapi#method(0,'getMechanismNames(', 'Map<String, ?>)', 'String[]'),
   \ ])
 
-call javaapi#class('SaslException', '', [
+call javaapi#class('SaslException', 'IOException', [
   \ javaapi#method(0,'SaslException(', ')', 'public'),
   \ javaapi#method(0,'SaslException(', 'String)', 'public'),
   \ javaapi#method(0,'SaslException(', 'String, Throwable)', 'public'),

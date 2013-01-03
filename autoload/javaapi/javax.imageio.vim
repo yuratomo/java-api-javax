@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.imageio')
 
-call javaapi#class('IIOException', '', [
+call javaapi#class('IIOException', 'IOException', [
   \ javaapi#method(0,'IIOException(', 'String)', 'public'),
   \ javaapi#method(0,'IIOException(', 'String, Throwable)', 'public'),
   \ ])
@@ -101,16 +101,16 @@ call javaapi#class('ImageWriterIterator', 'ImageWriter>', [
   \ javaapi#method(0,'next(', ')', 'Object'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'SpiInfo', [
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'SpiInfo', [
   \ ])
 
-call javaapi#class('3', '', [
+call javaapi#class('3', 'SpiInfo', [
   \ ])
 
-call javaapi#class('SpiInfo', '', [
+call javaapi#class('SpiInfo', 'SpiInfo>', [
   \ javaapi#field(1,'FORMAT_NAMES', 'SpiInfo'),
   \ javaapi#field(1,'MIME_TYPES', 'SpiInfo'),
   \ javaapi#field(1,'FILE_SUFFIXES', 'SpiInfo'),
@@ -157,7 +157,7 @@ call javaapi#class('ImageIO', '', [
   \ javaapi#method(1,'write(', 'RenderedImage, String, OutputStream) throws IOException', 'boolean'),
   \ ])
 
-call javaapi#class('ImageReadParam', '', [
+call javaapi#class('ImageReadParam', 'IIOParam', [
   \ javaapi#method(0,'ImageReadParam(', ')', 'public'),
   \ javaapi#method(0,'setDestinationType(', 'ImageTypeSpecifier)', 'void'),
   \ javaapi#method(0,'setDestination(', 'BufferedImage)', 'void'),
@@ -244,27 +244,27 @@ call javaapi#interface('ImageTranscoder', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Banded', '', [
+call javaapi#class('Banded', 'ImageTypeSpecifier', [
   \ javaapi#method(0,'Banded(', 'ColorSpace, int[], int[], int, boolean, boolean)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('Grayscale', '', [
+call javaapi#class('Grayscale', 'ImageTypeSpecifier', [
   \ javaapi#method(0,'Grayscale(', 'int, int, boolean, boolean, boolean)', 'public'),
   \ ])
 
-call javaapi#class('Indexed', '', [
+call javaapi#class('Indexed', 'ImageTypeSpecifier', [
   \ javaapi#method(0,'Indexed(', 'byte[], byte[], byte[], byte[], int, int)', 'public'),
   \ ])
 
-call javaapi#class('Interleaved', '', [
+call javaapi#class('Interleaved', 'ImageTypeSpecifier', [
   \ javaapi#method(0,'Interleaved(', 'ColorSpace, int[], int, boolean, boolean)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('Packed', '', [
+call javaapi#class('Packed', 'ImageTypeSpecifier', [
   \ javaapi#method(0,'Packed(', 'ColorSpace, int, int, int, int, int, boolean)', 'public'),
   \ ])
 
@@ -291,7 +291,7 @@ call javaapi#class('ImageTypeSpecifier', '', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('ImageWriteParam', '', [
+call javaapi#class('ImageWriteParam', 'IIOParam', [
   \ javaapi#field(1,'MODE_DISABLED', 'int'),
   \ javaapi#field(1,'MODE_DEFAULT', 'int'),
   \ javaapi#field(1,'MODE_EXPLICIT', 'int'),

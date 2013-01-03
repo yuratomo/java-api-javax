@@ -11,14 +11,14 @@ call javaapi#class('ColorType', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('DefaultSynthStyleFactory', '', [
+call javaapi#class('DefaultSynthStyleFactory', 'SynthStyleFactory', [
   \ javaapi#field(1,'NAME', 'int'),
   \ javaapi#field(1,'REGION', 'int'),
   \ javaapi#method(0,'addStyle(', 'DefaultSynthStyle, String, int) throws PatternSyntaxException', 'void'),
   \ javaapi#method(0,'getStyle(', 'JComponent, Region)', 'SynthStyle'),
   \ ])
 
-call javaapi#class('ImagePainter', '', [
+call javaapi#class('ImagePainter', 'SynthPainter', [
   \ javaapi#method(0,'getTiles(', ')', 'boolean'),
   \ javaapi#method(0,'getPaintsCenter(', ')', 'boolean'),
   \ javaapi#method(0,'getCenter(', ')', 'boolean'),
@@ -165,7 +165,7 @@ call javaapi#class('ImagePainter', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('AggregatePainter', '', [
+call javaapi#class('AggregatePainter', 'SynthPainter', [
   \ javaapi#method(0,'paintArrowButtonBackground(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'paintArrowButtonBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'paintArrowButtonForeground(', 'SynthContext, Graphics, int, int, int, int, int)', 'void'),
@@ -304,7 +304,7 @@ call javaapi#class('AggregatePainter', '', [
   \ javaapi#method(0,'paintViewportBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('DelegatingPainter', '', [
+call javaapi#class('DelegatingPainter', 'SynthPainter', [
   \ javaapi#method(0,'paintArrowButtonBackground(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'paintArrowButtonBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'paintArrowButtonForeground(', 'SynthContext, Graphics, int, int, int, int, int)', 'void'),
@@ -447,7 +447,7 @@ call javaapi#class('PainterInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('StateInfo', '', [
+call javaapi#class('StateInfo', 'StateInfo', [
   \ javaapi#method(0,'StateInfo(', ')', 'public'),
   \ javaapi#method(0,'StateInfo(', 'StateInfo)', 'public'),
   \ javaapi#method(0,'setPainters(', 'PainterInfo[])', 'void'),
@@ -457,7 +457,7 @@ call javaapi#class('StateInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ParsedSynthStyle', '', [
+call javaapi#class('ParsedSynthStyle', 'DefaultSynthStyle', [
   \ javaapi#method(0,'ParsedSynthStyle(', ')', 'public'),
   \ javaapi#method(0,'ParsedSynthStyle(', 'DefaultSynthStyle)', 'public'),
   \ javaapi#method(0,'getPainter(', 'SynthContext)', 'SynthPainter'),
@@ -532,14 +532,14 @@ call javaapi#class('Region', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('SynthArrowButtonUI', '', [
+call javaapi#class('SynthArrowButtonUI', 'SynthButtonUI', [
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getMinimumSize(', ')', 'Dimension'),
   \ javaapi#method(0,'getMaximumSize(', ')', 'Dimension'),
   \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
   \ ])
 
-call javaapi#class('SynthArrowButton', '', [
+call javaapi#class('SynthArrowButton', 'JButton', [
   \ javaapi#method(0,'SynthArrowButton(', 'int)', 'public'),
   \ javaapi#method(0,'getUIClassID(', ')', 'String'),
   \ javaapi#method(0,'updateUI(', ')', 'void'),
@@ -548,13 +548,13 @@ call javaapi#class('SynthArrowButton', '', [
   \ javaapi#method(0,'setFocusable(', 'boolean)', 'void'),
   \ ])
 
-call javaapi#class('SynthBorder', '', [
+call javaapi#class('SynthBorder', 'AbstractBorder', [
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ javaapi#method(0,'isBorderOpaque(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SynthButtonUI', '', [
+call javaapi#class('SynthButtonUI', 'BasicButtonUI', [
   \ javaapi#method(0,'SynthButtonUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -568,19 +568,19 @@ call javaapi#class('SynthButtonUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthCheckBoxMenuItemUI', '', [
+call javaapi#class('SynthCheckBoxMenuItemUI', 'SynthMenuItemUI', [
   \ javaapi#method(0,'SynthCheckBoxMenuItemUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('SynthCheckBoxUI', '', [
+call javaapi#class('SynthCheckBoxUI', 'SynthRadioButtonUI', [
   \ javaapi#method(0,'SynthCheckBoxUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('SynthColorChooserUI', '', [
+call javaapi#class('SynthColorChooserUI', 'BasicColorChooserUI', [
   \ javaapi#method(0,'SynthColorChooserUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -593,7 +593,7 @@ call javaapi#class('SynthColorChooserUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ButtonHandler', '', [
+call javaapi#class('ButtonHandler', 'DefaultButtonModel', [
   \ javaapi#method(0,'isPressed(', ')', 'boolean'),
   \ javaapi#method(0,'isArmed(', ')', 'boolean'),
   \ javaapi#method(0,'isRollover(', ')', 'boolean'),
@@ -616,17 +616,17 @@ call javaapi#class('EditorFocusHandler', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthComboBoxEditor', '', [
+call javaapi#class('SynthComboBoxEditor', 'UIResource', [
   \ javaapi#method(0,'createEditorComponent(', ')', 'JTextField'),
   \ ])
 
-call javaapi#class('SynthComboBoxRenderer', '', [
+call javaapi#class('SynthComboBoxRenderer', 'JLabel', [
   \ javaapi#method(0,'SynthComboBoxRenderer(', 'SynthComboBoxUI)', 'public'),
   \ javaapi#method(0,'getListCellRendererComponent(', 'JList, Object, int, boolean, boolean)', 'Component'),
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('SynthComboBoxUI', '', [
+call javaapi#class('SynthComboBoxUI', 'BasicComboBoxUI', [
   \ javaapi#method(0,'SynthComboBoxUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -639,7 +639,7 @@ call javaapi#class('SynthComboBoxUI', '', [
   \ javaapi#method(0,'paintCurrentValue(', 'Graphics, Rectangle, boolean)', 'void'),
   \ ])
 
-call javaapi#class('SynthComboPopup', '', [
+call javaapi#class('SynthComboPopup', 'BasicComboPopup', [
   \ javaapi#method(0,'SynthComboPopup(', 'JComboBox)', 'public'),
   \ ])
 
@@ -661,11 +661,11 @@ call javaapi#class('SynthContext', '', [
   \ javaapi#method(0,'getComponentState(', ')', 'int'),
   \ ])
 
-call javaapi#class('SynthDefaultLookup', '', [
+call javaapi#class('SynthDefaultLookup', 'DefaultLookup', [
   \ javaapi#method(0,'getDefault(', 'JComponent, ComponentUI, String)', 'Object'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'JToggleButton', [
   \ javaapi#method(0,'getToolTipText(', ')', 'String'),
   \ javaapi#method(0,'getComponentPopupMenu(', ')', 'JPopupMenu'),
   \ ])
@@ -674,7 +674,7 @@ call javaapi#class('Handler', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthDesktopIconUI', '', [
+call javaapi#class('SynthDesktopIconUI', 'BasicDesktopIconUI', [
   \ javaapi#method(0,'SynthDesktopIconUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -684,21 +684,21 @@ call javaapi#class('SynthDesktopIconUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthDesktopManager', '', [
+call javaapi#class('SynthDesktopManager', 'DefaultDesktopManager', [
   \ javaapi#method(0,'maximizeFrame(', 'JInternalFrame)', 'void'),
   \ javaapi#method(0,'iconifyFrame(', 'JInternalFrame)', 'void'),
   \ javaapi#method(0,'deiconifyFrame(', 'JInternalFrame)', 'void'),
   \ javaapi#method(0,'setBoundsForFrame(', 'JComponent, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'FlowLayout', [
   \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'BevelBorder', [
   \ ])
 
-call javaapi#class('TaskBar', '', [
+call javaapi#class('TaskBar', 'JPanel', [
   \ javaapi#method(0,'componentResized(', 'ComponentEvent)', 'void'),
   \ javaapi#method(0,'componentMoved(', 'ComponentEvent)', 'void'),
   \ javaapi#method(0,'componentShown(', 'ComponentEvent)', 'void'),
@@ -707,7 +707,7 @@ call javaapi#class('TaskBar', '', [
   \ javaapi#method(0,'componentRemoved(', 'ContainerEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthDesktopPaneUI', '', [
+call javaapi#class('SynthDesktopPaneUI', 'BasicDesktopPaneUI', [
   \ javaapi#method(0,'SynthDesktopPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -717,7 +717,7 @@ call javaapi#class('SynthDesktopPaneUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthEditorPaneUI', '', [
+call javaapi#class('SynthEditorPaneUI', 'BasicEditorPaneUI', [
   \ javaapi#method(0,'SynthEditorPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -725,7 +725,7 @@ call javaapi#class('SynthEditorPaneUI', '', [
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('SynthFormattedTextFieldUI', '', [
+call javaapi#class('SynthFormattedTextFieldUI', 'SynthTextFieldUI', [
   \ javaapi#method(0,'SynthFormattedTextFieldUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
@@ -752,11 +752,11 @@ call javaapi#class('SynthGraphicsUtils', '', [
   \ javaapi#method(0,'paintText(', 'SynthContext, Graphics, String, Icon, int, int, int, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'MouseAdapter', [
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('JPopupMenuUIResource', '', [
+call javaapi#class('JPopupMenuUIResource', 'JPopupMenu', [
   \ ])
 
 call javaapi#class('SynthTitlePaneLayout', 'LayoutManager', [
@@ -767,7 +767,7 @@ call javaapi#class('SynthTitlePaneLayout', 'LayoutManager', [
   \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
   \ ])
 
-call javaapi#class('SynthInternalFrameTitlePane', '', [
+call javaapi#class('SynthInternalFrameTitlePane', 'BasicInternalFrameTitlePane', [
   \ javaapi#method(0,'SynthInternalFrameTitlePane(', 'JInternalFrame)', 'public'),
   \ javaapi#method(0,'getUIClassID(', ')', 'String'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -777,11 +777,11 @@ call javaapi#class('SynthInternalFrameTitlePane', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ComponentHandler', [
   \ javaapi#method(0,'componentResized(', 'ComponentEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthInternalFrameUI', '', [
+call javaapi#class('SynthInternalFrameUI', 'BasicInternalFrameUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installDefaults(', ')', 'void'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -791,7 +791,7 @@ call javaapi#class('SynthInternalFrameUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthLabelUI', '', [
+call javaapi#class('SynthLabelUI', 'BasicLabelUI', [
   \ javaapi#method(0,'SynthLabelUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -808,14 +808,14 @@ call javaapi#class('SynthLabelUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('SynthListCellRenderer', '', [
+call javaapi#class('SynthListCellRenderer', 'UIResource', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'setBorder(', 'Border)', 'void'),
   \ javaapi#method(0,'getListCellRendererComponent(', 'JList, Object, int, boolean, boolean)', 'Component'),
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('SynthListUI', '', [
+call javaapi#class('SynthListUI', 'BasicListUI', [
   \ javaapi#method(0,'SynthListUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'update(', 'Graphics, JComponent)', 'void'),
@@ -831,7 +831,7 @@ call javaapi#class('1', 'Runnable', [
   \ javaapi#method(0,'run(', ')', 'void'),
   \ ])
 
-call javaapi#class('AATextListener', '', [
+call javaapi#class('AATextListener', 'LookAndFeel>', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
@@ -839,7 +839,7 @@ call javaapi#class('Handler', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthLookAndFeel', '', [
+call javaapi#class('SynthLookAndFeel', 'BasicLookAndFeel', [
   \ javaapi#method(1,'setStyleFactory(', 'SynthStyleFactory)', 'void'),
   \ javaapi#method(1,'getStyleFactory(', ')', 'SynthStyleFactory'),
   \ javaapi#method(1,'getStyle(', 'JComponent, Region)', 'SynthStyle'),
@@ -860,7 +860,7 @@ call javaapi#class('SynthLookAndFeel', '', [
   \ javaapi#method(0,'shouldUpdateStyleOnAncestorChanged(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SynthMenuBarUI', '', [
+call javaapi#class('SynthMenuBarUI', 'BasicMenuBarUI', [
   \ javaapi#method(0,'SynthMenuBarUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -870,7 +870,7 @@ call javaapi#class('SynthMenuBarUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthMenuItemLayoutHelper', '', [
+call javaapi#class('SynthMenuItemLayoutHelper', 'MenuItemLayoutHelper', [
   \ javaapi#field(1,'MAX_ACC_OR_ARROW_WIDTH', 'StringUIClientPropertyKey'),
   \ javaapi#field(1,'LTR_ALIGNMENT_1', 'ColumnAlignment'),
   \ javaapi#field(1,'LTR_ALIGNMENT_2', 'ColumnAlignment'),
@@ -889,7 +889,7 @@ call javaapi#class('SynthMenuItemLayoutHelper', '', [
   \ javaapi#method(0,'getRTLColumnAlignment(', ')', 'ColumnAlignment'),
   \ ])
 
-call javaapi#class('SynthMenuItemUI', '', [
+call javaapi#class('SynthMenuItemUI', 'BasicMenuItemUI', [
   \ javaapi#method(0,'SynthMenuItemUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
@@ -900,12 +900,12 @@ call javaapi#class('SynthMenuItemUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthMenuLayout', '', [
+call javaapi#class('SynthMenuLayout', 'DefaultMenuLayout', [
   \ javaapi#method(0,'SynthMenuLayout(', 'Container, int)', 'public'),
   \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
   \ ])
 
-call javaapi#class('SynthMenuUI', '', [
+call javaapi#class('SynthMenuUI', 'BasicMenuUI', [
   \ javaapi#method(0,'SynthMenuUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
@@ -916,7 +916,7 @@ call javaapi#class('SynthMenuUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthOptionPaneUI', '', [
+call javaapi#class('SynthOptionPaneUI', 'BasicOptionPaneUI', [
   \ javaapi#method(0,'SynthOptionPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -926,7 +926,7 @@ call javaapi#class('SynthOptionPaneUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'SynthPainter', [
   \ ])
 
 call javaapi#class('SynthPainter', '', [
@@ -1069,7 +1069,7 @@ call javaapi#class('SynthPainter', '', [
   \ javaapi#method(0,'paintViewportBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('SynthPanelUI', '', [
+call javaapi#class('SynthPanelUI', 'BasicPanelUI', [
   \ javaapi#method(0,'SynthPanelUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -1081,7 +1081,7 @@ call javaapi#class('SynthPanelUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('LazyImageIcon', '', [
+call javaapi#class('LazyImageIcon', 'ImageIcon', [
   \ javaapi#method(0,'LazyImageIcon(', 'URL)', 'public'),
   \ javaapi#method(0,'paintIcon(', 'Component, Graphics, int, int)', 'void'),
   \ javaapi#method(0,'getIconWidth(', ')', 'int'),
@@ -1089,7 +1089,7 @@ call javaapi#class('LazyImageIcon', '', [
   \ javaapi#method(0,'getImage(', ')', 'Image'),
   \ ])
 
-call javaapi#class('SynthParser', '', [
+call javaapi#class('SynthParser', 'DefaultHandler', [
   \ javaapi#method(0,'parse(', 'InputStream, DefaultSynthStyleFactory, URL, Class<?>, Map<String, Object>) throws ParseException, IllegalArgumentException', 'void'),
   \ javaapi#method(0,'resolveEntity(', 'String, String) throws IOException, SAXException', 'InputSource'),
   \ javaapi#method(0,'notationDecl(', 'String, String, String) throws SAXException', 'void'),
@@ -1107,14 +1107,14 @@ call javaapi#class('SynthParser', '', [
   \ javaapi#method(0,'fatalError(', 'SAXParseException) throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('SynthPasswordFieldUI', '', [
+call javaapi#class('SynthPasswordFieldUI', 'SynthTextFieldUI', [
   \ javaapi#method(0,'SynthPasswordFieldUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'create(', 'Element)', 'View'),
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('SynthPopupMenuUI', '', [
+call javaapi#class('SynthPopupMenuUI', 'BasicPopupMenuUI', [
   \ javaapi#method(0,'SynthPopupMenuUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installDefaults(', ')', 'void'),
@@ -1125,7 +1125,7 @@ call javaapi#class('SynthPopupMenuUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthProgressBarUI', '', [
+call javaapi#class('SynthProgressBarUI', 'BasicProgressBarUI', [
   \ javaapi#method(0,'SynthProgressBarUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -1137,19 +1137,19 @@ call javaapi#class('SynthProgressBarUI', '', [
   \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
   \ ])
 
-call javaapi#class('SynthRadioButtonMenuItemUI', '', [
+call javaapi#class('SynthRadioButtonMenuItemUI', 'SynthMenuItemUI', [
   \ javaapi#method(0,'SynthRadioButtonMenuItemUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('SynthRadioButtonUI', '', [
+call javaapi#class('SynthRadioButtonUI', 'SynthToggleButtonUI', [
   \ javaapi#method(0,'SynthRadioButtonUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('SynthRootPaneUI', '', [
+call javaapi#class('SynthRootPaneUI', 'BasicRootPaneUI', [
   \ javaapi#method(0,'SynthRootPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -1159,15 +1159,15 @@ call javaapi#class('SynthRootPaneUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'SynthArrowButton', [
   \ javaapi#method(0,'contains(', 'int, int)', 'boolean'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'SynthArrowButton', [
   \ javaapi#method(0,'contains(', 'int, int)', 'boolean'),
   \ ])
 
-call javaapi#class('SynthScrollBarUI', '', [
+call javaapi#class('SynthScrollBarUI', 'BasicScrollBarUI', [
   \ javaapi#method(0,'SynthScrollBarUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -1182,7 +1182,7 @@ call javaapi#class('SynthScrollBarUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ViewportBorder', '', [
+call javaapi#class('ViewportBorder', 'AbstractBorder', [
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ javaapi#method(0,'isBorderOpaque(', ')', 'boolean'),
@@ -1195,7 +1195,7 @@ call javaapi#class('ViewportViewFocusHandler', 'FocusListener', [
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthScrollPaneUI', '', [
+call javaapi#class('SynthScrollPaneUI', 'BasicScrollPaneUI', [
   \ javaapi#method(0,'SynthScrollPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'update(', 'Graphics, JComponent)', 'void'),
@@ -1205,7 +1205,7 @@ call javaapi#class('SynthScrollPaneUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthSeparatorUI', '', [
+call javaapi#class('SynthSeparatorUI', 'SeparatorUI', [
   \ javaapi#method(0,'SynthSeparatorUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -1227,7 +1227,7 @@ call javaapi#class('SynthSeparatorUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('SynthTrackListener', '', [
+call javaapi#class('SynthTrackListener', 'TrackListener', [
   \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
@@ -1235,7 +1235,7 @@ call javaapi#class('SynthTrackListener', '', [
   \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthSliderUI', '', [
+call javaapi#class('SynthSliderUI', 'BasicSliderUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
   \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
@@ -1266,7 +1266,7 @@ call javaapi#class('SpinnerLayout', 'UIResource', [
   \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
   \ ])
 
-call javaapi#class('SynthSpinnerUI', '', [
+call javaapi#class('SynthSpinnerUI', 'BasicSpinnerUI', [
   \ javaapi#method(0,'SynthSpinnerUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -1276,17 +1276,17 @@ call javaapi#class('SynthSpinnerUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthSplitPaneDivider', '', [
+call javaapi#class('SynthSplitPaneDivider', 'BasicSplitPaneDivider', [
   \ javaapi#method(0,'SynthSplitPaneDivider(', 'BasicSplitPaneUI)', 'public'),
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'Canvas', [
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('SynthSplitPaneUI', '', [
+call javaapi#class('SynthSplitPaneUI', 'BasicSplitPaneUI', [
   \ javaapi#method(0,'SynthSplitPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -1328,15 +1328,15 @@ call javaapi#class('1', 'MouseListener', [
   \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'TabbedPaneLayout', [
   \ javaapi#method(0,'calculateLayoutInfo(', ')', 'void'),
   \ ])
 
-call javaapi#class('SynthScrollableTabButton', '', [
+call javaapi#class('SynthScrollableTabButton', 'SynthArrowButton', [
   \ javaapi#method(0,'SynthScrollableTabButton(', 'SynthTabbedPaneUI, int)', 'public'),
   \ ])
 
-call javaapi#class('SynthTabbedPaneUI', '', [
+call javaapi#class('SynthTabbedPaneUI', 'BasicTabbedPaneUI', [
   \ javaapi#method(0,'SynthTabbedPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -1349,12 +1349,12 @@ call javaapi#class('SynthTabbedPaneUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('HeaderRenderer', '', [
+call javaapi#class('HeaderRenderer', 'DefaultTableCellHeaderRenderer', [
   \ javaapi#method(0,'getTableCellRendererComponent(', 'JTable, Object, boolean, boolean, int, int)', 'Component'),
   \ javaapi#method(0,'setBorder(', 'Border)', 'void'),
   \ ])
 
-call javaapi#class('SynthTableHeaderUI', '', [
+call javaapi#class('SynthTableHeaderUI', 'BasicTableHeaderUI', [
   \ javaapi#method(0,'SynthTableHeaderUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'update(', 'Graphics, JComponent)', 'void'),
@@ -1367,13 +1367,13 @@ call javaapi#class('SynthTableHeaderUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('SynthBooleanTableCellRenderer', '', [
+call javaapi#class('SynthBooleanTableCellRenderer', 'JCheckBox', [
   \ javaapi#method(0,'SynthBooleanTableCellRenderer(', 'SynthTableUI)', 'public'),
   \ javaapi#method(0,'getTableCellRendererComponent(', 'JTable, Object, boolean, boolean, int, int)', 'Component'),
   \ javaapi#method(0,'isOpaque(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('SynthTableCellRenderer', '', [
+call javaapi#class('SynthTableCellRenderer', 'DefaultTableCellRenderer', [
   \ javaapi#method(0,'setOpaque(', 'boolean)', 'void'),
   \ javaapi#method(0,'isOpaque(', ')', 'boolean'),
   \ javaapi#method(0,'getName(', ')', 'String'),
@@ -1382,7 +1382,7 @@ call javaapi#class('SynthTableCellRenderer', '', [
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('SynthTableUI', '', [
+call javaapi#class('SynthTableUI', 'BasicTableUI', [
   \ javaapi#method(0,'SynthTableUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -1400,7 +1400,7 @@ call javaapi#class('Handler', 'FocusListener', [
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthTextAreaUI', '', [
+call javaapi#class('SynthTextAreaUI', 'BasicTextAreaUI', [
   \ javaapi#method(0,'SynthTextAreaUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -1416,7 +1416,7 @@ call javaapi#class('Handler', 'FocusListener', [
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthTextFieldUI', '', [
+call javaapi#class('SynthTextFieldUI', 'BasicTextFieldUI', [
   \ javaapi#method(0,'SynthTextFieldUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -1424,14 +1424,14 @@ call javaapi#class('SynthTextFieldUI', '', [
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('SynthTextPaneUI', '', [
+call javaapi#class('SynthTextPaneUI', 'SynthEditorPaneUI', [
   \ javaapi#method(0,'SynthTextPaneUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('SynthToggleButtonUI', '', [
+call javaapi#class('SynthToggleButtonUI', 'SynthButtonUI', [
   \ javaapi#method(0,'SynthToggleButtonUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
@@ -1445,7 +1445,7 @@ call javaapi#class('SynthToolBarLayoutManager', 'LayoutManager', [
   \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
   \ ])
 
-call javaapi#class('SynthToolBarUI', '', [
+call javaapi#class('SynthToolBarUI', 'BasicToolBarUI', [
   \ javaapi#method(0,'SynthToolBarUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -1455,7 +1455,7 @@ call javaapi#class('SynthToolBarUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('SynthToolTipUI', '', [
+call javaapi#class('SynthToolTipUI', 'BasicToolTipUI', [
   \ javaapi#method(0,'SynthToolTipUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
@@ -1469,27 +1469,27 @@ call javaapi#class('SynthToolTipUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ExpandedIconWrapper', '', [
+call javaapi#class('ExpandedIconWrapper', 'SynthIcon', [
   \ javaapi#method(0,'paintIcon(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getIconWidth(', 'SynthContext)', 'int'),
   \ javaapi#method(0,'getIconHeight(', 'SynthContext)', 'int'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'JTextField', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('SynthTreeCellEditor', '', [
+call javaapi#class('SynthTreeCellEditor', 'DefaultTreeCellEditor', [
   \ javaapi#method(0,'SynthTreeCellEditor(', 'JTree, DefaultTreeCellRenderer)', 'public'),
   \ ])
 
-call javaapi#class('SynthTreeCellRenderer', '', [
+call javaapi#class('SynthTreeCellRenderer', 'DefaultTreeCellRenderer', [
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getTreeCellRendererComponent(', 'JTree, Object, boolean, boolean, boolean, int, boolean)', 'Component'),
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('SynthTreeUI', '', [
+call javaapi#class('SynthTreeUI', 'BasicTreeUI', [
   \ javaapi#method(0,'SynthTreeUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getExpandedIcon(', ')', 'Icon'),
@@ -1500,12 +1500,12 @@ call javaapi#class('SynthTreeUI', '', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#interface('SynthUI', '', [
+call javaapi#interface('SynthUI', 'SynthConstants', [
   \ javaapi#method(0,'getContext(', 'JComponent)', 'SynthContext'),
   \ javaapi#method(0,'paintBorder(', 'SynthContext, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('SynthViewportUI', '', [
+call javaapi#class('SynthViewportUI', 'ViewportUI', [
   \ javaapi#method(0,'SynthViewportUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),

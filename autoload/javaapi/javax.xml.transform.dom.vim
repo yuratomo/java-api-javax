@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.xml.transform.dom')
 
-call javaapi#interface('DOMLocator', '', [
+call javaapi#interface('DOMLocator', 'SourceLocator', [
   \ javaapi#method(0,'getOriginatingNode(', ')', 'Node'),
   \ ])
 

@@ -64,17 +64,17 @@ call javaapi#class('DefaultValidationEventHandler', 'ValidationEventHandler', [
 call javaapi#class('Messages', '', [
   \ ])
 
-call javaapi#class('NotIdentifiableEventImpl', '', [
+call javaapi#class('NotIdentifiableEventImpl', 'ValidationEventImpl', [
   \ javaapi#method(0,'NotIdentifiableEventImpl(', 'int, String, ValidationEventLocator)', 'public'),
   \ javaapi#method(0,'NotIdentifiableEventImpl(', 'int, String, ValidationEventLocator, Throwable)', 'public'),
   \ ])
 
-call javaapi#class('ParseConversionEventImpl', '', [
+call javaapi#class('ParseConversionEventImpl', 'ValidationEventImpl', [
   \ javaapi#method(0,'ParseConversionEventImpl(', 'int, String, ValidationEventLocator)', 'public'),
   \ javaapi#method(0,'ParseConversionEventImpl(', 'int, String, ValidationEventLocator, Throwable)', 'public'),
   \ ])
 
-call javaapi#class('PrintConversionEventImpl', '', [
+call javaapi#class('PrintConversionEventImpl', 'ValidationEventImpl', [
   \ javaapi#method(0,'PrintConversionEventImpl(', 'int, String, ValidationEventLocator)', 'public'),
   \ javaapi#method(0,'PrintConversionEventImpl(', 'int, String, ValidationEventLocator, Throwable)', 'public'),
   \ ])

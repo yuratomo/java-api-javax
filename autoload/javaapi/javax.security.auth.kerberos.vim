@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.security.auth.kerberos')
 
-call javaapi#class('DelegationPermission', '', [
+call javaapi#class('DelegationPermission', 'BasicPermission', [
   \ javaapi#method(0,'DelegationPermission(', 'String)', 'public'),
   \ javaapi#method(0,'DelegationPermission(', 'String, String)', 'public'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
@@ -99,21 +99,21 @@ call javaapi#class('KeyTab', '', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('KrbDelegationPermissionCollection', '', [
+call javaapi#class('KrbDelegationPermissionCollection', 'PermissionCollection', [
   \ javaapi#method(0,'KrbDelegationPermissionCollection(', ')', 'public'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
   \ javaapi#method(0,'add(', 'Permission)', 'void'),
   \ javaapi#method(0,'elements(', ')', 'Permission>'),
   \ ])
 
-call javaapi#class('KrbServicePermissionCollection', '', [
+call javaapi#class('KrbServicePermissionCollection', 'PermissionCollection', [
   \ javaapi#method(0,'KrbServicePermissionCollection(', ')', 'public'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
   \ javaapi#method(0,'add(', 'Permission)', 'void'),
   \ javaapi#method(0,'elements(', ')', 'Permission>'),
   \ ])
 
-call javaapi#class('ServicePermission', '', [
+call javaapi#class('ServicePermission', 'Permission', [
   \ javaapi#method(0,'ServicePermission(', 'String, String)', 'public'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),

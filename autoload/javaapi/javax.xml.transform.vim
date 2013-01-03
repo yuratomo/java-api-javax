@@ -6,7 +6,7 @@ call javaapi#interface('ErrorListener', '', [
   \ javaapi#method(0,'fatalError(', 'TransformerException) throws TransformerException', 'void'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ javaapi#method(0,'getCause(', ')', 'Throwable'),
   \ ])
 
@@ -89,7 +89,7 @@ call javaapi#class('Transformer', '', [
   \ javaapi#method(0,'getErrorListener(', ')', 'ErrorListener'),
   \ ])
 
-call javaapi#class('TransformerConfigurationException', '', [
+call javaapi#class('TransformerConfigurationException', 'TransformerException', [
   \ javaapi#method(0,'TransformerConfigurationException(', ')', 'public'),
   \ javaapi#method(0,'TransformerConfigurationException(', 'String)', 'public'),
   \ javaapi#method(0,'TransformerConfigurationException(', 'Throwable)', 'public'),
@@ -98,7 +98,7 @@ call javaapi#class('TransformerConfigurationException', '', [
   \ javaapi#method(0,'TransformerConfigurationException(', 'String, SourceLocator, Throwable)', 'public'),
   \ ])
 
-call javaapi#class('TransformerException', '', [
+call javaapi#class('TransformerException', 'Exception', [
   \ javaapi#method(0,'getLocator(', ')', 'SourceLocator'),
   \ javaapi#method(0,'setLocator(', 'SourceLocator)', 'void'),
   \ javaapi#method(0,'getException(', ')', 'Throwable'),
@@ -133,7 +133,7 @@ call javaapi#class('TransformerFactory', '', [
   \ javaapi#method(0,'getErrorListener(', ')', 'ErrorListener'),
   \ ])
 
-call javaapi#class('TransformerFactoryConfigurationError', '', [
+call javaapi#class('TransformerFactoryConfigurationError', 'Error', [
   \ javaapi#method(0,'TransformerFactoryConfigurationError(', ')', 'public'),
   \ javaapi#method(0,'TransformerFactoryConfigurationError(', 'String)', 'public'),
   \ javaapi#method(0,'TransformerFactoryConfigurationError(', 'Exception)', 'public'),

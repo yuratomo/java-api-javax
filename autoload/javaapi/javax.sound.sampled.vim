@@ -1,81 +1,5 @@
 call javaapi#namespace('javax.sound.sampled')
 
-call javaapi#class('UnsupportedAudioFileException', '', [
-  \ javaapi#method(0,'UnsupportedAudioFileException(', ')', 'public'),
-  \ javaapi#method(0,'UnsupportedAudioFileException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('LineUnavailableException', '', [
-  \ javaapi#method(0,'LineUnavailableException(', ')', 'public'),
-  \ javaapi#method(0,'LineUnavailableException(', 'String)', 'public'),
-  \ ])
-
-call javaapi#class('Type', '', [
-  \ javaapi#field(1,'MASTER_GAIN', 'Type'),
-  \ javaapi#field(1,'AUX_SEND', 'Type'),
-  \ javaapi#field(1,'AUX_RETURN', 'Type'),
-  \ javaapi#field(1,'REVERB_SEND', 'Type'),
-  \ javaapi#field(1,'REVERB_RETURN', 'Type'),
-  \ javaapi#field(1,'VOLUME', 'Type'),
-  \ javaapi#field(1,'PAN', 'Type'),
-  \ javaapi#field(1,'BALANCE', 'Type'),
-  \ javaapi#field(1,'SAMPLE_RATE', 'Type'),
-  \ ])
-
-call javaapi#class('Type', '', [
-  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'hashCode(', ')', 'int'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('Info', '', [
-  \ javaapi#method(0,'Info(', 'Class<?>, AudioFormat[], int, int)', 'public'),
-  \ javaapi#method(0,'Info(', 'Class<?>, AudioFormat, int)', 'public'),
-  \ javaapi#method(0,'Info(', 'Class<?>, AudioFormat)', 'public'),
-  \ javaapi#method(0,'getFormats(', ')', 'AudioFormat[]'),
-  \ javaapi#method(0,'isFormatSupported(', 'AudioFormat)', 'boolean'),
-  \ javaapi#method(0,'getMinBufferSize(', ')', 'int'),
-  \ javaapi#method(0,'getMaxBufferSize(', ')', 'int'),
-  \ javaapi#method(0,'matches(', 'Info)', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('Info', '', [
-  \ javaapi#method(0,'Info(', 'Class<?>)', 'public'),
-  \ javaapi#method(0,'getLineClass(', ')', 'Class<?>'),
-  \ javaapi#method(0,'matches(', 'Info)', 'boolean'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#interface('Line', '', [
-  \ javaapi#method(0,'getLineInfo(', ')', 'Info'),
-  \ javaapi#method(0,'open(', ') throws LineUnavailableException', 'void'),
-  \ javaapi#method(0,'close(', ')', 'void'),
-  \ javaapi#method(0,'isOpen(', ')', 'boolean'),
-  \ javaapi#method(0,'getControls(', ')', 'Control[]'),
-  \ javaapi#method(0,'isControlSupported(', 'Type)', 'boolean'),
-  \ javaapi#method(0,'getControl(', 'Type)', 'Control'),
-  \ javaapi#method(0,'addLineListener(', 'LineListener)', 'void'),
-  \ javaapi#method(0,'removeLineListener(', 'LineListener)', 'void'),
-  \ ])
-
-call javaapi#interface('DataLine', '', [
-  \ javaapi#method(0,'drain(', ')', 'void'),
-  \ javaapi#method(0,'flush(', ')', 'void'),
-  \ javaapi#method(0,'start(', ')', 'void'),
-  \ javaapi#method(0,'stop(', ')', 'void'),
-  \ javaapi#method(0,'isRunning(', ')', 'boolean'),
-  \ javaapi#method(0,'isActive(', ')', 'boolean'),
-  \ javaapi#method(0,'getFormat(', ')', 'AudioFormat'),
-  \ javaapi#method(0,'getBufferSize(', ')', 'int'),
-  \ javaapi#method(0,'available(', ')', 'int'),
-  \ javaapi#method(0,'getFramePosition(', ')', 'int'),
-  \ javaapi#method(0,'getLongFramePosition(', ')', 'long'),
-  \ javaapi#method(0,'getMicrosecondPosition(', ')', 'long'),
-  \ javaapi#method(0,'getLevel(', ')', 'float'),
-  \ ])
-
-
 call javaapi#class('Type', '', [
   \ javaapi#field(1,'WAVE', 'Type'),
   \ javaapi#field(1,'AU', 'Type'),
@@ -130,14 +54,14 @@ call javaapi#class('AudioFormat', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('TargetDataLineInputStream', '', [
+call javaapi#class('TargetDataLineInputStream', 'InputStream', [
   \ javaapi#method(0,'available(', ') throws IOException', 'int'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('AudioInputStream', '', [
+call javaapi#class('AudioInputStream', 'InputStream', [
   \ javaapi#method(0,'AudioInputStream(', 'InputStream, AudioFormat, long)', 'public'),
   \ javaapi#method(0,'AudioInputStream(', 'TargetDataLine)', 'public'),
   \ javaapi#method(0,'getFormat(', ')', 'AudioFormat'),
@@ -153,7 +77,7 @@ call javaapi#class('AudioInputStream', '', [
   \ javaapi#method(0,'markSupported(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('AudioPermission', '', [
+call javaapi#class('AudioPermission', 'BasicPermission', [
   \ javaapi#method(0,'AudioPermission(', 'String)', 'public'),
   \ javaapi#method(0,'AudioPermission(', 'String, String)', 'public'),
   \ ])
@@ -193,19 +117,19 @@ call javaapi#class('AudioSystem', '', [
   \ javaapi#method(1,'write(', 'AudioInputStream, Type, File) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('Type', '', [
+call javaapi#class('Type', 'Type', [
   \ javaapi#field(1,'MUTE', 'Type'),
   \ javaapi#field(1,'APPLY_REVERB', 'Type'),
   \ ])
 
-call javaapi#class('BooleanControl', '', [
+call javaapi#class('BooleanControl', 'Control', [
   \ javaapi#method(0,'setValue(', 'boolean)', 'void'),
   \ javaapi#method(0,'getValue(', ')', 'boolean'),
   \ javaapi#method(0,'getStateLabel(', 'boolean)', 'String'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Clip', '', [
+call javaapi#interface('Clip', 'DataLine', [
   \ javaapi#field(1,'LOOP_CONTINUOUSLY', 'int'),
   \ javaapi#method(0,'open(', 'AudioFormat, byte[], int, int) throws LineUnavailableException', 'void'),
   \ javaapi#method(0,'open(', 'AudioInputStream) throws LineUnavailableException, IOException', 'void'),
@@ -217,10 +141,10 @@ call javaapi#interface('Clip', '', [
   \ javaapi#method(0,'loop(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('Type', '', [
+call javaapi#class('Type', 'Type', [
   \ ])
 
-call javaapi#class('CompoundControl', '', [
+call javaapi#class('CompoundControl', 'Control', [
   \ javaapi#method(0,'getMemberControls(', ')', 'Control[]'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
@@ -230,18 +154,18 @@ call javaapi#class('Control', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Type', '', [
+call javaapi#class('Type', 'Type', [
   \ javaapi#field(1,'REVERB', 'Type'),
   \ ])
 
-call javaapi#class('EnumControl', '', [
+call javaapi#class('EnumControl', 'Control', [
   \ javaapi#method(0,'setValue(', 'Object)', 'void'),
   \ javaapi#method(0,'getValue(', ')', 'Object'),
   \ javaapi#method(0,'getValues(', ')', 'Object[]'),
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('FloatControl', '', [
+call javaapi#class('FloatControl', 'Control', [
   \ javaapi#method(0,'setValue(', 'float)', 'void'),
   \ javaapi#method(0,'getValue(', ')', 'float'),
   \ javaapi#method(0,'getMaximum(', ')', 'float'),
@@ -266,7 +190,7 @@ call javaapi#class('Type', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('LineEvent', '', [
+call javaapi#class('LineEvent', 'EventObject', [
   \ javaapi#method(0,'LineEvent(', 'Line, Type, long)', 'public'),
   \ javaapi#method(0,'getLine(', ')', 'Line'),
   \ javaapi#method(0,'getType(', ')', 'Type'),
@@ -274,7 +198,7 @@ call javaapi#class('LineEvent', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('LineListener', '', [
+call javaapi#interface('LineListener', 'EventListener', [
   \ javaapi#method(0,'update(', 'LineEvent)', 'void'),
   \ ])
 
@@ -288,7 +212,7 @@ call javaapi#class('Info', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Mixer', '', [
+call javaapi#interface('Mixer', 'Line', [
   \ javaapi#method(0,'getMixerInfo(', ')', 'Info'),
   \ javaapi#method(0,'getSourceLineInfo(', ')', 'Info[]'),
   \ javaapi#method(0,'getTargetLineInfo(', ')', 'Info[]'),
@@ -304,7 +228,7 @@ call javaapi#interface('Mixer', '', [
   \ javaapi#method(0,'isSynchronizationSupported(', 'Line[], boolean)', 'boolean'),
   \ ])
 
-call javaapi#class('Info', '', [
+call javaapi#class('Info', 'Info', [
   \ javaapi#field(1,'MICROPHONE', 'Info'),
   \ javaapi#field(1,'LINE_IN', 'Info'),
   \ javaapi#field(1,'COMPACT_DISC', 'Info'),
@@ -320,7 +244,7 @@ call javaapi#class('Info', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Port', '', [
+call javaapi#interface('Port', 'Line', [
   \ ])
 
 call javaapi#class('ReverbType', '', [
@@ -335,15 +259,92 @@ call javaapi#class('ReverbType', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('SourceDataLine', '', [
+call javaapi#interface('SourceDataLine', 'DataLine', [
   \ javaapi#method(0,'open(', 'AudioFormat, int) throws LineUnavailableException', 'void'),
   \ javaapi#method(0,'open(', 'AudioFormat) throws LineUnavailableException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int)', 'int'),
   \ ])
 
-call javaapi#interface('TargetDataLine', '', [
+call javaapi#interface('TargetDataLine', 'DataLine', [
   \ javaapi#method(0,'open(', 'AudioFormat, int) throws LineUnavailableException', 'void'),
   \ javaapi#method(0,'open(', 'AudioFormat) throws LineUnavailableException', 'void'),
   \ javaapi#method(0,'read(', 'byte[], int, int)', 'int'),
+  \ ])
+
+call javaapi#namespace('javax.sound.sampled')
+
+call javaapi#class('UnsupportedAudioFileException', 'Exception', [
+  \ javaapi#method(0,'UnsupportedAudioFileException(', ')', 'public'),
+  \ javaapi#method(0,'UnsupportedAudioFileException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('LineUnavailableException', 'Exception', [
+  \ javaapi#method(0,'LineUnavailableException(', ')', 'public'),
+  \ javaapi#method(0,'LineUnavailableException(', 'String)', 'public'),
+  \ ])
+
+call javaapi#class('Type', 'Type', [
+  \ javaapi#field(1,'MASTER_GAIN', 'Type'),
+  \ javaapi#field(1,'AUX_SEND', 'Type'),
+  \ javaapi#field(1,'AUX_RETURN', 'Type'),
+  \ javaapi#field(1,'REVERB_SEND', 'Type'),
+  \ javaapi#field(1,'REVERB_RETURN', 'Type'),
+  \ javaapi#field(1,'VOLUME', 'Type'),
+  \ javaapi#field(1,'PAN', 'Type'),
+  \ javaapi#field(1,'BALANCE', 'Type'),
+  \ javaapi#field(1,'SAMPLE_RATE', 'Type'),
+  \ ])
+
+call javaapi#class('Type', '', [
+  \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'hashCode(', ')', 'int'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('Info', 'Info', [
+  \ javaapi#method(0,'Info(', 'Class<?>, AudioFormat[], int, int)', 'public'),
+  \ javaapi#method(0,'Info(', 'Class<?>, AudioFormat, int)', 'public'),
+  \ javaapi#method(0,'Info(', 'Class<?>, AudioFormat)', 'public'),
+  \ javaapi#method(0,'getFormats(', ')', 'AudioFormat[]'),
+  \ javaapi#method(0,'isFormatSupported(', 'AudioFormat)', 'boolean'),
+  \ javaapi#method(0,'getMinBufferSize(', ')', 'int'),
+  \ javaapi#method(0,'getMaxBufferSize(', ')', 'int'),
+  \ javaapi#method(0,'matches(', 'Info)', 'boolean'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('Info', '', [
+  \ javaapi#method(0,'Info(', 'Class<?>)', 'public'),
+  \ javaapi#method(0,'getLineClass(', ')', 'Class<?>'),
+  \ javaapi#method(0,'matches(', 'Info)', 'boolean'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#interface('Line', 'AutoCloseable', [
+  \ javaapi#method(0,'getLineInfo(', ')', 'Info'),
+  \ javaapi#method(0,'open(', ') throws LineUnavailableException', 'void'),
+  \ javaapi#method(0,'close(', ')', 'void'),
+  \ javaapi#method(0,'isOpen(', ')', 'boolean'),
+  \ javaapi#method(0,'getControls(', ')', 'Control[]'),
+  \ javaapi#method(0,'isControlSupported(', 'Type)', 'boolean'),
+  \ javaapi#method(0,'getControl(', 'Type)', 'Control'),
+  \ javaapi#method(0,'addLineListener(', 'LineListener)', 'void'),
+  \ javaapi#method(0,'removeLineListener(', 'LineListener)', 'void'),
+  \ ])
+
+call javaapi#interface('DataLine', 'Line', [
+  \ javaapi#method(0,'drain(', ')', 'void'),
+  \ javaapi#method(0,'flush(', ')', 'void'),
+  \ javaapi#method(0,'start(', ')', 'void'),
+  \ javaapi#method(0,'stop(', ')', 'void'),
+  \ javaapi#method(0,'isRunning(', ')', 'boolean'),
+  \ javaapi#method(0,'isActive(', ')', 'boolean'),
+  \ javaapi#method(0,'getFormat(', ')', 'AudioFormat'),
+  \ javaapi#method(0,'getBufferSize(', ')', 'int'),
+  \ javaapi#method(0,'available(', ')', 'int'),
+  \ javaapi#method(0,'getFramePosition(', ')', 'int'),
+  \ javaapi#method(0,'getLongFramePosition(', ')', 'long'),
+  \ javaapi#method(0,'getMicrosecondPosition(', ')', 'long'),
+  \ javaapi#method(0,'getLevel(', ')', 'float'),
   \ ])
 

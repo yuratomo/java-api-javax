@@ -1,51 +1,51 @@
 call javaapi#namespace('javax.lang.model.type')
 
-call javaapi#interface('ArrayType', '', [
+call javaapi#interface('ArrayType', 'ReferenceType', [
   \ javaapi#method(0,'getComponentType(', ')', 'TypeMirror'),
   \ ])
 
-call javaapi#interface('DeclaredType', '', [
+call javaapi#interface('DeclaredType', 'ReferenceType', [
   \ javaapi#method(0,'asElement(', ')', 'Element'),
   \ javaapi#method(0,'getEnclosingType(', ')', 'TypeMirror'),
   \ javaapi#method(0,'getTypeArguments(', ')', 'TypeMirror>'),
   \ ])
 
-call javaapi#interface('ErrorType', '', [
+call javaapi#interface('ErrorType', 'DeclaredType', [
   \ ])
 
-call javaapi#interface('ExecutableType', '', [
+call javaapi#interface('ExecutableType', 'TypeMirror', [
   \ javaapi#method(0,'getTypeVariables(', ')', 'TypeVariable>'),
   \ javaapi#method(0,'getReturnType(', ')', 'TypeMirror'),
   \ javaapi#method(0,'getParameterTypes(', ')', 'TypeMirror>'),
   \ javaapi#method(0,'getThrownTypes(', ')', 'TypeMirror>'),
   \ ])
 
-call javaapi#class('MirroredTypeException', '', [
+call javaapi#class('MirroredTypeException', 'MirroredTypesException', [
   \ javaapi#method(0,'MirroredTypeException(', 'TypeMirror)', 'public'),
   \ javaapi#method(0,'getTypeMirror(', ')', 'TypeMirror'),
   \ ])
 
-call javaapi#class('MirroredTypesException', '', [
+call javaapi#class('MirroredTypesException', 'RuntimeException', [
   \ javaapi#method(0,'MirroredTypesException(', 'List<? extends TypeMirror>)', 'public'),
   \ javaapi#method(0,'getTypeMirrors(', ')', 'TypeMirror>'),
   \ ])
 
-call javaapi#interface('NoType', '', [
+call javaapi#interface('NoType', 'TypeMirror', [
   \ ])
 
-call javaapi#interface('NullType', '', [
+call javaapi#interface('NullType', 'ReferenceType', [
   \ ])
 
-call javaapi#interface('PrimitiveType', '', [
+call javaapi#interface('PrimitiveType', 'TypeMirror', [
   \ ])
 
-call javaapi#interface('ReferenceType', '', [
+call javaapi#interface('ReferenceType', 'TypeMirror', [
   \ ])
 
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('TypeKind', '', [
+call javaapi#class('TypeKind', 'TypeKind>', [
   \ javaapi#field(1,'BOOLEAN', 'TypeKind'),
   \ javaapi#field(1,'BYTE', 'TypeKind'),
   \ javaapi#field(1,'SHORT', 'TypeKind'),
@@ -79,7 +79,7 @@ call javaapi#interface('TypeMirror', '', [
   \ javaapi#method(0,'accept(', 'TypeVisitor<R, P>, P)', 'R'),
   \ ])
 
-call javaapi#interface('TypeVariable', '', [
+call javaapi#interface('TypeVariable', 'ReferenceType', [
   \ javaapi#method(0,'asElement(', ')', 'Element'),
   \ javaapi#method(0,'getUpperBound(', ')', 'TypeMirror'),
   \ javaapi#method(0,'getLowerBound(', ')', 'TypeMirror'),
@@ -101,17 +101,17 @@ call javaapi#interface('TypeVisitor<R,P>', '', [
   \ javaapi#method(0,'visitUnion(', 'UnionType, P)', 'R'),
   \ ])
 
-call javaapi#interface('UnionType', '', [
+call javaapi#interface('UnionType', 'TypeMirror', [
   \ javaapi#method(0,'getAlternatives(', ')', 'TypeMirror>'),
   \ ])
 
-call javaapi#class('UnknownTypeException', '', [
+call javaapi#class('UnknownTypeException', 'UnknownEntityException', [
   \ javaapi#method(0,'UnknownTypeException(', 'TypeMirror, Object)', 'public'),
   \ javaapi#method(0,'getUnknownType(', ')', 'TypeMirror'),
   \ javaapi#method(0,'getArgument(', ')', 'Object'),
   \ ])
 
-call javaapi#interface('WildcardType', '', [
+call javaapi#interface('WildcardType', 'TypeMirror', [
   \ javaapi#method(0,'getExtendsBound(', ')', 'TypeMirror'),
   \ javaapi#method(0,'getSuperBound(', ')', 'TypeMirror'),
   \ ])

@@ -1,200 +1,5 @@
 call javaapi#namespace('javax.accessibility')
 
-call javaapi#interface('Accessible', '', [
-  \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
-  \ ])
-
-
-call javaapi#class('AccessibleContext', '', [
-  \ javaapi#field(1,'ACCESSIBLE_NAME_PROPERTY', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_DESCRIPTION_PROPERTY', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_STATE_PROPERTY', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_VALUE_PROPERTY', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_SELECTION_PROPERTY', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_CARET_PROPERTY', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_VISIBLE_DATA_PROPERTY', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_CHILD_PROPERTY', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_ACTIVE_DESCENDANT_PROPERTY', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_TABLE_CAPTION_CHANGED', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_TABLE_SUMMARY_CHANGED', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_TABLE_MODEL_CHANGED', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_TABLE_ROW_HEADER_CHANGED', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_TABLE_ROW_DESCRIPTION_CHANGED', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_TABLE_COLUMN_HEADER_CHANGED', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_TABLE_COLUMN_DESCRIPTION_CHANGED', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_ACTION_PROPERTY', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_HYPERTEXT_OFFSET', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_TEXT_PROPERTY', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_INVALIDATE_CHILDREN', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_TEXT_ATTRIBUTES_CHANGED', 'String'),
-  \ javaapi#field(1,'ACCESSIBLE_COMPONENT_BOUNDS_CHANGED', 'String'),
-  \ javaapi#method(0,'AccessibleContext(', ')', 'public'),
-  \ javaapi#method(0,'getAccessibleName(', ')', 'String'),
-  \ javaapi#method(0,'setAccessibleName(', 'String)', 'void'),
-  \ javaapi#method(0,'getAccessibleDescription(', ')', 'String'),
-  \ javaapi#method(0,'setAccessibleDescription(', 'String)', 'void'),
-  \ javaapi#method(0,'getAccessibleRole(', ')', 'AccessibleRole'),
-  \ javaapi#method(0,'getAccessibleStateSet(', ')', 'AccessibleStateSet'),
-  \ javaapi#method(0,'getAccessibleParent(', ')', 'Accessible'),
-  \ javaapi#method(0,'setAccessibleParent(', 'Accessible)', 'void'),
-  \ javaapi#method(0,'getAccessibleIndexInParent(', ')', 'int'),
-  \ javaapi#method(0,'getAccessibleChildrenCount(', ')', 'int'),
-  \ javaapi#method(0,'getAccessibleChild(', 'int)', 'Accessible'),
-  \ javaapi#method(0,'getLocale(', ') throws IllegalComponentStateException', 'Locale'),
-  \ javaapi#method(0,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
-  \ javaapi#method(0,'removePropertyChangeListener(', 'PropertyChangeListener)', 'void'),
-  \ javaapi#method(0,'getAccessibleAction(', ')', 'AccessibleAction'),
-  \ javaapi#method(0,'getAccessibleComponent(', ')', 'AccessibleComponent'),
-  \ javaapi#method(0,'getAccessibleSelection(', ')', 'AccessibleSelection'),
-  \ javaapi#method(0,'getAccessibleText(', ')', 'AccessibleText'),
-  \ javaapi#method(0,'getAccessibleEditableText(', ')', 'AccessibleEditableText'),
-  \ javaapi#method(0,'getAccessibleValue(', ')', 'AccessibleValue'),
-  \ javaapi#method(0,'getAccessibleIcon(', ')', 'AccessibleIcon[]'),
-  \ javaapi#method(0,'getAccessibleRelationSet(', ')', 'AccessibleRelationSet'),
-  \ javaapi#method(0,'getAccessibleTable(', ')', 'AccessibleTable'),
-  \ javaapi#method(0,'firePropertyChange(', 'String, Object, Object)', 'void'),
-  \ ])
-
-
-call javaapi#class('AccessibleStateSet', '', [
-  \ javaapi#method(0,'AccessibleStateSet(', ')', 'public'),
-  \ javaapi#method(0,'AccessibleStateSet(', 'AccessibleState[])', 'public'),
-  \ javaapi#method(0,'add(', 'AccessibleState)', 'boolean'),
-  \ javaapi#method(0,'addAll(', 'AccessibleState[])', 'void'),
-  \ javaapi#method(0,'remove(', 'AccessibleState)', 'boolean'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'contains(', 'AccessibleState)', 'boolean'),
-  \ javaapi#method(0,'toArray(', ')', 'AccessibleState[]'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-
-call javaapi#interface('AccessibleComponent', '', [
-  \ javaapi#method(0,'getBackground(', ')', 'Color'),
-  \ javaapi#method(0,'setBackground(', 'Color)', 'void'),
-  \ javaapi#method(0,'getForeground(', ')', 'Color'),
-  \ javaapi#method(0,'setForeground(', 'Color)', 'void'),
-  \ javaapi#method(0,'getCursor(', ')', 'Cursor'),
-  \ javaapi#method(0,'setCursor(', 'Cursor)', 'void'),
-  \ javaapi#method(0,'getFont(', ')', 'Font'),
-  \ javaapi#method(0,'setFont(', 'Font)', 'void'),
-  \ javaapi#method(0,'getFontMetrics(', 'Font)', 'FontMetrics'),
-  \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
-  \ javaapi#method(0,'setEnabled(', 'boolean)', 'void'),
-  \ javaapi#method(0,'isVisible(', ')', 'boolean'),
-  \ javaapi#method(0,'setVisible(', 'boolean)', 'void'),
-  \ javaapi#method(0,'isShowing(', ')', 'boolean'),
-  \ javaapi#method(0,'contains(', 'Point)', 'boolean'),
-  \ javaapi#method(0,'getLocationOnScreen(', ')', 'Point'),
-  \ javaapi#method(0,'getLocation(', ')', 'Point'),
-  \ javaapi#method(0,'setLocation(', 'Point)', 'void'),
-  \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
-  \ javaapi#method(0,'setBounds(', 'Rectangle)', 'void'),
-  \ javaapi#method(0,'getSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'setSize(', 'Dimension)', 'void'),
-  \ javaapi#method(0,'getAccessibleAt(', 'Point)', 'Accessible'),
-  \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
-  \ javaapi#method(0,'requestFocus(', ')', 'void'),
-  \ javaapi#method(0,'addFocusListener(', 'FocusListener)', 'void'),
-  \ javaapi#method(0,'removeFocusListener(', 'FocusListener)', 'void'),
-  \ ])
-
-call javaapi#interface('AccessibleExtendedComponent', '', [
-  \ javaapi#method(0,'getToolTipText(', ')', 'String'),
-  \ javaapi#method(0,'getTitledBorderText(', ')', 'String'),
-  \ javaapi#method(0,'getAccessibleKeyBinding(', ')', 'AccessibleKeyBinding'),
-  \ ])
-
-call javaapi#interface('AccessibleText', '', [
-  \ javaapi#field(1,'CHARACTER', 'int'),
-  \ javaapi#field(1,'WORD', 'int'),
-  \ javaapi#field(1,'SENTENCE', 'int'),
-  \ javaapi#method(0,'getIndexAtPoint(', 'Point)', 'int'),
-  \ javaapi#method(0,'getCharacterBounds(', 'int)', 'Rectangle'),
-  \ javaapi#method(0,'getCharCount(', ')', 'int'),
-  \ javaapi#method(0,'getCaretPosition(', ')', 'int'),
-  \ javaapi#method(0,'getAtIndex(', 'int, int)', 'String'),
-  \ javaapi#method(0,'getAfterIndex(', 'int, int)', 'String'),
-  \ javaapi#method(0,'getBeforeIndex(', 'int, int)', 'String'),
-  \ javaapi#method(0,'getCharacterAttribute(', 'int)', 'AttributeSet'),
-  \ javaapi#method(0,'getSelectionStart(', ')', 'int'),
-  \ javaapi#method(0,'getSelectionEnd(', ')', 'int'),
-  \ javaapi#method(0,'getSelectedText(', ')', 'String'),
-  \ ])
-
-call javaapi#interface('AccessibleValue', '', [
-  \ javaapi#method(0,'getCurrentAccessibleValue(', ')', 'Number'),
-  \ javaapi#method(0,'setCurrentAccessibleValue(', 'Number)', 'boolean'),
-  \ javaapi#method(0,'getMinimumAccessibleValue(', ')', 'Number'),
-  \ javaapi#method(0,'getMaximumAccessibleValue(', ')', 'Number'),
-  \ ])
-
-call javaapi#interface('AccessibleAction', '', [
-  \ javaapi#field(1,'TOGGLE_EXPAND', 'String'),
-  \ javaapi#field(1,'INCREMENT', 'String'),
-  \ javaapi#field(1,'DECREMENT', 'String'),
-  \ javaapi#field(1,'CLICK', 'String'),
-  \ javaapi#field(1,'TOGGLE_POPUP', 'String'),
-  \ javaapi#method(0,'getAccessibleActionCount(', ')', 'int'),
-  \ javaapi#method(0,'getAccessibleActionDescription(', 'int)', 'String'),
-  \ javaapi#method(0,'doAccessibleAction(', 'int)', 'boolean'),
-  \ ])
-
-
-call javaapi#class('AccessibleBundle', '', [
-  \ javaapi#method(0,'AccessibleBundle(', ')', 'public'),
-  \ javaapi#method(0,'toDisplayString(', 'Locale)', 'String'),
-  \ javaapi#method(0,'toDisplayString(', ')', 'String'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-call javaapi#class('AccessibleState', '', [
-  \ javaapi#field(1,'ACTIVE', 'AccessibleState'),
-  \ javaapi#field(1,'PRESSED', 'AccessibleState'),
-  \ javaapi#field(1,'ARMED', 'AccessibleState'),
-  \ javaapi#field(1,'BUSY', 'AccessibleState'),
-  \ javaapi#field(1,'CHECKED', 'AccessibleState'),
-  \ javaapi#field(1,'EDITABLE', 'AccessibleState'),
-  \ javaapi#field(1,'EXPANDABLE', 'AccessibleState'),
-  \ javaapi#field(1,'COLLAPSED', 'AccessibleState'),
-  \ javaapi#field(1,'EXPANDED', 'AccessibleState'),
-  \ javaapi#field(1,'ENABLED', 'AccessibleState'),
-  \ javaapi#field(1,'FOCUSABLE', 'AccessibleState'),
-  \ javaapi#field(1,'FOCUSED', 'AccessibleState'),
-  \ javaapi#field(1,'ICONIFIED', 'AccessibleState'),
-  \ javaapi#field(1,'MODAL', 'AccessibleState'),
-  \ javaapi#field(1,'OPAQUE', 'AccessibleState'),
-  \ javaapi#field(1,'RESIZABLE', 'AccessibleState'),
-  \ javaapi#field(1,'MULTISELECTABLE', 'AccessibleState'),
-  \ javaapi#field(1,'SELECTABLE', 'AccessibleState'),
-  \ javaapi#field(1,'SELECTED', 'AccessibleState'),
-  \ javaapi#field(1,'SHOWING', 'AccessibleState'),
-  \ javaapi#field(1,'VISIBLE', 'AccessibleState'),
-  \ javaapi#field(1,'VERTICAL', 'AccessibleState'),
-  \ javaapi#field(1,'HORIZONTAL', 'AccessibleState'),
-  \ javaapi#field(1,'SINGLE_LINE', 'AccessibleState'),
-  \ javaapi#field(1,'MULTI_LINE', 'AccessibleState'),
-  \ javaapi#field(1,'TRANSIENT', 'AccessibleState'),
-  \ javaapi#field(1,'MANAGES_DESCENDANTS', 'AccessibleState'),
-  \ javaapi#field(1,'INDETERMINATE', 'AccessibleState'),
-  \ javaapi#field(1,'TRUNCATED', 'AccessibleState'),
-  \ ])
-
-call javaapi#class('AccessibleRelationSet', '', [
-  \ javaapi#method(0,'AccessibleRelationSet(', ')', 'public'),
-  \ javaapi#method(0,'AccessibleRelationSet(', 'AccessibleRelation[])', 'public'),
-  \ javaapi#method(0,'add(', 'AccessibleRelation)', 'boolean'),
-  \ javaapi#method(0,'addAll(', 'AccessibleRelation[])', 'void'),
-  \ javaapi#method(0,'remove(', 'AccessibleRelation)', 'boolean'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'contains(', 'String)', 'boolean'),
-  \ javaapi#method(0,'get(', 'String)', 'AccessibleRelation'),
-  \ javaapi#method(0,'toArray(', ')', 'AccessibleRelation[]'),
-  \ javaapi#method(0,'toString(', ')', 'String'),
-  \ ])
-
-
 call javaapi#class('AccessibleAttributeSequence', '', [
   \ javaapi#field(0,'startIndex', 'int'),
   \ javaapi#field(0,'endIndex', 'int'),
@@ -202,7 +7,7 @@ call javaapi#class('AccessibleAttributeSequence', '', [
   \ javaapi#method(0,'AccessibleAttributeSequence(', 'int, int, AttributeSet)', 'public'),
   \ ])
 
-call javaapi#interface('AccessibleEditableText', '', [
+call javaapi#interface('AccessibleEditableText', 'AccessibleText', [
   \ javaapi#method(0,'setTextContents(', 'String)', 'void'),
   \ javaapi#method(0,'insertTextAtIndex(', 'int, String)', 'void'),
   \ javaapi#method(0,'getTextRange(', 'int, int)', 'String'),
@@ -214,7 +19,7 @@ call javaapi#interface('AccessibleEditableText', '', [
   \ javaapi#method(0,'setAttributes(', 'int, int, AttributeSet)', 'void'),
   \ ])
 
-call javaapi#interface('AccessibleExtendedTable', '', [
+call javaapi#interface('AccessibleExtendedTable', 'AccessibleTable', [
   \ javaapi#method(0,'getAccessibleRow(', 'int)', 'int'),
   \ javaapi#method(0,'getAccessibleColumn(', 'int)', 'int'),
   \ javaapi#method(0,'getAccessibleIndex(', 'int, int)', 'int'),
@@ -242,7 +47,7 @@ call javaapi#class('AccessibleHyperlink', 'AccessibleAction', [
   \ javaapi#method(0,'getEndIndex(', ')', 'int'),
   \ ])
 
-call javaapi#interface('AccessibleHypertext', '', [
+call javaapi#interface('AccessibleHypertext', 'AccessibleText', [
   \ javaapi#method(0,'getLinkCount(', ')', 'int'),
   \ javaapi#method(0,'getLink(', 'int)', 'AccessibleHyperlink'),
   \ javaapi#method(0,'getLinkIndex(', 'int)', 'int'),
@@ -260,7 +65,7 @@ call javaapi#interface('AccessibleKeyBinding', '', [
   \ javaapi#method(0,'getAccessibleKeyBinding(', 'int)', 'Object'),
   \ ])
 
-call javaapi#class('AccessibleRelation', '', [
+call javaapi#class('AccessibleRelation', 'AccessibleBundle', [
   \ javaapi#field(1,'LABEL_FOR', 'String'),
   \ javaapi#field(1,'LABELED_BY', 'String'),
   \ javaapi#field(1,'MEMBER_OF', 'String'),
@@ -294,12 +99,12 @@ call javaapi#class('AccessibleRelation', '', [
   \ javaapi#method(0,'setTarget(', 'Object[])', 'void'),
   \ ])
 
-call javaapi#class('AccessibleResourceBundle', '', [
+call javaapi#class('AccessibleResourceBundle', 'ListResourceBundle', [
   \ javaapi#method(0,'AccessibleResourceBundle(', ')', 'public'),
   \ javaapi#method(0,'getContents(', ')', 'Object[][]'),
   \ ])
 
-call javaapi#class('AccessibleRole', '', [
+call javaapi#class('AccessibleRole', 'AccessibleBundle', [
   \ javaapi#field(1,'ALERT', 'AccessibleRole'),
   \ javaapi#field(1,'COLUMN_HEADER', 'AccessibleRole'),
   \ javaapi#field(1,'CANVAS', 'AccessibleRole'),
@@ -421,5 +226,205 @@ call javaapi#class('AccessibleTextSequence', '', [
   \ javaapi#field(0,'endIndex', 'int'),
   \ javaapi#field(0,'text', 'String'),
   \ javaapi#method(0,'AccessibleTextSequence(', 'int, int, String)', 'public'),
+  \ ])
+
+call javaapi#namespace('javax.accessibility')
+
+call javaapi#class('AccessibleBundle', '', [
+  \ javaapi#method(0,'AccessibleBundle(', ')', 'public'),
+  \ javaapi#method(0,'toDisplayString(', 'Locale)', 'String'),
+  \ javaapi#method(0,'toDisplayString(', ')', 'String'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#class('AccessibleState', 'AccessibleBundle', [
+  \ javaapi#field(1,'ACTIVE', 'AccessibleState'),
+  \ javaapi#field(1,'PRESSED', 'AccessibleState'),
+  \ javaapi#field(1,'ARMED', 'AccessibleState'),
+  \ javaapi#field(1,'BUSY', 'AccessibleState'),
+  \ javaapi#field(1,'CHECKED', 'AccessibleState'),
+  \ javaapi#field(1,'EDITABLE', 'AccessibleState'),
+  \ javaapi#field(1,'EXPANDABLE', 'AccessibleState'),
+  \ javaapi#field(1,'COLLAPSED', 'AccessibleState'),
+  \ javaapi#field(1,'EXPANDED', 'AccessibleState'),
+  \ javaapi#field(1,'ENABLED', 'AccessibleState'),
+  \ javaapi#field(1,'FOCUSABLE', 'AccessibleState'),
+  \ javaapi#field(1,'FOCUSED', 'AccessibleState'),
+  \ javaapi#field(1,'ICONIFIED', 'AccessibleState'),
+  \ javaapi#field(1,'MODAL', 'AccessibleState'),
+  \ javaapi#field(1,'OPAQUE', 'AccessibleState'),
+  \ javaapi#field(1,'RESIZABLE', 'AccessibleState'),
+  \ javaapi#field(1,'MULTISELECTABLE', 'AccessibleState'),
+  \ javaapi#field(1,'SELECTABLE', 'AccessibleState'),
+  \ javaapi#field(1,'SELECTED', 'AccessibleState'),
+  \ javaapi#field(1,'SHOWING', 'AccessibleState'),
+  \ javaapi#field(1,'VISIBLE', 'AccessibleState'),
+  \ javaapi#field(1,'VERTICAL', 'AccessibleState'),
+  \ javaapi#field(1,'HORIZONTAL', 'AccessibleState'),
+  \ javaapi#field(1,'SINGLE_LINE', 'AccessibleState'),
+  \ javaapi#field(1,'MULTI_LINE', 'AccessibleState'),
+  \ javaapi#field(1,'TRANSIENT', 'AccessibleState'),
+  \ javaapi#field(1,'MANAGES_DESCENDANTS', 'AccessibleState'),
+  \ javaapi#field(1,'INDETERMINATE', 'AccessibleState'),
+  \ javaapi#field(1,'TRUNCATED', 'AccessibleState'),
+  \ ])
+
+call javaapi#class('AccessibleRelationSet', '', [
+  \ javaapi#method(0,'AccessibleRelationSet(', ')', 'public'),
+  \ javaapi#method(0,'AccessibleRelationSet(', 'AccessibleRelation[])', 'public'),
+  \ javaapi#method(0,'add(', 'AccessibleRelation)', 'boolean'),
+  \ javaapi#method(0,'addAll(', 'AccessibleRelation[])', 'void'),
+  \ javaapi#method(0,'remove(', 'AccessibleRelation)', 'boolean'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'contains(', 'String)', 'boolean'),
+  \ javaapi#method(0,'get(', 'String)', 'AccessibleRelation'),
+  \ javaapi#method(0,'toArray(', ')', 'AccessibleRelation[]'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#namespace('javax.accessibility')
+
+call javaapi#interface('AccessibleComponent', '', [
+  \ javaapi#method(0,'getBackground(', ')', 'Color'),
+  \ javaapi#method(0,'setBackground(', 'Color)', 'void'),
+  \ javaapi#method(0,'getForeground(', ')', 'Color'),
+  \ javaapi#method(0,'setForeground(', 'Color)', 'void'),
+  \ javaapi#method(0,'getCursor(', ')', 'Cursor'),
+  \ javaapi#method(0,'setCursor(', 'Cursor)', 'void'),
+  \ javaapi#method(0,'getFont(', ')', 'Font'),
+  \ javaapi#method(0,'setFont(', 'Font)', 'void'),
+  \ javaapi#method(0,'getFontMetrics(', 'Font)', 'FontMetrics'),
+  \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
+  \ javaapi#method(0,'setEnabled(', 'boolean)', 'void'),
+  \ javaapi#method(0,'isVisible(', ')', 'boolean'),
+  \ javaapi#method(0,'setVisible(', 'boolean)', 'void'),
+  \ javaapi#method(0,'isShowing(', ')', 'boolean'),
+  \ javaapi#method(0,'contains(', 'Point)', 'boolean'),
+  \ javaapi#method(0,'getLocationOnScreen(', ')', 'Point'),
+  \ javaapi#method(0,'getLocation(', ')', 'Point'),
+  \ javaapi#method(0,'setLocation(', 'Point)', 'void'),
+  \ javaapi#method(0,'getBounds(', ')', 'Rectangle'),
+  \ javaapi#method(0,'setBounds(', 'Rectangle)', 'void'),
+  \ javaapi#method(0,'getSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'setSize(', 'Dimension)', 'void'),
+  \ javaapi#method(0,'getAccessibleAt(', 'Point)', 'Accessible'),
+  \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
+  \ javaapi#method(0,'requestFocus(', ')', 'void'),
+  \ javaapi#method(0,'addFocusListener(', 'FocusListener)', 'void'),
+  \ javaapi#method(0,'removeFocusListener(', 'FocusListener)', 'void'),
+  \ ])
+
+call javaapi#interface('AccessibleExtendedComponent', 'AccessibleComponent', [
+  \ javaapi#method(0,'getToolTipText(', ')', 'String'),
+  \ javaapi#method(0,'getTitledBorderText(', ')', 'String'),
+  \ javaapi#method(0,'getAccessibleKeyBinding(', ')', 'AccessibleKeyBinding'),
+  \ ])
+
+call javaapi#interface('AccessibleText', '', [
+  \ javaapi#field(1,'CHARACTER', 'int'),
+  \ javaapi#field(1,'WORD', 'int'),
+  \ javaapi#field(1,'SENTENCE', 'int'),
+  \ javaapi#method(0,'getIndexAtPoint(', 'Point)', 'int'),
+  \ javaapi#method(0,'getCharacterBounds(', 'int)', 'Rectangle'),
+  \ javaapi#method(0,'getCharCount(', ')', 'int'),
+  \ javaapi#method(0,'getCaretPosition(', ')', 'int'),
+  \ javaapi#method(0,'getAtIndex(', 'int, int)', 'String'),
+  \ javaapi#method(0,'getAfterIndex(', 'int, int)', 'String'),
+  \ javaapi#method(0,'getBeforeIndex(', 'int, int)', 'String'),
+  \ javaapi#method(0,'getCharacterAttribute(', 'int)', 'AttributeSet'),
+  \ javaapi#method(0,'getSelectionStart(', ')', 'int'),
+  \ javaapi#method(0,'getSelectionEnd(', ')', 'int'),
+  \ javaapi#method(0,'getSelectedText(', ')', 'String'),
+  \ ])
+
+call javaapi#interface('AccessibleValue', '', [
+  \ javaapi#method(0,'getCurrentAccessibleValue(', ')', 'Number'),
+  \ javaapi#method(0,'setCurrentAccessibleValue(', 'Number)', 'boolean'),
+  \ javaapi#method(0,'getMinimumAccessibleValue(', ')', 'Number'),
+  \ javaapi#method(0,'getMaximumAccessibleValue(', ')', 'Number'),
+  \ ])
+
+call javaapi#interface('AccessibleAction', '', [
+  \ javaapi#field(1,'TOGGLE_EXPAND', 'String'),
+  \ javaapi#field(1,'INCREMENT', 'String'),
+  \ javaapi#field(1,'DECREMENT', 'String'),
+  \ javaapi#field(1,'CLICK', 'String'),
+  \ javaapi#field(1,'TOGGLE_POPUP', 'String'),
+  \ javaapi#method(0,'getAccessibleActionCount(', ')', 'int'),
+  \ javaapi#method(0,'getAccessibleActionDescription(', 'int)', 'String'),
+  \ javaapi#method(0,'doAccessibleAction(', 'int)', 'boolean'),
+  \ ])
+
+call javaapi#namespace('javax.accessibility')
+
+call javaapi#class('AccessibleStateSet', '', [
+  \ javaapi#method(0,'AccessibleStateSet(', ')', 'public'),
+  \ javaapi#method(0,'AccessibleStateSet(', 'AccessibleState[])', 'public'),
+  \ javaapi#method(0,'add(', 'AccessibleState)', 'boolean'),
+  \ javaapi#method(0,'addAll(', 'AccessibleState[])', 'void'),
+  \ javaapi#method(0,'remove(', 'AccessibleState)', 'boolean'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'contains(', 'AccessibleState)', 'boolean'),
+  \ javaapi#method(0,'toArray(', ')', 'AccessibleState[]'),
+  \ javaapi#method(0,'toString(', ')', 'String'),
+  \ ])
+
+call javaapi#namespace('javax.accessibility')
+
+call javaapi#class('AccessibleContext', '', [
+  \ javaapi#field(1,'ACCESSIBLE_NAME_PROPERTY', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_DESCRIPTION_PROPERTY', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_STATE_PROPERTY', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_VALUE_PROPERTY', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_SELECTION_PROPERTY', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_CARET_PROPERTY', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_VISIBLE_DATA_PROPERTY', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_CHILD_PROPERTY', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_ACTIVE_DESCENDANT_PROPERTY', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_TABLE_CAPTION_CHANGED', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_TABLE_SUMMARY_CHANGED', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_TABLE_MODEL_CHANGED', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_TABLE_ROW_HEADER_CHANGED', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_TABLE_ROW_DESCRIPTION_CHANGED', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_TABLE_COLUMN_HEADER_CHANGED', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_TABLE_COLUMN_DESCRIPTION_CHANGED', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_ACTION_PROPERTY', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_HYPERTEXT_OFFSET', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_TEXT_PROPERTY', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_INVALIDATE_CHILDREN', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_TEXT_ATTRIBUTES_CHANGED', 'String'),
+  \ javaapi#field(1,'ACCESSIBLE_COMPONENT_BOUNDS_CHANGED', 'String'),
+  \ javaapi#method(0,'AccessibleContext(', ')', 'public'),
+  \ javaapi#method(0,'getAccessibleName(', ')', 'String'),
+  \ javaapi#method(0,'setAccessibleName(', 'String)', 'void'),
+  \ javaapi#method(0,'getAccessibleDescription(', ')', 'String'),
+  \ javaapi#method(0,'setAccessibleDescription(', 'String)', 'void'),
+  \ javaapi#method(0,'getAccessibleRole(', ')', 'AccessibleRole'),
+  \ javaapi#method(0,'getAccessibleStateSet(', ')', 'AccessibleStateSet'),
+  \ javaapi#method(0,'getAccessibleParent(', ')', 'Accessible'),
+  \ javaapi#method(0,'setAccessibleParent(', 'Accessible)', 'void'),
+  \ javaapi#method(0,'getAccessibleIndexInParent(', ')', 'int'),
+  \ javaapi#method(0,'getAccessibleChildrenCount(', ')', 'int'),
+  \ javaapi#method(0,'getAccessibleChild(', 'int)', 'Accessible'),
+  \ javaapi#method(0,'getLocale(', ') throws IllegalComponentStateException', 'Locale'),
+  \ javaapi#method(0,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
+  \ javaapi#method(0,'removePropertyChangeListener(', 'PropertyChangeListener)', 'void'),
+  \ javaapi#method(0,'getAccessibleAction(', ')', 'AccessibleAction'),
+  \ javaapi#method(0,'getAccessibleComponent(', ')', 'AccessibleComponent'),
+  \ javaapi#method(0,'getAccessibleSelection(', ')', 'AccessibleSelection'),
+  \ javaapi#method(0,'getAccessibleText(', ')', 'AccessibleText'),
+  \ javaapi#method(0,'getAccessibleEditableText(', ')', 'AccessibleEditableText'),
+  \ javaapi#method(0,'getAccessibleValue(', ')', 'AccessibleValue'),
+  \ javaapi#method(0,'getAccessibleIcon(', ')', 'AccessibleIcon[]'),
+  \ javaapi#method(0,'getAccessibleRelationSet(', ')', 'AccessibleRelationSet'),
+  \ javaapi#method(0,'getAccessibleTable(', ')', 'AccessibleTable'),
+  \ javaapi#method(0,'firePropertyChange(', 'String, Object, Object)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.accessibility')
+
+call javaapi#interface('Accessible', '', [
+  \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ ])
 

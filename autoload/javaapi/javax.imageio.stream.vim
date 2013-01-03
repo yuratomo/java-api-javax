@@ -5,7 +5,7 @@ call javaapi#class('StreamDisposerRecord', 'DisposerRecord', [
   \ javaapi#method(0,'dispose(', ')', 'void'),
   \ ])
 
-call javaapi#class('FileCacheImageInputStream', '', [
+call javaapi#class('FileCacheImageInputStream', 'ImageInputStreamImpl', [
   \ javaapi#method(0,'FileCacheImageInputStream(', 'InputStream, File) throws IOException', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -15,7 +15,7 @@ call javaapi#class('FileCacheImageInputStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('FileCacheImageOutputStream', '', [
+call javaapi#class('FileCacheImageOutputStream', 'ImageOutputStreamImpl', [
   \ javaapi#method(0,'FileCacheImageOutputStream(', 'OutputStream, File) throws IOException', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -30,7 +30,7 @@ call javaapi#class('FileCacheImageOutputStream', '', [
   \ javaapi#method(0,'flushBefore(', 'long) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('FileImageInputStream', '', [
+call javaapi#class('FileImageInputStream', 'ImageInputStreamImpl', [
   \ javaapi#method(0,'FileImageInputStream(', 'File) throws FileNotFoundException, IOException', 'public'),
   \ javaapi#method(0,'FileImageInputStream(', 'RandomAccessFile)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -40,7 +40,7 @@ call javaapi#class('FileImageInputStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('FileImageOutputStream', '', [
+call javaapi#class('FileImageOutputStream', 'ImageOutputStreamImpl', [
   \ javaapi#method(0,'FileImageOutputStream(', 'File) throws FileNotFoundException, IOException', 'public'),
   \ javaapi#method(0,'FileImageOutputStream(', 'RandomAccessFile)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -62,7 +62,7 @@ call javaapi#class('IIOByteBuffer', '', [
   \ javaapi#method(0,'setLength(', 'int)', 'void'),
   \ ])
 
-call javaapi#interface('ImageInputStream', '', [
+call javaapi#interface('ImageInputStream', 'Closeable', [
   \ javaapi#method(0,'setByteOrder(', 'ByteOrder)', 'void'),
   \ javaapi#method(0,'getByteOrder(', ')', 'ByteOrder'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
@@ -159,7 +159,7 @@ call javaapi#class('ImageInputStreamImpl', 'ImageInputStream', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#interface('ImageOutputStream', '', [
+call javaapi#interface('ImageOutputStream', 'DataOutput', [
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[], int, int) throws IOException', 'void'),
@@ -185,7 +185,7 @@ call javaapi#interface('ImageOutputStream', '', [
   \ javaapi#method(0,'flushBefore(', 'long) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ImageOutputStreamImpl', '', [
+call javaapi#class('ImageOutputStreamImpl', 'ImageInputStreamImpl', [
   \ javaapi#method(0,'ImageOutputStreamImpl(', ')', 'public'),
   \ javaapi#method(0,'write(', 'int) throws IOException', 'void'),
   \ javaapi#method(0,'write(', 'byte[]) throws IOException', 'void'),
@@ -228,7 +228,7 @@ call javaapi#class('StreamDisposerRecord', 'DisposerRecord', [
   \ javaapi#method(0,'dispose(', ')', 'void'),
   \ ])
 
-call javaapi#class('MemoryCacheImageInputStream', '', [
+call javaapi#class('MemoryCacheImageInputStream', 'ImageInputStreamImpl', [
   \ javaapi#method(0,'MemoryCacheImageInputStream(', 'InputStream)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),
@@ -239,7 +239,7 @@ call javaapi#class('MemoryCacheImageInputStream', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('MemoryCacheImageOutputStream', '', [
+call javaapi#class('MemoryCacheImageOutputStream', 'ImageOutputStreamImpl', [
   \ javaapi#method(0,'MemoryCacheImageOutputStream(', 'OutputStream)', 'public'),
   \ javaapi#method(0,'read(', ') throws IOException', 'int'),
   \ javaapi#method(0,'read(', 'byte[], int, int) throws IOException', 'int'),

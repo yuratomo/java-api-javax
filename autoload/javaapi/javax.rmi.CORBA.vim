@@ -21,7 +21,7 @@ call javaapi#interface('PortableRemoteObjectDelegate', '', [
   \ javaapi#method(0,'connect(', 'Remote, Remote) throws RemoteException', 'void'),
   \ ])
 
-call javaapi#class('Stub', '', [
+call javaapi#class('Stub', 'ObjectImpl', [
   \ javaapi#method(0,'Stub(', ')', 'public'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
@@ -38,7 +38,7 @@ call javaapi#interface('StubDelegate', '', [
   \ javaapi#method(0,'writeObject(', 'Stub, ObjectOutputStream) throws IOException', 'void'),
   \ ])
 
-call javaapi#interface('Tie', '', [
+call javaapi#interface('Tie', 'InvokeHandler', [
   \ javaapi#method(0,'thisObject(', ')', 'Object'),
   \ javaapi#method(0,'deactivate(', ') throws NoSuchObjectException', 'void'),
   \ javaapi#method(0,'orb(', ')', 'ORB'),
@@ -92,7 +92,7 @@ call javaapi#interface('ValueHandler', '', [
   \ javaapi#method(0,'writeReplace(', 'Serializable)', 'Serializable'),
   \ ])
 
-call javaapi#interface('ValueHandlerMultiFormat', '', [
+call javaapi#interface('ValueHandlerMultiFormat', 'ValueHandler', [
   \ javaapi#method(0,'getMaximumStreamFormatVersion(', ')', 'byte'),
   \ javaapi#method(0,'writeValue(', 'OutputStream, Serializable, byte)', 'void'),
   \ ])

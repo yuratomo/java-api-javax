@@ -1,20 +1,20 @@
 call javaapi#namespace('javax.jws')
 
-call javaapi#interface('HandlerChain', '', [
+call javaapi#interface('HandlerChain', 'Annotation', [
   \ javaapi#method(0,'file(', ')', 'String'),
   \ javaapi#method(0,'name(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Oneway', '', [
+call javaapi#interface('Oneway', 'Annotation', [
   \ ])
 
-call javaapi#interface('WebMethod', '', [
+call javaapi#interface('WebMethod', 'Annotation', [
   \ javaapi#method(0,'operationName(', ')', 'String'),
   \ javaapi#method(0,'action(', ')', 'String'),
   \ javaapi#method(0,'exclude(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('Mode', '', [
+call javaapi#class('Mode', 'Mode>', [
   \ javaapi#field(1,'IN', 'Mode'),
   \ javaapi#field(1,'OUT', 'Mode'),
   \ javaapi#field(1,'INOUT', 'Mode'),
@@ -22,7 +22,7 @@ call javaapi#class('Mode', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Mode'),
   \ ])
 
-call javaapi#interface('WebParam', '', [
+call javaapi#interface('WebParam', 'Annotation', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ javaapi#method(0,'partName(', ')', 'String'),
   \ javaapi#method(0,'targetNamespace(', ')', 'String'),
@@ -30,14 +30,14 @@ call javaapi#interface('WebParam', '', [
   \ javaapi#method(0,'header(', ')', 'boolean'),
   \ ])
 
-call javaapi#interface('WebResult', '', [
+call javaapi#interface('WebResult', 'Annotation', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ javaapi#method(0,'partName(', ')', 'String'),
   \ javaapi#method(0,'targetNamespace(', ')', 'String'),
   \ javaapi#method(0,'header(', ')', 'boolean'),
   \ ])
 
-call javaapi#interface('WebService', '', [
+call javaapi#interface('WebService', 'Annotation', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ javaapi#method(0,'targetNamespace(', ')', 'String'),
   \ javaapi#method(0,'serviceName(', ')', 'String'),

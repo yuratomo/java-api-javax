@@ -1,31 +1,31 @@
 call javaapi#namespace('javax.management.relation')
 
-call javaapi#class('InvalidRelationIdException', '', [
+call javaapi#class('InvalidRelationIdException', 'RelationException', [
   \ javaapi#method(0,'InvalidRelationIdException(', ')', 'public'),
   \ javaapi#method(0,'InvalidRelationIdException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('InvalidRelationServiceException', '', [
+call javaapi#class('InvalidRelationServiceException', 'RelationException', [
   \ javaapi#method(0,'InvalidRelationServiceException(', ')', 'public'),
   \ javaapi#method(0,'InvalidRelationServiceException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('InvalidRelationTypeException', '', [
+call javaapi#class('InvalidRelationTypeException', 'RelationException', [
   \ javaapi#method(0,'InvalidRelationTypeException(', ')', 'public'),
   \ javaapi#method(0,'InvalidRelationTypeException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('InvalidRoleInfoException', '', [
+call javaapi#class('InvalidRoleInfoException', 'RelationException', [
   \ javaapi#method(0,'InvalidRoleInfoException(', ')', 'public'),
   \ javaapi#method(0,'InvalidRoleInfoException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('InvalidRoleValueException', '', [
+call javaapi#class('InvalidRoleValueException', 'RelationException', [
   \ javaapi#method(0,'InvalidRoleValueException(', ')', 'public'),
   \ javaapi#method(0,'InvalidRoleValueException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('MBeanServerNotificationFilter', '', [
+call javaapi#class('MBeanServerNotificationFilter', 'NotificationFilterSupport', [
   \ javaapi#method(0,'MBeanServerNotificationFilter(', ')', 'public'),
   \ javaapi#method(0,'disableAllObjectNames(', ')', 'void'),
   \ javaapi#method(0,'disableObjectName(', 'ObjectName) throws IllegalArgumentException', 'void'),
@@ -51,17 +51,17 @@ call javaapi#interface('Relation', '', [
   \ javaapi#method(0,'getRelationId(', ')', 'String'),
   \ ])
 
-call javaapi#class('RelationException', '', [
+call javaapi#class('RelationException', 'JMException', [
   \ javaapi#method(0,'RelationException(', ')', 'public'),
   \ javaapi#method(0,'RelationException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('RelationNotFoundException', '', [
+call javaapi#class('RelationNotFoundException', 'RelationException', [
   \ javaapi#method(0,'RelationNotFoundException(', ')', 'public'),
   \ javaapi#method(0,'RelationNotFoundException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('RelationNotification', '', [
+call javaapi#class('RelationNotification', 'Notification', [
   \ javaapi#field(1,'RELATION_BASIC_CREATION', 'String'),
   \ javaapi#field(1,'RELATION_MBEAN_CREATION', 'String'),
   \ javaapi#field(1,'RELATION_BASIC_UPDATE', 'String'),
@@ -79,7 +79,7 @@ call javaapi#class('RelationNotification', '', [
   \ javaapi#method(0,'getNewRoleValue(', ')', 'ObjectName>'),
   \ ])
 
-call javaapi#class('RelationService', '', [
+call javaapi#class('RelationService', 'NotificationBroadcasterSupport', [
   \ javaapi#method(0,'RelationService(', 'boolean)', 'public'),
   \ javaapi#method(0,'isActive(', ') throws RelationServiceNotRegisteredException', 'void'),
   \ javaapi#method(0,'preRegister(', 'MBeanServer, ObjectName) throws Exception', 'ObjectName'),
@@ -160,7 +160,7 @@ call javaapi#interface('RelationServiceMBean', '', [
   \ javaapi#method(0,'getRelationTypeName(', 'String) throws IllegalArgumentException, RelationNotFoundException', 'String'),
   \ ])
 
-call javaapi#class('RelationServiceNotRegisteredException', '', [
+call javaapi#class('RelationServiceNotRegisteredException', 'RelationException', [
   \ javaapi#method(0,'RelationServiceNotRegisteredException(', ')', 'public'),
   \ javaapi#method(0,'RelationServiceNotRegisteredException(', 'String)', 'public'),
   \ ])
@@ -188,18 +188,18 @@ call javaapi#class('RelationSupport', 'MBeanRegistration', [
   \ javaapi#method(0,'setRelationServiceManagementFlag(', 'Boolean) throws IllegalArgumentException', 'void'),
   \ ])
 
-call javaapi#interface('RelationSupportMBean', '', [
+call javaapi#interface('RelationSupportMBean', 'Relation', [
   \ javaapi#method(0,'isInRelationService(', ')', 'Boolean'),
   \ javaapi#method(0,'setRelationServiceManagementFlag(', 'Boolean) throws IllegalArgumentException', 'void'),
   \ ])
 
-call javaapi#interface('RelationType', '', [
+call javaapi#interface('RelationType', 'Serializable', [
   \ javaapi#method(0,'getRelationTypeName(', ')', 'String'),
   \ javaapi#method(0,'getRoleInfos(', ')', 'RoleInfo>'),
   \ javaapi#method(0,'getRoleInfo(', 'String) throws IllegalArgumentException, RoleInfoNotFoundException', 'RoleInfo'),
   \ ])
 
-call javaapi#class('RelationTypeNotFoundException', '', [
+call javaapi#class('RelationTypeNotFoundException', 'RelationException', [
   \ javaapi#method(0,'RelationTypeNotFoundException(', ')', 'public'),
   \ javaapi#method(0,'RelationTypeNotFoundException(', 'String)', 'public'),
   \ ])
@@ -240,12 +240,12 @@ call javaapi#class('RoleInfo', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('RoleInfoNotFoundException', '', [
+call javaapi#class('RoleInfoNotFoundException', 'RelationException', [
   \ javaapi#method(0,'RoleInfoNotFoundException(', ')', 'public'),
   \ javaapi#method(0,'RoleInfoNotFoundException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('RoleList', '', [
+call javaapi#class('RoleList', 'Object>', [
   \ javaapi#method(0,'RoleList(', ')', 'public'),
   \ javaapi#method(0,'RoleList(', 'int)', 'public'),
   \ javaapi#method(0,'RoleList(', 'List<Role>) throws IllegalArgumentException', 'public'),
@@ -262,7 +262,7 @@ call javaapi#class('RoleList', '', [
   \ javaapi#method(0,'set(', 'int, Object)', 'Object'),
   \ ])
 
-call javaapi#class('RoleNotFoundException', '', [
+call javaapi#class('RoleNotFoundException', 'RelationException', [
   \ javaapi#method(0,'RoleNotFoundException(', ')', 'public'),
   \ javaapi#method(0,'RoleNotFoundException(', 'String)', 'public'),
   \ ])
@@ -299,7 +299,7 @@ call javaapi#class('RoleUnresolved', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('RoleUnresolvedList', '', [
+call javaapi#class('RoleUnresolvedList', 'Object>', [
   \ javaapi#method(0,'RoleUnresolvedList(', ')', 'public'),
   \ javaapi#method(0,'RoleUnresolvedList(', 'int)', 'public'),
   \ javaapi#method(0,'RoleUnresolvedList(', 'List<RoleUnresolved>) throws IllegalArgumentException', 'public'),

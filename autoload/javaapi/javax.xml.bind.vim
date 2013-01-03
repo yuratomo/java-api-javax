@@ -26,7 +26,7 @@ call javaapi#class('1', 'ClassLoader>', [
 call javaapi#class('ContextFinder', '', [
   \ ])
 
-call javaapi#class('DataBindingException', '', [
+call javaapi#class('DataBindingException', 'RuntimeException', [
   \ javaapi#method(0,'DataBindingException(', 'String, Throwable)', 'public'),
   \ javaapi#method(0,'DataBindingException(', 'Throwable)', 'public'),
   \ ])
@@ -255,7 +255,7 @@ call javaapi#class('JAXBElement<T>', 'Serializable', [
   \ javaapi#method(0,'isTypeSubstituted(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('JAXBException', '', [
+call javaapi#class('JAXBException', 'Exception', [
   \ javaapi#method(0,'JAXBException(', 'String)', 'public'),
   \ javaapi#method(0,'JAXBException(', 'String, String)', 'public'),
   \ javaapi#method(0,'JAXBException(', 'Throwable)', 'public'),
@@ -278,11 +278,11 @@ call javaapi#class('JAXBIntrospector', '', [
   \ javaapi#method(1,'getValue(', 'Object)', 'Object'),
   \ ])
 
-call javaapi#class('JAXBPermission', '', [
+call javaapi#class('JAXBPermission', 'BasicPermission', [
   \ javaapi#method(0,'JAXBPermission(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('MarshalException', '', [
+call javaapi#class('MarshalException', 'JAXBException', [
   \ javaapi#method(0,'MarshalException(', 'String)', 'public'),
   \ javaapi#method(0,'MarshalException(', 'String, String)', 'public'),
   \ javaapi#method(0,'MarshalException(', 'Throwable)', 'public'),
@@ -329,16 +329,16 @@ call javaapi#interface('Marshaller', '', [
 call javaapi#class('Messages', '', [
   \ ])
 
-call javaapi#interface('NotIdentifiableEvent', '', [
+call javaapi#interface('NotIdentifiableEvent', 'ValidationEvent', [
   \ ])
 
-call javaapi#interface('ParseConversionEvent', '', [
+call javaapi#interface('ParseConversionEvent', 'ValidationEvent', [
   \ ])
 
-call javaapi#interface('PrintConversionEvent', '', [
+call javaapi#interface('PrintConversionEvent', 'ValidationEvent', [
   \ ])
 
-call javaapi#class('PropertyException', '', [
+call javaapi#class('PropertyException', 'JAXBException', [
   \ javaapi#method(0,'PropertyException(', 'String)', 'public'),
   \ javaapi#method(0,'PropertyException(', 'String, String)', 'public'),
   \ javaapi#method(0,'PropertyException(', 'Throwable)', 'public'),
@@ -352,7 +352,7 @@ call javaapi#class('SchemaOutputResolver', '', [
   \ javaapi#method(0,'createOutput(', 'String, String) throws IOException', 'Result'),
   \ ])
 
-call javaapi#class('TypeConstraintException', '', [
+call javaapi#class('TypeConstraintException', 'RuntimeException', [
   \ javaapi#method(0,'TypeConstraintException(', 'String)', 'public'),
   \ javaapi#method(0,'TypeConstraintException(', 'String, String)', 'public'),
   \ javaapi#method(0,'TypeConstraintException(', 'Throwable)', 'public'),
@@ -366,7 +366,7 @@ call javaapi#class('TypeConstraintException', '', [
   \ javaapi#method(0,'printStackTrace(', ')', 'void'),
   \ ])
 
-call javaapi#class('UnmarshalException', '', [
+call javaapi#class('UnmarshalException', 'JAXBException', [
   \ javaapi#method(0,'UnmarshalException(', 'String)', 'public'),
   \ javaapi#method(0,'UnmarshalException(', 'String, String)', 'public'),
   \ javaapi#method(0,'UnmarshalException(', 'Throwable)', 'public'),
@@ -412,7 +412,7 @@ call javaapi#interface('Unmarshaller', '', [
   \ javaapi#method(0,'getListener(', ')', 'Listener'),
   \ ])
 
-call javaapi#interface('UnmarshallerHandler', '', [
+call javaapi#interface('UnmarshallerHandler', 'ContentHandler', [
   \ javaapi#method(0,'getResult(', ') throws JAXBException, IllegalStateException', 'Object'),
   \ ])
 
@@ -439,7 +439,7 @@ call javaapi#interface('ValidationEventLocator', '', [
   \ javaapi#method(0,'getNode(', ')', 'Node'),
   \ ])
 
-call javaapi#class('ValidationException', '', [
+call javaapi#class('ValidationException', 'JAXBException', [
   \ javaapi#method(0,'ValidationException(', 'String)', 'public'),
   \ javaapi#method(0,'ValidationException(', 'String, String)', 'public'),
   \ javaapi#method(0,'ValidationException(', 'Throwable)', 'public'),

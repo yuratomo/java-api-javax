@@ -17,7 +17,7 @@ call javaapi#class('1', 'ClassLoaderRepository>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('MLet', '', [
+call javaapi#class('MLet', 'URLClassLoader', [
   \ javaapi#method(0,'MLet(', ')', 'public'),
   \ javaapi#method(0,'MLet(', 'URL[])', 'public'),
   \ javaapi#method(0,'MLet(', 'URL[], ClassLoader)', 'public'),
@@ -68,7 +68,7 @@ call javaapi#interface('MLetMBean', '', [
   \ javaapi#method(0,'setLibraryDirectory(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('MLetObjectInputStream', '', [
+call javaapi#class('MLetObjectInputStream', 'ObjectInputStream', [
   \ javaapi#method(0,'MLetObjectInputStream(', 'InputStream, MLet) throws IOException, StreamCorruptedException', 'public'),
   \ javaapi#method(0,'getClassLoader(', ')', 'ClassLoader'),
   \ ])
@@ -85,7 +85,7 @@ call javaapi#class('MLetParser', '', [
 call javaapi#interface('PrivateClassLoader', '', [
   \ ])
 
-call javaapi#class('PrivateMLet', '', [
+call javaapi#class('PrivateMLet', 'MLet', [
   \ javaapi#method(0,'PrivateMLet(', 'URL[], boolean)', 'public'),
   \ javaapi#method(0,'PrivateMLet(', 'URL[], ClassLoader, boolean)', 'public'),
   \ javaapi#method(0,'PrivateMLet(', 'URL[], ClassLoader, URLStreamHandlerFactory, boolean)', 'public'),

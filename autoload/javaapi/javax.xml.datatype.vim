@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.xml.datatype')
 
-call javaapi#class('DatatypeConfigurationException', '', [
+call javaapi#class('DatatypeConfigurationException', 'Exception', [
   \ javaapi#method(0,'DatatypeConfigurationException(', ')', 'public'),
   \ javaapi#method(0,'DatatypeConfigurationException(', 'String)', 'public'),
   \ javaapi#method(0,'DatatypeConfigurationException(', 'String, Throwable)', 'public'),
@@ -112,7 +112,7 @@ call javaapi#class('Duration', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ConfigurationError', '', [
+call javaapi#class('ConfigurationError', 'Error', [
   \ javaapi#method(0,'getCause(', ')', 'Throwable'),
   \ ])
 

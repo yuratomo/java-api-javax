@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.lang.model')
 
-call javaapi#class('SourceVersion', '', [
+call javaapi#class('SourceVersion', 'SourceVersion>', [
   \ javaapi#field(1,'RELEASE_0', 'SourceVersion'),
   \ javaapi#field(1,'RELEASE_1', 'SourceVersion'),
   \ javaapi#field(1,'RELEASE_2', 'SourceVersion'),
@@ -18,6 +18,6 @@ call javaapi#class('SourceVersion', '', [
   \ javaapi#method(1,'isKeyword(', 'CharSequence)', 'boolean'),
   \ ])
 
-call javaapi#class('UnknownEntityException', '', [
+call javaapi#class('UnknownEntityException', 'RuntimeException', [
   \ ])
 

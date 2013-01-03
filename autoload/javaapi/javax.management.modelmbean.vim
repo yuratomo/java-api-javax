@@ -22,18 +22,18 @@ call javaapi#class('DescriptorSupport', 'Descriptor', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('InvalidTargetObjectTypeException', '', [
+call javaapi#class('InvalidTargetObjectTypeException', 'Exception', [
   \ javaapi#method(0,'InvalidTargetObjectTypeException(', ')', 'public'),
   \ javaapi#method(0,'InvalidTargetObjectTypeException(', 'String)', 'public'),
   \ javaapi#method(0,'InvalidTargetObjectTypeException(', 'Exception, String)', 'public'),
   \ ])
 
-call javaapi#interface('ModelMBean', '', [
+call javaapi#interface('ModelMBean', 'ModelMBeanNotificationBroadcaster', [
   \ javaapi#method(0,'setModelMBeanInfo(', 'ModelMBeanInfo) throws MBeanException, RuntimeOperationsException', 'void'),
   \ javaapi#method(0,'setManagedResource(', 'Object, String) throws MBeanException, RuntimeOperationsException, InstanceNotFoundException, InvalidTargetObjectTypeException', 'void'),
   \ ])
 
-call javaapi#class('ModelMBeanAttributeInfo', '', [
+call javaapi#class('ModelMBeanAttributeInfo', 'MBeanAttributeInfo', [
   \ javaapi#method(0,'ModelMBeanAttributeInfo(', 'String, String, Method, Method) throws IntrospectionException', 'public'),
   \ javaapi#method(0,'ModelMBeanAttributeInfo(', 'String, String, Method, Method, Descriptor) throws IntrospectionException', 'public'),
   \ javaapi#method(0,'ModelMBeanAttributeInfo(', 'String, String, String, boolean, boolean, boolean)', 'public'),
@@ -45,7 +45,7 @@ call javaapi#class('ModelMBeanAttributeInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ModelMBeanConstructorInfo', '', [
+call javaapi#class('ModelMBeanConstructorInfo', 'MBeanConstructorInfo', [
   \ javaapi#method(0,'ModelMBeanConstructorInfo(', 'String, Constructor<?>)', 'public'),
   \ javaapi#method(0,'ModelMBeanConstructorInfo(', 'String, Constructor<?>, Descriptor)', 'public'),
   \ javaapi#method(0,'ModelMBeanConstructorInfo(', 'String, String, MBeanParameterInfo[])', 'public'),
@@ -75,7 +75,7 @@ call javaapi#interface('ModelMBeanInfo', '', [
   \ javaapi#method(0,'getOperations(', ')', 'MBeanOperationInfo[]'),
   \ ])
 
-call javaapi#class('ModelMBeanInfoSupport', '', [
+call javaapi#class('ModelMBeanInfoSupport', 'MBeanInfo', [
   \ javaapi#method(0,'ModelMBeanInfoSupport(', 'ModelMBeanInfo)', 'public'),
   \ javaapi#method(0,'ModelMBeanInfoSupport(', 'String, String, ModelMBeanAttributeInfo[], ModelMBeanConstructorInfo[], ModelMBeanOperationInfo[], ModelMBeanNotificationInfo[])', 'public'),
   \ javaapi#method(0,'ModelMBeanInfoSupport(', 'String, String, ModelMBeanAttributeInfo[], ModelMBeanConstructorInfo[], ModelMBeanOperationInfo[], ModelMBeanNotificationInfo[], Descriptor)', 'public'),
@@ -94,7 +94,7 @@ call javaapi#class('ModelMBeanInfoSupport', '', [
   \ javaapi#method(0,'setMBeanDescriptor(', 'Descriptor) throws MBeanException, RuntimeOperationsException', 'void'),
   \ ])
 
-call javaapi#interface('ModelMBeanNotificationBroadcaster', '', [
+call javaapi#interface('ModelMBeanNotificationBroadcaster', 'NotificationBroadcaster', [
   \ javaapi#method(0,'sendNotification(', 'Notification) throws MBeanException, RuntimeOperationsException', 'void'),
   \ javaapi#method(0,'sendNotification(', 'String) throws MBeanException, RuntimeOperationsException', 'void'),
   \ javaapi#method(0,'sendAttributeChangeNotification(', 'AttributeChangeNotification) throws MBeanException, RuntimeOperationsException', 'void'),
@@ -103,7 +103,7 @@ call javaapi#interface('ModelMBeanNotificationBroadcaster', '', [
   \ javaapi#method(0,'removeAttributeChangeNotificationListener(', 'NotificationListener, String) throws MBeanException, RuntimeOperationsException, ListenerNotFoundException', 'void'),
   \ ])
 
-call javaapi#class('ModelMBeanNotificationInfo', '', [
+call javaapi#class('ModelMBeanNotificationInfo', 'MBeanNotificationInfo', [
   \ javaapi#method(0,'ModelMBeanNotificationInfo(', 'String[], String, String)', 'public'),
   \ javaapi#method(0,'ModelMBeanNotificationInfo(', 'String[], String, String, Descriptor)', 'public'),
   \ javaapi#method(0,'ModelMBeanNotificationInfo(', 'ModelMBeanNotificationInfo)', 'public'),
@@ -113,7 +113,7 @@ call javaapi#class('ModelMBeanNotificationInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ModelMBeanOperationInfo', '', [
+call javaapi#class('ModelMBeanOperationInfo', 'MBeanOperationInfo', [
   \ javaapi#method(0,'ModelMBeanOperationInfo(', 'String, Method)', 'public'),
   \ javaapi#method(0,'ModelMBeanOperationInfo(', 'String, Method, Descriptor)', 'public'),
   \ javaapi#method(0,'ModelMBeanOperationInfo(', 'String, String, MBeanParameterInfo[], String, int)', 'public'),
@@ -154,7 +154,7 @@ call javaapi#class('RequiredModelMBean', 'NotificationEmitter', [
   \ javaapi#method(0,'postDeregister(', ')', 'void'),
   \ ])
 
-call javaapi#class('XMLParseException', '', [
+call javaapi#class('XMLParseException', 'Exception', [
   \ javaapi#method(0,'XMLParseException(', ')', 'public'),
   \ javaapi#method(0,'XMLParseException(', 'String)', 'public'),
   \ javaapi#method(0,'XMLParseException(', 'Exception, String)', 'public'),

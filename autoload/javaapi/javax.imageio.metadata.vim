@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.imageio.metadata')
 
-call javaapi#class('IIOAttr', '', [
+call javaapi#class('IIOAttr', 'IIOMetadataNode', [
   \ javaapi#method(0,'IIOAttr(', 'Element, String, String)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getNodeName(', ')', 'String'),
@@ -15,11 +15,11 @@ call javaapi#class('IIOAttr', '', [
   \ javaapi#method(0,'isId(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('IIODOMException', '', [
+call javaapi#class('IIODOMException', 'DOMException', [
   \ javaapi#method(0,'IIODOMException(', 'short, String)', 'public'),
   \ ])
 
-call javaapi#class('IIOInvalidTreeException', '', [
+call javaapi#class('IIOInvalidTreeException', 'IIOException', [
   \ javaapi#method(0,'IIOInvalidTreeException(', 'String, Node)', 'public'),
   \ javaapi#method(0,'IIOInvalidTreeException(', 'String, Throwable, Node)', 'public'),
   \ javaapi#method(0,'getOffendingNode(', ')', 'Node'),

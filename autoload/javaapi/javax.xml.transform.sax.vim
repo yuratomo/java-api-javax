@@ -26,7 +26,7 @@ call javaapi#class('SAXSource', 'Source', [
   \ javaapi#method(1,'sourceToInputSource(', 'Source)', 'InputSource'),
   \ ])
 
-call javaapi#class('SAXTransformerFactory', '', [
+call javaapi#class('SAXTransformerFactory', 'TransformerFactory', [
   \ javaapi#field(1,'FEATURE', 'String'),
   \ javaapi#field(1,'FEATURE_XMLFILTER', 'String'),
   \ javaapi#method(0,'newTransformerHandler(', 'Source) throws TransformerConfigurationException', 'TransformerHandler'),
@@ -37,13 +37,13 @@ call javaapi#class('SAXTransformerFactory', '', [
   \ javaapi#method(0,'newXMLFilter(', 'Templates) throws TransformerConfigurationException', 'XMLFilter'),
   \ ])
 
-call javaapi#interface('TemplatesHandler', '', [
+call javaapi#interface('TemplatesHandler', 'ContentHandler', [
   \ javaapi#method(0,'getTemplates(', ')', 'Templates'),
   \ javaapi#method(0,'setSystemId(', 'String)', 'void'),
   \ javaapi#method(0,'getSystemId(', ')', 'String'),
   \ ])
 
-call javaapi#interface('TransformerHandler', '', [
+call javaapi#interface('TransformerHandler', 'DTDHandler', [
   \ javaapi#method(0,'setResult(', 'Result) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,'setSystemId(', 'String)', 'void'),
   \ javaapi#method(0,'getSystemId(', ')', 'String'),

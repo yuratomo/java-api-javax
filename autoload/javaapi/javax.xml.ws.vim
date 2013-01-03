@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.xml.ws')
 
-call javaapi#interface('Action', '', [
+call javaapi#interface('Action', 'Annotation', [
   \ javaapi#method(0,'input(', ')', 'String'),
   \ javaapi#method(0,'output(', ')', 'String'),
   \ javaapi#method(0,'fault(', ')', 'FaultAction[]'),
@@ -30,11 +30,11 @@ call javaapi#interface('BindingProvider', '', [
   \ javaapi#method(0,'getEndpointReference(', 'Class<T>)', 'T'),
   \ ])
 
-call javaapi#interface('BindingType', '', [
+call javaapi#interface('BindingType', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Dispatch<T>', '', [
+call javaapi#interface('Dispatch<T>', 'BindingProvider', [
   \ javaapi#method(0,'invoke(', 'T)', 'T'),
   \ javaapi#method(0,'invokeAsync(', 'T)', 'Response<T>'),
   \ javaapi#method(0,'invokeAsync(', 'T, AsyncHandler<T>)', 'Future<?>'),
@@ -81,7 +81,7 @@ call javaapi#class('EndpointReference', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('FaultAction', '', [
+call javaapi#interface('FaultAction', 'Annotation', [
   \ javaapi#method(0,'className(', ')', 'Exception>'),
   \ javaapi#method(0,'value(', ')', 'String'),
   \ ])
@@ -99,7 +99,7 @@ call javaapi#interface('LogicalMessage', '', [
   \ javaapi#method(0,'setPayload(', 'Object, JAXBContext)', 'void'),
   \ ])
 
-call javaapi#class('ProtocolException', '', [
+call javaapi#class('ProtocolException', 'WebServiceException', [
   \ javaapi#method(0,'ProtocolException(', ')', 'public'),
   \ javaapi#method(0,'ProtocolException(', 'String)', 'public'),
   \ javaapi#method(0,'ProtocolException(', 'String, Throwable)', 'public'),
@@ -110,36 +110,36 @@ call javaapi#interface('Provider<T>', '', [
   \ javaapi#method(0,'invoke(', 'T)', 'T'),
   \ ])
 
-call javaapi#interface('RequestWrapper', '', [
+call javaapi#interface('RequestWrapper', 'Annotation', [
   \ javaapi#method(0,'localName(', ')', 'String'),
   \ javaapi#method(0,'targetNamespace(', ')', 'String'),
   \ javaapi#method(0,'className(', ')', 'String'),
   \ javaapi#method(0,'partName(', ')', 'String'),
   \ ])
 
-call javaapi#interface('RespectBinding', '', [
+call javaapi#interface('RespectBinding', 'Annotation', [
   \ javaapi#method(0,'enabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('RespectBindingFeature', '', [
+call javaapi#class('RespectBindingFeature', 'WebServiceFeature', [
   \ javaapi#field(1,'ID', 'String'),
   \ javaapi#method(0,'RespectBindingFeature(', ')', 'public'),
   \ javaapi#method(0,'RespectBindingFeature(', 'boolean)', 'public'),
   \ javaapi#method(0,'getID(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Response<T>', '', [
+call javaapi#interface('Response<T>', 'Future<T>', [
   \ javaapi#method(0,'getContext(', ')', 'Object>'),
   \ ])
 
-call javaapi#interface('ResponseWrapper', '', [
+call javaapi#interface('ResponseWrapper', 'Annotation', [
   \ javaapi#method(0,'localName(', ')', 'String'),
   \ javaapi#method(0,'targetNamespace(', ')', 'String'),
   \ javaapi#method(0,'className(', ')', 'String'),
   \ javaapi#method(0,'partName(', ')', 'String'),
   \ ])
 
-call javaapi#class('Mode', '', [
+call javaapi#class('Mode', 'Mode>', [
   \ javaapi#field(1,'MESSAGE', 'Mode'),
   \ javaapi#field(1,'PAYLOAD', 'Mode'),
   \ javaapi#method(1,'values(', ')', 'Mode[]'),
@@ -172,22 +172,22 @@ call javaapi#class('Service', '', [
   \ javaapi#method(1,'create(', 'QName, )', 'Service'),
   \ ])
 
-call javaapi#interface('ServiceMode', '', [
+call javaapi#interface('ServiceMode', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'Mode'),
   \ ])
 
-call javaapi#interface('WebEndpoint', '', [
+call javaapi#interface('WebEndpoint', 'Annotation', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ ])
 
-call javaapi#interface('WebFault', '', [
+call javaapi#interface('WebFault', 'Annotation', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ javaapi#method(0,'targetNamespace(', ')', 'String'),
   \ javaapi#method(0,'faultBean(', ')', 'String'),
   \ javaapi#method(0,'messageName(', ')', 'String'),
   \ ])
 
-call javaapi#interface('WebServiceClient', '', [
+call javaapi#interface('WebServiceClient', 'Annotation', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ javaapi#method(0,'targetNamespace(', ')', 'String'),
   \ javaapi#method(0,'wsdlLocation(', ')', 'String'),
@@ -201,7 +201,7 @@ call javaapi#interface('WebServiceContext', '', [
   \ javaapi#method(0,'getEndpointReference(', 'Class<T>, )', 'T'),
   \ ])
 
-call javaapi#class('WebServiceException', '', [
+call javaapi#class('WebServiceException', 'RuntimeException', [
   \ javaapi#method(0,'WebServiceException(', ')', 'public'),
   \ javaapi#method(0,'WebServiceException(', 'String)', 'public'),
   \ javaapi#method(0,'WebServiceException(', 'String, Throwable)', 'public'),
@@ -213,19 +213,19 @@ call javaapi#class('WebServiceFeature', '', [
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('WebServicePermission', '', [
+call javaapi#class('WebServicePermission', 'BasicPermission', [
   \ javaapi#method(0,'WebServicePermission(', 'String)', 'public'),
   \ javaapi#method(0,'WebServicePermission(', 'String, String)', 'public'),
   \ ])
 
-call javaapi#interface('WebServiceProvider', '', [
+call javaapi#interface('WebServiceProvider', 'Annotation', [
   \ javaapi#method(0,'wsdlLocation(', ')', 'String'),
   \ javaapi#method(0,'serviceName(', ')', 'String'),
   \ javaapi#method(0,'targetNamespace(', ')', 'String'),
   \ javaapi#method(0,'portName(', ')', 'String'),
   \ ])
 
-call javaapi#interface('WebServiceRef', '', [
+call javaapi#interface('WebServiceRef', 'Annotation', [
   \ javaapi#method(0,'name(', ')', 'String'),
   \ javaapi#method(0,'type(', ')', 'Class<?>'),
   \ javaapi#method(0,'mappedName(', ')', 'String'),
@@ -234,7 +234,7 @@ call javaapi#interface('WebServiceRef', '', [
   \ javaapi#method(0,'lookup(', ')', 'String'),
   \ ])
 
-call javaapi#interface('WebServiceRefs', '', [
+call javaapi#interface('WebServiceRefs', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'WebServiceRef[]'),
   \ ])
 

@@ -1,9 +1,9 @@
 call javaapi#namespace('javax.xml.crypto.dsig.spec')
 
-call javaapi#interface('C14NMethodParameterSpec', '', [
+call javaapi#interface('C14NMethodParameterSpec', 'TransformParameterSpec', [
   \ ])
 
-call javaapi#interface('DigestMethodParameterSpec', '', [
+call javaapi#interface('DigestMethodParameterSpec', 'AlgorithmParameterSpec', [
   \ ])
 
 call javaapi#class('ExcC14NParameterSpec', 'C14NMethodParameterSpec', [
@@ -18,10 +18,10 @@ call javaapi#class('HMACParameterSpec', 'SignatureMethodParameterSpec', [
   \ javaapi#method(0,'getOutputLength(', ')', 'int'),
   \ ])
 
-call javaapi#interface('SignatureMethodParameterSpec', '', [
+call javaapi#interface('SignatureMethodParameterSpec', 'AlgorithmParameterSpec', [
   \ ])
 
-call javaapi#interface('TransformParameterSpec', '', [
+call javaapi#interface('TransformParameterSpec', 'AlgorithmParameterSpec', [
   \ ])
 
 call javaapi#class('XPathFilter2ParameterSpec', 'TransformParameterSpec', [

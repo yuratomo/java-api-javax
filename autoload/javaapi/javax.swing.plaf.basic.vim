@@ -1,1301 +1,28 @@
 call javaapi#namespace('javax.swing.plaf.basic')
 
-call javaapi#class('BasicLookAndFeel', '', [
-  \ javaapi#method(0,'BasicLookAndFeel(', ')', 'public'),
-  \ javaapi#method(0,'getDefaults(', ')', 'UIDefaults'),
-  \ javaapi#method(0,'initialize(', ')', 'void'),
-  \ javaapi#method(0,'uninitialize(', ')', 'void'),
-  \ ])
-
-
-call javaapi#class('2', 'ActiveValue', [
-  \ javaapi#method(0,'createValue(', 'UIDefaults)', 'Object'),
-  \ ])
-
-
-call javaapi#class('BasicPanelUI', '', [
-  \ javaapi#method(0,'BasicPanelUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ ])
-
-
-call javaapi#class('BasicRootPaneUI', '', [
-  \ javaapi#method(0,'BasicRootPaneUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('RootPaneInputMap', '', [
-  \ javaapi#method(0,'RootPaneInputMap(', 'JComponent)', 'public'),
-  \ ])
-
-
-call javaapi#class('LazyActionMap', '', [
-  \ javaapi#method(0,'put(', 'Action)', 'void'),
-  \ javaapi#method(0,'put(', 'Object, Action)', 'void'),
-  \ javaapi#method(0,'get(', 'Object)', 'Action'),
-  \ javaapi#method(0,'remove(', 'Object)', 'void'),
-  \ javaapi#method(0,'clear(', ')', 'void'),
-  \ javaapi#method(0,'keys(', ')', 'Object[]'),
-  \ javaapi#method(0,'size(', ')', 'int'),
-  \ javaapi#method(0,'allKeys(', ')', 'Object[]'),
-  \ javaapi#method(0,'setParent(', 'ActionMap)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicLabelUI', '', [
-  \ javaapi#method(0,'BasicLabelUI(', ')', 'public'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicHTML', '', [
-  \ javaapi#field(1,'propertyKey', 'String'),
-  \ javaapi#field(1,'documentBaseKey', 'String'),
-  \ javaapi#method(0,'BasicHTML(', ')', 'public'),
-  \ javaapi#method(1,'createHTMLView(', 'JComponent, String)', 'View'),
-  \ javaapi#method(1,'getHTMLBaseline(', 'View, int, int)', 'int'),
-  \ javaapi#method(1,'isHTMLString(', 'String)', 'boolean'),
-  \ javaapi#method(1,'updateRenderer(', 'JComponent, String)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicButtonUI', '', [
-  \ javaapi#method(0,'BasicButtonUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getDefaultTextIconGap(', 'AbstractButton)', 'int'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ ])
-
-
-call javaapi#class('BasicButtonListener', 'PropertyChangeListener', [
-  \ javaapi#method(0,'BasicButtonListener(', 'AbstractButton)', 'public'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ javaapi#method(0,'installKeyboardActions(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallKeyboardActions(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ ])
-
-call javaapi#class('MarginBorder', '', [
-  \ javaapi#method(0,'MarginBorder(', ')', 'public'),
-  \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
-  \ ])
-
-
-call javaapi#class('BasicToggleButtonUI', '', [
-  \ javaapi#method(0,'BasicToggleButtonUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicMenuBarUI', '', [
-  \ javaapi#method(0,'BasicMenuBarUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ ])
-
-
-call javaapi#class('DefaultMenuLayout', '', [
-  \ javaapi#method(0,'DefaultMenuLayout(', 'Container, int)', 'public'),
-  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
-  \ ])
-
-
-call javaapi#class('Handler', 'ContainerListener', [
-  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
-  \ javaapi#method(0,'componentAdded(', 'ContainerEvent)', 'void'),
-  \ javaapi#method(0,'componentRemoved(', 'ContainerEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicMenuItemUI', '', [
-  \ javaapi#method(0,'BasicMenuItemUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'update(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getPath(', ')', 'MenuElement[]'),
-  \ ])
-
-call javaapi#class('BasicMenuUI', '', [
-  \ javaapi#method(0,'BasicMenuUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ ])
-
-
-call javaapi#class('Handler', '', [
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'menuDragMouseEntered(', 'MenuDragMouseEvent)', 'void'),
-  \ javaapi#method(0,'menuDragMouseDragged(', 'MenuDragMouseEvent)', 'void'),
-  \ javaapi#method(0,'menuDragMouseExited(', 'MenuDragMouseEvent)', 'void'),
-  \ javaapi#method(0,'menuDragMouseReleased(', 'MenuDragMouseEvent)', 'void'),
-  \ javaapi#method(0,'menuKeyTyped(', 'MenuKeyEvent)', 'void'),
-  \ javaapi#method(0,'menuKeyPressed(', 'MenuKeyEvent)', 'void'),
-  \ javaapi#method(0,'menuKeyReleased(', 'MenuKeyEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('Handler', 'PropertyChangeListener', [
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'menuDragMouseEntered(', 'MenuDragMouseEvent)', 'void'),
-  \ javaapi#method(0,'menuDragMouseDragged(', 'MenuDragMouseEvent)', 'void'),
-  \ javaapi#method(0,'menuDragMouseExited(', 'MenuDragMouseEvent)', 'void'),
-  \ javaapi#method(0,'menuDragMouseReleased(', 'MenuDragMouseEvent)', 'void'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicPopupMenuUI', '', [
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'BasicPopupMenuUI(', ')', 'public'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'installDefaults(', ')', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'isPopupTrigger(', 'MouseEvent)', 'boolean'),
-  \ ])
-
-
-call javaapi#class('AWTEventHelper', 'Object>', [
-  \ javaapi#method(0,'run(', ')', 'Object'),
-  \ javaapi#method(0,'eventDispatched(', 'AWTEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('1', 'PropertyChangeListener', [
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicPopupMenuListener', 'PopupMenuListener', [
-  \ javaapi#method(0,'popupMenuCanceled(', 'PopupMenuEvent)', 'void'),
-  \ javaapi#method(0,'popupMenuWillBecomeInvisible(', 'PopupMenuEvent)', 'void'),
-  \ javaapi#method(0,'popupMenuWillBecomeVisible(', 'PopupMenuEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('MouseGrabber', 'WindowListener', [
-  \ javaapi#method(0,'MouseGrabber(', ')', 'public'),
-  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
-  \ javaapi#method(0,'eventDispatched(', 'AWTEvent)', 'void'),
-  \ javaapi#method(0,'componentResized(', 'ComponentEvent)', 'void'),
-  \ javaapi#method(0,'componentMoved(', 'ComponentEvent)', 'void'),
-  \ javaapi#method(0,'componentShown(', 'ComponentEvent)', 'void'),
-  \ javaapi#method(0,'componentHidden(', 'ComponentEvent)', 'void'),
-  \ javaapi#method(0,'windowClosing(', 'WindowEvent)', 'void'),
-  \ javaapi#method(0,'windowClosed(', 'WindowEvent)', 'void'),
-  \ javaapi#method(0,'windowIconified(', 'WindowEvent)', 'void'),
-  \ javaapi#method(0,'windowDeactivated(', 'WindowEvent)', 'void'),
-  \ javaapi#method(0,'windowOpened(', 'WindowEvent)', 'void'),
-  \ javaapi#method(0,'windowDeiconified(', 'WindowEvent)', 'void'),
-  \ javaapi#method(0,'windowActivated(', 'WindowEvent)', 'void'),
-  \ ])
-
-call javaapi#class('BasicMenuKeyListener', 'MenuKeyListener', [
-  \ javaapi#method(0,'menuKeyTyped(', 'MenuKeyEvent)', 'void'),
-  \ javaapi#method(0,'menuKeyPressed(', 'MenuKeyEvent)', 'void'),
-  \ javaapi#method(0,'menuKeyReleased(', 'MenuKeyEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('1', '', [
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ ])
-
-call javaapi#class('MenuKeyboardHelper', 'KeyListener', [
-  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
-  \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicSeparatorUI', '', [
-  \ javaapi#method(0,'BasicSeparatorUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ ])
-
-
-call javaapi#class('BasicScrollBarUI', '', [
-  \ javaapi#method(0,'BasicScrollBarUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'isThumbRollover(', ')', 'boolean'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
-  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
-  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
-  \ javaapi#method(0,'getSupportsAbsolutePositioning(', ')', 'boolean'),
-  \ ])
-
-
-call javaapi#class('ModelListener', 'ChangeListener', [
-  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
-  \ ])
-
-call javaapi#class('ArrowButtonListener', '', [
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ ])
-
-call javaapi#class('TrackListener', '', [
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ ])
-
-call javaapi#class('BasicArrowButton', '', [
-  \ javaapi#method(0,'BasicArrowButton(', 'int, Color, Color, Color, Color)', 'public'),
-  \ javaapi#method(0,'BasicArrowButton(', 'int)', 'public'),
-  \ javaapi#method(0,'getDirection(', ')', 'int'),
-  \ javaapi#method(0,'setDirection(', 'int)', 'void'),
-  \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
-  \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'getMinimumSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
-  \ javaapi#method(0,'paintTriangle(', 'Graphics, int, int, int, int, boolean)', 'void'),
-  \ ])
-
-
-call javaapi#class('ScrollListener', 'ActionListener', [
-  \ javaapi#method(0,'ScrollListener(', 'BasicScrollBarUI)', 'public'),
-  \ javaapi#method(0,'ScrollListener(', 'BasicScrollBarUI, int, boolean)', 'public'),
-  \ javaapi#method(0,'setDirection(', 'int)', 'void'),
-  \ javaapi#method(0,'setScrollByBlock(', 'boolean)', 'void'),
-  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
-  \ ])
-
-call javaapi#class('Handler', 'PropertyChangeListener', [
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
-  \ javaapi#method(0,'PropertyChangeHandler(', 'BasicScrollBarUI)', 'public'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicComboBoxUI', '', [
-  \ javaapi#method(0,'BasicComboBoxUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'addEditor(', ')', 'void'),
-  \ javaapi#method(0,'removeEditor(', ')', 'void'),
-  \ javaapi#method(0,'configureArrowButton(', ')', 'void'),
-  \ javaapi#method(0,'unconfigureArrowButton(', ')', 'void'),
-  \ javaapi#method(0,'isPopupVisible(', 'JComboBox)', 'boolean'),
-  \ javaapi#method(0,'setPopupVisible(', 'JComboBox, boolean)', 'void'),
-  \ javaapi#method(0,'isFocusTraversable(', 'JComboBox)', 'boolean'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ javaapi#method(0,'getAccessibleChildrenCount(', 'JComponent)', 'int'),
-  \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
-  \ javaapi#method(0,'paintCurrentValue(', 'Graphics, Rectangle, boolean)', 'void'),
-  \ javaapi#method(0,'paintCurrentValueBackground(', 'Graphics, Rectangle, boolean)', 'void'),
-  \ ])
-
-
-call javaapi#class('EmptyListModelClass', 'Serializable', [
-  \ javaapi#method(0,'getSize(', ')', 'int'),
-  \ javaapi#method(0,'getElementAt(', 'int)', 'Object'),
-  \ javaapi#method(0,'addListDataListener(', 'ListDataListener)', 'void'),
-  \ javaapi#method(0,'removeListDataListener(', 'ListDataListener)', 'void'),
-  \ ])
-
-call javaapi#interface('ComboPopup', '', [
-  \ javaapi#method(0,'show(', ')', 'void'),
-  \ javaapi#method(0,'hide(', ')', 'void'),
-  \ javaapi#method(0,'isVisible(', ')', 'boolean'),
-  \ javaapi#method(0,'getList(', ')', 'JList'),
-  \ javaapi#method(0,'getMouseListener(', ')', 'MouseListener'),
-  \ javaapi#method(0,'getMouseMotionListener(', ')', 'MouseMotionListener'),
-  \ javaapi#method(0,'getKeyListener(', ')', 'KeyListener'),
-  \ javaapi#method(0,'uninstallingUI(', ')', 'void'),
-  \ ])
-
-call javaapi#class('BasicComboPopup', '', [
-  \ javaapi#method(0,'show(', ')', 'void'),
-  \ javaapi#method(0,'hide(', ')', 'void'),
-  \ javaapi#method(0,'getList(', ')', 'JList'),
-  \ javaapi#method(0,'getMouseListener(', ')', 'MouseListener'),
-  \ javaapi#method(0,'getMouseMotionListener(', ')', 'MouseMotionListener'),
-  \ javaapi#method(0,'getKeyListener(', ')', 'KeyListener'),
-  \ javaapi#method(0,'uninstallingUI(', ')', 'void'),
-  \ javaapi#method(0,'BasicComboPopup(', 'JComboBox)', 'public'),
-  \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
-  \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
-  \ ])
-
-call javaapi#class('ComboBoxLayoutManager', 'LayoutManager', [
-  \ javaapi#method(0,'ComboBoxLayoutManager(', 'BasicComboBoxUI)', 'public'),
-  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
-  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
-  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
-  \ ])
-
-
-call javaapi#class('1', '', [
-  \ javaapi#method(0,'processMouseEvent(', 'MouseEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicListUI', '', [
-  \ javaapi#method(0,'BasicListUI(', ')', 'public'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'locationToIndex(', 'JList, Point)', 'int'),
-  \ javaapi#method(0,'indexToLocation(', 'JList, int)', 'Point'),
-  \ javaapi#method(0,'getCellBounds(', 'JList, int, int)', 'Rectangle'),
-  \ ])
-
-
-call javaapi#class('ListTransferHandler', '', [
-  \ javaapi#method(0,'getSourceActions(', 'JComponent)', 'int'),
-  \ ])
-
-
-call javaapi#class('Handler', 'BeforeDrag', [
-  \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ javaapi#method(0,'intervalAdded(', 'ListDataEvent)', 'void'),
-  \ javaapi#method(0,'intervalRemoved(', 'ListDataEvent)', 'void'),
-  \ javaapi#method(0,'contentsChanged(', 'ListDataEvent)', 'void'),
-  \ javaapi#method(0,'valueChanged(', 'ListSelectionEvent)', 'void'),
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'dragStarting(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('Handler', 'Serializable', [
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ javaapi#method(0,'itemStateChanged(', 'ItemEvent)', 'void'),
-  \ ])
-
-call javaapi#interface('BeforeDrag', '', [
-  \ javaapi#method(0,'dragStarting(', 'MouseEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicViewportUI', '', [
-  \ javaapi#method(0,'BasicViewportUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicScrollPaneUI', '', [
-  \ javaapi#method(0,'BasicScrollPaneUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ ])
-
-
-call javaapi#class('Handler', 'MouseWheelListener', [
-  \ javaapi#method(0,'mouseWheelMoved(', 'MouseWheelEvent)', 'void'),
-  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicComboBoxRenderer', '', [
-  \ javaapi#method(0,'BasicComboBoxRenderer(', ')', 'public'),
-  \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'getListCellRendererComponent(', 'JList, Object, int, boolean, boolean)', 'Component'),
-  \ ])
-
-call javaapi#class('UIResource', '', [
-  \ javaapi#method(0,'UIResource(', ')', 'public'),
-  \ ])
-
-
-call javaapi#class('BasicComboBoxEditor', 'FocusListener', [
-  \ javaapi#method(0,'BasicComboBoxEditor(', ')', 'public'),
-  \ javaapi#method(0,'getEditorComponent(', ')', 'Component'),
-  \ javaapi#method(0,'setItem(', 'Object)', 'void'),
-  \ javaapi#method(0,'getItem(', ')', 'Object'),
-  \ javaapi#method(0,'selectAll(', ')', 'void'),
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'addActionListener(', 'ActionListener)', 'void'),
-  \ javaapi#method(0,'removeActionListener(', 'ActionListener)', 'void'),
-  \ ])
-
-
-call javaapi#class('BorderlessTextField', '', [
-  \ javaapi#method(0,'BorderlessTextField(', 'String, int)', 'public'),
-  \ javaapi#method(0,'setText(', 'String)', 'void'),
-  \ javaapi#method(0,'setBorder(', 'Border)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicTextUI', '', [
-  \ javaapi#method(0,'BasicTextUI(', ')', 'public'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'update(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'modelToView(', 'JTextComponent, int) throws BadLocationException', 'Rectangle'),
-  \ javaapi#method(0,'modelToView(', 'JTextComponent, int, Bias) throws BadLocationException', 'Rectangle'),
-  \ javaapi#method(0,'viewToModel(', 'JTextComponent, Point)', 'int'),
-  \ javaapi#method(0,'viewToModel(', 'JTextComponent, Point, Bias[])', 'int'),
-  \ javaapi#method(0,'getNextVisualPositionFrom(', 'JTextComponent, int, Bias, int, Bias[]) throws BadLocationException', 'int'),
-  \ javaapi#method(0,'damageRange(', 'JTextComponent, int, int)', 'void'),
-  \ javaapi#method(0,'damageRange(', 'JTextComponent, int, int, Bias, Bias)', 'void'),
-  \ javaapi#method(0,'getEditorKit(', 'JTextComponent)', 'EditorKit'),
-  \ javaapi#method(0,'getRootView(', 'JTextComponent)', 'View'),
-  \ javaapi#method(0,'getToolTipText(', 'JTextComponent, Point)', 'String'),
-  \ javaapi#method(0,'create(', 'Element)', 'View'),
-  \ javaapi#method(0,'create(', 'Element, int, int)', 'View'),
-  \ ])
-
-call javaapi#class('BasicTextFieldUI', '', [
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'BasicTextFieldUI(', ')', 'public'),
-  \ javaapi#method(0,'create(', 'Element)', 'View'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ ])
-
-
-call javaapi#class('BasicCursor', '', [
-  \ ])
-
-
-call javaapi#class('TextTransferHandler', '', [
-  \ javaapi#method(0,'getSourceActions(', 'JComponent)', 'int'),
-  \ javaapi#method(0,'importData(', 'TransferSupport)', 'boolean'),
-  \ javaapi#method(0,'importData(', 'JComponent, Transferable)', 'boolean'),
-  \ javaapi#method(0,'canImport(', 'JComponent, DataFlavor[])', 'boolean'),
-  \ ])
-
-
-call javaapi#class('RootView', '', [
-  \ javaapi#method(0,'getAttributes(', ')', 'AttributeSet'),
-  \ javaapi#method(0,'getPreferredSpan(', 'int)', 'float'),
-  \ javaapi#method(0,'getMinimumSpan(', 'int)', 'float'),
-  \ javaapi#method(0,'getMaximumSpan(', 'int)', 'float'),
-  \ javaapi#method(0,'preferenceChanged(', 'View, boolean, boolean)', 'void'),
-  \ javaapi#method(0,'getAlignment(', 'int)', 'float'),
-  \ javaapi#method(0,'paint(', 'Graphics, Shape)', 'void'),
-  \ javaapi#method(0,'setParent(', 'View)', 'void'),
-  \ javaapi#method(0,'getViewCount(', ')', 'int'),
-  \ javaapi#method(0,'getView(', 'int)', 'View'),
-  \ javaapi#method(0,'getViewIndex(', 'int, Bias)', 'int'),
-  \ javaapi#method(0,'getChildAllocation(', 'int, Shape)', 'Shape'),
-  \ javaapi#method(0,'modelToView(', 'int, Shape, Bias) throws BadLocationException', 'Shape'),
-  \ javaapi#method(0,'modelToView(', 'int, Bias, int, Bias, Shape) throws BadLocationException', 'Shape'),
-  \ javaapi#method(0,'viewToModel(', 'float, float, Shape, Bias[])', 'int'),
-  \ javaapi#method(0,'getNextVisualPositionFrom(', 'int, Bias, Shape, int, Bias[]) throws BadLocationException', 'int'),
-  \ javaapi#method(0,'insertUpdate(', 'DocumentEvent, Shape, ViewFactory)', 'void'),
-  \ javaapi#method(0,'removeUpdate(', 'DocumentEvent, Shape, ViewFactory)', 'void'),
-  \ javaapi#method(0,'changedUpdate(', 'DocumentEvent, Shape, ViewFactory)', 'void'),
-  \ javaapi#method(0,'getDocument(', ')', 'Document'),
-  \ javaapi#method(0,'getStartOffset(', ')', 'int'),
-  \ javaapi#method(0,'getEndOffset(', ')', 'int'),
-  \ javaapi#method(0,'getElement(', ')', 'Element'),
-  \ javaapi#method(0,'breakView(', 'int, float, Shape)', 'View'),
-  \ javaapi#method(0,'getResizeWeight(', 'int)', 'int'),
-  \ javaapi#method(0,'setSize(', 'float, float)', 'void'),
-  \ javaapi#method(0,'getContainer(', ')', 'Container'),
-  \ javaapi#method(0,'getViewFactory(', ')', 'ViewFactory'),
-  \ ])
-
-
-call javaapi#class('UpdateHandler', 'UIResource', [
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ javaapi#method(0,'insertUpdate(', 'DocumentEvent)', 'void'),
-  \ javaapi#method(0,'removeUpdate(', 'DocumentEvent)', 'void'),
-  \ javaapi#method(0,'changedUpdate(', 'DocumentEvent)', 'void'),
-  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
-  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
-  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
-  \ javaapi#method(0,'addLayoutComponent(', 'Component, Object)', 'void'),
-  \ javaapi#method(0,'maximumLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'getLayoutAlignmentX(', 'Container)', 'float'),
-  \ javaapi#method(0,'getLayoutAlignmentY(', 'Container)', 'float'),
-  \ javaapi#method(0,'invalidateLayout(', 'Container)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicCaret', '', [
-  \ javaapi#method(0,'BasicCaret(', ')', 'public'),
-  \ ])
-
-call javaapi#class('UIResource', '', [
-  \ javaapi#method(0,'UIResource(', ')', 'public'),
-  \ ])
-
-call javaapi#class('DragListener', '', [
-  \ javaapi#method(0,'dragStarting(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicHighlighter', '', [
-  \ javaapi#method(0,'BasicHighlighter(', ')', 'public'),
-  \ ])
-
-
-call javaapi#class('TextActionWrapper', '', [
-  \ javaapi#method(0,'TextActionWrapper(', 'BasicTextUI, TextAction)', 'public'),
-  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
-  \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('FocusAction', '', [
-  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
-  \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
-  \ ])
-
-
-call javaapi#class('Handler', 'PropertyChangeListener', [
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'contentsChanged(', 'ListDataEvent)', 'void'),
-  \ javaapi#method(0,'intervalAdded(', 'ListDataEvent)', 'void'),
-  \ javaapi#method(0,'intervalRemoved(', 'ListDataEvent)', 'void'),
-  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
-  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
-  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
-  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
-  \ ])
-
-call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
-  \ javaapi#method(0,'PropertyChangeHandler(', 'BasicComboBoxUI)', 'public'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('DefaultKeySelectionManager', 'UIResource', [
-  \ javaapi#method(0,'selectionForKey(', 'char, ComboBoxModel)', 'int'),
-  \ ])
-
-
-call javaapi#class('BasicToolBarUI', '', [
-  \ javaapi#method(0,'BasicToolBarUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'isRolloverBorders(', ')', 'boolean'),
-  \ javaapi#method(0,'setRolloverBorders(', 'boolean)', 'void'),
-  \ javaapi#method(0,'setFloatingLocation(', 'int, int)', 'void'),
-  \ javaapi#method(0,'isFloating(', ')', 'boolean'),
-  \ javaapi#method(0,'setFloating(', 'boolean, Point)', 'void'),
-  \ javaapi#method(0,'setOrientation(', 'int)', 'void'),
-  \ javaapi#method(0,'getDockingColor(', ')', 'Color'),
-  \ javaapi#method(0,'setDockingColor(', 'Color)', 'void'),
-  \ javaapi#method(0,'getFloatingColor(', ')', 'Color'),
-  \ javaapi#method(0,'setFloatingColor(', 'Color)', 'void'),
-  \ javaapi#method(0,'canDock(', 'Component, Point)', 'boolean'),
-  \ ])
-
-
-call javaapi#class('RolloverMarginBorder', '', [
-  \ javaapi#method(0,'RolloverMarginBorder(', ')', 'public'),
-  \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
-  \ ])
-
-call javaapi#class('ButtonBorder', '', [
-  \ javaapi#method(0,'ButtonBorder(', 'Color, Color, Color, Color)', 'public'),
-  \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
-  \ ])
-
-call javaapi#class('RadioButtonBorder', '', [
-  \ javaapi#method(0,'RadioButtonBorder(', 'Color, Color, Color, Color)', 'public'),
-  \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
-  \ ])
-
-
-call javaapi#class('Handler', 'PropertyChangeListener', [
-  \ javaapi#method(0,'componentAdded(', 'ContainerEvent)', 'void'),
-  \ javaapi#method(0,'componentRemoved(', 'ContainerEvent)', 'void'),
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-call javaapi#class('DockingListener', 'MouseInputListener', [
-  \ javaapi#method(0,'DockingListener(', 'BasicToolBarUI, JToolBar)', 'public'),
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicToolBarSeparatorUI', '', [
-  \ javaapi#method(0,'BasicToolBarSeparatorUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ ])
-
-
-call javaapi#class('BasicGraphicsUtils', '', [
-  \ javaapi#method(0,'BasicGraphicsUtils(', ')', 'public'),
-  \ javaapi#method(1,'drawEtchedRect(', 'Graphics, int, int, int, int, Color, Color, Color, Color)', 'void'),
-  \ javaapi#method(1,'getEtchedInsets(', ')', 'Insets'),
-  \ javaapi#method(1,'drawGroove(', 'Graphics, int, int, int, int, Color, Color)', 'void'),
-  \ javaapi#method(1,'getGrooveInsets(', ')', 'Insets'),
-  \ javaapi#method(1,'drawBezel(', 'Graphics, int, int, int, int, boolean, boolean, Color, Color, Color, Color)', 'void'),
-  \ javaapi#method(1,'drawLoweredBezel(', 'Graphics, int, int, int, int, Color, Color, Color, Color)', 'void'),
-  \ javaapi#method(1,'drawString(', 'Graphics, String, int, int, int)', 'void'),
-  \ javaapi#method(1,'drawStringUnderlineCharAt(', 'Graphics, String, int, int, int)', 'void'),
-  \ javaapi#method(1,'drawDashedRect(', 'Graphics, int, int, int, int)', 'void'),
-  \ javaapi#method(1,'getPreferredButtonSize(', 'AbstractButton, int)', 'Dimension'),
-  \ ])
-
-
-call javaapi#class('BasicTabbedPaneUI', '', [
-  \ javaapi#method(0,'BasicTabbedPaneUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getTabBounds(', 'JTabbedPane, int)', 'Rectangle'),
-  \ javaapi#method(0,'getTabRunCount(', 'JTabbedPane)', 'int'),
-  \ javaapi#method(0,'tabForCoordinate(', 'JTabbedPane, int, int)', 'int'),
-  \ ])
-
-
-call javaapi#class('Handler', 'PropertyChangeListener', [
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'componentAdded(', 'ContainerEvent)', 'void'),
-  \ javaapi#method(0,'componentRemoved(', 'ContainerEvent)', 'void'),
-  \ ])
-
-call javaapi#class('TabbedPaneScrollLayout', '', [
-  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
-  \ ])
-
-call javaapi#class('TabbedPaneLayout', 'LayoutManager', [
-  \ javaapi#method(0,'TabbedPaneLayout(', 'BasicTabbedPaneUI)', 'public'),
-  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
-  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
-  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
-  \ javaapi#method(0,'calculateLayoutInfo(', ')', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicBorders', '', [
-  \ javaapi#method(0,'BasicBorders(', ')', 'public'),
-  \ javaapi#method(1,'getButtonBorder(', ')', 'Border'),
-  \ javaapi#method(1,'getRadioButtonBorder(', ')', 'Border'),
-  \ javaapi#method(1,'getToggleButtonBorder(', ')', 'Border'),
-  \ javaapi#method(1,'getMenuBarBorder(', ')', 'Border'),
-  \ javaapi#method(1,'getSplitPaneBorder(', ')', 'Border'),
-  \ javaapi#method(1,'getSplitPaneDividerBorder(', ')', 'Border'),
-  \ javaapi#method(1,'getTextFieldBorder(', ')', 'Border'),
-  \ javaapi#method(1,'getProgressBarBorder(', ')', 'Border'),
-  \ javaapi#method(1,'getInternalFrameBorder(', ')', 'Border'),
-  \ ])
-
-call javaapi#class('BasicRadioButtonUI', '', [
-  \ javaapi#method(0,'BasicRadioButtonUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'getDefaultIcon(', ')', 'Icon'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ ])
-
-
-call javaapi#class('BasicProgressBarUI', '', [
-  \ javaapi#method(0,'BasicProgressBarUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ ])
-
-
-call javaapi#class('Handler', 'HierarchyListener', [
-  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ javaapi#method(0,'hierarchyChanged(', 'HierarchyEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicTableHeaderUI', '', [
-  \ javaapi#method(0,'BasicTableHeaderUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ ])
-
-
-call javaapi#class('MouseInputHandler', 'MouseInputListener', [
-  \ javaapi#method(0,'MouseInputHandler(', 'BasicTableHeaderUI)', 'public'),
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ ])
-
-call javaapi#class('1', 'FocusListener', [
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicTableUI', '', [
-  \ javaapi#method(0,'BasicTableUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ ])
-
-
-call javaapi#class('Handler', 'BeforeDrag', [
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'valueChanged(', 'ListSelectionEvent)', 'void'),
-  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'dragStarting(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-call javaapi#class('TableTransferHandler', '', [
-  \ javaapi#method(0,'getSourceActions(', 'JComponent)', 'int'),
-  \ ])
-
-
-call javaapi#class('BasicTreeUI', '', [
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'BasicTreeUI(', ')', 'public'),
-  \ javaapi#method(0,'setLeftChildIndent(', 'int)', 'void'),
-  \ javaapi#method(0,'getLeftChildIndent(', ')', 'int'),
-  \ javaapi#method(0,'setRightChildIndent(', 'int)', 'void'),
-  \ javaapi#method(0,'getRightChildIndent(', ')', 'int'),
-  \ javaapi#method(0,'setExpandedIcon(', 'Icon)', 'void'),
-  \ javaapi#method(0,'getExpandedIcon(', ')', 'Icon'),
-  \ javaapi#method(0,'setCollapsedIcon(', 'Icon)', 'void'),
-  \ javaapi#method(0,'getCollapsedIcon(', ')', 'Icon'),
-  \ javaapi#method(0,'getPathBounds(', 'JTree, TreePath)', 'Rectangle'),
-  \ javaapi#method(0,'getPathForRow(', 'JTree, int)', 'TreePath'),
-  \ javaapi#method(0,'getRowForPath(', 'JTree, TreePath)', 'int'),
-  \ javaapi#method(0,'getRowCount(', 'JTree)', 'int'),
-  \ javaapi#method(0,'getClosestPathForLocation(', 'JTree, int, int)', 'TreePath'),
-  \ javaapi#method(0,'isEditing(', 'JTree)', 'boolean'),
-  \ javaapi#method(0,'stopEditing(', 'JTree)', 'boolean'),
-  \ javaapi#method(0,'cancelEditing(', 'JTree)', 'void'),
-  \ javaapi#method(0,'startEditingAtPath(', 'JTree, TreePath)', 'void'),
-  \ javaapi#method(0,'getEditingPath(', 'JTree)', 'TreePath'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'setPreferredMinSize(', 'Dimension)', 'void'),
-  \ javaapi#method(0,'getPreferredMinSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent, boolean)', 'Dimension'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ ])
-
-
-call javaapi#class('TreeTransferHandler', '', [
-  \ javaapi#method(0,'compare(', 'TreePath, TreePath)', 'int'),
-  \ javaapi#method(0,'getSourceActions(', 'JComponent)', 'int'),
-  \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
-  \ ])
-
-call javaapi#class('Actions', '', [
-  \ javaapi#method(0,'isEnabled(', 'Object)', 'boolean'),
-  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('Handler', 'BeforeDrag', [
-  \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'dragStarting(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'editingStopped(', 'ChangeEvent)', 'void'),
-  \ javaapi#method(0,'editingCanceled(', 'ChangeEvent)', 'void'),
-  \ javaapi#method(0,'valueChanged(', 'TreeSelectionEvent)', 'void'),
-  \ javaapi#method(0,'treeExpanded(', 'TreeExpansionEvent)', 'void'),
-  \ javaapi#method(0,'treeCollapsed(', 'TreeExpansionEvent)', 'void'),
-  \ javaapi#method(0,'treeNodesChanged(', 'TreeModelEvent)', 'void'),
-  \ javaapi#method(0,'treeNodesInserted(', 'TreeModelEvent)', 'void'),
-  \ javaapi#method(0,'treeNodesRemoved(', 'TreeModelEvent)', 'void'),
-  \ javaapi#method(0,'treeStructureChanged(', 'TreeModelEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('NodeDimensionsHandler', '', [
-  \ javaapi#method(0,'NodeDimensionsHandler(', 'BasicTreeUI)', 'public'),
-  \ javaapi#method(0,'getNodeDimensions(', 'Object, int, int, boolean, Rectangle)', 'Rectangle'),
-  \ ])
-
-
-call javaapi#class('BasicSplitPaneUI', '', [
-  \ javaapi#method(0,'BasicSplitPaneUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getOrientation(', ')', 'int'),
-  \ javaapi#method(0,'setOrientation(', 'int)', 'void'),
-  \ javaapi#method(0,'isContinuousLayout(', ')', 'boolean'),
-  \ javaapi#method(0,'setContinuousLayout(', 'boolean)', 'void'),
-  \ javaapi#method(0,'getLastDragLocation(', ')', 'int'),
-  \ javaapi#method(0,'setLastDragLocation(', 'int)', 'void'),
-  \ javaapi#method(0,'getDivider(', ')', 'BasicSplitPaneDivider'),
-  \ javaapi#method(0,'getNonContinuousLayoutDivider(', ')', 'Component'),
-  \ javaapi#method(0,'getSplitPane(', ')', 'JSplitPane'),
-  \ javaapi#method(0,'createDefaultDivider(', ')', 'BasicSplitPaneDivider'),
-  \ javaapi#method(0,'resetToPreferredSizes(', 'JSplitPane)', 'void'),
-  \ javaapi#method(0,'setDividerLocation(', 'JSplitPane, int)', 'void'),
-  \ javaapi#method(0,'getDividerLocation(', 'JSplitPane)', 'int'),
-  \ javaapi#method(0,'getMinimumDividerLocation(', 'JSplitPane)', 'int'),
-  \ javaapi#method(0,'getMaximumDividerLocation(', 'JSplitPane)', 'int'),
-  \ javaapi#method(0,'finishedPaintingChildren(', 'JSplitPane, Graphics)', 'void'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getInsets(', 'JComponent)', 'Insets'),
-  \ ])
-
-
-call javaapi#class('SplitPaneBorder', 'UIResource', [
-  \ javaapi#method(0,'SplitPaneBorder(', 'Color, Color)', 'public'),
-  \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'getBorderInsets(', 'Component)', 'Insets'),
-  \ javaapi#method(0,'isBorderOpaque(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('BasicSplitPaneDivider', '', [
-  \ javaapi#method(0,'BasicSplitPaneDivider(', 'BasicSplitPaneUI)', 'public'),
-  \ javaapi#method(0,'setBasicSplitPaneUI(', 'BasicSplitPaneUI)', 'void'),
-  \ javaapi#method(0,'getBasicSplitPaneUI(', ')', 'BasicSplitPaneUI'),
-  \ javaapi#method(0,'setDividerSize(', 'int)', 'void'),
-  \ javaapi#method(0,'getDividerSize(', ')', 'int'),
-  \ javaapi#method(0,'setBorder(', 'Border)', 'void'),
-  \ javaapi#method(0,'getBorder(', ')', 'Border'),
-  \ javaapi#method(0,'getInsets(', ')', 'Insets'),
-  \ javaapi#method(0,'isMouseOver(', ')', 'boolean'),
-  \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'getMinimumSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
-  \ ])
-
-
-call javaapi#class('Handler', 'PropertyChangeListener', [
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ ])
-
-call javaapi#class('1', '', [
-  \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
-  \ ])
-
-call javaapi#class('BasicHorizontalLayoutManager', 'LayoutManager2', [
-  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
-  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
-  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
-  \ javaapi#method(0,'addLayoutComponent(', 'Component, Object)', 'void'),
-  \ javaapi#method(0,'getLayoutAlignmentX(', 'Container)', 'float'),
-  \ javaapi#method(0,'getLayoutAlignmentY(', 'Container)', 'float'),
-  \ javaapi#method(0,'invalidateLayout(', 'Container)', 'void'),
-  \ javaapi#method(0,'maximumLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'resetToPreferredSizes(', ')', 'void'),
-  \ ])
-
-call javaapi#class('SplitPaneDividerBorder', 'UIResource', [
-  \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'getBorderInsets(', 'Component)', 'Insets'),
-  \ javaapi#method(0,'isBorderOpaque(', ')', 'boolean'),
-  \ ])
-
-call javaapi#class('MouseHandler', '', [
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ ])
-
-call javaapi#class('DividerLayout', 'LayoutManager', [
-  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
-  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
-  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
-  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
-  \ ])
-
-
-call javaapi#class('OneTouchActionHandler', 'ActionListener', [
-  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicTextAreaUI', '', [
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'BasicTextAreaUI(', ')', 'public'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'create(', 'Element)', 'View'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ ])
-
-
-call javaapi#class('BasicSliderUI', '', [
-  \ javaapi#field(1,'POSITIVE_SCROLL', 'int'),
-  \ javaapi#field(1,'NEGATIVE_SCROLL', 'int'),
-  \ javaapi#field(1,'MIN_SCROLL', 'int'),
-  \ javaapi#field(1,'MAX_SCROLL', 'int'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'BasicSliderUI(', 'JSlider)', 'public'),
-  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
-  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
-  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
-  \ javaapi#method(0,'getPreferredHorizontalSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'getPreferredVerticalSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'getMinimumHorizontalSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'getMinimumVerticalSize(', ')', 'Dimension'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'paintFocus(', 'Graphics)', 'void'),
-  \ javaapi#method(0,'paintTrack(', 'Graphics)', 'void'),
-  \ javaapi#method(0,'paintTicks(', 'Graphics)', 'void'),
-  \ javaapi#method(0,'paintLabels(', 'Graphics)', 'void'),
-  \ javaapi#method(0,'paintThumb(', 'Graphics)', 'void'),
-  \ javaapi#method(0,'setThumbLocation(', 'int, int)', 'void'),
-  \ javaapi#method(0,'scrollByBlock(', 'int)', 'void'),
-  \ javaapi#method(0,'scrollByUnit(', 'int)', 'void'),
-  \ javaapi#method(0,'valueForYPosition(', 'int)', 'int'),
-  \ javaapi#method(0,'valueForXPosition(', 'int)', 'int'),
-  \ ])
-
-
-call javaapi#class('Actions', '', [
-  \ javaapi#field(1,'POSITIVE_UNIT_INCREMENT', 'String'),
-  \ javaapi#field(1,'POSITIVE_BLOCK_INCREMENT', 'String'),
-  \ javaapi#field(1,'NEGATIVE_UNIT_INCREMENT', 'String'),
-  \ javaapi#field(1,'NEGATIVE_BLOCK_INCREMENT', 'String'),
-  \ javaapi#field(1,'MIN_SCROLL_INCREMENT', 'String'),
-  \ javaapi#field(1,'MAX_SCROLL_INCREMENT', 'String'),
-  \ javaapi#method(0,'Actions(', 'String)', 'public'),
-  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('ScrollListener', 'ActionListener', [
-  \ javaapi#method(0,'ScrollListener(', 'BasicSliderUI)', 'public'),
-  \ javaapi#method(0,'ScrollListener(', 'BasicSliderUI, int, boolean)', 'public'),
-  \ javaapi#method(0,'setDirection(', 'int)', 'void'),
-  \ javaapi#method(0,'setScrollByBlock(', 'boolean)', 'void'),
-  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
-  \ ])
-
-call javaapi#class('Handler', 'PropertyChangeListener', [
-  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
-  \ javaapi#method(0,'componentHidden(', 'ComponentEvent)', 'void'),
-  \ javaapi#method(0,'componentMoved(', 'ComponentEvent)', 'void'),
-  \ javaapi#method(0,'componentResized(', 'ComponentEvent)', 'void'),
-  \ javaapi#method(0,'componentShown(', 'ComponentEvent)', 'void'),
-  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-call javaapi#class('TrackListener', '', [
-  \ javaapi#method(0,'TrackListener(', 'BasicSliderUI)', 'public'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'shouldScroll(', 'int)', 'boolean'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
-  \ javaapi#method(0,'PropertyChangeHandler(', 'BasicSliderUI)', 'public'),
-  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicCheckBoxMenuItemUI', '', [
-  \ javaapi#method(0,'BasicCheckBoxMenuItemUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'processMouseEvent(', 'JMenuItem, MouseEvent, MenuElement[], MenuSelectionManager)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicRadioButtonMenuItemUI', '', [
-  \ javaapi#method(0,'BasicRadioButtonMenuItemUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'processMouseEvent(', 'JMenuItem, MouseEvent, MenuElement[], MenuSelectionManager)', 'void'),
-  \ ])
-
-
-call javaapi#class('MenuBarBorder', '', [
-  \ javaapi#method(0,'MenuBarBorder(', 'Color, Color)', 'public'),
-  \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
-  \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
-  \ ])
-
-
-call javaapi#class('Actions', '', [
-  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('MenuItemCheckIcon', 'Serializable', [
-  \ javaapi#method(0,'paintIcon(', 'Component, Graphics, int, int)', 'void'),
-  \ javaapi#method(0,'getIconWidth(', ')', 'int'),
-  \ javaapi#method(0,'getIconHeight(', ')', 'int'),
-  \ ])
-
-call javaapi#class('BasicIconFactory', 'Serializable', [
-  \ javaapi#method(0,'BasicIconFactory(', ')', 'public'),
-  \ javaapi#method(1,'getMenuItemCheckIcon(', ')', 'Icon'),
-  \ javaapi#method(1,'getMenuItemArrowIcon(', ')', 'Icon'),
-  \ javaapi#method(1,'getMenuArrowIcon(', ')', 'Icon'),
-  \ javaapi#method(1,'getCheckBoxIcon(', ')', 'Icon'),
-  \ javaapi#method(1,'getRadioButtonIcon(', ')', 'Icon'),
-  \ javaapi#method(1,'getCheckBoxMenuItemIcon(', ')', 'Icon'),
-  \ javaapi#method(1,'getRadioButtonMenuItemIcon(', ')', 'Icon'),
-  \ javaapi#method(1,'createEmptyFrameIcon(', ')', 'Icon'),
-  \ ])
-
-
-call javaapi#class('MouseInputHandler', 'MouseInputListener', [
-  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
-  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
-  \ ])
-
-
-call javaapi#class('BasicPopupMenuSeparatorUI', '', [
-  \ javaapi#method(0,'BasicPopupMenuSeparatorUI(', ')', 'public'),
-  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
-  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
-  \ ])
-
-
-call javaapi#class('FieldBorder', '', [
+call javaapi#class('FieldBorder', 'AbstractBorder', [
   \ javaapi#method(0,'FieldBorder(', 'Color, Color, Color, Color)', 'public'),
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ ])
 
-call javaapi#class('RolloverButtonBorder', '', [
+call javaapi#class('RolloverButtonBorder', 'ButtonBorder', [
   \ javaapi#method(0,'RolloverButtonBorder(', 'Color, Color, Color, Color)', 'public'),
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('ToggleButtonBorder', '', [
+call javaapi#class('ToggleButtonBorder', 'ButtonBorder', [
   \ javaapi#method(0,'ToggleButtonBorder(', 'Color, Color, Color, Color)', 'public'),
   \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
   \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('BasicCheckBoxUI', '', [
+call javaapi#class('BasicCheckBoxUI', 'BasicRadioButtonUI', [
   \ javaapi#method(0,'BasicCheckBoxUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'getPropertyPrefix(', ')', 'String'),
@@ -1304,7 +31,7 @@ call javaapi#class('BasicCheckBoxUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ColorTransferHandler', '', [
+call javaapi#class('ColorTransferHandler', 'TransferHandler', [
   \ ])
 
 call javaapi#class('Handler', 'PropertyChangeListener', [
@@ -1322,7 +49,7 @@ call javaapi#class('PropertyHandler', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('BasicColorChooserUI', '', [
+call javaapi#class('BasicColorChooserUI', 'ColorChooserUI', [
   \ javaapi#method(0,'BasicColorChooserUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -1332,7 +59,7 @@ call javaapi#class('BasicColorChooserUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', 'Object)', 'boolean'),
   \ ])
@@ -1348,7 +75,7 @@ call javaapi#class('ItemHandler', 'ItemListener', [
   \ javaapi#method(0,'itemStateChanged(', 'ItemEvent)', 'void'),
   \ ])
 
-call javaapi#class('KeyHandler', '', [
+call javaapi#class('KeyHandler', 'KeyAdapter', [
   \ javaapi#method(0,'KeyHandler(', 'BasicComboBoxUI)', 'public'),
   \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
   \ ])
@@ -1364,17 +91,17 @@ call javaapi#class('AutoScrollActionHandler', 'ActionListener', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('InvocationKeyHandler', '', [
+call javaapi#class('InvocationKeyHandler', 'KeyAdapter', [
   \ javaapi#method(0,'InvocationKeyHandler(', 'BasicComboPopup)', 'public'),
   \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
   \ ])
 
-call javaapi#class('InvocationMouseHandler', '', [
+call javaapi#class('InvocationMouseHandler', 'MouseAdapter', [
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('InvocationMouseMotionHandler', '', [
+call javaapi#class('InvocationMouseMotionHandler', 'MouseMotionAdapter', [
   \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
   \ ])
 
@@ -1389,12 +116,12 @@ call javaapi#class('ListDataHandler', 'ListDataListener', [
   \ javaapi#method(0,'intervalRemoved(', 'ListDataEvent)', 'void'),
   \ ])
 
-call javaapi#class('ListMouseHandler', '', [
+call javaapi#class('ListMouseHandler', 'MouseAdapter', [
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('ListMouseMotionHandler', '', [
+call javaapi#class('ListMouseMotionHandler', 'MouseMotionAdapter', [
   \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
   \ ])
 
@@ -1406,7 +133,7 @@ call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('MouseInputHandler', '', [
+call javaapi#class('MouseInputHandler', 'MouseInputAdapter', [
   \ javaapi#method(0,'MouseInputHandler(', 'BasicDesktopIconUI)', 'public'),
   \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
@@ -1415,7 +142,7 @@ call javaapi#class('MouseInputHandler', '', [
   \ javaapi#method(0,'moveAndRepaint(', 'JComponent, int, int, int, int)', 'void'),
   \ ])
 
-call javaapi#class('BasicDesktopIconUI', '', [
+call javaapi#class('BasicDesktopIconUI', 'DesktopIconUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'BasicDesktopIconUI(', ')', 'public'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -1430,15 +157,15 @@ call javaapi#class('BasicDesktopIconUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', 'Object)', 'boolean'),
   \ ])
 
-call javaapi#class('BasicDesktopManager', '', [
+call javaapi#class('BasicDesktopManager', 'DefaultDesktopManager', [
   \ ])
 
-call javaapi#class('CloseAction', '', [
+call javaapi#class('CloseAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
@@ -1447,27 +174,27 @@ call javaapi#class('Handler', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('MaximizeAction', '', [
+call javaapi#class('MaximizeAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('MinimizeAction', '', [
+call javaapi#class('MinimizeAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('NavigateAction', '', [
+call javaapi#class('NavigateAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('OpenAction', '', [
+call javaapi#class('OpenAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('BasicDesktopPaneUI', '', [
+call javaapi#class('BasicDesktopPaneUI', 'DesktopPaneUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'BasicDesktopPaneUI(', ')', 'public'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -1492,7 +219,7 @@ call javaapi#class('1', 'DoChangeContents>', [
   \ javaapi#method(0,'call(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('LoadFilesThread', '', [
+call javaapi#class('LoadFilesThread', 'Thread', [
   \ javaapi#method(0,'LoadFilesThread(', 'BasicDirectoryModel, File, int)', 'public'),
   \ javaapi#method(0,'run(', ')', 'void'),
   \ javaapi#method(0,'run0(', ')', 'void'),
@@ -1500,7 +227,7 @@ call javaapi#class('LoadFilesThread', '', [
   \ javaapi#method(0,'cancelRunnables(', ')', 'void'),
   \ ])
 
-call javaapi#class('BasicDirectoryModel', '', [
+call javaapi#class('BasicDirectoryModel', 'Object>', [
   \ javaapi#method(0,'BasicDirectoryModel(', 'JFileChooser)', 'public'),
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ javaapi#method(0,'invalidateFileCache(', ')', 'void'),
@@ -1520,10 +247,10 @@ call javaapi#class('BasicDirectoryModel', '', [
   \ javaapi#method(0,'getPropertyChangeListeners(', ')', 'PropertyChangeListener[]'),
   \ ])
 
-call javaapi#class('StyleSheetUIResource', '', [
+call javaapi#class('StyleSheetUIResource', 'StyleSheet', [
   \ ])
 
-call javaapi#class('BasicEditorPaneUI', '', [
+call javaapi#class('BasicEditorPaneUI', 'BasicTextUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'BasicEditorPaneUI(', ')', 'public'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -1531,21 +258,21 @@ call javaapi#class('BasicEditorPaneUI', '', [
   \ javaapi#method(0,'getEditorKit(', 'JTextComponent)', 'EditorKit'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('AcceptAllFileFilter', '', [
+call javaapi#class('AcceptAllFileFilter', 'FileFilter', [
   \ javaapi#method(0,'AcceptAllFileFilter(', 'BasicFileChooserUI)', 'public'),
   \ javaapi#method(0,'accept(', 'File)', 'boolean'),
   \ javaapi#method(0,'getDescription(', ')', 'String'),
   \ ])
 
-call javaapi#class('ApproveSelectionAction', '', [
+call javaapi#class('ApproveSelectionAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('BasicFileView', '', [
+call javaapi#class('BasicFileView', 'FileView', [
   \ javaapi#method(0,'BasicFileView(', 'BasicFileChooserUI)', 'public'),
   \ javaapi#method(0,'clearIconCache(', ')', 'void'),
   \ javaapi#method(0,'getName(', 'File)', 'String'),
@@ -1557,34 +284,34 @@ call javaapi#class('BasicFileView', '', [
   \ javaapi#method(0,'isHidden(', 'File)', 'Boolean'),
   \ ])
 
-call javaapi#class('CancelSelectionAction', '', [
+call javaapi#class('CancelSelectionAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('ChangeToParentDirectoryAction', '', [
+call javaapi#class('ChangeToParentDirectoryAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('DoubleClickListener', '', [
+call javaapi#class('DoubleClickListener', 'MouseAdapter', [
   \ javaapi#method(0,'DoubleClickListener(', 'BasicFileChooserUI, JList)', 'public'),
   \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('FileTransferable', '', [
+call javaapi#class('FileTransferable', 'BasicTransferable', [
   \ ])
 
-call javaapi#class('FileTransferHandler', '', [
+call javaapi#class('FileTransferHandler', 'TransferHandler', [
   \ javaapi#method(0,'getSourceActions(', 'JComponent)', 'int'),
   \ ])
 
-call javaapi#class('GlobFilter', '', [
+call javaapi#class('GlobFilter', 'FileFilter', [
   \ javaapi#method(0,'setPattern(', 'String)', 'void'),
   \ javaapi#method(0,'accept(', 'File)', 'boolean'),
   \ javaapi#method(0,'getDescription(', ')', 'String'),
   \ ])
 
-call javaapi#class('GoHomeAction', '', [
+call javaapi#class('GoHomeAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
@@ -1597,7 +324,7 @@ call javaapi#class('Handler', 'ListSelectionListener', [
   \ javaapi#method(0,'valueChanged(', 'ListSelectionEvent)', 'void'),
   \ ])
 
-call javaapi#class('NewFolderAction', '', [
+call javaapi#class('NewFolderAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
@@ -1605,11 +332,11 @@ call javaapi#class('SelectionListener', 'ListSelectionListener', [
   \ javaapi#method(0,'valueChanged(', 'ListSelectionEvent)', 'void'),
   \ ])
 
-call javaapi#class('UpdateAction', '', [
+call javaapi#class('UpdateAction', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('BasicFileChooserUI', '', [
+call javaapi#class('BasicFileChooserUI', 'FileChooserUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'BasicFileChooserUI(', 'JFileChooser)', 'public'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -1643,25 +370,25 @@ call javaapi#class('BasicFileChooserUI', '', [
   \ javaapi#method(0,'getUpdateAction(', ')', 'Action'),
   \ ])
 
-call javaapi#class('BasicFormattedTextFieldUI', '', [
+call javaapi#class('BasicFormattedTextFieldUI', 'BasicTextFieldUI', [
   \ javaapi#method(0,'BasicFormattedTextFieldUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('BasicDocument', '', [
+call javaapi#class('BasicDocument', 'HTMLDocument', [
   \ ])
 
-call javaapi#class('BasicEditorKit', '', [
+call javaapi#class('BasicEditorKit', 'HTMLEditorKit', [
   \ javaapi#method(0,'getStyleSheet(', ')', 'StyleSheet'),
   \ javaapi#method(0,'createDefaultDocument(', 'Font, Color)', 'Document'),
   \ javaapi#method(0,'getViewFactory(', ')', 'ViewFactory'),
   \ ])
 
-call javaapi#class('BasicHTMLViewFactory', '', [
+call javaapi#class('BasicHTMLViewFactory', 'HTMLFactory', [
   \ javaapi#method(0,'create(', 'Element)', 'View'),
   \ ])
 
-call javaapi#class('Renderer', '', [
+call javaapi#class('Renderer', 'View', [
   \ javaapi#method(0,'getAttributes(', ')', 'AttributeSet'),
   \ javaapi#method(0,'getPreferredSpan(', 'int)', 'float'),
   \ javaapi#method(0,'getMinimumSpan(', 'int)', 'float'),
@@ -1732,7 +459,7 @@ call javaapi#class('RadioButtonMenuItemIcon', 'Serializable', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('CloseAction', '', [
+call javaapi#class('CloseAction', 'AbstractAction', [
   \ javaapi#method(0,'CloseAction(', 'BasicInternalFrameTitlePane)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
@@ -1746,22 +473,22 @@ call javaapi#class('Handler', 'PropertyChangeListener', [
   \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
   \ ])
 
-call javaapi#class('IconifyAction', '', [
+call javaapi#class('IconifyAction', 'AbstractAction', [
   \ javaapi#method(0,'IconifyAction(', 'BasicInternalFrameTitlePane)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('MaximizeAction', '', [
+call javaapi#class('MaximizeAction', 'AbstractAction', [
   \ javaapi#method(0,'MaximizeAction(', 'BasicInternalFrameTitlePane)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('MoveAction', '', [
+call javaapi#class('MoveAction', 'AbstractAction', [
   \ javaapi#method(0,'MoveAction(', 'BasicInternalFrameTitlePane)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('NoFocusButton', '', [
+call javaapi#class('NoFocusButton', 'JButton', [
   \ javaapi#method(0,'NoFocusButton(', 'BasicInternalFrameTitlePane, String, String)', 'public'),
   \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
   \ javaapi#method(0,'requestFocus(', ')', 'void'),
@@ -1773,22 +500,22 @@ call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('RestoreAction', '', [
+call javaapi#class('RestoreAction', 'AbstractAction', [
   \ javaapi#method(0,'RestoreAction(', 'BasicInternalFrameTitlePane)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('ShowSystemMenuAction', '', [
+call javaapi#class('ShowSystemMenuAction', 'AbstractAction', [
   \ javaapi#method(0,'ShowSystemMenuAction(', 'BasicInternalFrameTitlePane, boolean)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('SizeAction', '', [
+call javaapi#class('SizeAction', 'AbstractAction', [
   \ javaapi#method(0,'SizeAction(', 'BasicInternalFrameTitlePane)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('SystemMenuBar', '', [
+call javaapi#class('SystemMenuBar', 'JMenuBar', [
   \ javaapi#method(0,'SystemMenuBar(', 'BasicInternalFrameTitlePane)', 'public'),
   \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
   \ javaapi#method(0,'requestFocus(', ')', 'void'),
@@ -1805,12 +532,12 @@ call javaapi#class('TitlePaneLayout', 'LayoutManager', [
   \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
   \ ])
 
-call javaapi#class('BasicInternalFrameTitlePane', '', [
+call javaapi#class('BasicInternalFrameTitlePane', 'JComponent', [
   \ javaapi#method(0,'BasicInternalFrameTitlePane(', 'JInternalFrame)', 'public'),
   \ javaapi#method(0,'paintComponent(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', 'Object)', 'boolean'),
   \ ])
@@ -1825,7 +552,7 @@ call javaapi#class('BasicInternalFrameListener', 'InternalFrameListener', [
   \ javaapi#method(0,'internalFrameDeactivated(', 'InternalFrameEvent)', 'void'),
   \ ])
 
-call javaapi#class('BorderListener', '', [
+call javaapi#class('BorderListener', 'MouseInputAdapter', [
   \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
@@ -1895,7 +622,7 @@ call javaapi#class('InternalFramePropertyChangeListener', 'PropertyChangeListene
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('BasicInternalFrameUI', '', [
+call javaapi#class('BasicInternalFrameUI', 'InternalFrameUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'BasicInternalFrameUI(', 'JInternalFrame)', 'public'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -1914,14 +641,14 @@ call javaapi#class('BasicInternalFrameUI', '', [
   \ javaapi#method(0,'setEastPane(', 'JComponent)', 'void'),
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', 'Object)', 'boolean'),
   \ ])
@@ -1965,7 +692,7 @@ call javaapi#class('3', 'PrivilegedAction<byte[]>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('AudioAction', '', [
+call javaapi#class('AudioAction', 'AbstractAction', [
   \ javaapi#method(0,'AudioAction(', 'BasicLookAndFeel, String, String)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'update(', 'LineEvent)', 'void'),
@@ -1974,7 +701,7 @@ call javaapi#class('AudioAction', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
@@ -1991,7 +718,7 @@ call javaapi#class('MouseInputHandler', 'MouseInputListener', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', 'Object)', 'boolean'),
   \ ])
@@ -2005,7 +732,7 @@ call javaapi#class('ChangeHandler', 'ChangeListener', [
   \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'JPanel', [
   \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
   \ ])
 
@@ -2013,7 +740,7 @@ call javaapi#class('2', 'HierarchyListener', [
   \ javaapi#method(0,'hierarchyChanged(', 'HierarchyEvent)', 'void'),
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
@@ -2037,7 +764,7 @@ call javaapi#class('ButtonAreaLayout', 'LayoutManager', [
   \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
   \ ])
 
-call javaapi#class('ConstrainedButton', '', [
+call javaapi#class('ConstrainedButton', 'JButton', [
   \ javaapi#method(0,'getMinimumSize(', ')', 'Dimension'),
   \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
   \ ])
@@ -2055,7 +782,7 @@ call javaapi#class('Handler', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('MultiplexingTextField', '', [
+call javaapi#class('MultiplexingTextField', 'JTextField', [
   \ ])
 
 call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
@@ -2063,7 +790,7 @@ call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('BasicOptionPaneUI', '', [
+call javaapi#class('BasicOptionPaneUI', 'OptionPaneUI', [
   \ javaapi#field(1,'MinimumWidth', 'int'),
   \ javaapi#field(1,'MinimumHeight', 'int'),
   \ javaapi#method(0,'BasicOptionPaneUI(', ')', 'public'),
@@ -2076,7 +803,7 @@ call javaapi#class('BasicOptionPaneUI', '', [
   \ javaapi#method(0,'containsCustomComponents(', 'JOptionPane)', 'boolean'),
   \ ])
 
-call javaapi#class('BasicPasswordFieldUI', '', [
+call javaapi#class('BasicPasswordFieldUI', 'BasicTextFieldUI', [
   \ javaapi#method(0,'BasicPasswordFieldUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'create(', 'Element)', 'View'),
@@ -2085,7 +812,7 @@ call javaapi#class('BasicPasswordFieldUI', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
@@ -2109,7 +836,7 @@ call javaapi#class('ChangeHandler', 'ChangeListener', [
   \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#field(1,'PRESS', 'String'),
   \ javaapi#field(1,'RELEASE', 'String'),
   \ javaapi#field(1,'POST_POPUP', 'String'),
@@ -2120,11 +847,11 @@ call javaapi#class('Actions', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
@@ -2155,7 +882,7 @@ call javaapi#class('ViewportChangeHandler', 'ChangeListener', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ActionScroller', '', [
+call javaapi#class('ActionScroller', 'AbstractAction', [
   \ javaapi#method(0,'ActionScroller(', 'BasicSliderUI, JSlider, int, boolean)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
@@ -2166,7 +893,7 @@ call javaapi#class('ChangeHandler', 'ChangeListener', [
   \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('ComponentHandler', '', [
+call javaapi#class('ComponentHandler', 'ComponentAdapter', [
   \ javaapi#method(0,'ComponentHandler(', 'BasicSliderUI)', 'public'),
   \ javaapi#method(0,'componentResized(', 'ComponentEvent)', 'void'),
   \ ])
@@ -2177,7 +904,7 @@ call javaapi#class('FocusHandler', 'FocusListener', [
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
   \ ])
 
-call javaapi#class('SharedActionScroller', '', [
+call javaapi#class('SharedActionScroller', 'AbstractAction', [
   \ javaapi#method(0,'SharedActionScroller(', 'int, boolean)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
@@ -2185,7 +912,7 @@ call javaapi#class('SharedActionScroller', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ArrowButtonHandler', '', [
+call javaapi#class('ArrowButtonHandler', 'AbstractAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
@@ -2206,7 +933,7 @@ call javaapi#class('Handler', 'ChangeListener', [
   \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('BasicSpinnerUI', '', [
+call javaapi#class('BasicSpinnerUI', 'SpinnerUI', [
   \ javaapi#method(0,'BasicSpinnerUI(', ')', 'public'),
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -2215,13 +942,13 @@ call javaapi#class('BasicSpinnerUI', '', [
   \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'JButton', [
   \ javaapi#method(0,'setBorder(', 'Border)', 'void'),
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'JButton', [
   \ javaapi#method(0,'setBorder(', 'Border)', 'void'),
   \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
   \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
@@ -2230,18 +957,18 @@ call javaapi#class('2', '', [
 call javaapi#class('DragController', '', [
   \ ])
 
-call javaapi#class('VerticalDragController', '', [
+call javaapi#class('VerticalDragController', 'DragController', [
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('BasicVerticalLayoutManager', '', [
+call javaapi#class('BasicVerticalLayoutManager', 'BasicHorizontalLayoutManager', [
   \ javaapi#method(0,'BasicVerticalLayoutManager(', 'BasicSplitPaneUI)', 'public'),
   \ ])
 
-call javaapi#class('FocusHandler', '', [
+call javaapi#class('FocusHandler', 'FocusAdapter', [
   \ javaapi#method(0,'FocusHandler(', 'BasicSplitPaneUI)', 'public'),
   \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
@@ -2280,11 +1007,11 @@ call javaapi#class('PropertyHandler', 'PropertyChangeListener', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('CroppedEdge', '', [
+call javaapi#class('CroppedEdge', 'JPanel', [
   \ javaapi#method(0,'CroppedEdge(', 'BasicTabbedPaneUI)', 'public'),
   \ javaapi#method(0,'setParams(', 'int, int, int, int)', 'void'),
   \ javaapi#method(0,'resetParams(', ')', 'void'),
@@ -2294,13 +1021,13 @@ call javaapi#class('CroppedEdge', '', [
   \ javaapi#method(0,'getCroppedSideWidth(', ')', 'int'),
   \ ])
 
-call javaapi#class('FocusHandler', '', [
+call javaapi#class('FocusHandler', 'FocusAdapter', [
   \ javaapi#method(0,'FocusHandler(', 'BasicTabbedPaneUI)', 'public'),
   \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
   \ ])
 
-call javaapi#class('MouseHandler', '', [
+call javaapi#class('MouseHandler', 'MouseAdapter', [
   \ javaapi#method(0,'MouseHandler(', 'BasicTabbedPaneUI)', 'public'),
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ ])
@@ -2310,11 +1037,11 @@ call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('ScrollableTabButton', '', [
+call javaapi#class('ScrollableTabButton', 'BasicArrowButton', [
   \ javaapi#method(0,'ScrollableTabButton(', 'BasicTabbedPaneUI, int)', 'public'),
   \ ])
 
-call javaapi#class('ScrollableTabPanel', '', [
+call javaapi#class('ScrollableTabPanel', 'JPanel', [
   \ javaapi#method(0,'ScrollableTabPanel(', 'BasicTabbedPaneUI)', 'public'),
   \ javaapi#method(0,'paintComponent(', 'Graphics)', 'void'),
   \ javaapi#method(0,'doLayout(', ')', 'void'),
@@ -2335,11 +1062,11 @@ call javaapi#class('ScrollableTabSupport', 'ChangeListener', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('ScrollableTabViewport', '', [
+call javaapi#class('ScrollableTabViewport', 'JViewport', [
   \ javaapi#method(0,'ScrollableTabViewport(', 'BasicTabbedPaneUI)', 'public'),
   \ ])
 
-call javaapi#class('TabContainer', '', [
+call javaapi#class('TabContainer', 'JPanel', [
   \ javaapi#method(0,'TabContainer(', 'BasicTabbedPaneUI)', 'public'),
   \ javaapi#method(0,'remove(', 'Component)', 'void'),
   \ javaapi#method(0,'isOptimizedDrawingEnabled(', ')', 'boolean'),
@@ -2351,7 +1078,7 @@ call javaapi#class('TabSelectionHandler', 'ChangeListener', [
   \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#field(1,'TOGGLE_SORT_ORDER', 'String'),
   \ javaapi#field(1,'SELECT_COLUMN_TO_LEFT', 'String'),
   \ javaapi#field(1,'SELECT_COLUMN_TO_RIGHT', 'String'),
@@ -2368,7 +1095,7 @@ call javaapi#class('Actions', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', 'Object)', 'boolean'),
   \ ])
@@ -2397,18 +1124,18 @@ call javaapi#class('MouseInputHandler', 'MouseInputListener', [
   \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('LogicalView', '', [
+call javaapi#class('LogicalView', 'CompositeView', [
   \ javaapi#method(0,'getPreferredSpan(', 'int)', 'float'),
   \ javaapi#method(0,'paint(', 'Graphics, Shape)', 'void'),
   \ ])
 
-call javaapi#class('PlainParagraph', '', [
+call javaapi#class('PlainParagraph', 'ParagraphView', [
   \ javaapi#method(0,'setParent(', 'View)', 'void'),
   \ javaapi#method(0,'getFlowSpan(', 'int)', 'int'),
   \ javaapi#method(0,'setSize(', 'float, float)', 'void'),
   \ ])
 
-call javaapi#class('I18nFieldView', '', [
+call javaapi#class('I18nFieldView', 'ParagraphView', [
   \ javaapi#method(0,'getFlowSpan(', 'int)', 'int'),
   \ javaapi#method(0,'paint(', 'Graphics, Shape)', 'void'),
   \ javaapi#method(0,'getResizeWeight(', 'int)', 'int'),
@@ -2419,41 +1146,41 @@ call javaapi#class('I18nFieldView', '', [
   \ javaapi#method(0,'removeUpdate(', 'DocumentEvent, Shape, ViewFactory)', 'void'),
   \ ])
 
-call javaapi#class('BasicTextPaneUI', '', [
+call javaapi#class('BasicTextPaneUI', 'BasicEditorPaneUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'BasicTextPaneUI(', ')', 'public'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
   \ ])
 
-call javaapi#class('TextTransferable', '', [
+call javaapi#class('TextTransferable', 'BasicTransferable', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'JRootPane', [
   \ javaapi#method(0,'validate(', ')', 'void'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'JFrame', [
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'JRootPane', [
   \ javaapi#method(0,'validate(', ')', 'void'),
   \ ])
 
-call javaapi#class('1ToolBarDialog', '', [
+call javaapi#class('1ToolBarDialog', 'JDialog', [
   \ javaapi#method(0,'1ToolBarDialog(', 'BasicToolBarUI, Frame, String, boolean)', 'public'),
   \ javaapi#method(0,'1ToolBarDialog(', 'BasicToolBarUI, Dialog, String, boolean)', 'public'),
   \ ])
 
-call javaapi#class('2', '', [
+call javaapi#class('2', 'WindowAdapter', [
   \ javaapi#method(0,'windowOpened(', 'WindowEvent)', 'void'),
   \ ])
 
-call javaapi#class('Actions', '', [
+call javaapi#class('Actions', 'UIAction', [
   \ javaapi#method(0,'Actions(', 'String)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('DragWindow', '', [
+call javaapi#class('DragWindow', 'Window', [
   \ javaapi#method(0,'getOrientation(', ')', 'int'),
   \ javaapi#method(0,'setOrientation(', 'int)', 'void'),
   \ javaapi#method(0,'getOffset(', ')', 'Point'),
@@ -2464,7 +1191,7 @@ call javaapi#class('DragWindow', '', [
   \ javaapi#method(0,'getInsets(', ')', 'Insets'),
   \ ])
 
-call javaapi#class('FrameListener', '', [
+call javaapi#class('FrameListener', 'WindowAdapter', [
   \ javaapi#method(0,'windowClosing(', 'WindowEvent)', 'void'),
   \ ])
 
@@ -2489,7 +1216,7 @@ call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('BasicToolTipUI', '', [
+call javaapi#class('BasicToolTipUI', 'ToolTipUI', [
   \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,'BasicToolTipUI(', ')', 'public'),
   \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
@@ -2516,7 +1243,7 @@ call javaapi#class('CellEditorHandler', 'CellEditorListener', [
   \ javaapi#method(0,'editingCanceled(', 'ChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('ComponentHandler', '', [
+call javaapi#class('ComponentHandler', 'ComponentAdapter', [
   \ javaapi#method(0,'ComponentHandler(', 'BasicTreeUI)', 'public'),
   \ javaapi#method(0,'componentMoved(', 'ComponentEvent)', 'void'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
@@ -2528,14 +1255,14 @@ call javaapi#class('FocusHandler', 'FocusListener', [
   \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
   \ ])
 
-call javaapi#class('KeyHandler', '', [
+call javaapi#class('KeyHandler', 'KeyAdapter', [
   \ javaapi#method(0,'KeyHandler(', 'BasicTreeUI)', 'public'),
   \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
   \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
   \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
   \ ])
 
-call javaapi#class('MouseHandler', '', [
+call javaapi#class('MouseHandler', 'MouseAdapter', [
   \ javaapi#method(0,'MouseHandler(', 'BasicTreeUI)', 'public'),
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
@@ -2564,7 +1291,7 @@ call javaapi#class('SelectionModelPropertyChangeHandler', 'PropertyChangeListene
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('TreeCancelEditingAction', '', [
+call javaapi#class('TreeCancelEditingAction', 'AbstractAction', [
   \ javaapi#method(0,'TreeCancelEditingAction(', 'BasicTreeUI, String)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
@@ -2576,13 +1303,13 @@ call javaapi#class('TreeExpansionHandler', 'TreeExpansionListener', [
   \ javaapi#method(0,'treeCollapsed(', 'TreeExpansionEvent)', 'void'),
   \ ])
 
-call javaapi#class('TreeHomeAction', '', [
+call javaapi#class('TreeHomeAction', 'AbstractAction', [
   \ javaapi#method(0,'TreeHomeAction(', 'BasicTreeUI, int, String)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('TreeIncrementAction', '', [
+call javaapi#class('TreeIncrementAction', 'AbstractAction', [
   \ javaapi#method(0,'TreeIncrementAction(', 'BasicTreeUI, int, String)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
@@ -2596,7 +1323,7 @@ call javaapi#class('TreeModelHandler', 'TreeModelListener', [
   \ javaapi#method(0,'treeStructureChanged(', 'TreeModelEvent)', 'void'),
   \ ])
 
-call javaapi#class('TreePageAction', '', [
+call javaapi#class('TreePageAction', 'AbstractAction', [
   \ javaapi#method(0,'TreePageAction(', 'BasicTreeUI, int, String)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
@@ -2607,13 +1334,13 @@ call javaapi#class('TreeSelectionHandler', 'TreeSelectionListener', [
   \ javaapi#method(0,'valueChanged(', 'TreeSelectionEvent)', 'void'),
   \ ])
 
-call javaapi#class('TreeToggleAction', '', [
+call javaapi#class('TreeToggleAction', 'AbstractAction', [
   \ javaapi#method(0,'TreeToggleAction(', 'BasicTreeUI, String)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('TreeTraverseAction', '', [
+call javaapi#class('TreeTraverseAction', 'AbstractAction', [
   \ javaapi#method(0,'TreeTraverseAction(', 'BasicTreeUI, int, String)', 'public'),
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
@@ -2631,5 +1358,1362 @@ call javaapi#class('DragRecognitionSupport', '', [
   \ javaapi#method(1,'mousePressed(', 'MouseEvent)', 'boolean'),
   \ javaapi#method(1,'mouseReleased(', 'MouseEvent)', 'MouseEvent'),
   \ javaapi#method(1,'mouseDragged(', 'MouseEvent, BeforeDrag)', 'boolean'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicPopupMenuSeparatorUI', 'BasicSeparatorUI', [
+  \ javaapi#method(0,'BasicPopupMenuSeparatorUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('MouseInputHandler', 'MouseInputListener', [
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('MenuItemCheckIcon', 'Serializable', [
+  \ javaapi#method(0,'paintIcon(', 'Component, Graphics, int, int)', 'void'),
+  \ javaapi#method(0,'getIconWidth(', ')', 'int'),
+  \ javaapi#method(0,'getIconHeight(', ')', 'int'),
+  \ ])
+
+call javaapi#class('BasicIconFactory', 'Serializable', [
+  \ javaapi#method(0,'BasicIconFactory(', ')', 'public'),
+  \ javaapi#method(1,'getMenuItemCheckIcon(', ')', 'Icon'),
+  \ javaapi#method(1,'getMenuItemArrowIcon(', ')', 'Icon'),
+  \ javaapi#method(1,'getMenuArrowIcon(', ')', 'Icon'),
+  \ javaapi#method(1,'getCheckBoxIcon(', ')', 'Icon'),
+  \ javaapi#method(1,'getRadioButtonIcon(', ')', 'Icon'),
+  \ javaapi#method(1,'getCheckBoxMenuItemIcon(', ')', 'Icon'),
+  \ javaapi#method(1,'getRadioButtonMenuItemIcon(', ')', 'Icon'),
+  \ javaapi#method(1,'createEmptyFrameIcon(', ')', 'Icon'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Actions', 'UIAction', [
+  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('MenuBarBorder', 'AbstractBorder', [
+  \ javaapi#method(0,'MenuBarBorder(', 'Color, Color)', 'public'),
+  \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
+  \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicRadioButtonMenuItemUI', 'BasicMenuItemUI', [
+  \ javaapi#method(0,'BasicRadioButtonMenuItemUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'processMouseEvent(', 'JMenuItem, MouseEvent, MenuElement[], MenuSelectionManager)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicCheckBoxMenuItemUI', 'BasicMenuItemUI', [
+  \ javaapi#method(0,'BasicCheckBoxMenuItemUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'processMouseEvent(', 'JMenuItem, MouseEvent, MenuElement[], MenuSelectionManager)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
+  \ javaapi#method(0,'PropertyChangeHandler(', 'BasicSliderUI)', 'public'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('ScrollListener', 'ActionListener', [
+  \ javaapi#method(0,'ScrollListener(', 'BasicSliderUI)', 'public'),
+  \ javaapi#method(0,'ScrollListener(', 'BasicSliderUI, int, boolean)', 'public'),
+  \ javaapi#method(0,'setDirection(', 'int)', 'void'),
+  \ javaapi#method(0,'setScrollByBlock(', 'boolean)', 'void'),
+  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
+  \ ])
+
+call javaapi#class('Handler', 'PropertyChangeListener', [
+  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
+  \ javaapi#method(0,'componentHidden(', 'ComponentEvent)', 'void'),
+  \ javaapi#method(0,'componentMoved(', 'ComponentEvent)', 'void'),
+  \ javaapi#method(0,'componentResized(', 'ComponentEvent)', 'void'),
+  \ javaapi#method(0,'componentShown(', 'ComponentEvent)', 'void'),
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#class('TrackListener', 'MouseInputAdapter', [
+  \ javaapi#method(0,'TrackListener(', 'BasicSliderUI)', 'public'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'shouldScroll(', 'int)', 'boolean'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Actions', 'UIAction', [
+  \ javaapi#field(1,'POSITIVE_UNIT_INCREMENT', 'String'),
+  \ javaapi#field(1,'POSITIVE_BLOCK_INCREMENT', 'String'),
+  \ javaapi#field(1,'NEGATIVE_UNIT_INCREMENT', 'String'),
+  \ javaapi#field(1,'NEGATIVE_BLOCK_INCREMENT', 'String'),
+  \ javaapi#field(1,'MIN_SCROLL_INCREMENT', 'String'),
+  \ javaapi#field(1,'MAX_SCROLL_INCREMENT', 'String'),
+  \ javaapi#method(0,'Actions(', 'String)', 'public'),
+  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicSliderUI', 'SliderUI', [
+  \ javaapi#field(1,'POSITIVE_SCROLL', 'int'),
+  \ javaapi#field(1,'NEGATIVE_SCROLL', 'int'),
+  \ javaapi#field(1,'MIN_SCROLL', 'int'),
+  \ javaapi#field(1,'MAX_SCROLL', 'int'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'BasicSliderUI(', 'JSlider)', 'public'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ javaapi#method(0,'getPreferredHorizontalSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'getPreferredVerticalSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'getMinimumHorizontalSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'getMinimumVerticalSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'paintFocus(', 'Graphics)', 'void'),
+  \ javaapi#method(0,'paintTrack(', 'Graphics)', 'void'),
+  \ javaapi#method(0,'paintTicks(', 'Graphics)', 'void'),
+  \ javaapi#method(0,'paintLabels(', 'Graphics)', 'void'),
+  \ javaapi#method(0,'paintThumb(', 'Graphics)', 'void'),
+  \ javaapi#method(0,'setThumbLocation(', 'int, int)', 'void'),
+  \ javaapi#method(0,'scrollByBlock(', 'int)', 'void'),
+  \ javaapi#method(0,'scrollByUnit(', 'int)', 'void'),
+  \ javaapi#method(0,'valueForYPosition(', 'int)', 'int'),
+  \ javaapi#method(0,'valueForXPosition(', 'int)', 'int'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicTextAreaUI', 'BasicTextUI', [
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'BasicTextAreaUI(', ')', 'public'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'create(', 'Element)', 'View'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('OneTouchActionHandler', 'ActionListener', [
+  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'PropertyChangeListener', [
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ ])
+
+call javaapi#class('1', 'Canvas', [
+  \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
+  \ ])
+
+call javaapi#class('BasicHorizontalLayoutManager', 'LayoutManager2', [
+  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
+  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
+  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
+  \ javaapi#method(0,'addLayoutComponent(', 'Component, Object)', 'void'),
+  \ javaapi#method(0,'getLayoutAlignmentX(', 'Container)', 'float'),
+  \ javaapi#method(0,'getLayoutAlignmentY(', 'Container)', 'float'),
+  \ javaapi#method(0,'invalidateLayout(', 'Container)', 'void'),
+  \ javaapi#method(0,'maximumLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'resetToPreferredSizes(', ')', 'void'),
+  \ ])
+
+call javaapi#class('SplitPaneDividerBorder', 'UIResource', [
+  \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
+  \ javaapi#method(0,'getBorderInsets(', 'Component)', 'Insets'),
+  \ javaapi#method(0,'isBorderOpaque(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('MouseHandler', 'MouseAdapter', [
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ ])
+
+call javaapi#class('DividerLayout', 'LayoutManager', [
+  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
+  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
+  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('SplitPaneBorder', 'UIResource', [
+  \ javaapi#method(0,'SplitPaneBorder(', 'Color, Color)', 'public'),
+  \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
+  \ javaapi#method(0,'getBorderInsets(', 'Component)', 'Insets'),
+  \ javaapi#method(0,'isBorderOpaque(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('BasicSplitPaneDivider', 'Container', [
+  \ javaapi#method(0,'BasicSplitPaneDivider(', 'BasicSplitPaneUI)', 'public'),
+  \ javaapi#method(0,'setBasicSplitPaneUI(', 'BasicSplitPaneUI)', 'void'),
+  \ javaapi#method(0,'getBasicSplitPaneUI(', ')', 'BasicSplitPaneUI'),
+  \ javaapi#method(0,'setDividerSize(', 'int)', 'void'),
+  \ javaapi#method(0,'getDividerSize(', ')', 'int'),
+  \ javaapi#method(0,'setBorder(', 'Border)', 'void'),
+  \ javaapi#method(0,'getBorder(', ')', 'Border'),
+  \ javaapi#method(0,'getInsets(', ')', 'Insets'),
+  \ javaapi#method(0,'isMouseOver(', ')', 'boolean'),
+  \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'getMinimumSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicSplitPaneUI', 'SplitPaneUI', [
+  \ javaapi#method(0,'BasicSplitPaneUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getOrientation(', ')', 'int'),
+  \ javaapi#method(0,'setOrientation(', 'int)', 'void'),
+  \ javaapi#method(0,'isContinuousLayout(', ')', 'boolean'),
+  \ javaapi#method(0,'setContinuousLayout(', 'boolean)', 'void'),
+  \ javaapi#method(0,'getLastDragLocation(', ')', 'int'),
+  \ javaapi#method(0,'setLastDragLocation(', 'int)', 'void'),
+  \ javaapi#method(0,'getDivider(', ')', 'BasicSplitPaneDivider'),
+  \ javaapi#method(0,'getNonContinuousLayoutDivider(', ')', 'Component'),
+  \ javaapi#method(0,'getSplitPane(', ')', 'JSplitPane'),
+  \ javaapi#method(0,'createDefaultDivider(', ')', 'BasicSplitPaneDivider'),
+  \ javaapi#method(0,'resetToPreferredSizes(', 'JSplitPane)', 'void'),
+  \ javaapi#method(0,'setDividerLocation(', 'JSplitPane, int)', 'void'),
+  \ javaapi#method(0,'getDividerLocation(', 'JSplitPane)', 'int'),
+  \ javaapi#method(0,'getMinimumDividerLocation(', 'JSplitPane)', 'int'),
+  \ javaapi#method(0,'getMaximumDividerLocation(', 'JSplitPane)', 'int'),
+  \ javaapi#method(0,'finishedPaintingChildren(', 'JSplitPane, Graphics)', 'void'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getInsets(', 'JComponent)', 'Insets'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('NodeDimensionsHandler', 'NodeDimensions', [
+  \ javaapi#method(0,'NodeDimensionsHandler(', 'BasicTreeUI)', 'public'),
+  \ javaapi#method(0,'getNodeDimensions(', 'Object, int, int, boolean, Rectangle)', 'Rectangle'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'BeforeDrag', [
+  \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'dragStarting(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'editingStopped(', 'ChangeEvent)', 'void'),
+  \ javaapi#method(0,'editingCanceled(', 'ChangeEvent)', 'void'),
+  \ javaapi#method(0,'valueChanged(', 'TreeSelectionEvent)', 'void'),
+  \ javaapi#method(0,'treeExpanded(', 'TreeExpansionEvent)', 'void'),
+  \ javaapi#method(0,'treeCollapsed(', 'TreeExpansionEvent)', 'void'),
+  \ javaapi#method(0,'treeNodesChanged(', 'TreeModelEvent)', 'void'),
+  \ javaapi#method(0,'treeNodesInserted(', 'TreeModelEvent)', 'void'),
+  \ javaapi#method(0,'treeNodesRemoved(', 'TreeModelEvent)', 'void'),
+  \ javaapi#method(0,'treeStructureChanged(', 'TreeModelEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('TreeTransferHandler', 'TransferHandler', [
+  \ javaapi#method(0,'compare(', 'TreePath, TreePath)', 'int'),
+  \ javaapi#method(0,'getSourceActions(', 'JComponent)', 'int'),
+  \ javaapi#method(0,'compare(', 'Object, Object)', 'int'),
+  \ ])
+
+call javaapi#class('Actions', 'UIAction', [
+  \ javaapi#method(0,'isEnabled(', 'Object)', 'boolean'),
+  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicTreeUI', 'TreeUI', [
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'BasicTreeUI(', ')', 'public'),
+  \ javaapi#method(0,'setLeftChildIndent(', 'int)', 'void'),
+  \ javaapi#method(0,'getLeftChildIndent(', ')', 'int'),
+  \ javaapi#method(0,'setRightChildIndent(', 'int)', 'void'),
+  \ javaapi#method(0,'getRightChildIndent(', ')', 'int'),
+  \ javaapi#method(0,'setExpandedIcon(', 'Icon)', 'void'),
+  \ javaapi#method(0,'getExpandedIcon(', ')', 'Icon'),
+  \ javaapi#method(0,'setCollapsedIcon(', 'Icon)', 'void'),
+  \ javaapi#method(0,'getCollapsedIcon(', ')', 'Icon'),
+  \ javaapi#method(0,'getPathBounds(', 'JTree, TreePath)', 'Rectangle'),
+  \ javaapi#method(0,'getPathForRow(', 'JTree, int)', 'TreePath'),
+  \ javaapi#method(0,'getRowForPath(', 'JTree, TreePath)', 'int'),
+  \ javaapi#method(0,'getRowCount(', 'JTree)', 'int'),
+  \ javaapi#method(0,'getClosestPathForLocation(', 'JTree, int, int)', 'TreePath'),
+  \ javaapi#method(0,'isEditing(', 'JTree)', 'boolean'),
+  \ javaapi#method(0,'stopEditing(', 'JTree)', 'boolean'),
+  \ javaapi#method(0,'cancelEditing(', 'JTree)', 'void'),
+  \ javaapi#method(0,'startEditingAtPath(', 'JTree, TreePath)', 'void'),
+  \ javaapi#method(0,'getEditingPath(', 'JTree)', 'TreePath'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'setPreferredMinSize(', 'Dimension)', 'void'),
+  \ javaapi#method(0,'getPreferredMinSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent, boolean)', 'Dimension'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'BeforeDrag', [
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'valueChanged(', 'ListSelectionEvent)', 'void'),
+  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'dragStarting(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#class('TableTransferHandler', 'TransferHandler', [
+  \ javaapi#method(0,'getSourceActions(', 'JComponent)', 'int'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicTableUI', 'TableUI', [
+  \ javaapi#method(0,'BasicTableUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('MouseInputHandler', 'MouseInputListener', [
+  \ javaapi#method(0,'MouseInputHandler(', 'BasicTableHeaderUI)', 'public'),
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ ])
+
+call javaapi#class('1', 'FocusListener', [
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicTableHeaderUI', 'TableHeaderUI', [
+  \ javaapi#method(0,'BasicTableHeaderUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'HierarchyListener', [
+  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ javaapi#method(0,'hierarchyChanged(', 'HierarchyEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicProgressBarUI', 'ProgressBarUI', [
+  \ javaapi#method(0,'BasicProgressBarUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicBorders', '', [
+  \ javaapi#method(0,'BasicBorders(', ')', 'public'),
+  \ javaapi#method(1,'getButtonBorder(', ')', 'Border'),
+  \ javaapi#method(1,'getRadioButtonBorder(', ')', 'Border'),
+  \ javaapi#method(1,'getToggleButtonBorder(', ')', 'Border'),
+  \ javaapi#method(1,'getMenuBarBorder(', ')', 'Border'),
+  \ javaapi#method(1,'getSplitPaneBorder(', ')', 'Border'),
+  \ javaapi#method(1,'getSplitPaneDividerBorder(', ')', 'Border'),
+  \ javaapi#method(1,'getTextFieldBorder(', ')', 'Border'),
+  \ javaapi#method(1,'getProgressBarBorder(', ')', 'Border'),
+  \ javaapi#method(1,'getInternalFrameBorder(', ')', 'Border'),
+  \ ])
+
+call javaapi#class('BasicRadioButtonUI', 'BasicToggleButtonUI', [
+  \ javaapi#method(0,'BasicRadioButtonUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'getDefaultIcon(', ')', 'Icon'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'PropertyChangeListener', [
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'componentAdded(', 'ContainerEvent)', 'void'),
+  \ javaapi#method(0,'componentRemoved(', 'ContainerEvent)', 'void'),
+  \ ])
+
+call javaapi#class('TabbedPaneScrollLayout', 'TabbedPaneLayout', [
+  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
+  \ ])
+
+call javaapi#class('TabbedPaneLayout', 'LayoutManager', [
+  \ javaapi#method(0,'TabbedPaneLayout(', 'BasicTabbedPaneUI)', 'public'),
+  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
+  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
+  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
+  \ javaapi#method(0,'calculateLayoutInfo(', ')', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicTabbedPaneUI', 'TabbedPaneUI', [
+  \ javaapi#method(0,'BasicTabbedPaneUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getTabBounds(', 'JTabbedPane, int)', 'Rectangle'),
+  \ javaapi#method(0,'getTabRunCount(', 'JTabbedPane)', 'int'),
+  \ javaapi#method(0,'tabForCoordinate(', 'JTabbedPane, int, int)', 'int'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicGraphicsUtils', '', [
+  \ javaapi#method(0,'BasicGraphicsUtils(', ')', 'public'),
+  \ javaapi#method(1,'drawEtchedRect(', 'Graphics, int, int, int, int, Color, Color, Color, Color)', 'void'),
+  \ javaapi#method(1,'getEtchedInsets(', ')', 'Insets'),
+  \ javaapi#method(1,'drawGroove(', 'Graphics, int, int, int, int, Color, Color)', 'void'),
+  \ javaapi#method(1,'getGrooveInsets(', ')', 'Insets'),
+  \ javaapi#method(1,'drawBezel(', 'Graphics, int, int, int, int, boolean, boolean, Color, Color, Color, Color)', 'void'),
+  \ javaapi#method(1,'drawLoweredBezel(', 'Graphics, int, int, int, int, Color, Color, Color, Color)', 'void'),
+  \ javaapi#method(1,'drawString(', 'Graphics, String, int, int, int)', 'void'),
+  \ javaapi#method(1,'drawStringUnderlineCharAt(', 'Graphics, String, int, int, int)', 'void'),
+  \ javaapi#method(1,'drawDashedRect(', 'Graphics, int, int, int, int)', 'void'),
+  \ javaapi#method(1,'getPreferredButtonSize(', 'AbstractButton, int)', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicToolBarSeparatorUI', 'BasicSeparatorUI', [
+  \ javaapi#method(0,'BasicToolBarSeparatorUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'PropertyChangeListener', [
+  \ javaapi#method(0,'componentAdded(', 'ContainerEvent)', 'void'),
+  \ javaapi#method(0,'componentRemoved(', 'ContainerEvent)', 'void'),
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#class('DockingListener', 'MouseInputListener', [
+  \ javaapi#method(0,'DockingListener(', 'BasicToolBarUI, JToolBar)', 'public'),
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('RolloverMarginBorder', 'EmptyBorder', [
+  \ javaapi#method(0,'RolloverMarginBorder(', ')', 'public'),
+  \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
+  \ ])
+
+call javaapi#class('ButtonBorder', 'AbstractBorder', [
+  \ javaapi#method(0,'ButtonBorder(', 'Color, Color, Color, Color)', 'public'),
+  \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
+  \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
+  \ ])
+
+call javaapi#class('RadioButtonBorder', 'ButtonBorder', [
+  \ javaapi#method(0,'RadioButtonBorder(', 'Color, Color, Color, Color)', 'public'),
+  \ javaapi#method(0,'paintBorder(', 'Component, Graphics, int, int, int, int)', 'void'),
+  \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicToolBarUI', 'ToolBarUI', [
+  \ javaapi#method(0,'BasicToolBarUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'isRolloverBorders(', ')', 'boolean'),
+  \ javaapi#method(0,'setRolloverBorders(', 'boolean)', 'void'),
+  \ javaapi#method(0,'setFloatingLocation(', 'int, int)', 'void'),
+  \ javaapi#method(0,'isFloating(', ')', 'boolean'),
+  \ javaapi#method(0,'setFloating(', 'boolean, Point)', 'void'),
+  \ javaapi#method(0,'setOrientation(', 'int)', 'void'),
+  \ javaapi#method(0,'getDockingColor(', ')', 'Color'),
+  \ javaapi#method(0,'setDockingColor(', 'Color)', 'void'),
+  \ javaapi#method(0,'getFloatingColor(', ')', 'Color'),
+  \ javaapi#method(0,'setFloatingColor(', 'Color)', 'void'),
+  \ javaapi#method(0,'canDock(', 'Component, Point)', 'boolean'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('DefaultKeySelectionManager', 'UIResource', [
+  \ javaapi#method(0,'selectionForKey(', 'char, ComboBoxModel)', 'int'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'PropertyChangeListener', [
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'contentsChanged(', 'ListDataEvent)', 'void'),
+  \ javaapi#method(0,'intervalAdded(', 'ListDataEvent)', 'void'),
+  \ javaapi#method(0,'intervalRemoved(', 'ListDataEvent)', 'void'),
+  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
+  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
+  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
+  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
+  \ ])
+
+call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
+  \ javaapi#method(0,'PropertyChangeHandler(', 'BasicComboBoxUI)', 'public'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('TextActionWrapper', 'TextAction', [
+  \ javaapi#method(0,'TextActionWrapper(', 'BasicTextUI, TextAction)', 'public'),
+  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
+  \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
+  \ ])
+
+call javaapi#class('FocusAction', 'AbstractAction', [
+  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
+  \ javaapi#method(0,'isEnabled(', ')', 'boolean'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicHighlighter', 'DefaultHighlighter', [
+  \ javaapi#method(0,'BasicHighlighter(', ')', 'public'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicCaret', 'DefaultCaret', [
+  \ javaapi#method(0,'BasicCaret(', ')', 'public'),
+  \ ])
+
+call javaapi#class('UIResource', 'BasicComboBoxEditor', [
+  \ javaapi#method(0,'UIResource(', ')', 'public'),
+  \ ])
+
+call javaapi#class('DragListener', 'MouseInputAdapter', [
+  \ javaapi#method(0,'dragStarting(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('UpdateHandler', 'UIResource', [
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ javaapi#method(0,'insertUpdate(', 'DocumentEvent)', 'void'),
+  \ javaapi#method(0,'removeUpdate(', 'DocumentEvent)', 'void'),
+  \ javaapi#method(0,'changedUpdate(', 'DocumentEvent)', 'void'),
+  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
+  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
+  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
+  \ javaapi#method(0,'addLayoutComponent(', 'Component, Object)', 'void'),
+  \ javaapi#method(0,'maximumLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'getLayoutAlignmentX(', 'Container)', 'float'),
+  \ javaapi#method(0,'getLayoutAlignmentY(', 'Container)', 'float'),
+  \ javaapi#method(0,'invalidateLayout(', 'Container)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('RootView', 'View', [
+  \ javaapi#method(0,'getAttributes(', ')', 'AttributeSet'),
+  \ javaapi#method(0,'getPreferredSpan(', 'int)', 'float'),
+  \ javaapi#method(0,'getMinimumSpan(', 'int)', 'float'),
+  \ javaapi#method(0,'getMaximumSpan(', 'int)', 'float'),
+  \ javaapi#method(0,'preferenceChanged(', 'View, boolean, boolean)', 'void'),
+  \ javaapi#method(0,'getAlignment(', 'int)', 'float'),
+  \ javaapi#method(0,'paint(', 'Graphics, Shape)', 'void'),
+  \ javaapi#method(0,'setParent(', 'View)', 'void'),
+  \ javaapi#method(0,'getViewCount(', ')', 'int'),
+  \ javaapi#method(0,'getView(', 'int)', 'View'),
+  \ javaapi#method(0,'getViewIndex(', 'int, Bias)', 'int'),
+  \ javaapi#method(0,'getChildAllocation(', 'int, Shape)', 'Shape'),
+  \ javaapi#method(0,'modelToView(', 'int, Shape, Bias) throws BadLocationException', 'Shape'),
+  \ javaapi#method(0,'modelToView(', 'int, Bias, int, Bias, Shape) throws BadLocationException', 'Shape'),
+  \ javaapi#method(0,'viewToModel(', 'float, float, Shape, Bias[])', 'int'),
+  \ javaapi#method(0,'getNextVisualPositionFrom(', 'int, Bias, Shape, int, Bias[]) throws BadLocationException', 'int'),
+  \ javaapi#method(0,'insertUpdate(', 'DocumentEvent, Shape, ViewFactory)', 'void'),
+  \ javaapi#method(0,'removeUpdate(', 'DocumentEvent, Shape, ViewFactory)', 'void'),
+  \ javaapi#method(0,'changedUpdate(', 'DocumentEvent, Shape, ViewFactory)', 'void'),
+  \ javaapi#method(0,'getDocument(', ')', 'Document'),
+  \ javaapi#method(0,'getStartOffset(', ')', 'int'),
+  \ javaapi#method(0,'getEndOffset(', ')', 'int'),
+  \ javaapi#method(0,'getElement(', ')', 'Element'),
+  \ javaapi#method(0,'breakView(', 'int, float, Shape)', 'View'),
+  \ javaapi#method(0,'getResizeWeight(', 'int)', 'int'),
+  \ javaapi#method(0,'setSize(', 'float, float)', 'void'),
+  \ javaapi#method(0,'getContainer(', ')', 'Container'),
+  \ javaapi#method(0,'getViewFactory(', ')', 'ViewFactory'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('TextTransferHandler', 'TransferHandler', [
+  \ javaapi#method(0,'getSourceActions(', 'JComponent)', 'int'),
+  \ javaapi#method(0,'importData(', 'TransferSupport)', 'boolean'),
+  \ javaapi#method(0,'importData(', 'JComponent, Transferable)', 'boolean'),
+  \ javaapi#method(0,'canImport(', 'JComponent, DataFlavor[])', 'boolean'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicCursor', 'Cursor', [
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicTextUI', 'TextUI', [
+  \ javaapi#method(0,'BasicTextUI(', ')', 'public'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'update(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'modelToView(', 'JTextComponent, int) throws BadLocationException', 'Rectangle'),
+  \ javaapi#method(0,'modelToView(', 'JTextComponent, int, Bias) throws BadLocationException', 'Rectangle'),
+  \ javaapi#method(0,'viewToModel(', 'JTextComponent, Point)', 'int'),
+  \ javaapi#method(0,'viewToModel(', 'JTextComponent, Point, Bias[])', 'int'),
+  \ javaapi#method(0,'getNextVisualPositionFrom(', 'JTextComponent, int, Bias, int, Bias[]) throws BadLocationException', 'int'),
+  \ javaapi#method(0,'damageRange(', 'JTextComponent, int, int)', 'void'),
+  \ javaapi#method(0,'damageRange(', 'JTextComponent, int, int, Bias, Bias)', 'void'),
+  \ javaapi#method(0,'getEditorKit(', 'JTextComponent)', 'EditorKit'),
+  \ javaapi#method(0,'getRootView(', 'JTextComponent)', 'View'),
+  \ javaapi#method(0,'getToolTipText(', 'JTextComponent, Point)', 'String'),
+  \ javaapi#method(0,'create(', 'Element)', 'View'),
+  \ javaapi#method(0,'create(', 'Element, int, int)', 'View'),
+  \ ])
+
+call javaapi#class('BasicTextFieldUI', 'BasicTextUI', [
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'BasicTextFieldUI(', ')', 'public'),
+  \ javaapi#method(0,'create(', 'Element)', 'View'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BorderlessTextField', 'JTextField', [
+  \ javaapi#method(0,'BorderlessTextField(', 'String, int)', 'public'),
+  \ javaapi#method(0,'setText(', 'String)', 'void'),
+  \ javaapi#method(0,'setBorder(', 'Border)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicComboBoxEditor', 'FocusListener', [
+  \ javaapi#method(0,'BasicComboBoxEditor(', ')', 'public'),
+  \ javaapi#method(0,'getEditorComponent(', ')', 'Component'),
+  \ javaapi#method(0,'setItem(', 'Object)', 'void'),
+  \ javaapi#method(0,'getItem(', ')', 'Object'),
+  \ javaapi#method(0,'selectAll(', ')', 'void'),
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'addActionListener(', 'ActionListener)', 'void'),
+  \ javaapi#method(0,'removeActionListener(', 'ActionListener)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicComboBoxRenderer', 'JLabel', [
+  \ javaapi#method(0,'BasicComboBoxRenderer(', ')', 'public'),
+  \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'getListCellRendererComponent(', 'JList, Object, int, boolean, boolean)', 'Component'),
+  \ ])
+
+call javaapi#class('UIResource', 'BasicComboBoxRenderer', [
+  \ javaapi#method(0,'UIResource(', ')', 'public'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'MouseWheelListener', [
+  \ javaapi#method(0,'mouseWheelMoved(', 'MouseWheelEvent)', 'void'),
+  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicScrollPaneUI', 'ScrollPaneUI', [
+  \ javaapi#method(0,'BasicScrollPaneUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicViewportUI', 'ViewportUI', [
+  \ javaapi#method(0,'BasicViewportUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'Serializable', [
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ javaapi#method(0,'itemStateChanged(', 'ItemEvent)', 'void'),
+  \ ])
+
+call javaapi#interface('BeforeDrag', '', [
+  \ javaapi#method(0,'dragStarting(', 'MouseEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'BeforeDrag', [
+  \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ javaapi#method(0,'intervalAdded(', 'ListDataEvent)', 'void'),
+  \ javaapi#method(0,'intervalRemoved(', 'ListDataEvent)', 'void'),
+  \ javaapi#method(0,'contentsChanged(', 'ListDataEvent)', 'void'),
+  \ javaapi#method(0,'valueChanged(', 'ListSelectionEvent)', 'void'),
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'dragStarting(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('ListTransferHandler', 'TransferHandler', [
+  \ javaapi#method(0,'getSourceActions(', 'JComponent)', 'int'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicListUI', 'ListUI', [
+  \ javaapi#method(0,'BasicListUI(', ')', 'public'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'locationToIndex(', 'JList, Point)', 'int'),
+  \ javaapi#method(0,'indexToLocation(', 'JList, int)', 'Point'),
+  \ javaapi#method(0,'getCellBounds(', 'JList, int, int)', 'Rectangle'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('1', 'JList', [
+  \ javaapi#method(0,'processMouseEvent(', 'MouseEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('EmptyListModelClass', 'Serializable', [
+  \ javaapi#method(0,'getSize(', ')', 'int'),
+  \ javaapi#method(0,'getElementAt(', 'int)', 'Object'),
+  \ javaapi#method(0,'addListDataListener(', 'ListDataListener)', 'void'),
+  \ javaapi#method(0,'removeListDataListener(', 'ListDataListener)', 'void'),
+  \ ])
+
+call javaapi#interface('ComboPopup', '', [
+  \ javaapi#method(0,'show(', ')', 'void'),
+  \ javaapi#method(0,'hide(', ')', 'void'),
+  \ javaapi#method(0,'isVisible(', ')', 'boolean'),
+  \ javaapi#method(0,'getList(', ')', 'JList'),
+  \ javaapi#method(0,'getMouseListener(', ')', 'MouseListener'),
+  \ javaapi#method(0,'getMouseMotionListener(', ')', 'MouseMotionListener'),
+  \ javaapi#method(0,'getKeyListener(', ')', 'KeyListener'),
+  \ javaapi#method(0,'uninstallingUI(', ')', 'void'),
+  \ ])
+
+call javaapi#class('BasicComboPopup', 'JPopupMenu', [
+  \ javaapi#method(0,'show(', ')', 'void'),
+  \ javaapi#method(0,'hide(', ')', 'void'),
+  \ javaapi#method(0,'getList(', ')', 'JList'),
+  \ javaapi#method(0,'getMouseListener(', ')', 'MouseListener'),
+  \ javaapi#method(0,'getMouseMotionListener(', ')', 'MouseMotionListener'),
+  \ javaapi#method(0,'getKeyListener(', ')', 'KeyListener'),
+  \ javaapi#method(0,'uninstallingUI(', ')', 'void'),
+  \ javaapi#method(0,'BasicComboPopup(', 'JComboBox)', 'public'),
+  \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
+  \ javaapi#method(0,'getAccessibleContext(', ')', 'AccessibleContext'),
+  \ ])
+
+call javaapi#class('ComboBoxLayoutManager', 'LayoutManager', [
+  \ javaapi#method(0,'ComboBoxLayoutManager(', 'BasicComboBoxUI)', 'public'),
+  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
+  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
+  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicComboBoxUI', 'ComboBoxUI', [
+  \ javaapi#method(0,'BasicComboBoxUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'addEditor(', ')', 'void'),
+  \ javaapi#method(0,'removeEditor(', ')', 'void'),
+  \ javaapi#method(0,'configureArrowButton(', ')', 'void'),
+  \ javaapi#method(0,'unconfigureArrowButton(', ')', 'void'),
+  \ javaapi#method(0,'isPopupVisible(', 'JComboBox)', 'boolean'),
+  \ javaapi#method(0,'setPopupVisible(', 'JComboBox, boolean)', 'void'),
+  \ javaapi#method(0,'isFocusTraversable(', 'JComboBox)', 'boolean'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ javaapi#method(0,'getAccessibleChildrenCount(', 'JComponent)', 'int'),
+  \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
+  \ javaapi#method(0,'paintCurrentValue(', 'Graphics, Rectangle, boolean)', 'void'),
+  \ javaapi#method(0,'paintCurrentValueBackground(', 'Graphics, Rectangle, boolean)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('ScrollListener', 'ActionListener', [
+  \ javaapi#method(0,'ScrollListener(', 'BasicScrollBarUI)', 'public'),
+  \ javaapi#method(0,'ScrollListener(', 'BasicScrollBarUI, int, boolean)', 'public'),
+  \ javaapi#method(0,'setDirection(', 'int)', 'void'),
+  \ javaapi#method(0,'setScrollByBlock(', 'boolean)', 'void'),
+  \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
+  \ ])
+
+call javaapi#class('Handler', 'PropertyChangeListener', [
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#class('PropertyChangeHandler', 'PropertyChangeListener', [
+  \ javaapi#method(0,'PropertyChangeHandler(', 'BasicScrollBarUI)', 'public'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('ModelListener', 'ChangeListener', [
+  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#class('ArrowButtonListener', 'MouseAdapter', [
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ ])
+
+call javaapi#class('TrackListener', 'MouseAdapter', [
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ ])
+
+call javaapi#class('BasicArrowButton', 'JButton', [
+  \ javaapi#method(0,'BasicArrowButton(', 'int, Color, Color, Color, Color)', 'public'),
+  \ javaapi#method(0,'BasicArrowButton(', 'int)', 'public'),
+  \ javaapi#method(0,'getDirection(', ')', 'int'),
+  \ javaapi#method(0,'setDirection(', 'int)', 'void'),
+  \ javaapi#method(0,'paint(', 'Graphics)', 'void'),
+  \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'getMinimumSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', ')', 'Dimension'),
+  \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
+  \ javaapi#method(0,'paintTriangle(', 'Graphics, int, int, int, int, boolean)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicScrollBarUI', 'ScrollBarUI', [
+  \ javaapi#method(0,'BasicScrollBarUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'isThumbRollover(', ')', 'boolean'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'addLayoutComponent(', 'String, Component)', 'void'),
+  \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
+  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'minimumLayoutSize(', 'Container)', 'Dimension'),
+  \ javaapi#method(0,'layoutContainer(', 'Container)', 'void'),
+  \ javaapi#method(0,'getSupportsAbsolutePositioning(', ')', 'boolean'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicSeparatorUI', 'SeparatorUI', [
+  \ javaapi#method(0,'BasicSeparatorUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('1', 'FocusAdapter', [
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ ])
+
+call javaapi#class('MenuKeyboardHelper', 'KeyListener', [
+  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
+  \ javaapi#method(0,'keyPressed(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'keyReleased(', 'KeyEvent)', 'void'),
+  \ javaapi#method(0,'keyTyped(', 'KeyEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('MouseGrabber', 'WindowListener', [
+  \ javaapi#method(0,'MouseGrabber(', ')', 'public'),
+  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
+  \ javaapi#method(0,'eventDispatched(', 'AWTEvent)', 'void'),
+  \ javaapi#method(0,'componentResized(', 'ComponentEvent)', 'void'),
+  \ javaapi#method(0,'componentMoved(', 'ComponentEvent)', 'void'),
+  \ javaapi#method(0,'componentShown(', 'ComponentEvent)', 'void'),
+  \ javaapi#method(0,'componentHidden(', 'ComponentEvent)', 'void'),
+  \ javaapi#method(0,'windowClosing(', 'WindowEvent)', 'void'),
+  \ javaapi#method(0,'windowClosed(', 'WindowEvent)', 'void'),
+  \ javaapi#method(0,'windowIconified(', 'WindowEvent)', 'void'),
+  \ javaapi#method(0,'windowDeactivated(', 'WindowEvent)', 'void'),
+  \ javaapi#method(0,'windowOpened(', 'WindowEvent)', 'void'),
+  \ javaapi#method(0,'windowDeiconified(', 'WindowEvent)', 'void'),
+  \ javaapi#method(0,'windowActivated(', 'WindowEvent)', 'void'),
+  \ ])
+
+call javaapi#class('BasicMenuKeyListener', 'MenuKeyListener', [
+  \ javaapi#method(0,'menuKeyTyped(', 'MenuKeyEvent)', 'void'),
+  \ javaapi#method(0,'menuKeyPressed(', 'MenuKeyEvent)', 'void'),
+  \ javaapi#method(0,'menuKeyReleased(', 'MenuKeyEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicPopupMenuListener', 'PopupMenuListener', [
+  \ javaapi#method(0,'popupMenuCanceled(', 'PopupMenuEvent)', 'void'),
+  \ javaapi#method(0,'popupMenuWillBecomeInvisible(', 'PopupMenuEvent)', 'void'),
+  \ javaapi#method(0,'popupMenuWillBecomeVisible(', 'PopupMenuEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('1', 'PropertyChangeListener', [
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('AWTEventHelper', 'Object>', [
+  \ javaapi#method(0,'run(', ')', 'Object'),
+  \ javaapi#method(0,'eventDispatched(', 'AWTEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicPopupMenuUI', 'PopupMenuUI', [
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'BasicPopupMenuUI(', ')', 'public'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'installDefaults(', ')', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'isPopupTrigger(', 'MouseEvent)', 'boolean'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'PropertyChangeListener', [
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'menuDragMouseEntered(', 'MenuDragMouseEvent)', 'void'),
+  \ javaapi#method(0,'menuDragMouseDragged(', 'MenuDragMouseEvent)', 'void'),
+  \ javaapi#method(0,'menuDragMouseExited(', 'MenuDragMouseEvent)', 'void'),
+  \ javaapi#method(0,'menuDragMouseReleased(', 'MenuDragMouseEvent)', 'void'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'Handler', [
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'menuDragMouseEntered(', 'MenuDragMouseEvent)', 'void'),
+  \ javaapi#method(0,'menuDragMouseDragged(', 'MenuDragMouseEvent)', 'void'),
+  \ javaapi#method(0,'menuDragMouseExited(', 'MenuDragMouseEvent)', 'void'),
+  \ javaapi#method(0,'menuDragMouseReleased(', 'MenuDragMouseEvent)', 'void'),
+  \ javaapi#method(0,'menuKeyTyped(', 'MenuKeyEvent)', 'void'),
+  \ javaapi#method(0,'menuKeyPressed(', 'MenuKeyEvent)', 'void'),
+  \ javaapi#method(0,'menuKeyReleased(', 'MenuKeyEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicMenuItemUI', 'MenuItemUI', [
+  \ javaapi#method(0,'BasicMenuItemUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'update(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getPath(', ')', 'MenuElement[]'),
+  \ ])
+
+call javaapi#class('BasicMenuUI', 'BasicMenuItemUI', [
+  \ javaapi#method(0,'BasicMenuUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('Handler', 'ContainerListener', [
+  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
+  \ javaapi#method(0,'componentAdded(', 'ContainerEvent)', 'void'),
+  \ javaapi#method(0,'componentRemoved(', 'ContainerEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('DefaultMenuLayout', 'BoxLayout', [
+  \ javaapi#method(0,'DefaultMenuLayout(', 'Container, int)', 'public'),
+  \ javaapi#method(0,'preferredLayoutSize(', 'Container)', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicMenuBarUI', 'MenuBarUI', [
+  \ javaapi#method(0,'BasicMenuBarUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicToggleButtonUI', 'BasicButtonUI', [
+  \ javaapi#method(0,'BasicToggleButtonUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicButtonListener', 'PropertyChangeListener', [
+  \ javaapi#method(0,'BasicButtonListener(', 'AbstractButton)', 'public'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ javaapi#method(0,'installKeyboardActions(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallKeyboardActions(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'stateChanged(', 'ChangeEvent)', 'void'),
+  \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'focusLost(', 'FocusEvent)', 'void'),
+  \ javaapi#method(0,'mouseMoved(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseEntered(', 'MouseEvent)', 'void'),
+  \ javaapi#method(0,'mouseExited(', 'MouseEvent)', 'void'),
+  \ ])
+
+call javaapi#class('MarginBorder', 'AbstractBorder', [
+  \ javaapi#method(0,'MarginBorder(', ')', 'public'),
+  \ javaapi#method(0,'getBorderInsets(', 'Component, Insets)', 'Insets'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicButtonUI', 'ButtonUI', [
+  \ javaapi#method(0,'BasicButtonUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getDefaultTextIconGap(', 'AbstractButton)', 'int'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicHTML', '', [
+  \ javaapi#field(1,'propertyKey', 'String'),
+  \ javaapi#field(1,'documentBaseKey', 'String'),
+  \ javaapi#method(0,'BasicHTML(', ')', 'public'),
+  \ javaapi#method(1,'createHTMLView(', 'JComponent, String)', 'View'),
+  \ javaapi#method(1,'getHTMLBaseline(', 'View, int, int)', 'int'),
+  \ javaapi#method(1,'isHTMLString(', 'String)', 'boolean'),
+  \ javaapi#method(1,'updateRenderer(', 'JComponent, String)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicLabelUI', 'LabelUI', [
+  \ javaapi#method(0,'BasicLabelUI(', ')', 'public'),
+  \ javaapi#method(0,'paint(', 'Graphics, JComponent)', 'void'),
+  \ javaapi#method(0,'getPreferredSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMinimumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getMaximumSize(', 'JComponent)', 'Dimension'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('LazyActionMap', 'ActionMapUIResource', [
+  \ javaapi#method(0,'put(', 'Action)', 'void'),
+  \ javaapi#method(0,'put(', 'Object, Action)', 'void'),
+  \ javaapi#method(0,'get(', 'Object)', 'Action'),
+  \ javaapi#method(0,'remove(', 'Object)', 'void'),
+  \ javaapi#method(0,'clear(', ')', 'void'),
+  \ javaapi#method(0,'keys(', ')', 'Object[]'),
+  \ javaapi#method(0,'size(', ')', 'int'),
+  \ javaapi#method(0,'allKeys(', ')', 'Object[]'),
+  \ javaapi#method(0,'setParent(', 'ActionMap)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('RootPaneInputMap', 'ComponentInputMapUIResource', [
+  \ javaapi#method(0,'RootPaneInputMap(', 'JComponent)', 'public'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicRootPaneUI', 'RootPaneUI', [
+  \ javaapi#method(0,'BasicRootPaneUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicPanelUI', 'PanelUI', [
+  \ javaapi#method(0,'BasicPanelUI(', ')', 'public'),
+  \ javaapi#method(1,'createUI(', 'JComponent)', 'ComponentUI'),
+  \ javaapi#method(0,'installUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'uninstallUI(', 'JComponent)', 'void'),
+  \ javaapi#method(0,'getBaseline(', 'JComponent, int, int)', 'int'),
+  \ javaapi#method(0,'getBaselineResizeBehavior(', 'JComponent)', 'BaselineResizeBehavior'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('2', 'ActiveValue', [
+  \ javaapi#method(0,'createValue(', 'UIDefaults)', 'Object'),
+  \ ])
+
+call javaapi#namespace('javax.swing.plaf.basic')
+
+call javaapi#class('BasicLookAndFeel', 'LookAndFeel', [
+  \ javaapi#method(0,'BasicLookAndFeel(', ')', 'public'),
+  \ javaapi#method(0,'getDefaults(', ')', 'UIDefaults'),
+  \ javaapi#method(0,'initialize(', ')', 'void'),
+  \ javaapi#method(0,'uninitialize(', ')', 'void'),
   \ ])
 

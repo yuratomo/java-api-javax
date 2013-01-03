@@ -117,7 +117,7 @@ call javaapi#class('SerialDatalink', 'Cloneable', [
   \ javaapi#method(0,'getDatalink(', ') throws SerialException', 'URL'),
   \ ])
 
-call javaapi#class('SerialException', '', [
+call javaapi#class('SerialException', 'SQLException', [
   \ javaapi#method(0,'SerialException(', ')', 'public'),
   \ javaapi#method(0,'SerialException(', 'String)', 'public'),
   \ ])

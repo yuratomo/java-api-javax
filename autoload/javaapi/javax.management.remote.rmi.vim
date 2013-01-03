@@ -1,12 +1,12 @@
 call javaapi#namespace('javax.management.remote.rmi')
 
-call javaapi#class('NoCallStackClassLoader', '', [
+call javaapi#class('NoCallStackClassLoader', 'ClassLoader', [
   \ javaapi#method(0,'NoCallStackClassLoader(', 'String, byte[], String[], ClassLoader, ProtectionDomain)', 'public'),
   \ javaapi#method(0,'NoCallStackClassLoader(', 'String[], byte[][], String[], ClassLoader, ProtectionDomain)', 'public'),
   \ javaapi#method(1,'stringToBytes(', 'String)', 'byte[]'),
   \ ])
 
-call javaapi#interface('RMIConnection', '', [
+call javaapi#interface('RMIConnection', 'Remote', [
   \ javaapi#method(0,'getConnectionId(', ') throws IOException', 'String'),
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ javaapi#method(0,'createMBean(', 'String, ObjectName, Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, IOException', 'ObjectInstance'),
@@ -65,7 +65,7 @@ call javaapi#class('PrivilegedOperation', 'Object>', [
   \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('RMIServerCommunicatorAdmin', '', [
+call javaapi#class('RMIServerCommunicatorAdmin', 'ServerCommunicatorAdmin', [
   \ javaapi#method(0,'RMIServerCommunicatorAdmin(', 'RMIConnectionImpl, long)', 'public'),
   \ ])
 
@@ -107,6 +107,36 @@ call javaapi#class('RMIConnectionImpl', 'Unreferenced', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
+call javaapi#javax.management.remote.rmi.RMIConnectionImpl_Stub(java.rmi.server.RemoteRef);('RMIConnectionImpl', '', [
+  \ javaapi#method(0,'addNotificationListener(', 'ObjectName, ObjectName, MarshalledObject, MarshalledObject, Subject) throws IOException, InstanceNotFoundException', 'void'),
+  \ javaapi#method(0,'addNotificationListeners(', 'ObjectName[], MarshalledObject[], Subject[]) throws IOException, InstanceNotFoundException', 'Integer[]'),
+  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
+  \ javaapi#method(0,'createMBean(', 'String, ObjectName, MarshalledObject, String[], Subject) throws IOException, InstanceAlreadyExistsException, MBeanException, MBeanRegistrationException, NotCompliantMBeanException, ReflectionException', 'ObjectInstance'),
+  \ javaapi#method(0,'createMBean(', 'String, ObjectName, ObjectName, MarshalledObject, String[], Subject) throws IOException, InstanceAlreadyExistsException, InstanceNotFoundException, MBeanException, MBeanRegistrationException, NotCompliantMBeanException, ReflectionException', 'ObjectInstance'),
+  \ javaapi#method(0,'createMBean(', 'String, ObjectName, ObjectName, Subject) throws IOException, InstanceAlreadyExistsException, InstanceNotFoundException, MBeanException, MBeanRegistrationException, NotCompliantMBeanException, ReflectionException', 'ObjectInstance'),
+  \ javaapi#method(0,'createMBean(', 'String, ObjectName, Subject) throws IOException, InstanceAlreadyExistsException, MBeanException, MBeanRegistrationException, NotCompliantMBeanException, ReflectionException', 'ObjectInstance'),
+  \ javaapi#method(0,'fetchNotifications(', 'long, int, long) throws IOException', 'NotificationResult'),
+  \ javaapi#method(0,'getAttribute(', 'ObjectName, String, Subject) throws IOException, AttributeNotFoundException, InstanceNotFoundException, MBeanException, ReflectionException', 'Object'),
+  \ javaapi#method(0,'getAttributes(', 'ObjectName, String[], Subject) throws IOException, InstanceNotFoundException, ReflectionException', 'AttributeList'),
+  \ javaapi#method(0,'getConnectionId(', ') throws IOException', 'String'),
+  \ javaapi#method(0,'getDefaultDomain(', 'Subject) throws IOException', 'String'),
+  \ javaapi#method(0,'getDomains(', 'Subject) throws IOException', 'String[]'),
+  \ javaapi#method(0,'getMBeanCount(', 'Subject) throws IOException', 'Integer'),
+  \ javaapi#method(0,'getMBeanInfo(', 'ObjectName, Subject) throws IOException, InstanceNotFoundException, IntrospectionException, ReflectionException', 'MBeanInfo'),
+  \ javaapi#method(0,'getObjectInstance(', 'ObjectName, Subject) throws IOException, InstanceNotFoundException', 'ObjectInstance'),
+  \ javaapi#method(0,'invoke(', 'ObjectName, String, MarshalledObject, String[], Subject) throws IOException, InstanceNotFoundException, MBeanException, ReflectionException', 'Object'),
+  \ javaapi#method(0,'isInstanceOf(', 'ObjectName, String, Subject) throws IOException, InstanceNotFoundException', 'boolean'),
+  \ javaapi#method(0,'isRegistered(', 'ObjectName, Subject) throws IOException', 'boolean'),
+  \ javaapi#method(0,'queryMBeans(', 'ObjectName, MarshalledObject, Subject) throws IOException', 'Set'),
+  \ javaapi#method(0,'queryNames(', 'ObjectName, MarshalledObject, Subject) throws IOException', 'Set'),
+  \ javaapi#method(0,'removeNotificationListener(', 'ObjectName, ObjectName, MarshalledObject, MarshalledObject, Subject) throws IOException, InstanceNotFoundException, ListenerNotFoundException', 'void'),
+  \ javaapi#method(0,'removeNotificationListener(', 'ObjectName, ObjectName, Subject) throws IOException, InstanceNotFoundException, ListenerNotFoundException', 'void'),
+  \ javaapi#method(0,'removeNotificationListeners(', 'ObjectName, Integer[], Subject) throws IOException, InstanceNotFoundException, ListenerNotFoundException', 'void'),
+  \ javaapi#method(0,'setAttribute(', 'ObjectName, MarshalledObject, Subject) throws IOException, AttributeNotFoundException, InstanceNotFoundException, InvalidAttributeValueException, MBeanException, ReflectionException', 'void'),
+  \ javaapi#method(0,'setAttributes(', 'ObjectName, MarshalledObject, Subject) throws IOException, InstanceNotFoundException, ReflectionException', 'AttributeList'),
+  \ javaapi#method(0,'unregisterMBean(', 'ObjectName, Subject) throws IOException, InstanceNotFoundException, MBeanRegistrationException', 'void'),
+  \ ])
+
 call javaapi#class('1', 'Constructor<?>>', [
   \ javaapi#method(0,'run(', ') throws Exception', 'Constructor<?>'),
   \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
@@ -127,16 +157,16 @@ call javaapi#class('4', 'Void>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('ObjectInputStreamWithLoader', '', [
+call javaapi#class('ObjectInputStreamWithLoader', 'ObjectInputStream', [
   \ ])
 
-call javaapi#class('RMIClientCommunicatorAdmin', '', [
+call javaapi#class('RMIClientCommunicatorAdmin', 'ClientCommunicatorAdmin', [
   \ javaapi#method(0,'RMIClientCommunicatorAdmin(', 'RMIConnector, long)', 'public'),
   \ javaapi#method(0,'gotIOException(', 'IOException) throws IOException', 'void'),
   \ javaapi#method(0,'reconnectNotificationListeners(', 'ClientListenerInfo[]) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('RMINotifClient', '', [
+call javaapi#class('RMINotifClient', 'ClientNotifForwarder', [
   \ javaapi#method(0,'RMINotifClient(', 'ClassLoader, Map<String, ?>)', 'public'),
   \ ])
 
@@ -186,7 +216,7 @@ call javaapi#class('RMIConnector', 'JMXAddressable', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('RMIConnectorServer', '', [
+call javaapi#class('RMIConnectorServer', 'JMXConnectorServer', [
   \ javaapi#field(1,'JNDI_REBIND_ATTRIBUTE', 'String'),
   \ javaapi#field(1,'RMI_CLIENT_SOCKET_FACTORY_ATTRIBUTE', 'String'),
   \ javaapi#field(1,'RMI_SERVER_SOCKET_FACTORY_ATTRIBUTE', 'String'),
@@ -207,17 +237,17 @@ call javaapi#class('1', 'RMIConnection>', [
   \ javaapi#method(0,'run(', ') throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('RMIIIOPServerImpl', '', [
+call javaapi#class('RMIIIOPServerImpl', 'RMIServerImpl', [
   \ javaapi#method(0,'RMIIIOPServerImpl(', 'Map<String, ?>) throws IOException', 'public'),
   \ javaapi#method(0,'toStub(', ') throws IOException', 'Remote'),
   \ ])
 
-call javaapi#class('RMIJRMPServerImpl', '', [
+call javaapi#class('RMIJRMPServerImpl', 'RMIServerImpl', [
   \ javaapi#method(0,'RMIJRMPServerImpl(', 'int, RMIClientSocketFactory, RMIServerSocketFactory, Map<String, ?>) throws IOException', 'public'),
   \ javaapi#method(0,'toStub(', ') throws IOException', 'Remote'),
   \ ])
 
-call javaapi#interface('RMIServer', '', [
+call javaapi#interface('RMIServer', 'Remote', [
   \ javaapi#method(0,'getVersion(', ') throws RemoteException', 'String'),
   \ javaapi#method(0,'newClient(', 'Object) throws IOException', 'RMIConnection'),
   \ ])
@@ -234,81 +264,67 @@ call javaapi#class('RMIServerImpl', 'RMIServer', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('Timer', '', [
-  \ javaapi#field(1,'ONE_SECOND', 'long'),
-  \ javaapi#field(1,'ONE_MINUTE', 'long'),
-  \ javaapi#field(1,'ONE_HOUR', 'long'),
-  \ javaapi#field(1,'ONE_DAY', 'long'),
-  \ javaapi#field(1,'ONE_WEEK', 'long'),
-  \ javaapi#method(0,'Timer(', ')', 'public'),
-  \ javaapi#method(0,'preRegister(', 'MBeanServer, ObjectName) throws Exception', 'ObjectName'),
-  \ javaapi#method(0,'postRegister(', 'Boolean)', 'void'),
-  \ javaapi#method(0,'preDeregister(', ') throws Exception', 'void'),
-  \ javaapi#method(0,'postDeregister(', ')', 'void'),
-  \ javaapi#method(0,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
-  \ javaapi#method(0,'start(', ')', 'void'),
-  \ javaapi#method(0,'stop(', ')', 'void'),
-  \ javaapi#method(0,'addNotification(', 'String, String, Object, Date, long, long, boolean) throws IllegalArgumentException', 'Integer'),
-  \ javaapi#method(0,'addNotification(', 'String, String, Object, Date, long, long) throws IllegalArgumentException', 'Integer'),
-  \ javaapi#method(0,'addNotification(', 'String, String, Object, Date, long) throws IllegalArgumentException', 'Integer'),
-  \ javaapi#method(0,'addNotification(', 'String, String, Object, Date) throws IllegalArgumentException', 'Integer'),
-  \ javaapi#method(0,'removeNotification(', 'Integer) throws InstanceNotFoundException', 'void'),
-  \ javaapi#method(0,'removeNotifications(', 'String) throws InstanceNotFoundException', 'void'),
-  \ javaapi#method(0,'removeAllNotifications(', ')', 'void'),
-  \ javaapi#method(0,'getNbNotifications(', ')', 'int'),
-  \ javaapi#method(0,'getAllNotificationIDs(', ')', 'Integer>'),
-  \ javaapi#method(0,'getNotificationIDs(', 'String)', 'Integer>'),
-  \ javaapi#method(0,'getNotificationType(', 'Integer)', 'String'),
-  \ javaapi#method(0,'getNotificationMessage(', 'Integer)', 'String'),
-  \ javaapi#method(0,'getNotificationUserData(', 'Integer)', 'Object'),
-  \ javaapi#method(0,'getDate(', 'Integer)', 'Date'),
-  \ javaapi#method(0,'getPeriod(', 'Integer)', 'Long'),
-  \ javaapi#method(0,'getNbOccurences(', 'Integer)', 'Long'),
-  \ javaapi#method(0,'getFixedRate(', 'Integer)', 'Boolean'),
-  \ javaapi#method(0,'getSendPastNotifications(', ')', 'boolean'),
-  \ javaapi#method(0,'setSendPastNotifications(', 'boolean)', 'void'),
-  \ javaapi#method(0,'isActive(', ')', 'boolean'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+call javaapi#javax.management.remote.rmi.RMIServerImpl_Stub(java.rmi.server.RemoteRef);('RMIServerImpl', '', [
+  \ javaapi#method(0,'getVersion(', ') throws RemoteException', 'String'),
+  \ javaapi#method(0,'newClient(', 'Object) throws IOException', 'RMIConnection'),
   \ ])
 
-call javaapi#class('TimerAlarmClock', '', [
-  \ javaapi#method(0,'TimerAlarmClock(', 'Timer, long)', 'public'),
-  \ javaapi#method(0,'TimerAlarmClock(', 'Timer, Date)', 'public'),
-  \ javaapi#method(0,'run(', ')', 'void'),
+call javaapi#javax.management.remote.rmi._RMIConnectionImpl_Tie();('RMIServerImpl', '', [
+  \ javaapi#method(0,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,'_invoke(', 'String, InputStream, ResponseHandler) throws SystemException', 'OutputStream'),
+  \ javaapi#method(0,'deactivate(', ')', 'void'),
+  \ javaapi#method(0,'getTarget(', ')', 'Remote'),
+  \ javaapi#method(0,'orb(', ')', 'ORB'),
+  \ javaapi#method(0,'orb(', 'ORB)', 'void'),
+  \ javaapi#method(0,'setTarget(', 'Remote)', 'void'),
+  \ javaapi#method(0,'thisObject(', ')', 'Object'),
   \ ])
 
-call javaapi#class('TimerAlarmClockNotification', '', [
-  \ javaapi#method(0,'TimerAlarmClockNotification(', 'TimerAlarmClock)', 'public'),
+call javaapi#javax.management.remote.rmi._RMIConnection_Stub();('RMIServerImpl', '', [
+  \ javaapi#method(0,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,'addNotificationListener(', 'ObjectName, ObjectName, MarshalledObject, MarshalledObject, Subject) throws InstanceNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,'addNotificationListeners(', 'ObjectName[], MarshalledObject[], Subject[]) throws InstanceNotFoundException, IOException', 'Integer[]'),
+  \ javaapi#method(0,'close(', ') throws IOException', 'void'),
+  \ javaapi#method(0,'createMBean(', 'String, ObjectName, MarshalledObject, String[], Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,'createMBean(', 'String, ObjectName, ObjectName, MarshalledObject, String[], Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, InstanceNotFoundException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,'createMBean(', 'String, ObjectName, ObjectName, Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, InstanceNotFoundException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,'createMBean(', 'String, ObjectName, Subject) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,'fetchNotifications(', 'long, int, long) throws IOException', 'NotificationResult'),
+  \ javaapi#method(0,'getAttribute(', 'ObjectName, String, Subject) throws MBeanException, AttributeNotFoundException, InstanceNotFoundException, ReflectionException, IOException', 'Object'),
+  \ javaapi#method(0,'getAttributes(', 'ObjectName, String[], Subject) throws InstanceNotFoundException, ReflectionException, IOException', 'AttributeList'),
+  \ javaapi#method(0,'getConnectionId(', ') throws IOException', 'String'),
+  \ javaapi#method(0,'getDefaultDomain(', 'Subject) throws IOException', 'String'),
+  \ javaapi#method(0,'getDomains(', 'Subject) throws IOException', 'String[]'),
+  \ javaapi#method(0,'getMBeanCount(', 'Subject) throws IOException', 'Integer'),
+  \ javaapi#method(0,'getMBeanInfo(', 'ObjectName, Subject) throws InstanceNotFoundException, IntrospectionException, ReflectionException, IOException', 'MBeanInfo'),
+  \ javaapi#method(0,'getObjectInstance(', 'ObjectName, Subject) throws InstanceNotFoundException, IOException', 'ObjectInstance'),
+  \ javaapi#method(0,'invoke(', 'ObjectName, String, MarshalledObject, String[], Subject) throws InstanceNotFoundException, MBeanException, ReflectionException, IOException', 'Object'),
+  \ javaapi#method(0,'isInstanceOf(', 'ObjectName, String, Subject) throws InstanceNotFoundException, IOException', 'boolean'),
+  \ javaapi#method(0,'isRegistered(', 'ObjectName, Subject) throws IOException', 'boolean'),
+  \ javaapi#method(0,'queryMBeans(', 'ObjectName, MarshalledObject, Subject) throws IOException', 'Set'),
+  \ javaapi#method(0,'queryNames(', 'ObjectName, MarshalledObject, Subject) throws IOException', 'Set'),
+  \ javaapi#method(0,'removeNotificationListener(', 'ObjectName, ObjectName, MarshalledObject, MarshalledObject, Subject) throws InstanceNotFoundException, ListenerNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,'removeNotificationListener(', 'ObjectName, ObjectName, Subject) throws InstanceNotFoundException, ListenerNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,'removeNotificationListeners(', 'ObjectName, Integer[], Subject) throws InstanceNotFoundException, ListenerNotFoundException, IOException', 'void'),
+  \ javaapi#method(0,'setAttribute(', 'ObjectName, MarshalledObject, Subject) throws InstanceNotFoundException, AttributeNotFoundException, InvalidAttributeValueException, MBeanException, ReflectionException, IOException', 'void'),
+  \ javaapi#method(0,'setAttributes(', 'ObjectName, MarshalledObject, Subject) throws InstanceNotFoundException, ReflectionException, IOException', 'AttributeList'),
+  \ javaapi#method(0,'unregisterMBean(', 'ObjectName, Subject) throws InstanceNotFoundException, MBeanRegistrationException, IOException', 'void'),
   \ ])
 
-call javaapi#interface('TimerMBean', '', [
-  \ javaapi#method(0,'start(', ')', 'void'),
-  \ javaapi#method(0,'stop(', ')', 'void'),
-  \ javaapi#method(0,'addNotification(', 'String, String, Object, Date, long, long, boolean) throws IllegalArgumentException', 'Integer'),
-  \ javaapi#method(0,'addNotification(', 'String, String, Object, Date, long, long) throws IllegalArgumentException', 'Integer'),
-  \ javaapi#method(0,'addNotification(', 'String, String, Object, Date, long) throws IllegalArgumentException', 'Integer'),
-  \ javaapi#method(0,'addNotification(', 'String, String, Object, Date) throws IllegalArgumentException', 'Integer'),
-  \ javaapi#method(0,'removeNotification(', 'Integer) throws InstanceNotFoundException', 'void'),
-  \ javaapi#method(0,'removeNotifications(', 'String) throws InstanceNotFoundException', 'void'),
-  \ javaapi#method(0,'removeAllNotifications(', ')', 'void'),
-  \ javaapi#method(0,'getNbNotifications(', ')', 'int'),
-  \ javaapi#method(0,'getAllNotificationIDs(', ')', 'Integer>'),
-  \ javaapi#method(0,'getNotificationIDs(', 'String)', 'Integer>'),
-  \ javaapi#method(0,'getNotificationType(', 'Integer)', 'String'),
-  \ javaapi#method(0,'getNotificationMessage(', 'Integer)', 'String'),
-  \ javaapi#method(0,'getNotificationUserData(', 'Integer)', 'Object'),
-  \ javaapi#method(0,'getDate(', 'Integer)', 'Date'),
-  \ javaapi#method(0,'getPeriod(', 'Integer)', 'Long'),
-  \ javaapi#method(0,'getNbOccurences(', 'Integer)', 'Long'),
-  \ javaapi#method(0,'getFixedRate(', 'Integer)', 'Boolean'),
-  \ javaapi#method(0,'getSendPastNotifications(', ')', 'boolean'),
-  \ javaapi#method(0,'setSendPastNotifications(', 'boolean)', 'void'),
-  \ javaapi#method(0,'isActive(', ')', 'boolean'),
-  \ javaapi#method(0,'isEmpty(', ')', 'boolean'),
+call javaapi#javax.management.remote.rmi._RMIServerImpl_Tie();('RMIServerImpl', '', [
+  \ javaapi#method(0,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,'_invoke(', 'String, InputStream, ResponseHandler) throws SystemException', 'OutputStream'),
+  \ javaapi#method(0,'deactivate(', ')', 'void'),
+  \ javaapi#method(0,'getTarget(', ')', 'Remote'),
+  \ javaapi#method(0,'orb(', ')', 'ORB'),
+  \ javaapi#method(0,'orb(', 'ORB)', 'void'),
+  \ javaapi#method(0,'setTarget(', 'Remote)', 'void'),
+  \ javaapi#method(0,'thisObject(', ')', 'Object'),
   \ ])
 
-call javaapi#class('TimerNotification', '', [
-  \ javaapi#method(0,'TimerNotification(', 'String, Object, long, long, String, Integer)', 'public'),
-  \ javaapi#method(0,'getNotificationID(', ')', 'Integer'),
+call javaapi#javax.management.remote.rmi._RMIServer_Stub();('RMIServerImpl', '', [
+  \ javaapi#method(0,'_ids(', ')', 'String[]'),
+  \ javaapi#method(0,'getVersion(', ') throws RemoteException', 'String'),
+  \ javaapi#method(0,'newClient(', 'Object) throws IOException', 'RMIConnection'),
   \ ])
 

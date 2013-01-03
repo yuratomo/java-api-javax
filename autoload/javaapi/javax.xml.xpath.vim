@@ -59,7 +59,7 @@ call javaapi#class('XPathConstants', '', [
   \ javaapi#field(1,'DOM_OBJECT_MODEL', 'String'),
   \ ])
 
-call javaapi#class('XPathException', '', [
+call javaapi#class('XPathException', 'Exception', [
   \ javaapi#method(0,'XPathException(', 'String)', 'public'),
   \ javaapi#method(0,'XPathException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'getCause(', ')', 'Throwable'),
@@ -75,7 +75,7 @@ call javaapi#interface('XPathExpression', '', [
   \ javaapi#method(0,'evaluate(', 'InputSource) throws XPathExpressionException', 'String'),
   \ ])
 
-call javaapi#class('XPathExpressionException', '', [
+call javaapi#class('XPathExpressionException', 'XPathException', [
   \ javaapi#method(0,'XPathExpressionException(', 'String)', 'public'),
   \ javaapi#method(0,'XPathExpressionException(', 'Throwable)', 'public'),
   \ ])
@@ -94,12 +94,12 @@ call javaapi#class('XPathFactory', '', [
   \ javaapi#method(0,'newXPath(', ')', 'XPath'),
   \ ])
 
-call javaapi#class('XPathFactoryConfigurationException', '', [
+call javaapi#class('XPathFactoryConfigurationException', 'XPathException', [
   \ javaapi#method(0,'XPathFactoryConfigurationException(', 'String)', 'public'),
   \ javaapi#method(0,'XPathFactoryConfigurationException(', 'Throwable)', 'public'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'SingleIterator', [
   \ ])
 
 call javaapi#class('2', 'Iterator', [
@@ -123,7 +123,7 @@ call javaapi#interface('XPathFunction', '', [
   \ javaapi#method(0,'evaluate(', 'List) throws XPathFunctionException', 'Object'),
   \ ])
 
-call javaapi#class('XPathFunctionException', '', [
+call javaapi#class('XPathFunctionException', 'XPathExpressionException', [
   \ javaapi#method(0,'XPathFunctionException(', 'String)', 'public'),
   \ javaapi#method(0,'XPathFunctionException(', 'Throwable)', 'public'),
   \ ])

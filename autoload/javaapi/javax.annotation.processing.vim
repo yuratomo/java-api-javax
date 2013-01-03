@@ -32,7 +32,7 @@ call javaapi#interface('Filer', '', [
   \ javaapi#method(0,'getResource(', 'Location, CharSequence, CharSequence) throws IOException', 'FileObject'),
   \ ])
 
-call javaapi#class('FilerException', '', [
+call javaapi#class('FilerException', 'IOException', [
   \ javaapi#method(0,'FilerException(', 'String)', 'public'),
   \ ])
 
@@ -70,15 +70,15 @@ call javaapi#interface('RoundEnvironment', '', [
   \ javaapi#method(0,'getElementsAnnotatedWith(', 'Class<? extends Annotation>)', 'Element>'),
   \ ])
 
-call javaapi#interface('SupportedAnnotationTypes', '', [
+call javaapi#interface('SupportedAnnotationTypes', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String[]'),
   \ ])
 
-call javaapi#interface('SupportedOptions', '', [
+call javaapi#interface('SupportedOptions', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'String[]'),
   \ ])
 
-call javaapi#interface('SupportedSourceVersion', '', [
+call javaapi#interface('SupportedSourceVersion', 'Annotation', [
   \ javaapi#method(0,'value(', ')', 'SourceVersion'),
   \ ])
 

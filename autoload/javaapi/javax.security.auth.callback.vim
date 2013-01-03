@@ -85,7 +85,7 @@ call javaapi#class('TextOutputCallback', 'Serializable', [
   \ javaapi#method(0,'getMessage(', ')', 'String'),
   \ ])
 
-call javaapi#class('UnsupportedCallbackException', '', [
+call javaapi#class('UnsupportedCallbackException', 'Exception', [
   \ javaapi#method(0,'UnsupportedCallbackException(', 'Callback)', 'public'),
   \ javaapi#method(0,'UnsupportedCallbackException(', 'Callback, String)', 'public'),
   \ javaapi#method(0,'getCallback(', ')', 'Callback'),

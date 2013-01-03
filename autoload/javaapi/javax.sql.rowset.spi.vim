@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.sql.rowset.spi')
 
-call javaapi#class('ProviderImpl', '', [
+call javaapi#class('ProviderImpl', 'SyncProvider', [
   \ javaapi#method(0,'setClassname(', 'String)', 'void'),
   \ javaapi#method(0,'getClassname(', ')', 'String'),
   \ javaapi#method(0,'setVendor(', 'String)', 'void'),
@@ -39,7 +39,7 @@ call javaapi#class('SyncFactory', '', [
   \ javaapi#method(1,'setJNDIContext(', 'Context) throws SyncFactoryException', 'void'),
   \ ])
 
-call javaapi#class('SyncFactoryException', '', [
+call javaapi#class('SyncFactoryException', 'SQLException', [
   \ javaapi#method(0,'SyncFactoryException(', ')', 'public'),
   \ javaapi#method(0,'SyncFactoryException(', 'String)', 'public'),
   \ ])
@@ -68,7 +68,7 @@ call javaapi#class('SyncProvider', '', [
   \ javaapi#method(0,'getVendor(', ')', 'String'),
   \ ])
 
-call javaapi#class('SyncProviderException', '', [
+call javaapi#class('SyncProviderException', 'SQLException', [
   \ javaapi#method(0,'SyncProviderException(', ')', 'public'),
   \ javaapi#method(0,'SyncProviderException(', 'String)', 'public'),
   \ javaapi#method(0,'SyncProviderException(', 'SyncResolver)', 'public'),
@@ -76,7 +76,7 @@ call javaapi#class('SyncProviderException', '', [
   \ javaapi#method(0,'setSyncResolver(', 'SyncResolver)', 'void'),
   \ ])
 
-call javaapi#interface('SyncResolver', '', [
+call javaapi#interface('SyncResolver', 'RowSet', [
   \ javaapi#field(1,'UPDATE_ROW_CONFLICT', 'int'),
   \ javaapi#field(1,'DELETE_ROW_CONFLICT', 'int'),
   \ javaapi#field(1,'INSERT_ROW_CONFLICT', 'int'),
@@ -90,17 +90,17 @@ call javaapi#interface('SyncResolver', '', [
   \ javaapi#method(0,'previousConflict(', ') throws SQLException', 'boolean'),
   \ ])
 
-call javaapi#interface('TransactionalWriter', '', [
+call javaapi#interface('TransactionalWriter', 'RowSetWriter', [
   \ javaapi#method(0,'commit(', ') throws SQLException', 'void'),
   \ javaapi#method(0,'rollback(', ') throws SQLException', 'void'),
   \ javaapi#method(0,'rollback(', 'Savepoint) throws SQLException', 'void'),
   \ ])
 
-call javaapi#interface('XmlReader', '', [
+call javaapi#interface('XmlReader', 'RowSetReader', [
   \ javaapi#method(0,'readXML(', 'WebRowSet, Reader) throws SQLException', 'void'),
   \ ])
 
-call javaapi#interface('XmlWriter', '', [
+call javaapi#interface('XmlWriter', 'RowSetWriter', [
   \ javaapi#method(0,'writeXML(', 'WebRowSet, Writer) throws SQLException', 'void'),
   \ ])
 

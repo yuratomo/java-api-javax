@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.xml.bind.util')
 
-call javaapi#class('JAXBResult', '', [
+call javaapi#class('JAXBResult', 'SAXResult', [
   \ javaapi#method(0,'JAXBResult(', 'JAXBContext) throws JAXBException', 'public'),
   \ javaapi#method(0,'JAXBResult(', 'Unmarshaller) throws JAXBException', 'public'),
   \ javaapi#method(0,'getResult(', ') throws JAXBException', 'Object'),
@@ -24,7 +24,7 @@ call javaapi#class('1', 'XMLReader', [
   \ javaapi#method(0,'parse(', ') throws SAXException', 'void'),
   \ ])
 
-call javaapi#class('JAXBSource', '', [
+call javaapi#class('JAXBSource', 'SAXSource', [
   \ javaapi#method(0,'JAXBSource(', 'JAXBContext, Object) throws JAXBException', 'public'),
   \ javaapi#method(0,'JAXBSource(', 'Marshaller, Object) throws JAXBException', 'public'),
   \ ])

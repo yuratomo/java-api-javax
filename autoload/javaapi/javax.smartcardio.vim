@@ -28,19 +28,19 @@ call javaapi#class('CardChannel', '', [
   \ javaapi#method(0,'close(', ') throws CardException', 'void'),
   \ ])
 
-call javaapi#class('CardException', '', [
+call javaapi#class('CardException', 'Exception', [
   \ javaapi#method(0,'CardException(', 'String)', 'public'),
   \ javaapi#method(0,'CardException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'CardException(', 'String, Throwable)', 'public'),
   \ ])
 
-call javaapi#class('CardNotPresentException', '', [
+call javaapi#class('CardNotPresentException', 'CardException', [
   \ javaapi#method(0,'CardNotPresentException(', 'String)', 'public'),
   \ javaapi#method(0,'CardNotPresentException(', 'Throwable)', 'public'),
   \ javaapi#method(0,'CardNotPresentException(', 'String, Throwable)', 'public'),
   \ ])
 
-call javaapi#class('CardPermission', '', [
+call javaapi#class('CardPermission', 'Permission', [
   \ javaapi#method(0,'CardPermission(', 'String, String)', 'public'),
   \ javaapi#method(0,'getActions(', ')', 'String'),
   \ javaapi#method(0,'implies(', 'Permission)', 'boolean'),
@@ -56,7 +56,7 @@ call javaapi#class('CardTerminal', '', [
   \ javaapi#method(0,'waitForCardAbsent(', 'long) throws CardException', 'boolean'),
   \ ])
 
-call javaapi#class('State', '', [
+call javaapi#class('State', 'State>', [
   \ javaapi#field(1,'ALL', 'State'),
   \ javaapi#field(1,'CARD_PRESENT', 'State'),
   \ javaapi#field(1,'CARD_ABSENT', 'State'),
@@ -110,15 +110,15 @@ call javaapi#class('ResponseAPDU', 'Serializable', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('NoneCardTerminals', '', [
+call javaapi#class('NoneCardTerminals', 'CardTerminals', [
   \ javaapi#method(0,'list(', 'State) throws CardException', 'CardTerminal>'),
   \ javaapi#method(0,'waitForChange(', 'long) throws CardException', 'boolean'),
   \ ])
 
-call javaapi#class('NoneFactorySpi', '', [
+call javaapi#class('NoneFactorySpi', 'TerminalFactorySpi', [
   \ ])
 
-call javaapi#class('NoneProvider', '', [
+call javaapi#class('NoneProvider', 'Provider', [
   \ ])
 
 call javaapi#class('TerminalFactory', '', [

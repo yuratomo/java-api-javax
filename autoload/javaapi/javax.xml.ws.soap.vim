@@ -1,12 +1,12 @@
 call javaapi#namespace('javax.xml.ws.soap')
 
-call javaapi#interface('Addressing', '', [
+call javaapi#interface('Addressing', 'Annotation', [
   \ javaapi#method(0,'enabled(', ')', 'boolean'),
   \ javaapi#method(0,'required(', ')', 'boolean'),
   \ javaapi#method(0,'responses(', ')', 'Responses'),
   \ ])
 
-call javaapi#class('Responses', '', [
+call javaapi#class('Responses', 'Responses>', [
   \ javaapi#field(1,'ANONYMOUS', 'Responses'),
   \ javaapi#field(1,'NON_ANONYMOUS', 'Responses'),
   \ javaapi#field(1,'ALL', 'Responses'),
@@ -14,7 +14,7 @@ call javaapi#class('Responses', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Responses'),
   \ ])
 
-call javaapi#class('AddressingFeature', '', [
+call javaapi#class('AddressingFeature', 'WebServiceFeature', [
   \ javaapi#field(1,'ID', 'String'),
   \ javaapi#method(0,'AddressingFeature(', ')', 'public'),
   \ javaapi#method(0,'AddressingFeature(', 'boolean)', 'public'),
@@ -25,12 +25,12 @@ call javaapi#class('AddressingFeature', '', [
   \ javaapi#method(0,'getResponses(', ')', 'Responses'),
   \ ])
 
-call javaapi#interface('MTOM', '', [
+call javaapi#interface('MTOM', 'Annotation', [
   \ javaapi#method(0,'enabled(', ')', 'boolean'),
   \ javaapi#method(0,'threshold(', ')', 'int'),
   \ ])
 
-call javaapi#class('MTOMFeature', '', [
+call javaapi#class('MTOMFeature', 'WebServiceFeature', [
   \ javaapi#field(1,'ID', 'String'),
   \ javaapi#method(0,'MTOMFeature(', ')', 'public'),
   \ javaapi#method(0,'MTOMFeature(', 'boolean)', 'public'),
@@ -40,7 +40,7 @@ call javaapi#class('MTOMFeature', '', [
   \ javaapi#method(0,'getThreshold(', ')', 'int'),
   \ ])
 
-call javaapi#interface('SOAPBinding', '', [
+call javaapi#interface('SOAPBinding', 'Binding', [
   \ javaapi#field(1,'SOAP11HTTP_BINDING', 'String'),
   \ javaapi#field(1,'SOAP12HTTP_BINDING', 'String'),
   \ javaapi#field(1,'SOAP11HTTP_MTOM_BINDING', 'String'),
@@ -53,7 +53,7 @@ call javaapi#interface('SOAPBinding', '', [
   \ javaapi#method(0,'getMessageFactory(', ')', 'MessageFactory'),
   \ ])
 
-call javaapi#class('SOAPFaultException', '', [
+call javaapi#class('SOAPFaultException', 'ProtocolException', [
   \ javaapi#method(0,'SOAPFaultException(', 'SOAPFault)', 'public'),
   \ javaapi#method(0,'getFault(', ')', 'SOAPFault'),
   \ ])

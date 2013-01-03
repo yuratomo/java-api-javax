@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.swing.text.rtf')
 
-call javaapi#class('AbstractFilter', '', [
+call javaapi#class('AbstractFilter', 'OutputStream', [
   \ javaapi#method(0,'readFromStream(', 'InputStream) throws IOException', 'void'),
   \ javaapi#method(0,'readFromReader(', 'Reader) throws IOException', 'void'),
   \ javaapi#method(0,'AbstractFilter(', ')', 'public'),
@@ -48,7 +48,7 @@ call javaapi#interface('RTFAttribute', '', [
   \ javaapi#method(0,'writeValue(', 'Object, RTFGenerator, boolean) throws IOException', 'boolean'),
   \ ])
 
-call javaapi#class('AssertiveAttribute', '', [
+call javaapi#class('AssertiveAttribute', 'GenericAttribute', [
   \ javaapi#method(0,'AssertiveAttribute(', 'int, Object, String)', 'public'),
   \ javaapi#method(0,'AssertiveAttribute(', 'int, Object, String, Object)', 'public'),
   \ javaapi#method(0,'AssertiveAttribute(', 'int, Object, String, int)', 'public'),
@@ -58,7 +58,7 @@ call javaapi#class('AssertiveAttribute', '', [
   \ javaapi#method(0,'writeValue(', 'Object, RTFGenerator, boolean) throws IOException', 'boolean'),
   \ ])
 
-call javaapi#class('BooleanAttribute', '', [
+call javaapi#class('BooleanAttribute', 'GenericAttribute', [
   \ javaapi#method(0,'BooleanAttribute(', 'int, Object, String, boolean, boolean)', 'public'),
   \ javaapi#method(0,'BooleanAttribute(', 'int, Object, String)', 'public'),
   \ javaapi#method(0,'set(', 'MutableAttributeSet)', 'boolean'),
@@ -75,7 +75,7 @@ call javaapi#class('GenericAttribute', '', [
   \ javaapi#method(0,'writeValue(', 'Object, RTFGenerator, boolean) throws IOException', 'boolean'),
   \ ])
 
-call javaapi#class('NumericAttribute', '', [
+call javaapi#class('NumericAttribute', 'GenericAttribute', [
   \ javaapi#method(0,'NumericAttribute(', 'int, Object, String, int, int)', 'public'),
   \ javaapi#method(0,'NumericAttribute(', 'int, Object, String, Number, int, float)', 'public'),
   \ javaapi#method(1,'NewTwips(', 'int, Object, String, float, int)', 'NumericAttribute'),
@@ -89,7 +89,7 @@ call javaapi#class('NumericAttribute', '', [
 call javaapi#class('RTFAttributes', '', [
   \ ])
 
-call javaapi#class('RTFEditorKit', '', [
+call javaapi#class('RTFEditorKit', 'StyledEditorKit', [
   \ javaapi#method(0,'RTFEditorKit(', ')', 'public'),
   \ javaapi#method(0,'getContentType(', ')', 'String'),
   \ javaapi#method(0,'read(', 'InputStream, Document, int) throws IOException, BadLocationException', 'void'),
@@ -125,7 +125,7 @@ call javaapi#class('RTFGenerator', '', [
   \ javaapi#method(0,'writeCharacter(', 'char) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('RTFParser', '', [
+call javaapi#class('RTFParser', 'AbstractFilter', [
   \ javaapi#field(0,'level', 'int'),
   \ javaapi#method(0,'handleKeyword(', 'String)', 'boolean'),
   \ javaapi#method(0,'handleKeyword(', 'String, int)', 'boolean'),
@@ -190,7 +190,7 @@ call javaapi#class('DiscardingDestination', 'Destination', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('DocumentDestination', '', [
+call javaapi#class('DocumentDestination', 'TextHandlingDestination', [
   \ javaapi#method(0,'deliverText(', 'String, AttributeSet)', 'void'),
   \ javaapi#method(0,'finishParagraph(', 'AttributeSet, AttributeSet)', 'void'),
   \ javaapi#method(0,'endSection(', ')', 'void'),
@@ -206,10 +206,10 @@ call javaapi#class('FonttblDestination', 'Destination', [
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('InfoDestination', '', [
+call javaapi#class('InfoDestination', 'DiscardingDestination', [
   \ ])
 
-call javaapi#class('StyleDefiningDestination', '', [
+call javaapi#class('StyleDefiningDestination', 'AttributeTrackingDestination', [
   \ javaapi#field(0,'styleName', 'String'),
   \ javaapi#field(0,'number', 'int'),
   \ javaapi#method(0,'StyleDefiningDestination(', 'StylesheetDestination)', 'public'),
@@ -220,20 +220,20 @@ call javaapi#class('StyleDefiningDestination', '', [
   \ javaapi#method(0,'realize(', ')', 'Style'),
   \ ])
 
-call javaapi#class('StylesheetDestination', '', [
+call javaapi#class('StylesheetDestination', 'DiscardingDestination', [
   \ javaapi#method(0,'StylesheetDestination(', 'RTFReader)', 'public'),
   \ javaapi#method(0,'begingroup(', ')', 'void'),
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
 
-call javaapi#class('TextHandlingDestination', '', [
+call javaapi#class('TextHandlingDestination', 'AttributeTrackingDestination', [
   \ javaapi#method(0,'TextHandlingDestination(', 'RTFReader)', 'public'),
   \ javaapi#method(0,'handleText(', 'String)', 'void'),
   \ javaapi#method(0,'close(', ')', 'void'),
   \ javaapi#method(0,'handleKeyword(', 'String)', 'boolean'),
   \ ])
 
-call javaapi#class('RTFReader', '', [
+call javaapi#class('RTFReader', 'RTFParser', [
   \ javaapi#method(0,'RTFReader(', 'StyledDocument)', 'public'),
   \ javaapi#method(0,'handleBinaryBlob(', 'byte[])', 'void'),
   \ javaapi#method(0,'handleText(', 'String)', 'void'),

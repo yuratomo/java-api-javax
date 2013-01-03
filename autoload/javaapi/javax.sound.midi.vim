@@ -1,23 +1,23 @@
 call javaapi#namespace('javax.sound.midi')
 
-call javaapi#interface('ControllerEventListener', '', [
+call javaapi#interface('ControllerEventListener', 'EventListener', [
   \ javaapi#method(0,'controlChange(', 'ShortMessage)', 'void'),
   \ ])
 
-call javaapi#class('Instrument', '', [
+call javaapi#class('Instrument', 'SoundbankResource', [
   \ javaapi#method(0,'getPatch(', ')', 'Patch'),
   \ ])
 
-call javaapi#class('InvalidMidiDataException', '', [
+call javaapi#class('InvalidMidiDataException', 'Exception', [
   \ javaapi#method(0,'InvalidMidiDataException(', ')', 'public'),
   \ javaapi#method(0,'InvalidMidiDataException(', 'String)', 'public'),
   \ ])
 
-call javaapi#interface('MetaEventListener', '', [
+call javaapi#interface('MetaEventListener', 'EventListener', [
   \ javaapi#method(0,'meta(', 'MetaMessage)', 'void'),
   \ ])
 
-call javaapi#class('MetaMessage', '', [
+call javaapi#class('MetaMessage', 'MidiMessage', [
   \ javaapi#field(1,'META', 'int'),
   \ javaapi#method(0,'MetaMessage(', ')', 'public'),
   \ javaapi#method(0,'MetaMessage(', 'int, byte[], int) throws InvalidMidiDataException', 'public'),
@@ -66,7 +66,7 @@ call javaapi#class('Info', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('MidiDevice', '', [
+call javaapi#interface('MidiDevice', 'AutoCloseable', [
   \ javaapi#method(0,'getDeviceInfo(', ')', 'Info'),
   \ javaapi#method(0,'open(', ') throws MidiUnavailableException', 'void'),
   \ javaapi#method(0,'close(', ')', 'void'),
@@ -80,11 +80,11 @@ call javaapi#interface('MidiDevice', '', [
   \ javaapi#method(0,'getTransmitters(', ')', 'Transmitter>'),
   \ ])
 
-call javaapi#interface('MidiDeviceReceiver', '', [
+call javaapi#interface('MidiDeviceReceiver', 'Receiver', [
   \ javaapi#method(0,'getMidiDevice(', ')', 'MidiDevice'),
   \ ])
 
-call javaapi#interface('MidiDeviceTransmitter', '', [
+call javaapi#interface('MidiDeviceTransmitter', 'Transmitter', [
   \ javaapi#method(0,'getMidiDevice(', ')', 'MidiDevice'),
   \ ])
 
@@ -140,7 +140,7 @@ call javaapi#class('MidiSystem', '', [
   \ javaapi#method(1,'write(', 'Sequence, int, File) throws IOException', 'int'),
   \ ])
 
-call javaapi#class('MidiUnavailableException', '', [
+call javaapi#class('MidiUnavailableException', 'Exception', [
   \ javaapi#method(0,'MidiUnavailableException(', ')', 'public'),
   \ javaapi#method(0,'MidiUnavailableException(', 'String)', 'public'),
   \ ])
@@ -151,7 +151,7 @@ call javaapi#class('Patch', '', [
   \ javaapi#method(0,'getProgram(', ')', 'int'),
   \ ])
 
-call javaapi#interface('Receiver', '', [
+call javaapi#interface('Receiver', 'AutoCloseable', [
   \ javaapi#method(0,'send(', 'MidiMessage, long)', 'void'),
   \ javaapi#method(0,'close(', ')', 'void'),
   \ ])
@@ -184,7 +184,7 @@ call javaapi#class('SyncMode', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Sequencer', '', [
+call javaapi#interface('Sequencer', 'MidiDevice', [
   \ javaapi#field(1,'LOOP_CONTINUOUSLY', 'int'),
   \ javaapi#method(0,'setSequence(', 'Sequence) throws InvalidMidiDataException', 'void'),
   \ javaapi#method(0,'setSequence(', 'InputStream) throws IOException, InvalidMidiDataException', 'void'),
@@ -231,7 +231,7 @@ call javaapi#interface('Sequencer', '', [
   \ javaapi#method(0,'getLoopCount(', ')', 'int'),
   \ ])
 
-call javaapi#class('ShortMessage', '', [
+call javaapi#class('ShortMessage', 'MidiMessage', [
   \ javaapi#field(1,'MIDI_TIME_CODE', 'int'),
   \ javaapi#field(1,'SONG_POSITION_POINTER', 'int'),
   \ javaapi#field(1,'SONG_SELECT', 'int'),
@@ -281,7 +281,7 @@ call javaapi#class('SoundbankResource', '', [
   \ javaapi#method(0,'getData(', ')', 'Object'),
   \ ])
 
-call javaapi#interface('Synthesizer', '', [
+call javaapi#interface('Synthesizer', 'MidiDevice', [
   \ javaapi#method(0,'getMaxPolyphony(', ')', 'int'),
   \ javaapi#method(0,'getLatency(', ')', 'long'),
   \ javaapi#method(0,'getChannels(', ')', 'MidiChannel[]'),
@@ -299,7 +299,7 @@ call javaapi#interface('Synthesizer', '', [
   \ javaapi#method(0,'unloadInstruments(', 'Soundbank, Patch[])', 'void'),
   \ ])
 
-call javaapi#class('SysexMessage', '', [
+call javaapi#class('SysexMessage', 'MidiMessage', [
   \ javaapi#field(1,'SYSTEM_EXCLUSIVE', 'int'),
   \ javaapi#field(1,'SPECIAL_SYSTEM_EXCLUSIVE', 'int'),
   \ javaapi#method(0,'SysexMessage(', ')', 'public'),
@@ -314,7 +314,7 @@ call javaapi#class('SysexMessage', '', [
 call javaapi#class('1', '', [
   \ ])
 
-call javaapi#class('ImmutableEndOfTrack', '', [
+call javaapi#class('ImmutableEndOfTrack', 'MetaMessage', [
   \ javaapi#method(0,'setMessage(', 'int, byte[], int) throws InvalidMidiDataException', 'void'),
   \ ])
 
@@ -326,7 +326,7 @@ call javaapi#class('Track', '', [
   \ javaapi#method(0,'ticks(', ')', 'long'),
   \ ])
 
-call javaapi#interface('Transmitter', '', [
+call javaapi#interface('Transmitter', 'AutoCloseable', [
   \ javaapi#method(0,'setReceiver(', 'Receiver)', 'void'),
   \ javaapi#method(0,'getReceiver(', ')', 'Receiver'),
   \ javaapi#method(0,'close(', ')', 'void'),

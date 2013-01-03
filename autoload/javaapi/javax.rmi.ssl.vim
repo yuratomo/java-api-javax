@@ -7,7 +7,7 @@ call javaapi#class('SslRMIClientSocketFactory', 'Serializable', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'ServerSocket', [
   \ javaapi#method(0,'accept(', ') throws IOException', 'Socket'),
   \ ])
 

@@ -11,7 +11,7 @@ call javaapi#class('JPEGHuffmanTable', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('JPEGImageReadParam', '', [
+call javaapi#class('JPEGImageReadParam', 'ImageReadParam', [
   \ javaapi#method(0,'JPEGImageReadParam(', ')', 'public'),
   \ javaapi#method(0,'areTablesSet(', ')', 'boolean'),
   \ javaapi#method(0,'setDecodeTables(', 'JPEGQTable[], JPEGHuffmanTable[], JPEGHuffmanTable[])', 'void'),
@@ -21,7 +21,7 @@ call javaapi#class('JPEGImageReadParam', '', [
   \ javaapi#method(0,'getACHuffmanTables(', ')', 'JPEGHuffmanTable[]'),
   \ ])
 
-call javaapi#class('JPEGImageWriteParam', '', [
+call javaapi#class('JPEGImageWriteParam', 'ImageWriteParam', [
   \ javaapi#method(0,'JPEGImageWriteParam(', 'Locale)', 'public'),
   \ javaapi#method(0,'unsetCompression(', ')', 'void'),
   \ javaapi#method(0,'isCompressionLossless(', ')', 'boolean'),

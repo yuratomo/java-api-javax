@@ -5,7 +5,7 @@ call javaapi#interface('AttributeException', '', [
   \ javaapi#method(0,'getUnsupportedValues(', ')', 'Attribute[]'),
   \ ])
 
-call javaapi#interface('CancelablePrintJob', '', [
+call javaapi#interface('CancelablePrintJob', 'DocPrintJob', [
   \ javaapi#method(0,'cancel(', ') throws PrintException', 'void'),
   \ ])
 
@@ -17,7 +17,7 @@ call javaapi#interface('Doc', '', [
   \ javaapi#method(0,'getStreamForBytes(', ') throws IOException', 'InputStream'),
   \ ])
 
-call javaapi#class('BYTE_ARRAY', '', [
+call javaapi#class('BYTE_ARRAY', 'DocFlavor', [
   \ javaapi#field(1,'TEXT_PLAIN_HOST', 'BYTE_ARRAY'),
   \ javaapi#field(1,'TEXT_PLAIN_UTF_8', 'BYTE_ARRAY'),
   \ javaapi#field(1,'TEXT_PLAIN_UTF_16', 'BYTE_ARRAY'),
@@ -40,13 +40,13 @@ call javaapi#class('BYTE_ARRAY', '', [
   \ javaapi#method(0,'BYTE_ARRAY(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('CHAR_ARRAY', '', [
+call javaapi#class('CHAR_ARRAY', 'DocFlavor', [
   \ javaapi#field(1,'TEXT_PLAIN', 'CHAR_ARRAY'),
   \ javaapi#field(1,'TEXT_HTML', 'CHAR_ARRAY'),
   \ javaapi#method(0,'CHAR_ARRAY(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('INPUT_STREAM', '', [
+call javaapi#class('INPUT_STREAM', 'DocFlavor', [
   \ javaapi#field(1,'TEXT_PLAIN_HOST', 'INPUT_STREAM'),
   \ javaapi#field(1,'TEXT_PLAIN_UTF_8', 'INPUT_STREAM'),
   \ javaapi#field(1,'TEXT_PLAIN_UTF_16', 'INPUT_STREAM'),
@@ -69,26 +69,26 @@ call javaapi#class('INPUT_STREAM', '', [
   \ javaapi#method(0,'INPUT_STREAM(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('READER', '', [
+call javaapi#class('READER', 'DocFlavor', [
   \ javaapi#field(1,'TEXT_PLAIN', 'READER'),
   \ javaapi#field(1,'TEXT_HTML', 'READER'),
   \ javaapi#method(0,'READER(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SERVICE_FORMATTED', '', [
+call javaapi#class('SERVICE_FORMATTED', 'DocFlavor', [
   \ javaapi#field(1,'RENDERABLE_IMAGE', 'SERVICE_FORMATTED'),
   \ javaapi#field(1,'PRINTABLE', 'SERVICE_FORMATTED'),
   \ javaapi#field(1,'PAGEABLE', 'SERVICE_FORMATTED'),
   \ javaapi#method(0,'SERVICE_FORMATTED(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('STRING', '', [
+call javaapi#class('STRING', 'DocFlavor', [
   \ javaapi#field(1,'TEXT_PLAIN', 'STRING'),
   \ javaapi#field(1,'TEXT_HTML', 'STRING'),
   \ javaapi#method(0,'STRING(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('URL', '', [
+call javaapi#class('URL', 'DocFlavor', [
   \ javaapi#field(1,'TEXT_PLAIN_HOST', 'URL'),
   \ javaapi#field(1,'TEXT_PLAIN_UTF_8', 'URL'),
   \ javaapi#field(1,'TEXT_PLAIN_UTF_16', 'URL'),
@@ -149,7 +149,7 @@ call javaapi#class('LexicalAnalyzer', '', [
   \ javaapi#method(0,'nextLexeme(', ')', 'void'),
   \ ])
 
-call javaapi#class('ParameterMap', '', [
+call javaapi#class('ParameterMap', 'AbstractMap', [
   \ javaapi#method(0,'entrySet(', ')', 'Set'),
   \ ])
 
@@ -162,7 +162,7 @@ call javaapi#class('ParameterMapEntry', 'Entry', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('ParameterMapEntrySet', '', [
+call javaapi#class('ParameterMapEntrySet', 'AbstractSet', [
   \ javaapi#method(0,'iterator(', ')', 'Iterator'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ ])
@@ -189,15 +189,15 @@ call javaapi#interface('MultiDoc', '', [
   \ javaapi#method(0,'next(', ') throws IOException', 'MultiDoc'),
   \ ])
 
-call javaapi#interface('MultiDocPrintJob', '', [
+call javaapi#interface('MultiDocPrintJob', 'DocPrintJob', [
   \ javaapi#method(0,'print(', 'MultiDoc, PrintRequestAttributeSet) throws PrintException', 'void'),
   \ ])
 
-call javaapi#interface('MultiDocPrintService', '', [
+call javaapi#interface('MultiDocPrintService', 'PrintService', [
   \ javaapi#method(0,'createMultiDocPrintJob(', ')', 'MultiDocPrintJob'),
   \ ])
 
-call javaapi#class('PrintException', '', [
+call javaapi#class('PrintException', 'Exception', [
   \ javaapi#method(0,'PrintException(', ')', 'public'),
   \ javaapi#method(0,'PrintException(', 'String)', 'public'),
   \ javaapi#method(0,'PrintException(', 'Exception)', 'public'),

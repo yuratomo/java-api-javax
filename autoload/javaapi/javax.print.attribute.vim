@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.print.attribute')
 
-call javaapi#interface('Attribute', '', [
+call javaapi#interface('Attribute', 'Serializable', [
   \ javaapi#method(0,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ ])
@@ -38,19 +38,19 @@ call javaapi#class('SynchronizedAttributeSet', 'Serializable', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('SynchronizedDocAttributeSet', '', [
+call javaapi#class('SynchronizedDocAttributeSet', 'SynchronizedAttributeSet', [
   \ javaapi#method(0,'SynchronizedDocAttributeSet(', 'DocAttributeSet)', 'public'),
   \ ])
 
-call javaapi#class('SynchronizedPrintJobAttributeSet', '', [
+call javaapi#class('SynchronizedPrintJobAttributeSet', 'SynchronizedAttributeSet', [
   \ javaapi#method(0,'SynchronizedPrintJobAttributeSet(', 'PrintJobAttributeSet)', 'public'),
   \ ])
 
-call javaapi#class('SynchronizedPrintRequestAttributeSet', '', [
+call javaapi#class('SynchronizedPrintRequestAttributeSet', 'SynchronizedAttributeSet', [
   \ javaapi#method(0,'SynchronizedPrintRequestAttributeSet(', 'PrintRequestAttributeSet)', 'public'),
   \ ])
 
-call javaapi#class('SynchronizedPrintServiceAttributeSet', '', [
+call javaapi#class('SynchronizedPrintServiceAttributeSet', 'SynchronizedAttributeSet', [
   \ javaapi#method(0,'SynchronizedPrintServiceAttributeSet(', 'PrintServiceAttributeSet)', 'public'),
   \ ])
 
@@ -71,19 +71,19 @@ call javaapi#class('UnmodifiableAttributeSet', 'Serializable', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('UnmodifiableDocAttributeSet', '', [
+call javaapi#class('UnmodifiableDocAttributeSet', 'UnmodifiableAttributeSet', [
   \ javaapi#method(0,'UnmodifiableDocAttributeSet(', 'DocAttributeSet)', 'public'),
   \ ])
 
-call javaapi#class('UnmodifiablePrintJobAttributeSet', '', [
+call javaapi#class('UnmodifiablePrintJobAttributeSet', 'UnmodifiableAttributeSet', [
   \ javaapi#method(0,'UnmodifiablePrintJobAttributeSet(', 'PrintJobAttributeSet)', 'public'),
   \ ])
 
-call javaapi#class('UnmodifiablePrintRequestAttributeSet', '', [
+call javaapi#class('UnmodifiablePrintRequestAttributeSet', 'UnmodifiableAttributeSet', [
   \ javaapi#method(0,'UnmodifiablePrintRequestAttributeSet(', 'PrintRequestAttributeSet)', 'public'),
   \ ])
 
-call javaapi#class('UnmodifiablePrintServiceAttributeSet', '', [
+call javaapi#class('UnmodifiablePrintServiceAttributeSet', 'UnmodifiableAttributeSet', [
   \ javaapi#method(0,'UnmodifiablePrintServiceAttributeSet(', 'PrintServiceAttributeSet)', 'public'),
   \ ])
 
@@ -110,10 +110,10 @@ call javaapi#class('DateTimeSyntax', 'Cloneable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('DocAttribute', '', [
+call javaapi#interface('DocAttribute', 'Attribute', [
   \ ])
 
-call javaapi#interface('DocAttributeSet', '', [
+call javaapi#interface('DocAttributeSet', 'AttributeSet', [
   \ javaapi#method(0,'add(', 'Attribute)', 'boolean'),
   \ javaapi#method(0,'addAll(', 'AttributeSet)', 'boolean'),
   \ ])
@@ -145,28 +145,28 @@ call javaapi#class('HashAttributeSet', 'Serializable', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('HashDocAttributeSet', '', [
+call javaapi#class('HashDocAttributeSet', 'HashAttributeSet', [
   \ javaapi#method(0,'HashDocAttributeSet(', ')', 'public'),
   \ javaapi#method(0,'HashDocAttributeSet(', 'DocAttribute)', 'public'),
   \ javaapi#method(0,'HashDocAttributeSet(', 'DocAttribute[])', 'public'),
   \ javaapi#method(0,'HashDocAttributeSet(', 'DocAttributeSet)', 'public'),
   \ ])
 
-call javaapi#class('HashPrintJobAttributeSet', '', [
+call javaapi#class('HashPrintJobAttributeSet', 'HashAttributeSet', [
   \ javaapi#method(0,'HashPrintJobAttributeSet(', ')', 'public'),
   \ javaapi#method(0,'HashPrintJobAttributeSet(', 'PrintJobAttribute)', 'public'),
   \ javaapi#method(0,'HashPrintJobAttributeSet(', 'PrintJobAttribute[])', 'public'),
   \ javaapi#method(0,'HashPrintJobAttributeSet(', 'PrintJobAttributeSet)', 'public'),
   \ ])
 
-call javaapi#class('HashPrintRequestAttributeSet', '', [
+call javaapi#class('HashPrintRequestAttributeSet', 'HashAttributeSet', [
   \ javaapi#method(0,'HashPrintRequestAttributeSet(', ')', 'public'),
   \ javaapi#method(0,'HashPrintRequestAttributeSet(', 'PrintRequestAttribute)', 'public'),
   \ javaapi#method(0,'HashPrintRequestAttributeSet(', 'PrintRequestAttribute[])', 'public'),
   \ javaapi#method(0,'HashPrintRequestAttributeSet(', 'PrintRequestAttributeSet)', 'public'),
   \ ])
 
-call javaapi#class('HashPrintServiceAttributeSet', '', [
+call javaapi#class('HashPrintServiceAttributeSet', 'HashAttributeSet', [
   \ javaapi#method(0,'HashPrintServiceAttributeSet(', ')', 'public'),
   \ javaapi#method(0,'HashPrintServiceAttributeSet(', 'PrintServiceAttribute)', 'public'),
   \ javaapi#method(0,'HashPrintServiceAttributeSet(', 'PrintServiceAttribute[])', 'public'),
@@ -180,26 +180,26 @@ call javaapi#class('IntegerSyntax', 'Cloneable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('PrintJobAttribute', '', [
+call javaapi#interface('PrintJobAttribute', 'Attribute', [
   \ ])
 
-call javaapi#interface('PrintJobAttributeSet', '', [
+call javaapi#interface('PrintJobAttributeSet', 'AttributeSet', [
   \ javaapi#method(0,'add(', 'Attribute)', 'boolean'),
   \ javaapi#method(0,'addAll(', 'AttributeSet)', 'boolean'),
   \ ])
 
-call javaapi#interface('PrintRequestAttribute', '', [
+call javaapi#interface('PrintRequestAttribute', 'Attribute', [
   \ ])
 
-call javaapi#interface('PrintRequestAttributeSet', '', [
+call javaapi#interface('PrintRequestAttributeSet', 'AttributeSet', [
   \ javaapi#method(0,'add(', 'Attribute)', 'boolean'),
   \ javaapi#method(0,'addAll(', 'AttributeSet)', 'boolean'),
   \ ])
 
-call javaapi#interface('PrintServiceAttribute', '', [
+call javaapi#interface('PrintServiceAttribute', 'Attribute', [
   \ ])
 
-call javaapi#interface('PrintServiceAttributeSet', '', [
+call javaapi#interface('PrintServiceAttributeSet', 'AttributeSet', [
   \ javaapi#method(0,'add(', 'Attribute)', 'boolean'),
   \ javaapi#method(0,'addAll(', 'AttributeSet)', 'boolean'),
   \ ])
@@ -240,7 +240,7 @@ call javaapi#class('Size2DSyntax', 'Cloneable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('SupportedValuesAttribute', '', [
+call javaapi#interface('SupportedValuesAttribute', 'Attribute', [
   \ ])
 
 call javaapi#class('TextSyntax', 'Cloneable', [
@@ -258,7 +258,7 @@ call javaapi#class('URISyntax', 'Cloneable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('UnmodifiableSetException', '', [
+call javaapi#class('UnmodifiableSetException', 'RuntimeException', [
   \ javaapi#method(0,'UnmodifiableSetException(', ')', 'public'),
   \ javaapi#method(0,'UnmodifiableSetException(', 'String)', 'public'),
   \ ])

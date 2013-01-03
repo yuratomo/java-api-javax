@@ -47,7 +47,7 @@ call javaapi#class('ServiceDelegate', '', [
   \ javaapi#method(0,'setExecutor(', 'Executor)', 'void'),
   \ ])
 
-call javaapi#interface('WebServiceFeatureAnnotation', '', [
+call javaapi#interface('WebServiceFeatureAnnotation', 'Annotation', [
   \ javaapi#method(0,'id(', ')', 'String'),
   \ javaapi#method(0,'bean(', ')', 'WebServiceFeature>'),
   \ ])

@@ -8,7 +8,7 @@ call javaapi#class('BasicControl', 'Control', [
   \ javaapi#method(0,'getEncodedValue(', ')', 'byte[]'),
   \ ])
 
-call javaapi#interface('Control', '', [
+call javaapi#interface('Control', 'Serializable', [
   \ javaapi#field(1,'CRITICAL', 'boolean'),
   \ javaapi#field(1,'NONCRITICAL', 'boolean'),
   \ javaapi#method(0,'getID(', ')', 'String'),
@@ -21,13 +21,13 @@ call javaapi#class('ControlFactory', '', [
   \ javaapi#method(1,'getControlInstance(', 'Control, Context, Hashtable<?, ?>) throws NamingException', 'Control'),
   \ ])
 
-call javaapi#interface('ExtendedRequest', '', [
+call javaapi#interface('ExtendedRequest', 'Serializable', [
   \ javaapi#method(0,'getID(', ')', 'String'),
   \ javaapi#method(0,'getEncodedValue(', ')', 'byte[]'),
   \ javaapi#method(0,'createExtendedResponse(', 'String, byte[], int, int) throws NamingException', 'ExtendedResponse'),
   \ ])
 
-call javaapi#interface('ExtendedResponse', '', [
+call javaapi#interface('ExtendedResponse', 'Serializable', [
   \ javaapi#method(0,'getID(', ')', 'String'),
   \ javaapi#method(0,'getEncodedValue(', ')', 'byte[]'),
   \ ])
@@ -36,7 +36,7 @@ call javaapi#interface('HasControls', '', [
   \ javaapi#method(0,'getControls(', ') throws NamingException', 'Control[]'),
   \ ])
 
-call javaapi#class('InitialLdapContext', '', [
+call javaapi#class('InitialLdapContext', 'InitialDirContext', [
   \ javaapi#method(0,'InitialLdapContext(', ') throws NamingException', 'public'),
   \ javaapi#method(0,'InitialLdapContext(', 'Hashtable<?, ?>, Control[]) throws NamingException', 'public'),
   \ javaapi#method(0,'extendedOperation(', 'ExtendedRequest) throws NamingException', 'ExtendedResponse'),
@@ -48,7 +48,7 @@ call javaapi#class('InitialLdapContext', '', [
   \ javaapi#method(0,'getResponseControls(', ') throws NamingException', 'Control[]'),
   \ ])
 
-call javaapi#interface('LdapContext', '', [
+call javaapi#interface('LdapContext', 'DirContext', [
   \ javaapi#field(1,'CONTROL_FACTORIES', 'String'),
   \ javaapi#method(0,'extendedOperation(', 'ExtendedRequest) throws NamingException', 'ExtendedResponse'),
   \ javaapi#method(0,'newInstance(', 'Control[]) throws NamingException', 'LdapContext'),
@@ -96,25 +96,25 @@ call javaapi#class('LdapName', 'Name', [
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ ])
 
-call javaapi#class('LdapReferralException', '', [
+call javaapi#class('LdapReferralException', 'ReferralException', [
   \ javaapi#method(0,'getReferralContext(', ') throws NamingException', 'Context'),
   \ javaapi#method(0,'getReferralContext(', 'Hashtable<?, ?>) throws NamingException', 'Context'),
   \ javaapi#method(0,'getReferralContext(', 'Hashtable<?, ?>, Control[]) throws NamingException', 'Context'),
   \ ])
 
-call javaapi#class('ManageReferralControl', '', [
+call javaapi#class('ManageReferralControl', 'BasicControl', [
   \ javaapi#field(1,'OID', 'String'),
   \ javaapi#method(0,'ManageReferralControl(', ')', 'public'),
   \ javaapi#method(0,'ManageReferralControl(', 'boolean)', 'public'),
   \ ])
 
-call javaapi#class('PagedResultsControl', '', [
+call javaapi#class('PagedResultsControl', 'BasicControl', [
   \ javaapi#field(1,'OID', 'String'),
   \ javaapi#method(0,'PagedResultsControl(', 'int, boolean) throws IOException', 'public'),
   \ javaapi#method(0,'PagedResultsControl(', 'int, byte[], boolean) throws IOException', 'public'),
   \ ])
 
-call javaapi#class('PagedResultsResponseControl', '', [
+call javaapi#class('PagedResultsResponseControl', 'BasicControl', [
   \ javaapi#field(1,'OID', 'String'),
   \ javaapi#method(0,'PagedResultsResponseControl(', 'String, boolean, byte[]) throws IOException', 'public'),
   \ javaapi#method(0,'getResultSize(', ')', 'int'),
@@ -151,7 +151,7 @@ call javaapi#class('Rdn', 'Object>', [
 call javaapi#class('Rfc2253Parser', '', [
   \ ])
 
-call javaapi#class('SortControl', '', [
+call javaapi#class('SortControl', 'BasicControl', [
   \ javaapi#field(1,'OID', 'String'),
   \ javaapi#method(0,'SortControl(', 'String, boolean) throws IOException', 'public'),
   \ javaapi#method(0,'SortControl(', 'String[], boolean) throws IOException', 'public'),
@@ -166,7 +166,7 @@ call javaapi#class('SortKey', '', [
   \ javaapi#method(0,'getMatchingRuleID(', ')', 'String'),
   \ ])
 
-call javaapi#class('SortResponseControl', '', [
+call javaapi#class('SortResponseControl', 'BasicControl', [
   \ javaapi#field(1,'OID', 'String'),
   \ javaapi#method(0,'SortResponseControl(', 'String, boolean, byte[]) throws IOException', 'public'),
   \ javaapi#method(0,'isSorted(', ')', 'boolean'),
@@ -202,18 +202,18 @@ call javaapi#class('StartTlsResponse', 'ExtendedResponse', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#interface('UnsolicitedNotification', '', [
+call javaapi#interface('UnsolicitedNotification', 'HasControls', [
   \ javaapi#method(0,'getReferrals(', ')', 'String[]'),
   \ javaapi#method(0,'getException(', ')', 'NamingException'),
   \ ])
 
-call javaapi#class('UnsolicitedNotificationEvent', '', [
+call javaapi#class('UnsolicitedNotificationEvent', 'EventObject', [
   \ javaapi#method(0,'UnsolicitedNotificationEvent(', 'Object, UnsolicitedNotification)', 'public'),
   \ javaapi#method(0,'getNotification(', ')', 'UnsolicitedNotification'),
   \ javaapi#method(0,'dispatch(', 'UnsolicitedNotificationListener)', 'void'),
   \ ])
 
-call javaapi#interface('UnsolicitedNotificationListener', '', [
+call javaapi#interface('UnsolicitedNotificationListener', 'NamingListener', [
   \ javaapi#method(0,'notificationReceived(', 'UnsolicitedNotificationEvent)', 'void'),
   \ ])
 

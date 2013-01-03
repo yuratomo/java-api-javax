@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.xml.ws.handler')
 
-call javaapi#interface('Handler<C', '', [
+call javaapi#interface('Handler<C', 'MessageContext>', [
   \ javaapi#method(0,'handleMessage(', 'C)', 'boolean'),
   \ javaapi#method(0,'handleFault(', 'C)', 'boolean'),
   \ javaapi#method(0,'close(', 'MessageContext)', 'void'),
@@ -10,21 +10,21 @@ call javaapi#interface('HandlerResolver', '', [
   \ javaapi#method(0,'getHandlerChain(', 'PortInfo)', 'Handler>'),
   \ ])
 
-call javaapi#interface('LogicalHandler<C', '', [
+call javaapi#interface('LogicalHandler<C', 'LogicalMessageContext>', [
   \ ])
 
-call javaapi#interface('LogicalMessageContext', '', [
+call javaapi#interface('LogicalMessageContext', 'MessageContext', [
   \ javaapi#method(0,'getMessage(', ')', 'LogicalMessage'),
   \ ])
 
-call javaapi#class('Scope', '', [
+call javaapi#class('Scope', 'Scope>', [
   \ javaapi#field(1,'APPLICATION', 'Scope'),
   \ javaapi#field(1,'HANDLER', 'Scope'),
   \ javaapi#method(1,'values(', ')', 'Scope[]'),
   \ javaapi#method(1,'valueOf(', 'String)', 'Scope'),
   \ ])
 
-call javaapi#interface('MessageContext', '', [
+call javaapi#interface('MessageContext', 'Object>', [
   \ javaapi#field(1,'MESSAGE_OUTBOUND_PROPERTY', 'String'),
   \ javaapi#field(1,'INBOUND_MESSAGE_ATTACHMENTS', 'String'),
   \ javaapi#field(1,'OUTBOUND_MESSAGE_ATTACHMENTS', 'String'),

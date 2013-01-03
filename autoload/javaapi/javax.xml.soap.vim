@@ -30,13 +30,13 @@ call javaapi#class('AttachmentPart', '', [
   \ javaapi#method(0,'getNonMatchingMimeHeaders(', 'String[])', 'Iterator'),
   \ ])
 
-call javaapi#interface('Detail', '', [
+call javaapi#interface('Detail', 'SOAPFaultElement', [
   \ javaapi#method(0,'addDetailEntry(', 'Name) throws SOAPException', 'DetailEntry'),
   \ javaapi#method(0,'addDetailEntry(', 'QName) throws SOAPException', 'DetailEntry'),
   \ javaapi#method(0,'getDetailEntries(', ')', 'Iterator'),
   \ ])
 
-call javaapi#interface('DetailEntry', '', [
+call javaapi#interface('DetailEntry', 'SOAPElement', [
   \ ])
 
 call javaapi#class('FactoryFinder', '', [
@@ -81,7 +81,7 @@ call javaapi#interface('Name', '', [
   \ javaapi#method(0,'getURI(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Node', '', [
+call javaapi#interface('Node', 'Node', [
   \ javaapi#method(0,'getValue(', ')', 'String'),
   \ javaapi#method(0,'setValue(', 'String)', 'void'),
   \ javaapi#method(0,'setParentElement(', 'SOAPElement) throws SOAPException', 'void'),
@@ -93,7 +93,7 @@ call javaapi#interface('Node', '', [
 call javaapi#class('SAAJMetaFactory', '', [
   \ ])
 
-call javaapi#class('SAAJResult', '', [
+call javaapi#class('SAAJResult', 'DOMResult', [
   \ javaapi#method(0,'SAAJResult(', ') throws SOAPException', 'public'),
   \ javaapi#method(0,'SAAJResult(', 'String) throws SOAPException', 'public'),
   \ javaapi#method(0,'SAAJResult(', 'SOAPMessage)', 'public'),
@@ -101,7 +101,7 @@ call javaapi#class('SAAJResult', '', [
   \ javaapi#method(0,'getResult(', ')', 'Node'),
   \ ])
 
-call javaapi#interface('SOAPBody', '', [
+call javaapi#interface('SOAPBody', 'SOAPElement', [
   \ javaapi#method(0,'addFault(', ') throws SOAPException', 'SOAPFault'),
   \ javaapi#method(0,'addFault(', 'Name, String, Locale) throws SOAPException', 'SOAPFault'),
   \ javaapi#method(0,'addFault(', 'QName, String, Locale) throws SOAPException', 'SOAPFault'),
@@ -115,7 +115,7 @@ call javaapi#interface('SOAPBody', '', [
   \ javaapi#method(0,'extractContentAsDocument(', ') throws SOAPException', 'Document'),
   \ ])
 
-call javaapi#interface('SOAPBodyElement', '', [
+call javaapi#interface('SOAPBodyElement', 'SOAPElement', [
   \ ])
 
 call javaapi#class('SOAPConnection', '', [
@@ -155,7 +155,7 @@ call javaapi#interface('SOAPConstants', '', [
   \ javaapi#field(1,'SOAP_RECEIVER_FAULT', 'QName'),
   \ ])
 
-call javaapi#interface('SOAPElement', '', [
+call javaapi#interface('SOAPElement', 'Element', [
   \ javaapi#method(0,'addChildElement(', 'Name) throws SOAPException', 'SOAPElement'),
   \ javaapi#method(0,'addChildElement(', 'QName) throws SOAPException', 'SOAPElement'),
   \ javaapi#method(0,'addChildElement(', 'String) throws SOAPException', 'SOAPElement'),
@@ -195,7 +195,7 @@ call javaapi#class('SOAPElementFactory', '', [
   \ javaapi#method(1,'newInstance(', ') throws SOAPException', 'SOAPElementFactory'),
   \ ])
 
-call javaapi#interface('SOAPEnvelope', '', [
+call javaapi#interface('SOAPEnvelope', 'SOAPElement', [
   \ javaapi#method(0,'createName(', 'String, String, String) throws SOAPException', 'Name'),
   \ javaapi#method(0,'createName(', 'String) throws SOAPException', 'Name'),
   \ javaapi#method(0,'getHeader(', ') throws SOAPException', 'SOAPHeader'),
@@ -204,7 +204,7 @@ call javaapi#interface('SOAPEnvelope', '', [
   \ javaapi#method(0,'addBody(', ') throws SOAPException', 'SOAPBody'),
   \ ])
 
-call javaapi#class('SOAPException', '', [
+call javaapi#class('SOAPException', 'Exception', [
   \ javaapi#method(0,'SOAPException(', ')', 'public'),
   \ javaapi#method(0,'SOAPException(', 'String)', 'public'),
   \ javaapi#method(0,'SOAPException(', 'String, Throwable)', 'public'),
@@ -230,7 +230,7 @@ call javaapi#class('SOAPFactory', '', [
   \ javaapi#method(1,'newInstance(', 'String) throws SOAPException', 'SOAPFactory'),
   \ ])
 
-call javaapi#interface('SOAPFault', '', [
+call javaapi#interface('SOAPFault', 'SOAPBodyElement', [
   \ javaapi#method(0,'setFaultCode(', 'Name) throws SOAPException', 'void'),
   \ javaapi#method(0,'setFaultCode(', 'QName) throws SOAPException', 'void'),
   \ javaapi#method(0,'setFaultCode(', 'String) throws SOAPException', 'void'),
@@ -259,10 +259,10 @@ call javaapi#interface('SOAPFault', '', [
   \ javaapi#method(0,'setFaultRole(', 'String) throws SOAPException', 'void'),
   \ ])
 
-call javaapi#interface('SOAPFaultElement', '', [
+call javaapi#interface('SOAPFaultElement', 'SOAPElement', [
   \ ])
 
-call javaapi#interface('SOAPHeader', '', [
+call javaapi#interface('SOAPHeader', 'SOAPElement', [
   \ javaapi#method(0,'addHeaderElement(', 'Name) throws SOAPException', 'SOAPHeaderElement'),
   \ javaapi#method(0,'addHeaderElement(', 'QName) throws SOAPException', 'SOAPHeaderElement'),
   \ javaapi#method(0,'examineMustUnderstandHeaderElements(', 'String)', 'Iterator'),
@@ -276,7 +276,7 @@ call javaapi#interface('SOAPHeader', '', [
   \ javaapi#method(0,'extractAllHeaderElements(', ')', 'Iterator'),
   \ ])
 
-call javaapi#interface('SOAPHeaderElement', '', [
+call javaapi#interface('SOAPHeaderElement', 'SOAPElement', [
   \ javaapi#method(0,'setActor(', 'String)', 'void'),
   \ javaapi#method(0,'setRole(', 'String) throws SOAPException', 'void'),
   \ javaapi#method(0,'getActor(', ')', 'String'),
@@ -333,7 +333,7 @@ call javaapi#class('SOAPPart', 'Node', [
   \ javaapi#method(0,'getContent(', ') throws SOAPException', 'Source'),
   \ ])
 
-call javaapi#interface('Text', '', [
+call javaapi#interface('Text', 'Text', [
   \ javaapi#method(0,'isComment(', ')', 'boolean'),
   \ ])
 

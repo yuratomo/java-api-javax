@@ -131,7 +131,7 @@ call javaapi#class('BaseRowSet', 'Cloneable', [
   \ javaapi#method(0,'setURL(', 'int, URL) throws SQLException', 'void'),
   \ ])
 
-call javaapi#interface('CachedRowSet', '', [
+call javaapi#interface('CachedRowSet', 'Joinable', [
   \ javaapi#field(1,'COMMIT_ON_ACCEPT_CHANGES', 'boolean'),
   \ javaapi#method(0,'populate(', 'ResultSet) throws SQLException', 'void'),
   \ javaapi#method(0,'execute(', 'Connection) throws SQLException', 'void'),
@@ -176,12 +176,12 @@ call javaapi#interface('CachedRowSet', '', [
   \ javaapi#method(0,'previousPage(', ') throws SQLException', 'boolean'),
   \ ])
 
-call javaapi#interface('FilteredRowSet', '', [
+call javaapi#interface('FilteredRowSet', 'WebRowSet', [
   \ javaapi#method(0,'setFilter(', 'Predicate) throws SQLException', 'void'),
   \ javaapi#method(0,'getFilter(', ')', 'Predicate'),
   \ ])
 
-call javaapi#interface('JdbcRowSet', '', [
+call javaapi#interface('JdbcRowSet', 'Joinable', [
   \ javaapi#method(0,'getShowDeleted(', ') throws SQLException', 'boolean'),
   \ javaapi#method(0,'setShowDeleted(', 'boolean) throws SQLException', 'void'),
   \ javaapi#method(0,'getRowSetWarnings(', ') throws SQLException', 'RowSetWarning'),
@@ -192,7 +192,7 @@ call javaapi#interface('JdbcRowSet', '', [
   \ javaapi#method(0,'rollback(', 'Savepoint) throws SQLException', 'void'),
   \ ])
 
-call javaapi#interface('JoinRowSet', '', [
+call javaapi#interface('JoinRowSet', 'WebRowSet', [
   \ javaapi#field(1,'CROSS_JOIN', 'int'),
   \ javaapi#field(1,'INNER_JOIN', 'int'),
   \ javaapi#field(1,'LEFT_OUTER_JOIN', 'int'),
@@ -326,7 +326,7 @@ call javaapi#class('RowSetProvider', '', [
   \ javaapi#method(1,'newFactory(', 'String, ClassLoader) throws SQLException', 'RowSetFactory'),
   \ ])
 
-call javaapi#class('RowSetWarning', '', [
+call javaapi#class('RowSetWarning', 'SQLException', [
   \ javaapi#method(0,'RowSetWarning(', 'String)', 'public'),
   \ javaapi#method(0,'RowSetWarning(', ')', 'public'),
   \ javaapi#method(0,'RowSetWarning(', 'String, String)', 'public'),
@@ -335,7 +335,7 @@ call javaapi#class('RowSetWarning', '', [
   \ javaapi#method(0,'setNextWarning(', 'RowSetWarning)', 'void'),
   \ ])
 
-call javaapi#interface('WebRowSet', '', [
+call javaapi#interface('WebRowSet', 'CachedRowSet', [
   \ javaapi#field(1,'PUBLIC_XML_SCHEMA', 'String'),
   \ javaapi#field(1,'SCHEMA_SYSTEM_ID', 'String'),
   \ javaapi#method(0,'readXml(', 'Reader) throws SQLException', 'void'),

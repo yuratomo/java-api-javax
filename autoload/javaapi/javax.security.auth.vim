@@ -1,12 +1,6 @@
 call javaapi#namespace('javax.security.auth')
 
-call javaapi#class('AuthPermission', '', [
-  \ javaapi#method(0,'AuthPermission(', 'String)', 'public'),
-  \ javaapi#method(0,'AuthPermission(', 'String, String)', 'public'),
-  \ ])
-
-
-call javaapi#class('DestroyFailedException', '', [
+call javaapi#class('DestroyFailedException', 'Exception', [
   \ javaapi#method(0,'DestroyFailedException(', ')', 'public'),
   \ javaapi#method(0,'DestroyFailedException(', 'String)', 'public'),
   \ ])
@@ -48,7 +42,7 @@ call javaapi#class('CredOwner', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrivateCredentialPermission', '', [
+call javaapi#class('PrivateCredentialPermission', 'Permission', [
   \ javaapi#method(0,'PrivateCredentialPermission(', 'String, String)', 'public'),
   \ javaapi#method(0,'getCredentialClass(', ')', 'String'),
   \ javaapi#method(0,'getPrincipals(', ')', 'String[][]'),
@@ -59,7 +53,7 @@ call javaapi#class('PrivateCredentialPermission', '', [
   \ javaapi#method(0,'newPermissionCollection(', ')', 'PermissionCollection'),
   \ ])
 
-call javaapi#class('RefreshFailedException', '', [
+call javaapi#class('RefreshFailedException', 'Exception', [
   \ javaapi#method(0,'RefreshFailedException(', ')', 'public'),
   \ javaapi#method(0,'RefreshFailedException(', 'String)', 'public'),
   \ ])
@@ -86,7 +80,7 @@ call javaapi#class('1', 'Object>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('ClassSet<T>', '', [
+call javaapi#class('ClassSet<T>', 'AbstractSet<T>', [
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'iterator(', ')', 'Iterator<T>'),
   \ javaapi#method(0,'add(', 'T)', 'boolean'),
@@ -118,7 +112,7 @@ call javaapi#class('6', 'PrivilegedAction<E>', [
   \ javaapi#method(0,'run(', ')', 'E'),
   \ ])
 
-call javaapi#class('SecureSet<E>', '', [
+call javaapi#class('SecureSet<E>', 'AbstractSet<E>', [
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'iterator(', ')', 'Iterator<E>'),
   \ javaapi#method(0,'add(', 'E)', 'boolean'),
@@ -175,7 +169,7 @@ call javaapi#class('5', 'String>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('WeakKeyValueMap<K,V>', '', [
+call javaapi#class('WeakKeyValueMap<K,V>', 'WeakReference<V>>', [
   \ javaapi#method(0,'getValue(', 'K)', 'V'),
   \ javaapi#method(0,'putValue(', 'K, V)', 'V'),
   \ ])
@@ -184,5 +178,12 @@ call javaapi#class('SubjectDomainCombiner', 'DomainCombiner', [
   \ javaapi#method(0,'SubjectDomainCombiner(', 'Subject)', 'public'),
   \ javaapi#method(0,'getSubject(', ')', 'Subject'),
   \ javaapi#method(0,'combine(', 'ProtectionDomain[], ProtectionDomain[])', 'ProtectionDomain[]'),
+  \ ])
+
+call javaapi#namespace('javax.security.auth')
+
+call javaapi#class('AuthPermission', 'BasicPermission', [
+  \ javaapi#method(0,'AuthPermission(', 'String)', 'public'),
+  \ javaapi#method(0,'AuthPermission(', 'String, String)', 'public'),
   \ ])
 

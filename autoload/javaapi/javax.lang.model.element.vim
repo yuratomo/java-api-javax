@@ -44,7 +44,7 @@ call javaapi#interface('Element', '', [
   \ javaapi#method(0,'accept(', 'ElementVisitor<R, P>, P)', 'R'),
   \ ])
 
-call javaapi#class('ElementKind', '', [
+call javaapi#class('ElementKind', 'ElementKind>', [
   \ javaapi#field(1,'PACKAGE', 'ElementKind'),
   \ javaapi#field(1,'ENUM', 'ElementKind'),
   \ javaapi#field(1,'CLASS', 'ElementKind'),
@@ -80,7 +80,7 @@ call javaapi#interface('ElementVisitor<R,P>', '', [
   \ javaapi#method(0,'visitUnknown(', 'Element, P)', 'R'),
   \ ])
 
-call javaapi#interface('ExecutableElement', '', [
+call javaapi#interface('ExecutableElement', 'Parameterizable', [
   \ javaapi#method(0,'getTypeParameters(', ')', 'TypeParameterElement>'),
   \ javaapi#method(0,'getReturnType(', ')', 'TypeMirror'),
   \ javaapi#method(0,'getParameters(', ')', 'VariableElement>'),
@@ -90,7 +90,7 @@ call javaapi#interface('ExecutableElement', '', [
   \ javaapi#method(0,'getSimpleName(', ')', 'Name'),
   \ ])
 
-call javaapi#class('Modifier', '', [
+call javaapi#class('Modifier', 'Modifier>', [
   \ javaapi#field(1,'PUBLIC', 'Modifier'),
   \ javaapi#field(1,'PROTECTED', 'Modifier'),
   \ javaapi#field(1,'PRIVATE', 'Modifier'),
@@ -107,13 +107,13 @@ call javaapi#class('Modifier', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Name', '', [
+call javaapi#interface('Name', 'CharSequence', [
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,'hashCode(', ')', 'int'),
   \ javaapi#method(0,'contentEquals(', 'CharSequence)', 'boolean'),
   \ ])
 
-call javaapi#class('NestingKind', '', [
+call javaapi#class('NestingKind', 'NestingKind>', [
   \ javaapi#field(1,'TOP_LEVEL', 'NestingKind'),
   \ javaapi#field(1,'MEMBER', 'NestingKind'),
   \ javaapi#field(1,'LOCAL', 'NestingKind'),
@@ -123,22 +123,22 @@ call javaapi#class('NestingKind', '', [
   \ javaapi#method(0,'isNested(', ')', 'boolean'),
   \ ])
 
-call javaapi#interface('PackageElement', '', [
+call javaapi#interface('PackageElement', 'QualifiedNameable', [
   \ javaapi#method(0,'getQualifiedName(', ')', 'Name'),
   \ javaapi#method(0,'getSimpleName(', ')', 'Name'),
   \ javaapi#method(0,'isUnnamed(', ')', 'boolean'),
   \ javaapi#method(0,'getEnclosingElement(', ')', 'Element'),
   \ ])
 
-call javaapi#interface('Parameterizable', '', [
+call javaapi#interface('Parameterizable', 'Element', [
   \ javaapi#method(0,'getTypeParameters(', ')', 'TypeParameterElement>'),
   \ ])
 
-call javaapi#interface('QualifiedNameable', '', [
+call javaapi#interface('QualifiedNameable', 'Element', [
   \ javaapi#method(0,'getQualifiedName(', ')', 'Name'),
   \ ])
 
-call javaapi#interface('TypeElement', '', [
+call javaapi#interface('TypeElement', 'QualifiedNameable', [
   \ javaapi#method(0,'getEnclosedElements(', ')', 'Element>'),
   \ javaapi#method(0,'getNestingKind(', ')', 'NestingKind'),
   \ javaapi#method(0,'getQualifiedName(', ')', 'Name'),
@@ -149,25 +149,25 @@ call javaapi#interface('TypeElement', '', [
   \ javaapi#method(0,'getEnclosingElement(', ')', 'Element'),
   \ ])
 
-call javaapi#interface('TypeParameterElement', '', [
+call javaapi#interface('TypeParameterElement', 'Element', [
   \ javaapi#method(0,'getGenericElement(', ')', 'Element'),
   \ javaapi#method(0,'getBounds(', ')', 'TypeMirror>'),
   \ javaapi#method(0,'getEnclosingElement(', ')', 'Element'),
   \ ])
 
-call javaapi#class('UnknownAnnotationValueException', '', [
+call javaapi#class('UnknownAnnotationValueException', 'UnknownEntityException', [
   \ javaapi#method(0,'UnknownAnnotationValueException(', 'AnnotationValue, Object)', 'public'),
   \ javaapi#method(0,'getUnknownAnnotationValue(', ')', 'AnnotationValue'),
   \ javaapi#method(0,'getArgument(', ')', 'Object'),
   \ ])
 
-call javaapi#class('UnknownElementException', '', [
+call javaapi#class('UnknownElementException', 'UnknownEntityException', [
   \ javaapi#method(0,'UnknownElementException(', 'Element, Object)', 'public'),
   \ javaapi#method(0,'getUnknownElement(', ')', 'Element'),
   \ javaapi#method(0,'getArgument(', ')', 'Object'),
   \ ])
 
-call javaapi#interface('VariableElement', '', [
+call javaapi#interface('VariableElement', 'Element', [
   \ javaapi#method(0,'getConstantValue(', ')', 'Object'),
   \ ])
 

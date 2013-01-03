@@ -22,7 +22,7 @@ call javaapi#class('1', 'PrivilegedAction', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('IIORegistry', '', [
+call javaapi#class('IIORegistry', 'ServiceRegistry', [
   \ javaapi#method(1,'getDefaultInstance(', ')', 'IIORegistry'),
   \ javaapi#method(0,'registerApplicationClasspathSpis(', ')', 'void'),
   \ ])
@@ -37,7 +37,7 @@ call javaapi#class('IIOServiceProvider', 'RegisterableService', [
   \ javaapi#method(0,'getDescription(', 'Locale)', 'String'),
   \ ])
 
-call javaapi#class('ImageInputStreamSpi', '', [
+call javaapi#class('ImageInputStreamSpi', 'IIOServiceProvider', [
   \ javaapi#method(0,'ImageInputStreamSpi(', 'String, String, Class<?>)', 'public'),
   \ javaapi#method(0,'getInputClass(', ')', 'Class<?>'),
   \ javaapi#method(0,'canUseCacheFile(', ')', 'boolean'),
@@ -46,7 +46,7 @@ call javaapi#class('ImageInputStreamSpi', '', [
   \ javaapi#method(0,'createInputStreamInstance(', 'Object) throws IOException', 'ImageInputStream'),
   \ ])
 
-call javaapi#class('ImageOutputStreamSpi', '', [
+call javaapi#class('ImageOutputStreamSpi', 'IIOServiceProvider', [
   \ javaapi#method(0,'ImageOutputStreamSpi(', 'String, String, Class<?>)', 'public'),
   \ javaapi#method(0,'getOutputClass(', ')', 'Class<?>'),
   \ javaapi#method(0,'canUseCacheFile(', ')', 'boolean'),
@@ -55,7 +55,7 @@ call javaapi#class('ImageOutputStreamSpi', '', [
   \ javaapi#method(0,'createOutputStreamInstance(', 'Object) throws IOException', 'ImageOutputStream'),
   \ ])
 
-call javaapi#class('ImageReaderSpi', '', [
+call javaapi#class('ImageReaderSpi', 'ImageReaderWriterSpi', [
   \ javaapi#field(1,'STANDARD_INPUT_TYPE', 'Class[]'),
   \ javaapi#method(0,'ImageReaderSpi(', 'String, String, String[], String[], String[], String, Class[], String[], boolean, String, String, String[], String[], boolean, String, String, String[], String[])', 'public'),
   \ javaapi#method(0,'getInputTypes(', ')', 'Class[]'),
@@ -66,7 +66,7 @@ call javaapi#class('ImageReaderSpi', '', [
   \ javaapi#method(0,'getImageWriterSpiNames(', ')', 'String[]'),
   \ ])
 
-call javaapi#class('ImageReaderWriterSpi', '', [
+call javaapi#class('ImageReaderWriterSpi', 'IIOServiceProvider', [
   \ javaapi#method(0,'ImageReaderWriterSpi(', 'String, String, String[], String[], String[], String, boolean, String, String, String[], String[], boolean, String, String, String[], String[])', 'public'),
   \ javaapi#method(0,'ImageReaderWriterSpi(', ')', 'public'),
   \ javaapi#method(0,'getFormatNames(', ')', 'String[]'),
@@ -83,14 +83,14 @@ call javaapi#class('ImageReaderWriterSpi', '', [
   \ javaapi#method(0,'getImageMetadataFormat(', 'String)', 'IIOMetadataFormat'),
   \ ])
 
-call javaapi#class('ImageTranscoderSpi', '', [
+call javaapi#class('ImageTranscoderSpi', 'IIOServiceProvider', [
   \ javaapi#method(0,'ImageTranscoderSpi(', 'String, String)', 'public'),
   \ javaapi#method(0,'getReaderServiceProviderName(', ')', 'String'),
   \ javaapi#method(0,'getWriterServiceProviderName(', ')', 'String'),
   \ javaapi#method(0,'createTranscoderInstance(', ')', 'ImageTranscoder'),
   \ ])
 
-call javaapi#class('ImageWriterSpi', '', [
+call javaapi#class('ImageWriterSpi', 'ImageReaderWriterSpi', [
   \ javaapi#field(1,'STANDARD_OUTPUT_TYPE', 'Class[]'),
   \ javaapi#method(0,'ImageWriterSpi(', 'String, String, String[], String[], String[], String, Class[], String[], boolean, String, String, String[], String[], boolean, String, String, String[], String[])', 'public'),
   \ javaapi#method(0,'isFormatLossless(', ')', 'boolean'),
@@ -110,7 +110,7 @@ call javaapi#class('PartialOrderIterator', 'Iterator', [
   \ javaapi#method(0,'remove(', ')', 'void'),
   \ ])
 
-call javaapi#class('PartiallyOrderedSet', '', [
+call javaapi#class('PartiallyOrderedSet', 'AbstractSet', [
   \ javaapi#method(0,'PartiallyOrderedSet(', ')', 'public'),
   \ javaapi#method(0,'size(', ')', 'int'),
   \ javaapi#method(0,'contains(', 'Object)', 'boolean'),

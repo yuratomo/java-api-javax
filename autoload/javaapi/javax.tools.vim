@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.tools')
 
-call javaapi#class('Kind', '', [
+call javaapi#class('Kind', 'Kind>', [
   \ javaapi#field(1,'ERROR', 'Kind'),
   \ javaapi#field(1,'WARNING', 'Kind'),
   \ javaapi#field(1,'MANDATORY_WARNING', 'Kind'),
@@ -45,7 +45,7 @@ call javaapi#interface('FileObject', '', [
   \ javaapi#method(0,'delete(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ForwardingFileObject<F', '', [
+call javaapi#class('ForwardingFileObject<F', 'FileObject>', [
   \ javaapi#method(0,'toUri(', ')', 'URI'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'openInputStream(', ') throws IOException', 'InputStream'),
@@ -57,7 +57,7 @@ call javaapi#class('ForwardingFileObject<F', '', [
   \ javaapi#method(0,'delete(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('ForwardingJavaFileManager<M', '', [
+call javaapi#class('ForwardingJavaFileManager<M', 'JavaFileManager>', [
   \ javaapi#method(0,'getClassLoader(', 'Location)', 'ClassLoader'),
   \ javaapi#method(0,'list(', 'Location, String, Set<Kind>, boolean) throws IOException', 'JavaFileObject>'),
   \ javaapi#method(0,'inferBinaryName(', 'Location, JavaFileObject)', 'String'),
@@ -73,20 +73,20 @@ call javaapi#class('ForwardingJavaFileManager<M', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('ForwardingJavaFileObject<F', '', [
+call javaapi#class('ForwardingJavaFileObject<F', 'JavaFileObject>', [
   \ javaapi#method(0,'getKind(', ')', 'Kind'),
   \ javaapi#method(0,'isNameCompatible(', 'String, Kind)', 'boolean'),
   \ javaapi#method(0,'getNestingKind(', ')', 'NestingKind'),
   \ javaapi#method(0,'getAccessLevel(', ')', 'Modifier'),
   \ ])
 
-call javaapi#interface('CompilationTask', '', [
+call javaapi#interface('CompilationTask', 'Boolean>', [
   \ javaapi#method(0,'setProcessors(', 'Iterable<? extends Processor>)', 'void'),
   \ javaapi#method(0,'setLocale(', 'Locale)', 'void'),
   \ javaapi#method(0,'call(', ')', 'Boolean'),
   \ ])
 
-call javaapi#interface('JavaCompiler', '', [
+call javaapi#interface('JavaCompiler', 'OptionChecker', [
   \ javaapi#method(0,'getTask(', 'Writer, JavaFileManager, DiagnosticListener<? super JavaFileObject>, Iterable<String>, Iterable<String>, Iterable<? extends JavaFileObject>)', 'CompilationTask'),
   \ javaapi#method(0,'getStandardFileManager(', 'DiagnosticListener<? super JavaFileObject>, Locale, Charset)', 'StandardJavaFileManager'),
   \ ])
@@ -96,7 +96,7 @@ call javaapi#interface('Location', '', [
   \ javaapi#method(0,'isOutputLocation(', ')', 'boolean'),
   \ ])
 
-call javaapi#interface('JavaFileManager', '', [
+call javaapi#interface('JavaFileManager', 'OptionChecker', [
   \ javaapi#method(0,'getClassLoader(', 'Location)', 'ClassLoader'),
   \ javaapi#method(0,'list(', 'Location, String, Set<Kind>, boolean) throws IOException', 'JavaFileObject>'),
   \ javaapi#method(0,'inferBinaryName(', 'Location, JavaFileObject)', 'String'),
@@ -111,7 +111,7 @@ call javaapi#interface('JavaFileManager', '', [
   \ javaapi#method(0,'close(', ') throws IOException', 'void'),
   \ ])
 
-call javaapi#class('Kind', '', [
+call javaapi#class('Kind', 'Kind>', [
   \ javaapi#field(1,'SOURCE', 'Kind'),
   \ javaapi#field(1,'CLASS', 'Kind'),
   \ javaapi#field(1,'HTML', 'Kind'),
@@ -121,7 +121,7 @@ call javaapi#class('Kind', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'Kind'),
   \ ])
 
-call javaapi#interface('JavaFileObject', '', [
+call javaapi#interface('JavaFileObject', 'FileObject', [
   \ javaapi#method(0,'getKind(', ')', 'Kind'),
   \ javaapi#method(0,'isNameCompatible(', 'String, Kind)', 'boolean'),
   \ javaapi#method(0,'getNestingKind(', ')', 'NestingKind'),
@@ -149,7 +149,7 @@ call javaapi#class('SimpleJavaFileObject', 'JavaFileObject', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#interface('StandardJavaFileManager', '', [
+call javaapi#interface('StandardJavaFileManager', 'JavaFileManager', [
   \ javaapi#method(0,'isSameFile(', 'FileObject, FileObject)', 'boolean'),
   \ javaapi#method(0,'getJavaFileObjectsFromFiles(', 'Iterable<? extends File>)', 'JavaFileObject>'),
   \ javaapi#method(0,'getJavaFileObjects(', ')', 'JavaFileObject>'),
@@ -164,7 +164,7 @@ call javaapi#class('1', 'Location', [
   \ javaapi#method(0,'isOutputLocation(', ')', 'boolean'),
   \ ])
 
-call javaapi#class('StandardLocation', '', [
+call javaapi#class('StandardLocation', 'StandardLocation>', [
   \ javaapi#field(1,'CLASS_OUTPUT', 'StandardLocation'),
   \ javaapi#field(1,'SOURCE_OUTPUT', 'StandardLocation'),
   \ javaapi#field(1,'CLASS_PATH', 'StandardLocation'),

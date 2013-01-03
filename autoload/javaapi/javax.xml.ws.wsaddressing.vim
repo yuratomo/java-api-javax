@@ -6,7 +6,7 @@ call javaapi#class('Address', '', [
 call javaapi#class('Elements', '', [
   \ ])
 
-call javaapi#class('W3CEndpointReference', '', [
+call javaapi#class('W3CEndpointReference', 'EndpointReference', [
   \ javaapi#method(0,'W3CEndpointReference(', 'Source)', 'public'),
   \ javaapi#method(0,'writeTo(', 'Result)', 'void'),
   \ ])

@@ -4,7 +4,7 @@ call javaapi#class('1', 'PropertyChangeListener', [
   \ javaapi#method(0,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('AbstractColorChooserPanel', '', [
+call javaapi#class('AbstractColorChooserPanel', 'JPanel', [
   \ javaapi#method(0,'AbstractColorChooserPanel(', ')', 'public'),
   \ javaapi#method(0,'updateChooser(', ')', 'void'),
   \ javaapi#method(0,'getDisplayName(', ')', 'String'),
@@ -31,7 +31,7 @@ call javaapi#class('ColorChooserComponentFactory', '', [
   \ javaapi#method(1,'getPreviewPanel(', ')', 'JComponent'),
   \ ])
 
-call javaapi#class('ColorChooserPanel', '', [
+call javaapi#class('ColorChooserPanel', 'AbstractColorChooserPanel', [
   \ javaapi#method(0,'setEnabled(', 'boolean)', 'void'),
   \ javaapi#method(0,'updateChooser(', ')', 'void'),
   \ javaapi#method(0,'getDisplayName(', ')', 'String'),
@@ -45,16 +45,16 @@ call javaapi#class('ColorChooserPanel', '', [
 call javaapi#class('ColorModel', '', [
   \ ])
 
-call javaapi#class('ColorModelCMYK', '', [
+call javaapi#class('ColorModelCMYK', 'ColorModel', [
   \ ])
 
-call javaapi#class('ColorModelHSL', '', [
+call javaapi#class('ColorModelHSL', 'ColorModel', [
   \ ])
 
-call javaapi#class('ColorModelHSV', '', [
+call javaapi#class('ColorModelHSV', 'ColorModel', [
   \ ])
 
-call javaapi#class('ColorPanel', '', [
+call javaapi#class('ColorPanel', 'JPanel', [
   \ javaapi#method(0,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
@@ -75,20 +75,20 @@ call javaapi#class('DefaultColorSelectionModel', 'Serializable', [
   \ javaapi#method(0,'getChangeListeners(', ')', 'ChangeListener[]'),
   \ ])
 
-call javaapi#class('DefaultPreviewPanel', '', [
+call javaapi#class('DefaultPreviewPanel', 'JPanel', [
   \ javaapi#method(0,'getPreferredSize(', ')', 'Dimension'),
   \ javaapi#method(0,'paintComponent(', 'Graphics)', 'void'),
   \ ])
 
-call javaapi#class('MainSwatchListener', '', [
+call javaapi#class('MainSwatchListener', 'MouseAdapter', [
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('RecentSwatchListener', '', [
+call javaapi#class('RecentSwatchListener', 'MouseAdapter', [
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('DefaultSwatchChooserPanel', '', [
+call javaapi#class('DefaultSwatchChooserPanel', 'AbstractColorChooserPanel', [
   \ javaapi#method(0,'DefaultSwatchChooserPanel(', ')', 'public'),
   \ javaapi#method(0,'getDisplayName(', ')', 'String'),
   \ javaapi#method(0,'getMnemonic(', ')', 'int'),
@@ -100,7 +100,7 @@ call javaapi#class('DefaultSwatchChooserPanel', '', [
   \ javaapi#method(0,'updateChooser(', ')', 'void'),
   \ ])
 
-call javaapi#class('DiagramComponent', '', [
+call javaapi#class('DiagramComponent', 'JComponent', [
   \ javaapi#method(0,'mousePressed(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseReleased(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,'mouseClicked(', 'MouseEvent)', 'void'),
@@ -110,10 +110,10 @@ call javaapi#class('DiagramComponent', '', [
   \ javaapi#method(0,'mouseDragged(', 'MouseEvent)', 'void'),
   \ ])
 
-call javaapi#class('MainSwatchPanel', '', [
+call javaapi#class('MainSwatchPanel', 'SwatchPanel', [
   \ ])
 
-call javaapi#class('RecentSwatchPanel', '', [
+call javaapi#class('RecentSwatchPanel', 'SwatchPanel', [
   \ javaapi#method(0,'setMostRecentColor(', 'Color)', 'void'),
   \ ])
 
@@ -130,7 +130,7 @@ call javaapi#class('SmartGridLayout', 'Serializable', [
   \ javaapi#method(0,'removeLayoutComponent(', 'Component)', 'void'),
   \ ])
 
-call javaapi#class('SwatchPanel', '', [
+call javaapi#class('SwatchPanel', 'JPanel', [
   \ javaapi#method(0,'SwatchPanel(', ')', 'public'),
   \ javaapi#method(0,'isFocusTraversable(', ')', 'boolean'),
   \ javaapi#method(0,'paintComponent(', 'Graphics)', 'void'),
@@ -139,13 +139,13 @@ call javaapi#class('SwatchPanel', '', [
   \ javaapi#method(0,'getColorForLocation(', 'int, int)', 'Color'),
   \ ])
 
-call javaapi#class('1', '', [
+call javaapi#class('1', 'DocumentFilter', [
   \ javaapi#method(0,'remove(', 'FilterBypass, int, int) throws BadLocationException', 'void'),
   \ javaapi#method(0,'replace(', 'FilterBypass, int, int, String, AttributeSet) throws BadLocationException', 'void'),
   \ javaapi#method(0,'insertString(', 'FilterBypass, int, String, AttributeSet) throws BadLocationException', 'void'),
   \ ])
 
-call javaapi#class('ValueFormatter', '', [
+call javaapi#class('ValueFormatter', 'AbstractFormatter', [
   \ javaapi#method(0,'stringToValue(', 'String) throws ParseException', 'Object'),
   \ javaapi#method(0,'valueToString(', 'Object) throws ParseException', 'String'),
   \ javaapi#method(0,'focusGained(', 'FocusEvent)', 'void'),

@@ -5,7 +5,7 @@ call javaapi#class('CertPathTrustManagerParameters', 'ManagerFactoryParameters',
   \ javaapi#method(0,'getParameters(', ')', 'CertPathParameters'),
   \ ])
 
-call javaapi#class('DefaultSSLServerSocketFactory', '', [
+call javaapi#class('DefaultSSLServerSocketFactory', 'SSLServerSocketFactory', [
   \ javaapi#method(0,'createServerSocket(', ') throws IOException', 'ServerSocket'),
   \ javaapi#method(0,'createServerSocket(', 'int) throws IOException', 'ServerSocket'),
   \ javaapi#method(0,'createServerSocket(', 'int, int) throws IOException', 'ServerSocket'),
@@ -14,7 +14,7 @@ call javaapi#class('DefaultSSLServerSocketFactory', '', [
   \ javaapi#method(0,'getSupportedCipherSuites(', ')', 'String[]'),
   \ ])
 
-call javaapi#class('DefaultSSLSocketFactory', '', [
+call javaapi#class('DefaultSSLSocketFactory', 'SSLSocketFactory', [
   \ javaapi#method(0,'createSocket(', ') throws IOException', 'Socket'),
   \ javaapi#method(0,'createSocket(', 'String, int) throws IOException', 'Socket'),
   \ javaapi#method(0,'createSocket(', 'Socket, String, int, boolean) throws IOException', 'Socket'),
@@ -31,7 +31,7 @@ call javaapi#class('ExtendedSSLSession', 'SSLSession', [
   \ javaapi#method(0,'getPeerSupportedSignatureAlgorithms(', ')', 'String[]'),
   \ ])
 
-call javaapi#class('HandshakeCompletedEvent', '', [
+call javaapi#class('HandshakeCompletedEvent', 'EventObject', [
   \ javaapi#method(0,'HandshakeCompletedEvent(', 'SSLSocket, SSLSession)', 'public'),
   \ javaapi#method(0,'getSession(', ')', 'SSLSession'),
   \ javaapi#method(0,'getCipherSuite(', ')', 'String'),
@@ -43,7 +43,7 @@ call javaapi#class('HandshakeCompletedEvent', '', [
   \ javaapi#method(0,'getSocket(', ')', 'SSLSocket'),
   \ ])
 
-call javaapi#interface('HandshakeCompletedListener', '', [
+call javaapi#interface('HandshakeCompletedListener', 'EventListener', [
   \ javaapi#method(0,'handshakeCompleted(', 'HandshakeCompletedEvent)', 'void'),
   \ ])
 
@@ -58,7 +58,7 @@ call javaapi#class('DefaultHostnameVerifier', 'HostnameVerifier', [
   \ javaapi#method(0,'verify(', 'String, SSLSession)', 'boolean'),
   \ ])
 
-call javaapi#class('HttpsURLConnection', '', [
+call javaapi#class('HttpsURLConnection', 'HttpURLConnection', [
   \ javaapi#method(0,'getCipherSuite(', ')', 'String'),
   \ javaapi#method(0,'getLocalCertificates(', ')', 'Certificate[]'),
   \ javaapi#method(0,'getServerCertificates(', ') throws SSLPeerUnverifiedException', 'Certificate[]'),
@@ -166,7 +166,7 @@ call javaapi#class('SSLEngine', '', [
   \ javaapi#method(0,'setSSLParameters(', 'SSLParameters)', 'void'),
   \ ])
 
-call javaapi#class('HandshakeStatus', '', [
+call javaapi#class('HandshakeStatus', 'HandshakeStatus>', [
   \ javaapi#field(1,'NOT_HANDSHAKING', 'HandshakeStatus'),
   \ javaapi#field(1,'FINISHED', 'HandshakeStatus'),
   \ javaapi#field(1,'NEED_TASK', 'HandshakeStatus'),
@@ -176,7 +176,7 @@ call javaapi#class('HandshakeStatus', '', [
   \ javaapi#method(1,'valueOf(', 'String)', 'HandshakeStatus'),
   \ ])
 
-call javaapi#class('Status', '', [
+call javaapi#class('Status', 'Status>', [
   \ javaapi#field(1,'BUFFER_UNDERFLOW', 'Status'),
   \ javaapi#field(1,'BUFFER_OVERFLOW', 'Status'),
   \ javaapi#field(1,'OK', 'Status'),
@@ -194,17 +194,17 @@ call javaapi#class('SSLEngineResult', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SSLException', '', [
+call javaapi#class('SSLException', 'IOException', [
   \ javaapi#method(0,'SSLException(', 'String)', 'public'),
   \ javaapi#method(0,'SSLException(', 'String, Throwable)', 'public'),
   \ javaapi#method(0,'SSLException(', 'Throwable)', 'public'),
   \ ])
 
-call javaapi#class('SSLHandshakeException', '', [
+call javaapi#class('SSLHandshakeException', 'SSLException', [
   \ javaapi#method(0,'SSLHandshakeException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SSLKeyException', '', [
+call javaapi#class('SSLKeyException', 'SSLException', [
   \ javaapi#method(0,'SSLKeyException(', 'String)', 'public'),
   \ ])
 
@@ -226,20 +226,20 @@ call javaapi#class('SSLParameters', '', [
   \ javaapi#method(0,'setEndpointIdentificationAlgorithm(', 'String)', 'void'),
   \ ])
 
-call javaapi#class('SSLPeerUnverifiedException', '', [
+call javaapi#class('SSLPeerUnverifiedException', 'SSLException', [
   \ javaapi#method(0,'SSLPeerUnverifiedException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SSLPermission', '', [
+call javaapi#class('SSLPermission', 'BasicPermission', [
   \ javaapi#method(0,'SSLPermission(', 'String)', 'public'),
   \ javaapi#method(0,'SSLPermission(', 'String, String)', 'public'),
   \ ])
 
-call javaapi#class('SSLProtocolException', '', [
+call javaapi#class('SSLProtocolException', 'SSLException', [
   \ javaapi#method(0,'SSLProtocolException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('SSLServerSocket', '', [
+call javaapi#class('SSLServerSocket', 'ServerSocket', [
   \ javaapi#method(0,'getEnabledCipherSuites(', ')', 'String[]'),
   \ javaapi#method(0,'setEnabledCipherSuites(', 'String[])', 'void'),
   \ javaapi#method(0,'getSupportedCipherSuites(', ')', 'String[]'),
@@ -258,7 +258,7 @@ call javaapi#class('SSLServerSocket', '', [
   \ javaapi#method(0,'setSSLParameters(', 'SSLParameters)', 'void'),
   \ ])
 
-call javaapi#class('SSLServerSocketFactory', '', [
+call javaapi#class('SSLServerSocketFactory', 'ServerSocketFactory', [
   \ javaapi#method(1,'getDefault(', ')', 'ServerSocketFactory'),
   \ javaapi#method(0,'getDefaultCipherSuites(', ')', 'String[]'),
   \ javaapi#method(0,'getSupportedCipherSuites(', ')', 'String[]'),
@@ -288,13 +288,13 @@ call javaapi#interface('SSLSession', '', [
   \ javaapi#method(0,'getApplicationBufferSize(', ')', 'int'),
   \ ])
 
-call javaapi#class('SSLSessionBindingEvent', '', [
+call javaapi#class('SSLSessionBindingEvent', 'EventObject', [
   \ javaapi#method(0,'SSLSessionBindingEvent(', 'SSLSession, String)', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getSession(', ')', 'SSLSession'),
   \ ])
 
-call javaapi#interface('SSLSessionBindingListener', '', [
+call javaapi#interface('SSLSessionBindingListener', 'EventListener', [
   \ javaapi#method(0,'valueBound(', 'SSLSessionBindingEvent)', 'void'),
   \ javaapi#method(0,'valueUnbound(', 'SSLSessionBindingEvent)', 'void'),
   \ ])
@@ -308,7 +308,7 @@ call javaapi#interface('SSLSessionContext', '', [
   \ javaapi#method(0,'getSessionCacheSize(', ')', 'int'),
   \ ])
 
-call javaapi#class('SSLSocket', '', [
+call javaapi#class('SSLSocket', 'Socket', [
   \ javaapi#method(0,'getSupportedCipherSuites(', ')', 'String[]'),
   \ javaapi#method(0,'getEnabledCipherSuites(', ')', 'String[]'),
   \ javaapi#method(0,'setEnabledCipherSuites(', 'String[])', 'void'),
@@ -337,7 +337,7 @@ call javaapi#class('1', 'String>', [
   \ javaapi#method(0,'run(', ')', 'Object'),
   \ ])
 
-call javaapi#class('SSLSocketFactory', '', [
+call javaapi#class('SSLSocketFactory', 'SocketFactory', [
   \ javaapi#method(0,'SSLSocketFactory(', ')', 'public'),
   \ javaapi#method(1,'getDefault(', ')', 'SocketFactory'),
   \ javaapi#method(0,'getDefaultCipherSuites(', ')', 'String[]'),
@@ -382,7 +382,7 @@ call javaapi#class('X509ExtendedTrustManager', 'X509TrustManager', [
   \ javaapi#method(0,'checkServerTrusted(', 'X509Certificate[], String, SSLEngine) throws CertificateException', 'void'),
   \ ])
 
-call javaapi#interface('X509KeyManager', '', [
+call javaapi#interface('X509KeyManager', 'KeyManager', [
   \ javaapi#method(0,'getClientAliases(', 'String, Principal[])', 'String[]'),
   \ javaapi#method(0,'chooseClientAlias(', 'String[], Principal[], Socket)', 'String'),
   \ javaapi#method(0,'getServerAliases(', 'String, Principal[])', 'String[]'),
@@ -391,7 +391,7 @@ call javaapi#interface('X509KeyManager', '', [
   \ javaapi#method(0,'getPrivateKey(', 'String)', 'PrivateKey'),
   \ ])
 
-call javaapi#interface('X509TrustManager', '', [
+call javaapi#interface('X509TrustManager', 'TrustManager', [
   \ javaapi#method(0,'checkClientTrusted(', 'X509Certificate[], String) throws CertificateException', 'void'),
   \ javaapi#method(0,'checkServerTrusted(', 'X509Certificate[], String) throws CertificateException', 'void'),
   \ javaapi#method(0,'getAcceptedIssuers(', ')', 'X509Certificate[]'),

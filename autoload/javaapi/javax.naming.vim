@@ -1,16 +1,16 @@
 call javaapi#namespace('javax.naming')
 
-call javaapi#class('AuthenticationException', '', [
+call javaapi#class('AuthenticationException', 'NamingSecurityException', [
   \ javaapi#method(0,'AuthenticationException(', 'String)', 'public'),
   \ javaapi#method(0,'AuthenticationException(', ')', 'public'),
   \ ])
 
-call javaapi#class('AuthenticationNotSupportedException', '', [
+call javaapi#class('AuthenticationNotSupportedException', 'NamingSecurityException', [
   \ javaapi#method(0,'AuthenticationNotSupportedException(', 'String)', 'public'),
   \ javaapi#method(0,'AuthenticationNotSupportedException(', ')', 'public'),
   \ ])
 
-call javaapi#class('BinaryRefAddr', '', [
+call javaapi#class('BinaryRefAddr', 'RefAddr', [
   \ javaapi#method(0,'BinaryRefAddr(', 'String, byte[])', 'public'),
   \ javaapi#method(0,'BinaryRefAddr(', 'String, byte[], int, int)', 'public'),
   \ javaapi#method(0,'getContent(', ')', 'Object'),
@@ -19,7 +19,7 @@ call javaapi#class('BinaryRefAddr', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('Binding', '', [
+call javaapi#class('Binding', 'NameClassPair', [
   \ javaapi#method(0,'Binding(', 'String, Object)', 'public'),
   \ javaapi#method(0,'Binding(', 'String, Object, boolean)', 'public'),
   \ javaapi#method(0,'Binding(', 'String, String, Object)', 'public'),
@@ -30,7 +30,7 @@ call javaapi#class('Binding', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('CannotProceedException', '', [
+call javaapi#class('CannotProceedException', 'NamingException', [
   \ javaapi#method(0,'CannotProceedException(', 'String)', 'public'),
   \ javaapi#method(0,'CannotProceedException(', ')', 'public'),
   \ javaapi#method(0,'getEnvironment(', ')', '?>'),
@@ -43,7 +43,7 @@ call javaapi#class('CannotProceedException', '', [
   \ javaapi#method(0,'setAltNameCtx(', 'Context)', 'void'),
   \ ])
 
-call javaapi#class('CommunicationException', '', [
+call javaapi#class('CommunicationException', 'NamingException', [
   \ javaapi#method(0,'CommunicationException(', 'String)', 'public'),
   \ javaapi#method(0,'CommunicationException(', ')', 'public'),
   \ ])
@@ -93,7 +93,7 @@ call javaapi#class('CompoundName', 'Name', [
   \ javaapi#method(0,'remove(', 'int) throws InvalidNameException', 'Object'),
   \ ])
 
-call javaapi#class('ConfigurationException', '', [
+call javaapi#class('ConfigurationException', 'NamingException', [
   \ javaapi#method(0,'ConfigurationException(', 'String)', 'public'),
   \ javaapi#method(0,'ConfigurationException(', ')', 'public'),
   \ ])
@@ -145,7 +145,7 @@ call javaapi#interface('Context', '', [
   \ javaapi#method(0,'getNameInNamespace(', ') throws NamingException', 'String'),
   \ ])
 
-call javaapi#class('ContextNotEmptyException', '', [
+call javaapi#class('ContextNotEmptyException', 'NamingException', [
   \ javaapi#method(0,'ContextNotEmptyException(', 'String)', 'public'),
   \ javaapi#method(0,'ContextNotEmptyException(', ')', 'public'),
   \ ])
@@ -186,27 +186,27 @@ call javaapi#class('InitialContext', 'Context', [
   \ javaapi#method(0,'getNameInNamespace(', ') throws NamingException', 'String'),
   \ ])
 
-call javaapi#class('InsufficientResourcesException', '', [
+call javaapi#class('InsufficientResourcesException', 'NamingException', [
   \ javaapi#method(0,'InsufficientResourcesException(', 'String)', 'public'),
   \ javaapi#method(0,'InsufficientResourcesException(', ')', 'public'),
   \ ])
 
-call javaapi#class('InterruptedNamingException', '', [
+call javaapi#class('InterruptedNamingException', 'NamingException', [
   \ javaapi#method(0,'InterruptedNamingException(', 'String)', 'public'),
   \ javaapi#method(0,'InterruptedNamingException(', ')', 'public'),
   \ ])
 
-call javaapi#class('InvalidNameException', '', [
+call javaapi#class('InvalidNameException', 'NamingException', [
   \ javaapi#method(0,'InvalidNameException(', 'String)', 'public'),
   \ javaapi#method(0,'InvalidNameException(', ')', 'public'),
   \ ])
 
-call javaapi#class('LimitExceededException', '', [
+call javaapi#class('LimitExceededException', 'NamingException', [
   \ javaapi#method(0,'LimitExceededException(', ')', 'public'),
   \ javaapi#method(0,'LimitExceededException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('LinkException', '', [
+call javaapi#class('LinkException', 'NamingException', [
   \ javaapi#method(0,'LinkException(', 'String)', 'public'),
   \ javaapi#method(0,'LinkException(', ')', 'public'),
   \ javaapi#method(0,'getLinkResolvedName(', ')', 'Name'),
@@ -221,23 +221,23 @@ call javaapi#class('LinkException', '', [
   \ javaapi#method(0,'toString(', 'boolean)', 'String'),
   \ ])
 
-call javaapi#class('LinkLoopException', '', [
+call javaapi#class('LinkLoopException', 'LinkException', [
   \ javaapi#method(0,'LinkLoopException(', 'String)', 'public'),
   \ javaapi#method(0,'LinkLoopException(', ')', 'public'),
   \ ])
 
-call javaapi#class('LinkRef', '', [
+call javaapi#class('LinkRef', 'Reference', [
   \ javaapi#method(0,'LinkRef(', 'Name)', 'public'),
   \ javaapi#method(0,'LinkRef(', 'String)', 'public'),
   \ javaapi#method(0,'getLinkName(', ') throws NamingException', 'String'),
   \ ])
 
-call javaapi#class('MalformedLinkException', '', [
+call javaapi#class('MalformedLinkException', 'LinkException', [
   \ javaapi#method(0,'MalformedLinkException(', 'String)', 'public'),
   \ javaapi#method(0,'MalformedLinkException(', ')', 'public'),
   \ ])
 
-call javaapi#interface('Name', '', [
+call javaapi#interface('Name', 'Object>', [
   \ javaapi#field(1,'serialVersionUID', 'long'),
   \ javaapi#method(0,'clone(', ')', 'Object'),
   \ javaapi#method(0,'compareTo(', 'Object)', 'int'),
@@ -256,7 +256,7 @@ call javaapi#interface('Name', '', [
   \ javaapi#method(0,'remove(', 'int) throws InvalidNameException', 'Object'),
   \ ])
 
-call javaapi#class('NameAlreadyBoundException', '', [
+call javaapi#class('NameAlreadyBoundException', 'NamingException', [
   \ javaapi#method(0,'NameAlreadyBoundException(', 'String)', 'public'),
   \ javaapi#method(0,'NameAlreadyBoundException(', ')', 'public'),
   \ ])
@@ -300,7 +300,7 @@ call javaapi#class('NameImplEnumerator', 'Enumeration', [
   \ javaapi#method(0,'nextElement(', ')', 'Object'),
   \ ])
 
-call javaapi#class('NameNotFoundException', '', [
+call javaapi#class('NameNotFoundException', 'NamingException', [
   \ javaapi#method(0,'NameNotFoundException(', 'String)', 'public'),
   \ javaapi#method(0,'NameNotFoundException(', ')', 'public'),
   \ ])
@@ -309,13 +309,13 @@ call javaapi#interface('NameParser', '', [
   \ javaapi#method(0,'parse(', 'String) throws NamingException', 'Name'),
   \ ])
 
-call javaapi#interface('NamingEnumeration<T>', '', [
+call javaapi#interface('NamingEnumeration<T>', 'Enumeration<T>', [
   \ javaapi#method(0,'next(', ') throws NamingException', 'T'),
   \ javaapi#method(0,'hasMore(', ') throws NamingException', 'boolean'),
   \ javaapi#method(0,'close(', ') throws NamingException', 'void'),
   \ ])
 
-call javaapi#class('NamingException', '', [
+call javaapi#class('NamingException', 'Exception', [
   \ javaapi#method(0,'NamingException(', 'String)', 'public'),
   \ javaapi#method(0,'NamingException(', ')', 'public'),
   \ javaapi#method(0,'getResolvedName(', ')', 'Name'),
@@ -335,32 +335,32 @@ call javaapi#class('NamingException', '', [
   \ javaapi#method(0,'toString(', 'boolean)', 'String'),
   \ ])
 
-call javaapi#class('NamingSecurityException', '', [
+call javaapi#class('NamingSecurityException', 'NamingException', [
   \ javaapi#method(0,'NamingSecurityException(', 'String)', 'public'),
   \ javaapi#method(0,'NamingSecurityException(', ')', 'public'),
   \ ])
 
-call javaapi#class('NoInitialContextException', '', [
+call javaapi#class('NoInitialContextException', 'NamingException', [
   \ javaapi#method(0,'NoInitialContextException(', ')', 'public'),
   \ javaapi#method(0,'NoInitialContextException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('NoPermissionException', '', [
+call javaapi#class('NoPermissionException', 'NamingSecurityException', [
   \ javaapi#method(0,'NoPermissionException(', 'String)', 'public'),
   \ javaapi#method(0,'NoPermissionException(', ')', 'public'),
   \ ])
 
-call javaapi#class('NotContextException', '', [
+call javaapi#class('NotContextException', 'NamingException', [
   \ javaapi#method(0,'NotContextException(', 'String)', 'public'),
   \ javaapi#method(0,'NotContextException(', ')', 'public'),
   \ ])
 
-call javaapi#class('OperationNotSupportedException', '', [
+call javaapi#class('OperationNotSupportedException', 'NamingException', [
   \ javaapi#method(0,'OperationNotSupportedException(', ')', 'public'),
   \ javaapi#method(0,'OperationNotSupportedException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('PartialResultException', '', [
+call javaapi#class('PartialResultException', 'NamingException', [
   \ javaapi#method(0,'PartialResultException(', 'String)', 'public'),
   \ javaapi#method(0,'PartialResultException(', ')', 'public'),
   \ ])
@@ -399,7 +399,7 @@ call javaapi#interface('Referenceable', '', [
   \ javaapi#method(0,'getReference(', ') throws NamingException', 'Reference'),
   \ ])
 
-call javaapi#class('ReferralException', '', [
+call javaapi#class('ReferralException', 'NamingException', [
   \ javaapi#method(0,'getReferralInfo(', ')', 'Object'),
   \ javaapi#method(0,'getReferralContext(', ') throws NamingException', 'Context'),
   \ javaapi#method(0,'getReferralContext(', 'Hashtable<?, ?>) throws NamingException', 'Context'),
@@ -407,22 +407,22 @@ call javaapi#class('ReferralException', '', [
   \ javaapi#method(0,'retryReferral(', ')', 'void'),
   \ ])
 
-call javaapi#class('ServiceUnavailableException', '', [
+call javaapi#class('ServiceUnavailableException', 'NamingException', [
   \ javaapi#method(0,'ServiceUnavailableException(', 'String)', 'public'),
   \ javaapi#method(0,'ServiceUnavailableException(', ')', 'public'),
   \ ])
 
-call javaapi#class('SizeLimitExceededException', '', [
+call javaapi#class('SizeLimitExceededException', 'LimitExceededException', [
   \ javaapi#method(0,'SizeLimitExceededException(', ')', 'public'),
   \ javaapi#method(0,'SizeLimitExceededException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('StringRefAddr', '', [
+call javaapi#class('StringRefAddr', 'RefAddr', [
   \ javaapi#method(0,'StringRefAddr(', 'String, String)', 'public'),
   \ javaapi#method(0,'getContent(', ')', 'Object'),
   \ ])
 
-call javaapi#class('TimeLimitExceededException', '', [
+call javaapi#class('TimeLimitExceededException', 'LimitExceededException', [
   \ javaapi#method(0,'TimeLimitExceededException(', ')', 'public'),
   \ javaapi#method(0,'TimeLimitExceededException(', 'String)', 'public'),
   \ ])

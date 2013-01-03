@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.swing.plaf.multi')
 
-call javaapi#class('MultiButtonUI', '', [
+call javaapi#class('MultiButtonUI', 'ButtonUI', [
   \ javaapi#method(0,'MultiButtonUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -16,7 +16,7 @@ call javaapi#class('MultiButtonUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiColorChooserUI', '', [
+call javaapi#class('MultiColorChooserUI', 'ColorChooserUI', [
   \ javaapi#method(0,'MultiColorChooserUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -32,7 +32,7 @@ call javaapi#class('MultiColorChooserUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiComboBoxUI', '', [
+call javaapi#class('MultiComboBoxUI', 'ComboBoxUI', [
   \ javaapi#method(0,'MultiComboBoxUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'isFocusTraversable(', 'JComboBox)', 'boolean'),
@@ -51,7 +51,7 @@ call javaapi#class('MultiComboBoxUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiDesktopIconUI', '', [
+call javaapi#class('MultiDesktopIconUI', 'DesktopIconUI', [
   \ javaapi#method(0,'MultiDesktopIconUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -67,7 +67,7 @@ call javaapi#class('MultiDesktopIconUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiDesktopPaneUI', '', [
+call javaapi#class('MultiDesktopPaneUI', 'DesktopPaneUI', [
   \ javaapi#method(0,'MultiDesktopPaneUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -83,7 +83,7 @@ call javaapi#class('MultiDesktopPaneUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiFileChooserUI', '', [
+call javaapi#class('MultiFileChooserUI', 'FileChooserUI', [
   \ javaapi#method(0,'MultiFileChooserUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'getAcceptAllFileFilter(', 'JFileChooser)', 'FileFilter'),
@@ -105,7 +105,7 @@ call javaapi#class('MultiFileChooserUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiInternalFrameUI', '', [
+call javaapi#class('MultiInternalFrameUI', 'InternalFrameUI', [
   \ javaapi#method(0,'MultiInternalFrameUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -121,7 +121,7 @@ call javaapi#class('MultiInternalFrameUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiLabelUI', '', [
+call javaapi#class('MultiLabelUI', 'LabelUI', [
   \ javaapi#method(0,'MultiLabelUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -137,7 +137,7 @@ call javaapi#class('MultiLabelUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiListUI', '', [
+call javaapi#class('MultiListUI', 'ListUI', [
   \ javaapi#method(0,'MultiListUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'locationToIndex(', 'JList, Point)', 'int'),
@@ -156,7 +156,7 @@ call javaapi#class('MultiListUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiLookAndFeel', '', [
+call javaapi#class('MultiLookAndFeel', 'LookAndFeel', [
   \ javaapi#method(0,'MultiLookAndFeel(', ')', 'public'),
   \ javaapi#method(0,'getName(', ')', 'String'),
   \ javaapi#method(0,'getID(', ')', 'String'),
@@ -167,7 +167,7 @@ call javaapi#class('MultiLookAndFeel', '', [
   \ javaapi#method(1,'createUIs(', 'ComponentUI, Vector, JComponent)', 'ComponentUI'),
   \ ])
 
-call javaapi#class('MultiMenuBarUI', '', [
+call javaapi#class('MultiMenuBarUI', 'MenuBarUI', [
   \ javaapi#method(0,'MultiMenuBarUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -183,7 +183,7 @@ call javaapi#class('MultiMenuBarUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiMenuItemUI', '', [
+call javaapi#class('MultiMenuItemUI', 'MenuItemUI', [
   \ javaapi#method(0,'MultiMenuItemUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -199,7 +199,7 @@ call javaapi#class('MultiMenuItemUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiOptionPaneUI', '', [
+call javaapi#class('MultiOptionPaneUI', 'OptionPaneUI', [
   \ javaapi#method(0,'MultiOptionPaneUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'selectInitialValue(', 'JOptionPane)', 'void'),
@@ -217,7 +217,7 @@ call javaapi#class('MultiOptionPaneUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiPanelUI', '', [
+call javaapi#class('MultiPanelUI', 'PanelUI', [
   \ javaapi#method(0,'MultiPanelUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -233,7 +233,7 @@ call javaapi#class('MultiPanelUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiPopupMenuUI', '', [
+call javaapi#class('MultiPopupMenuUI', 'PopupMenuUI', [
   \ javaapi#method(0,'MultiPopupMenuUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'isPopupTrigger(', 'MouseEvent)', 'boolean'),
@@ -251,7 +251,7 @@ call javaapi#class('MultiPopupMenuUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiProgressBarUI', '', [
+call javaapi#class('MultiProgressBarUI', 'ProgressBarUI', [
   \ javaapi#method(0,'MultiProgressBarUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -267,7 +267,7 @@ call javaapi#class('MultiProgressBarUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiRootPaneUI', '', [
+call javaapi#class('MultiRootPaneUI', 'RootPaneUI', [
   \ javaapi#method(0,'MultiRootPaneUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -283,7 +283,7 @@ call javaapi#class('MultiRootPaneUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiScrollBarUI', '', [
+call javaapi#class('MultiScrollBarUI', 'ScrollBarUI', [
   \ javaapi#method(0,'MultiScrollBarUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -299,7 +299,7 @@ call javaapi#class('MultiScrollBarUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiScrollPaneUI', '', [
+call javaapi#class('MultiScrollPaneUI', 'ScrollPaneUI', [
   \ javaapi#method(0,'MultiScrollPaneUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -315,7 +315,7 @@ call javaapi#class('MultiScrollPaneUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiSeparatorUI', '', [
+call javaapi#class('MultiSeparatorUI', 'SeparatorUI', [
   \ javaapi#method(0,'MultiSeparatorUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -331,7 +331,7 @@ call javaapi#class('MultiSeparatorUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiSliderUI', '', [
+call javaapi#class('MultiSliderUI', 'SliderUI', [
   \ javaapi#method(0,'MultiSliderUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -347,7 +347,7 @@ call javaapi#class('MultiSliderUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiSpinnerUI', '', [
+call javaapi#class('MultiSpinnerUI', 'SpinnerUI', [
   \ javaapi#method(0,'MultiSpinnerUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -363,7 +363,7 @@ call javaapi#class('MultiSpinnerUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiSplitPaneUI', '', [
+call javaapi#class('MultiSplitPaneUI', 'SplitPaneUI', [
   \ javaapi#method(0,'MultiSplitPaneUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'resetToPreferredSizes(', 'JSplitPane)', 'void'),
@@ -385,7 +385,7 @@ call javaapi#class('MultiSplitPaneUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiTabbedPaneUI', '', [
+call javaapi#class('MultiTabbedPaneUI', 'TabbedPaneUI', [
   \ javaapi#method(0,'MultiTabbedPaneUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'tabForCoordinate(', 'JTabbedPane, int, int)', 'int'),
@@ -404,7 +404,7 @@ call javaapi#class('MultiTabbedPaneUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiTableHeaderUI', '', [
+call javaapi#class('MultiTableHeaderUI', 'TableHeaderUI', [
   \ javaapi#method(0,'MultiTableHeaderUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -420,7 +420,7 @@ call javaapi#class('MultiTableHeaderUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiTableUI', '', [
+call javaapi#class('MultiTableUI', 'TableUI', [
   \ javaapi#method(0,'MultiTableUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -436,7 +436,7 @@ call javaapi#class('MultiTableUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiTextUI', '', [
+call javaapi#class('MultiTextUI', 'TextUI', [
   \ javaapi#method(0,'MultiTextUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'getToolTipText(', 'JTextComponent, Point)', 'String'),
@@ -462,7 +462,7 @@ call javaapi#class('MultiTextUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiToolBarUI', '', [
+call javaapi#class('MultiToolBarUI', 'ToolBarUI', [
   \ javaapi#method(0,'MultiToolBarUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -478,7 +478,7 @@ call javaapi#class('MultiToolBarUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiToolTipUI', '', [
+call javaapi#class('MultiToolTipUI', 'ToolTipUI', [
   \ javaapi#method(0,'MultiToolTipUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -494,7 +494,7 @@ call javaapi#class('MultiToolTipUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiTreeUI', '', [
+call javaapi#class('MultiTreeUI', 'TreeUI', [
   \ javaapi#method(0,'MultiTreeUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'getPathBounds(', 'JTree, TreePath)', 'Rectangle'),
@@ -520,10 +520,10 @@ call javaapi#class('MultiTreeUI', '', [
   \ javaapi#method(0,'getAccessibleChild(', 'JComponent, int)', 'Accessible'),
   \ ])
 
-call javaapi#class('MultiUIDefaults', '', [
+call javaapi#class('MultiUIDefaults', 'UIDefaults', [
   \ ])
 
-call javaapi#class('MultiViewportUI', '', [
+call javaapi#class('MultiViewportUI', 'ViewportUI', [
   \ javaapi#method(0,'MultiViewportUI(', ')', 'public'),
   \ javaapi#method(0,'getUIs(', ')', 'ComponentUI[]'),
   \ javaapi#method(0,'contains(', 'JComponent, int, int)', 'boolean'),

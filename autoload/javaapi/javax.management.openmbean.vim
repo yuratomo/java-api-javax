@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.management.openmbean')
 
-call javaapi#class('ArrayType<T>', '', [
+call javaapi#class('ArrayType<T>', 'OpenType<T>', [
   \ javaapi#method(0,'ArrayType(', 'int, OpenType<?>) throws OpenDataException', 'public'),
   \ javaapi#method(0,'ArrayType(', 'SimpleType<?>, boolean) throws OpenDataException', 'public'),
   \ javaapi#method(0,'getDimension(', ')', 'int'),
@@ -50,7 +50,7 @@ call javaapi#interface('CompositeDataView', '', [
   \ javaapi#method(0,'toCompositeData(', 'CompositeType)', 'CompositeData'),
   \ ])
 
-call javaapi#class('CompositeType', '', [
+call javaapi#class('CompositeType', 'CompositeData>', [
   \ javaapi#method(0,'CompositeType(', 'String, String, String[], String[], OpenType<?>[]) throws OpenDataException', 'public'),
   \ javaapi#method(0,'containsKey(', 'String)', 'boolean'),
   \ javaapi#method(0,'getDescription(', 'String)', 'String'),
@@ -62,27 +62,27 @@ call javaapi#class('CompositeType', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('InvalidKeyException', '', [
+call javaapi#class('InvalidKeyException', 'IllegalArgumentException', [
   \ javaapi#method(0,'InvalidKeyException(', ')', 'public'),
   \ javaapi#method(0,'InvalidKeyException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('InvalidOpenTypeException', '', [
+call javaapi#class('InvalidOpenTypeException', 'IllegalArgumentException', [
   \ javaapi#method(0,'InvalidOpenTypeException(', ')', 'public'),
   \ javaapi#method(0,'InvalidOpenTypeException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('KeyAlreadyExistsException', '', [
+call javaapi#class('KeyAlreadyExistsException', 'IllegalArgumentException', [
   \ javaapi#method(0,'KeyAlreadyExistsException(', ')', 'public'),
   \ javaapi#method(0,'KeyAlreadyExistsException(', 'String)', 'public'),
   \ ])
 
-call javaapi#class('OpenDataException', '', [
+call javaapi#class('OpenDataException', 'JMException', [
   \ javaapi#method(0,'OpenDataException(', ')', 'public'),
   \ javaapi#method(0,'OpenDataException(', 'String)', 'public'),
   \ ])
 
-call javaapi#interface('OpenMBeanAttributeInfo', '', [
+call javaapi#interface('OpenMBeanAttributeInfo', 'OpenMBeanParameterInfo', [
   \ javaapi#method(0,'isReadable(', ')', 'boolean'),
   \ javaapi#method(0,'isWritable(', ')', 'boolean'),
   \ javaapi#method(0,'isIs(', ')', 'boolean'),
@@ -91,7 +91,7 @@ call javaapi#interface('OpenMBeanAttributeInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('OpenMBeanAttributeInfoSupport', '', [
+call javaapi#class('OpenMBeanAttributeInfoSupport', 'MBeanAttributeInfo', [
   \ javaapi#method(0,'OpenMBeanAttributeInfoSupport(', 'String, String, OpenType<?>, boolean, boolean, boolean)', 'public'),
   \ javaapi#method(0,'OpenMBeanAttributeInfoSupport(', 'String, String, OpenType<?>, boolean, boolean, boolean, Descriptor)', 'public'),
   \ javaapi#method(0,'OpenMBeanAttributeInfoSupport(', 'String, String, OpenType<T>, boolean, boolean, boolean, T) throws OpenDataException', 'java/lang/Object>'),
@@ -121,7 +121,7 @@ call javaapi#interface('OpenMBeanConstructorInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('OpenMBeanConstructorInfoSupport', '', [
+call javaapi#class('OpenMBeanConstructorInfoSupport', 'MBeanConstructorInfo', [
   \ javaapi#method(0,'OpenMBeanConstructorInfoSupport(', 'String, String, OpenMBeanParameterInfo[])', 'public'),
   \ javaapi#method(0,'OpenMBeanConstructorInfoSupport(', 'String, String, OpenMBeanParameterInfo[], Descriptor)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
@@ -141,7 +141,7 @@ call javaapi#interface('OpenMBeanInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('OpenMBeanInfoSupport', '', [
+call javaapi#class('OpenMBeanInfoSupport', 'MBeanInfo', [
   \ javaapi#method(0,'OpenMBeanInfoSupport(', 'String, String, OpenMBeanAttributeInfo[], OpenMBeanConstructorInfo[], OpenMBeanOperationInfo[], MBeanNotificationInfo[])', 'public'),
   \ javaapi#method(0,'OpenMBeanInfoSupport(', 'String, String, OpenMBeanAttributeInfo[], OpenMBeanConstructorInfo[], OpenMBeanOperationInfo[], MBeanNotificationInfo[], Descriptor)', 'public'),
   \ javaapi#method(0,'equals(', 'Object)', 'boolean'),
@@ -161,7 +161,7 @@ call javaapi#interface('OpenMBeanOperationInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('OpenMBeanOperationInfoSupport', '', [
+call javaapi#class('OpenMBeanOperationInfoSupport', 'MBeanOperationInfo', [
   \ javaapi#method(0,'OpenMBeanOperationInfoSupport(', 'String, String, OpenMBeanParameterInfo[], OpenType<?>, int)', 'public'),
   \ javaapi#method(0,'OpenMBeanOperationInfoSupport(', 'String, String, OpenMBeanParameterInfo[], OpenType<?>, int, Descriptor)', 'public'),
   \ javaapi#method(0,'getReturnOpenType(', ')', 'OpenType<?>'),
@@ -188,7 +188,7 @@ call javaapi#interface('OpenMBeanParameterInfo', '', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('OpenMBeanParameterInfoSupport', '', [
+call javaapi#class('OpenMBeanParameterInfoSupport', 'MBeanParameterInfo', [
   \ javaapi#method(0,'OpenMBeanParameterInfoSupport(', 'String, String, OpenType<?>)', 'public'),
   \ javaapi#method(0,'OpenMBeanParameterInfoSupport(', 'String, String, OpenType<?>, Descriptor)', 'public'),
   \ javaapi#method(0,'OpenMBeanParameterInfoSupport(', 'String, String, OpenType<T>, T) throws OpenDataException', 'java/lang/Object>'),
@@ -227,7 +227,7 @@ call javaapi#class('OpenType<T>', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('SimpleType<T>', '', [
+call javaapi#class('SimpleType<T>', 'OpenType<T>', [
   \ javaapi#field(1,'VOID', 'Void>'),
   \ javaapi#field(1,'BOOLEAN', 'Boolean>'),
   \ javaapi#field(1,'CHARACTER', 'Character>'),
@@ -297,7 +297,7 @@ call javaapi#class('TabularDataSupport', 'Serializable', [
   \ javaapi#method(0,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('TabularType', '', [
+call javaapi#class('TabularType', 'TabularData>', [
   \ javaapi#method(0,'TabularType(', 'String, String, CompositeType, String[]) throws OpenDataException', 'public'),
   \ javaapi#method(0,'getRowType(', ')', 'CompositeType'),
   \ javaapi#method(0,'getIndexNames(', ')', 'String>'),
