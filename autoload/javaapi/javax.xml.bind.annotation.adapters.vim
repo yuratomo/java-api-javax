@@ -1,44 +1,43 @@
 call javaapi#namespace('javax.xml.bind.annotation.adapters')
 
 call javaapi#class('CollapsedStringAdapter', 'String>', [
-  \ javaapi#method(0,'CollapsedStringAdapter(', ')', 'public'),
-  \ javaapi#method(0,'unmarshal(', 'String)', 'String'),
-  \ javaapi#method(0,'marshal(', 'String)', 'String'),
-  \ javaapi#method(0,'marshal(', 'Object) throws Exception', 'Object'),
-  \ javaapi#method(0,'unmarshal(', 'Object) throws Exception', 'Object'),
+  \ javaapi#method(0,1,'CollapsedStringAdapter(', ')', ''),
+  \ javaapi#method(0,1,'unmarshal(', 'String)', 'String'),
+  \ javaapi#method(0,1,'marshal(', 'String)', 'String'),
+  \ javaapi#method(1,0,'isWhiteSpace(', 'char)', 'boolean'),
+  \ javaapi#method(0,1,'marshal(', 'Object) throws Exception', 'Object'),
+  \ javaapi#method(0,1,'unmarshal(', 'Object) throws Exception', 'Object'),
   \ ])
 
 call javaapi#class('HexBinaryAdapter', 'String,byte[]>', [
-  \ javaapi#method(0,'HexBinaryAdapter(', ')', 'public'),
-  \ javaapi#method(0,'unmarshal(', 'String)', 'byte[]'),
-  \ javaapi#method(0,'marshal(', 'byte[])', 'String'),
-  \ javaapi#method(0,'marshal(', 'Object) throws Exception', 'Object'),
-  \ javaapi#method(0,'unmarshal(', 'Object) throws Exception', 'Object'),
+  \ javaapi#method(0,1,'HexBinaryAdapter(', ')', ''),
+  \ javaapi#method(0,1,'unmarshal(', 'String)', 'byte[]'),
+  \ javaapi#method(0,1,'marshal(', 'byte[])', 'String'),
+  \ javaapi#method(0,1,'marshal(', 'Object) throws Exception', 'Object'),
+  \ javaapi#method(0,1,'unmarshal(', 'Object) throws Exception', 'Object'),
   \ ])
 
 call javaapi#class('NormalizedStringAdapter', 'String>', [
-  \ javaapi#method(0,'NormalizedStringAdapter(', ')', 'public'),
-  \ javaapi#method(0,'unmarshal(', 'String)', 'String'),
-  \ javaapi#method(0,'marshal(', 'String)', 'String'),
-  \ javaapi#method(0,'marshal(', 'Object) throws Exception', 'Object'),
-  \ javaapi#method(0,'unmarshal(', 'Object) throws Exception', 'Object'),
+  \ javaapi#method(0,1,'NormalizedStringAdapter(', ')', ''),
+  \ javaapi#method(0,1,'unmarshal(', 'String)', 'String'),
+  \ javaapi#method(0,1,'marshal(', 'String)', 'String'),
+  \ javaapi#method(1,0,'isWhiteSpaceExceptSpace(', 'char)', 'boolean'),
+  \ javaapi#method(0,1,'marshal(', 'Object) throws Exception', 'Object'),
+  \ javaapi#method(0,1,'unmarshal(', 'Object) throws Exception', 'Object'),
   \ ])
 
 call javaapi#class('XmlAdapter<ValueType,BoundType>', '', [
-  \ javaapi#method(0,'unmarshal(', 'ValueType) throws Exception', 'BoundType'),
-  \ javaapi#method(0,'marshal(', 'BoundType) throws Exception', 'ValueType'),
-  \ ])
-
-call javaapi#class('DEFAULT', '', [
-  \ javaapi#method(0,'DEFAULT(', ')', 'public'),
+  \ javaapi#method(0,0,'XmlAdapter(', ')', ''),
+  \ javaapi#method(0,1,'unmarshal(', 'ValueType) throws Exception', 'BoundType'),
+  \ javaapi#method(0,1,'marshal(', 'BoundType) throws Exception', 'ValueType'),
   \ ])
 
 call javaapi#interface('XmlJavaTypeAdapter', 'Annotation', [
-  \ javaapi#method(0,'value(', ')', 'XmlAdapter>'),
-  \ javaapi#method(0,'type(', ')', 'Class'),
+  \ javaapi#method(0,1,'value(', ')', 'XmlAdapter>'),
+  \ javaapi#method(0,1,'type(', ')', 'Class'),
   \ ])
 
 call javaapi#interface('XmlJavaTypeAdapters', 'Annotation', [
-  \ javaapi#method(0,'value(', ')', 'XmlJavaTypeAdapter[]'),
+  \ javaapi#method(0,1,'value(', ')', 'XmlJavaTypeAdapter[]'),
   \ ])
 
