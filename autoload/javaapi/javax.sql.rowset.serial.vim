@@ -11,7 +11,7 @@ call javaapi#class('SQLInputImpl', 'SQLInput', [
   \ javaapi#method(0,1,'readFloat(', ') throws SQLException', 'float'),
   \ javaapi#method(0,1,'readDouble(', ') throws SQLException', 'double'),
   \ javaapi#method(0,1,'readBigDecimal(', ') throws SQLException', 'BigDecimal'),
-  \ javaapi#method(0,1,'readBytes(', ') throws SQLException', 'byte[]'),
+  \ javaapi#method(0,1,'readBytes(', ') throws SQLException', 'byte'),
   \ javaapi#method(0,1,'readDate(', ') throws SQLException', 'Date'),
   \ javaapi#method(0,1,'readTime(', ') throws SQLException', 'Time'),
   \ javaapi#method(0,1,'readTimestamp(', ') throws SQLException', 'Timestamp'),
@@ -81,7 +81,7 @@ call javaapi#class('SerialArray', 'Cloneable', [
 call javaapi#class('SerialBlob', 'Cloneable', [
   \ javaapi#method(0,1,'SerialBlob(', 'byte[]) throws SerialException, SQLException', ''),
   \ javaapi#method(0,1,'SerialBlob(', 'Blob) throws SerialException, SQLException', ''),
-  \ javaapi#method(0,1,'getBytes(', 'long, int) throws SerialException', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', 'long, int) throws SerialException', 'byte'),
   \ javaapi#method(0,1,'length(', ') throws SerialException', 'long'),
   \ javaapi#method(0,1,'getBinaryStream(', ') throws SerialException', 'InputStream'),
   \ javaapi#method(0,1,'position(', 'byte[], long) throws SerialException, SQLException', 'long'),
@@ -125,7 +125,7 @@ call javaapi#class('SerialException', 'SQLException', [
 call javaapi#class('SerialJavaObject', 'Cloneable', [
   \ javaapi#method(0,1,'SerialJavaObject(', 'Object) throws SerialException', ''),
   \ javaapi#method(0,1,'getObject(', ') throws SerialException', 'Object'),
-  \ javaapi#method(0,1,'getFields(', ') throws SerialException', 'Field[]'),
+  \ javaapi#method(0,1,'getFields(', ') throws SerialException', 'Field'),
   \ ])
 
 call javaapi#class('SerialRef', 'Cloneable', [
@@ -140,7 +140,7 @@ call javaapi#class('SerialStruct', 'Cloneable', [
   \ javaapi#method(0,1,'SerialStruct(', 'Struct, Map<String, Class<?>>) throws SerialException', ''),
   \ javaapi#method(0,1,'SerialStruct(', 'SQLData, Map<String, Class<?>>) throws SerialException', ''),
   \ javaapi#method(0,1,'getSQLTypeName(', ') throws SerialException', 'String'),
-  \ javaapi#method(0,1,'getAttributes(', ') throws SerialException', 'Object[]'),
-  \ javaapi#method(0,1,'getAttributes(', 'Map<String, Class<?>>) throws SerialException', 'Object[]'),
+  \ javaapi#method(0,1,'getAttributes(', ') throws SerialException', 'Object'),
+  \ javaapi#method(0,1,'getAttributes(', 'Map<String, Class<?>>) throws SerialException', 'Object'),
   \ ])
 

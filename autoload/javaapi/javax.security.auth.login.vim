@@ -37,13 +37,13 @@ call javaapi#class('Configuration', '', [
   \ javaapi#method(0,1,'getProvider(', ')', 'Provider'),
   \ javaapi#method(0,1,'getType(', ')', 'String'),
   \ javaapi#method(0,1,'getParameters(', ')', 'Parameters'),
-  \ javaapi#method(0,1,'getAppConfigurationEntry(', 'String)', 'AppConfigurationEntry[]'),
+  \ javaapi#method(0,1,'getAppConfigurationEntry(', 'String)', 'AppConfigurationEntry'),
   \ javaapi#method(0,1,'refresh(', ')', 'void'),
   \ ])
 
 call javaapi#class('ConfigurationSpi', '', [
   \ javaapi#method(0,1,'ConfigurationSpi(', ')', ''),
-  \ javaapi#method(0,0,'engineGetAppConfigurationEntry(', 'String)', 'AppConfigurationEntry[]'),
+  \ javaapi#method(0,0,'engineGetAppConfigurationEntry(', 'String)', 'AppConfigurationEntry'),
   \ javaapi#method(0,0,'engineRefresh(', ')', 'void'),
   \ ])
 

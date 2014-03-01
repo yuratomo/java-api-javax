@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.xml.bind.annotation.adapters')
 
-call javaapi#class('CollapsedStringAdapter', 'String>', [
+call javaapi#class('CollapsedStringAdapter', 'XmlAdapter', [
   \ javaapi#method(0,1,'CollapsedStringAdapter(', ')', ''),
   \ javaapi#method(0,1,'unmarshal(', 'String)', 'String'),
   \ javaapi#method(0,1,'marshal(', 'String)', 'String'),
@@ -9,15 +9,15 @@ call javaapi#class('CollapsedStringAdapter', 'String>', [
   \ javaapi#method(0,1,'unmarshal(', 'Object) throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('HexBinaryAdapter', 'String,byte[]>', [
+call javaapi#class('HexBinaryAdapter', 'XmlAdapter', [
   \ javaapi#method(0,1,'HexBinaryAdapter(', ')', ''),
-  \ javaapi#method(0,1,'unmarshal(', 'String)', 'byte[]'),
+  \ javaapi#method(0,1,'unmarshal(', 'String)', 'byte'),
   \ javaapi#method(0,1,'marshal(', 'byte[])', 'String'),
   \ javaapi#method(0,1,'marshal(', 'Object) throws Exception', 'Object'),
   \ javaapi#method(0,1,'unmarshal(', 'Object) throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('NormalizedStringAdapter', 'String>', [
+call javaapi#class('NormalizedStringAdapter', 'XmlAdapter', [
   \ javaapi#method(0,1,'NormalizedStringAdapter(', ')', ''),
   \ javaapi#method(0,1,'unmarshal(', 'String)', 'String'),
   \ javaapi#method(0,1,'marshal(', 'String)', 'String'),
@@ -26,7 +26,7 @@ call javaapi#class('NormalizedStringAdapter', 'String>', [
   \ javaapi#method(0,1,'unmarshal(', 'Object) throws Exception', 'Object'),
   \ ])
 
-call javaapi#class('XmlAdapter<ValueType,BoundType>', '', [
+call javaapi#class('XmlAdapter', '', [
   \ javaapi#method(0,0,'XmlAdapter(', ')', ''),
   \ javaapi#method(0,1,'unmarshal(', 'ValueType) throws Exception', 'BoundType'),
   \ javaapi#method(0,1,'marshal(', 'BoundType) throws Exception', 'ValueType'),
@@ -38,6 +38,6 @@ call javaapi#interface('XmlJavaTypeAdapter', 'Annotation', [
   \ ])
 
 call javaapi#interface('XmlJavaTypeAdapters', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'XmlJavaTypeAdapter[]'),
+  \ javaapi#method(0,1,'value(', ')', 'XmlJavaTypeAdapter'),
   \ ])
 

@@ -16,7 +16,7 @@ call javaapi#class('Messages', '', [
 
 call javaapi#class('ValidationEventCollector', 'ValidationEventHandler', [
   \ javaapi#method(0,1,'ValidationEventCollector(', ')', ''),
-  \ javaapi#method(0,1,'getEvents(', ')', 'ValidationEvent[]'),
+  \ javaapi#method(0,1,'getEvents(', ')', 'ValidationEvent'),
   \ javaapi#method(0,1,'reset(', ')', 'void'),
   \ javaapi#method(0,1,'hasEvents(', ')', 'boolean'),
   \ javaapi#method(0,1,'handleEvent(', 'ValidationEvent)', 'boolean'),

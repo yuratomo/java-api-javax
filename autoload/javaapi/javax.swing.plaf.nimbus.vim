@@ -1,9 +1,9 @@
 call javaapi#namespace('javax.swing.plaf.nimbus')
 
-call javaapi#class('AbstractRegionPainter', 'JComponent>', [
+call javaapi#class('AbstractRegionPainter', 'Painter', [
   \ javaapi#method(0,0,'AbstractRegionPainter(', ')', ''),
   \ javaapi#method(0,1,'paint(', 'Graphics2D, JComponent, int, int)', 'void'),
-  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object[]'),
+  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object'),
   \ javaapi#method(0,0,'getPaintContext(', ')', 'PaintContext'),
   \ javaapi#method(0,0,'configureGraphics(', 'Graphics2D)', 'void'),
   \ javaapi#method(0,0,'doPaint(', 'Graphics2D, JComponent, int, int, Object[])', 'void'),
@@ -28,7 +28,7 @@ call javaapi#class('ArrowButtonPainter', 'AbstractRegionPainter', [
 call javaapi#class('ButtonPainter', 'AbstractRegionPainter', [
   \ javaapi#method(0,1,'ButtonPainter(', 'PaintContext, int)', ''),
   \ javaapi#method(0,0,'doPaint(', 'Graphics2D, JComponent, int, int, Object[])', 'void'),
-  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object[]'),
+  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object'),
   \ javaapi#method(0,0,'getPaintContext(', ')', 'PaintContext'),
   \ ])
 
@@ -61,7 +61,7 @@ call javaapi#class('ComboBoxEditableState', 'State', [
 call javaapi#class('ComboBoxPainter', 'AbstractRegionPainter', [
   \ javaapi#method(0,1,'ComboBoxPainter(', 'PaintContext, int)', ''),
   \ javaapi#method(0,0,'doPaint(', 'Graphics2D, JComponent, int, int, Object[])', 'void'),
-  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object[]'),
+  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object'),
   \ javaapi#method(0,0,'getPaintContext(', ')', 'PaintContext'),
   \ ])
 
@@ -110,7 +110,7 @@ call javaapi#class('Effect', '', [
   \ ])
 
 call javaapi#class('EffectUtils', '', [
-  \ javaapi#method(1,1,'getPixels(', 'BufferedImage, int, int, int, int, int[])', 'int[]'),
+  \ javaapi#method(1,1,'getPixels(', 'BufferedImage, int, int, int, int, int[])', 'int'),
   \ javaapi#method(1,1,'setPixels(', 'BufferedImage, int, int, int, int, int[])', 'void'),
   \ javaapi#method(1,1,'createColorModelCompatibleImage(', 'BufferedImage)', 'BufferedImage'),
   \ javaapi#method(1,1,'createCompatibleTranslucentImage(', 'int, int)', 'BufferedImage'),
@@ -125,7 +125,7 @@ call javaapi#class('FileChooserPainter', 'AbstractRegionPainter', [
 call javaapi#class('FormattedTextFieldPainter', 'AbstractRegionPainter', [
   \ javaapi#method(0,1,'FormattedTextFieldPainter(', 'PaintContext, int)', ''),
   \ javaapi#method(0,0,'doPaint(', 'Graphics2D, JComponent, int, int, Object[])', 'void'),
-  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object[]'),
+  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object'),
   \ javaapi#method(0,0,'getPaintContext(', ')', 'PaintContext'),
   \ ])
 
@@ -207,7 +207,7 @@ call javaapi#class('InternalFrameWindowFocusedState', 'State', [
   \ ])
 
 call javaapi#class('LoweredBorder', 'AbstractRegionPainter', [
-  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object[]'),
+  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object'),
   \ javaapi#method(0,0,'doPaint(', 'Graphics2D, JComponent, int, int, Object[])', 'void'),
   \ javaapi#method(0,0,'getPaintContext(', ')', 'PaintContext'),
   \ javaapi#method(0,1,'getBorderInsets(', 'Component)', 'Insets'),
@@ -306,7 +306,7 @@ call javaapi#class('OuterGlowEffect', 'DropShadowEffect', [
 call javaapi#class('PasswordFieldPainter', 'AbstractRegionPainter', [
   \ javaapi#method(0,1,'PasswordFieldPainter(', 'PaintContext, int)', ''),
   \ javaapi#method(0,0,'doPaint(', 'Graphics2D, JComponent, int, int, Object[])', 'void'),
-  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object[]'),
+  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object'),
   \ javaapi#method(0,0,'getPaintContext(', ')', 'PaintContext'),
   \ ])
 
@@ -633,14 +633,14 @@ call javaapi#class('TextAreaNotInScrollPaneState', 'State', [
 call javaapi#class('TextAreaPainter', 'AbstractRegionPainter', [
   \ javaapi#method(0,1,'TextAreaPainter(', 'PaintContext, int)', ''),
   \ javaapi#method(0,0,'doPaint(', 'Graphics2D, JComponent, int, int, Object[])', 'void'),
-  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object[]'),
+  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object'),
   \ javaapi#method(0,0,'getPaintContext(', ')', 'PaintContext'),
   \ ])
 
 call javaapi#class('TextFieldPainter', 'AbstractRegionPainter', [
   \ javaapi#method(0,1,'TextFieldPainter(', 'PaintContext, int)', ''),
   \ javaapi#method(0,0,'doPaint(', 'Graphics2D, JComponent, int, int, Object[])', 'void'),
-  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object[]'),
+  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object'),
   \ javaapi#method(0,0,'getPaintContext(', ')', 'PaintContext'),
   \ ])
 
@@ -653,7 +653,7 @@ call javaapi#class('TextPanePainter', 'AbstractRegionPainter', [
 call javaapi#class('ToggleButtonPainter', 'AbstractRegionPainter', [
   \ javaapi#method(0,1,'ToggleButtonPainter(', 'PaintContext, int)', ''),
   \ javaapi#method(0,0,'doPaint(', 'Graphics2D, JComponent, int, int, Object[])', 'void'),
-  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object[]'),
+  \ javaapi#method(0,0,'getExtendedCacheKeys(', 'JComponent)', 'Object'),
   \ javaapi#method(0,0,'getPaintContext(', ')', 'PaintContext'),
   \ ])
 

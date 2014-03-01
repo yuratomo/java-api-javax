@@ -2,8 +2,8 @@ call javaapi#namespace('javax.smartcardio')
 
 call javaapi#class('ATR', 'Serializable', [
   \ javaapi#method(0,1,'ATR(', 'byte[])', ''),
-  \ javaapi#method(0,1,'getBytes(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getHistoricalBytes(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', ')', 'byte'),
+  \ javaapi#method(0,1,'getHistoricalBytes(', ')', 'byte'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -17,7 +17,7 @@ call javaapi#class('Card', '', [
   \ javaapi#method(0,1,'openLogicalChannel(', ') throws CardException', 'CardChannel'),
   \ javaapi#method(0,1,'beginExclusive(', ') throws CardException', 'void'),
   \ javaapi#method(0,1,'endExclusive(', ') throws CardException', 'void'),
-  \ javaapi#method(0,1,'transmitControlCommand(', 'int, byte[]) throws CardException', 'byte[]'),
+  \ javaapi#method(0,1,'transmitControlCommand(', 'int, byte[]) throws CardException', 'byte'),
   \ javaapi#method(0,1,'disconnect(', 'boolean) throws CardException', 'void'),
   \ ])
 
@@ -61,8 +61,8 @@ call javaapi#class('CardTerminal', '', [
 
 call javaapi#class('CardTerminals', '', [
   \ javaapi#method(0,0,'CardTerminals(', ')', ''),
-  \ javaapi#method(0,1,'list(', ') throws CardException', 'CardTerminal>'),
-  \ javaapi#method(0,1,'list(', 'State) throws CardException', 'CardTerminal>'),
+  \ javaapi#method(0,1,'list(', ') throws CardException', 'List'),
+  \ javaapi#method(0,1,'list(', 'State) throws CardException', 'List'),
   \ javaapi#method(0,1,'getTerminal(', 'String)', 'CardTerminal'),
   \ javaapi#method(0,1,'waitForChange(', ') throws CardException', 'void'),
   \ javaapi#method(0,1,'waitForChange(', 'long) throws CardException', 'boolean'),
@@ -83,9 +83,9 @@ call javaapi#class('CommandAPDU', 'Serializable', [
   \ javaapi#method(0,1,'getP1(', ')', 'int'),
   \ javaapi#method(0,1,'getP2(', ')', 'int'),
   \ javaapi#method(0,1,'getNc(', ')', 'int'),
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ javaapi#method(0,1,'getNe(', ')', 'int'),
-  \ javaapi#method(0,1,'getBytes(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', ')', 'byte'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -94,11 +94,11 @@ call javaapi#class('CommandAPDU', 'Serializable', [
 call javaapi#class('ResponseAPDU', 'Serializable', [
   \ javaapi#method(0,1,'ResponseAPDU(', 'byte[])', ''),
   \ javaapi#method(0,1,'getNr(', ')', 'int'),
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ javaapi#method(0,1,'getSW1(', ')', 'int'),
   \ javaapi#method(0,1,'getSW2(', ')', 'int'),
   \ javaapi#method(0,1,'getSW(', ')', 'int'),
-  \ javaapi#method(0,1,'getBytes(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getBytes(', ')', 'byte'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),

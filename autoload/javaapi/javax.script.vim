@@ -17,7 +17,7 @@ call javaapi#class('AbstractScriptEngine', 'ScriptEngine', [
   \ javaapi#method(0,0,'getScriptContext(', 'Bindings)', 'ScriptContext'),
   \ ])
 
-call javaapi#interface('Bindings', 'Object>', [
+call javaapi#interface('Bindings', 'Map', [
   \ javaapi#method(0,1,'put(', 'String, Object)', 'Object'),
   \ javaapi#method(0,1,'putAll(', 'Map<? extends String, ? extends Object>)', 'void'),
   \ javaapi#method(0,1,'containsKey(', 'Object)', 'boolean'),
@@ -61,7 +61,7 @@ call javaapi#interface('ScriptContext', '', [
   \ javaapi#method(0,1,'setErrorWriter(', 'Writer)', 'void'),
   \ javaapi#method(0,1,'getReader(', ')', 'Reader'),
   \ javaapi#method(0,1,'setReader(', 'Reader)', 'void'),
-  \ javaapi#method(0,1,'getScopes(', ')', 'Integer>'),
+  \ javaapi#method(0,1,'getScopes(', ')', 'List'),
   \ ])
 
 call javaapi#interface('ScriptEngine', '', [
@@ -91,9 +91,9 @@ call javaapi#interface('ScriptEngine', '', [
 call javaapi#interface('ScriptEngineFactory', '', [
   \ javaapi#method(0,1,'getEngineName(', ')', 'String'),
   \ javaapi#method(0,1,'getEngineVersion(', ')', 'String'),
-  \ javaapi#method(0,1,'getExtensions(', ')', 'String>'),
-  \ javaapi#method(0,1,'getMimeTypes(', ')', 'String>'),
-  \ javaapi#method(0,1,'getNames(', ')', 'String>'),
+  \ javaapi#method(0,1,'getExtensions(', ')', 'List'),
+  \ javaapi#method(0,1,'getMimeTypes(', ')', 'List'),
+  \ javaapi#method(0,1,'getNames(', ')', 'List'),
   \ javaapi#method(0,1,'getLanguageName(', ')', 'String'),
   \ javaapi#method(0,1,'getLanguageVersion(', ')', 'String'),
   \ javaapi#method(0,1,'getParameter(', 'String)', 'Object'),
@@ -113,7 +113,7 @@ call javaapi#class('ScriptEngineManager', '', [
   \ javaapi#method(0,1,'getEngineByName(', 'String)', 'ScriptEngine'),
   \ javaapi#method(0,1,'getEngineByExtension(', 'String)', 'ScriptEngine'),
   \ javaapi#method(0,1,'getEngineByMimeType(', 'String)', 'ScriptEngine'),
-  \ javaapi#method(0,1,'getEngineFactories(', ')', 'ScriptEngineFactory>'),
+  \ javaapi#method(0,1,'getEngineFactories(', ')', 'List'),
   \ javaapi#method(0,1,'registerEngineName(', 'String, ScriptEngineFactory)', 'void'),
   \ javaapi#method(0,1,'registerEngineMimeType(', 'String, ScriptEngineFactory)', 'void'),
   \ javaapi#method(0,1,'registerEngineExtension(', 'String, ScriptEngineFactory)', 'void'),
@@ -141,10 +141,10 @@ call javaapi#class('SimpleBindings', 'Bindings', [
   \ javaapi#method(0,1,'entrySet(', ')', 'Object>>'),
   \ javaapi#method(0,1,'get(', 'Object)', 'Object'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'keySet(', ')', 'String>'),
+  \ javaapi#method(0,1,'keySet(', ')', 'Set'),
   \ javaapi#method(0,1,'remove(', 'Object)', 'Object'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'values(', ')', 'Object>'),
+  \ javaapi#method(0,1,'values(', ')', 'Collection'),
   \ javaapi#method(0,1,'put(', 'Object, Object)', 'Object'),
   \ ])
 
@@ -168,6 +168,6 @@ call javaapi#class('SimpleScriptContext', 'ScriptContext', [
   \ javaapi#method(0,1,'setErrorWriter(', 'Writer)', 'void'),
   \ javaapi#method(0,1,'getAttributesScope(', 'String)', 'int'),
   \ javaapi#method(0,1,'getBindings(', 'int)', 'Bindings'),
-  \ javaapi#method(0,1,'getScopes(', ')', 'Integer>'),
+  \ javaapi#method(0,1,'getScopes(', ')', 'List'),
   \ ])
 

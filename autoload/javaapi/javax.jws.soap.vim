@@ -14,12 +14,12 @@ call javaapi#interface('SOAPBinding', 'Annotation', [
 call javaapi#interface('SOAPMessageHandler', 'Annotation', [
   \ javaapi#method(0,1,'name(', ')', 'String'),
   \ javaapi#method(0,1,'className(', ')', 'String'),
-  \ javaapi#method(0,1,'initParams(', ')', 'InitParam[]'),
-  \ javaapi#method(0,1,'roles(', ')', 'String[]'),
-  \ javaapi#method(0,1,'headers(', ')', 'String[]'),
+  \ javaapi#method(0,1,'initParams(', ')', 'InitParam'),
+  \ javaapi#method(0,1,'roles(', ')', 'String'),
+  \ javaapi#method(0,1,'headers(', ')', 'String'),
   \ ])
 
 call javaapi#interface('SOAPMessageHandlers', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'SOAPMessageHandler[]'),
+  \ javaapi#method(0,1,'value(', ')', 'SOAPMessageHandler'),
   \ ])
 

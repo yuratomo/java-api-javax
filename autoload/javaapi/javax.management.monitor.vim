@@ -21,7 +21,7 @@ call javaapi#class('CounterMonitor', 'Monitor', [
   \ javaapi#method(0,1,'setNotify(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getDifferenceMode(', ')', 'boolean'),
   \ javaapi#method(0,1,'setDifferenceMode(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'getDerivedGauge(', 'ObjectName)', 'Object'),
   \ ])
 
@@ -62,7 +62,7 @@ call javaapi#class('GaugeMonitor', 'Monitor', [
   \ javaapi#method(0,1,'setNotifyLow(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getDifferenceMode(', ')', 'boolean'),
   \ javaapi#method(0,1,'setDifferenceMode(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'getDerivedGauge(', 'ObjectName)', 'Object'),
   \ ])
 
@@ -86,7 +86,7 @@ call javaapi#class('Monitor', 'NotificationBroadcasterSupport', [
   \ javaapi#field(1,0,'capacityIncrement', 'int'),
   \ javaapi#field(0,0,'elementCount', 'int'),
   \ javaapi#field(0,0,'alreadyNotified', 'int'),
-  \ javaapi#field(0,0,'alreadyNotifieds', 'int[]'),
+  \ javaapi#field(0,0,'alreadyNotifieds', 'int'),
   \ javaapi#field(0,0,'server', 'MBeanServer'),
   \ javaapi#field(1,0,'RESET_FLAGS_ALREADY_NOTIFIED', 'int'),
   \ javaapi#field(1,0,'OBSERVED_OBJECT_ERROR_NOTIFIED', 'int'),
@@ -106,7 +106,7 @@ call javaapi#class('Monitor', 'NotificationBroadcasterSupport', [
   \ javaapi#method(0,1,'addObservedObject(', 'ObjectName) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'removeObservedObject(', 'ObjectName)', 'void'),
   \ javaapi#method(0,1,'containsObservedObject(', 'ObjectName)', 'boolean'),
-  \ javaapi#method(0,1,'getObservedObjects(', ')', 'ObjectName[]'),
+  \ javaapi#method(0,1,'getObservedObjects(', ')', 'ObjectName'),
   \ javaapi#method(0,1,'getObservedAttribute(', ')', 'String'),
   \ javaapi#method(0,1,'setObservedAttribute(', 'String) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'getGranularityPeriod(', ')', 'long'),
@@ -120,7 +120,7 @@ call javaapi#interface('MonitorMBean', '', [
   \ javaapi#method(0,1,'addObservedObject(', 'ObjectName) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'removeObservedObject(', 'ObjectName)', 'void'),
   \ javaapi#method(0,1,'containsObservedObject(', 'ObjectName)', 'boolean'),
-  \ javaapi#method(0,1,'getObservedObjects(', ')', 'ObjectName[]'),
+  \ javaapi#method(0,1,'getObservedObjects(', ')', 'ObjectName'),
   \ javaapi#method(0,1,'getObservedObject(', ')', 'ObjectName'),
   \ javaapi#method(0,1,'setObservedObject(', 'ObjectName)', 'void'),
   \ javaapi#method(0,1,'getObservedAttribute(', ')', 'String'),
@@ -166,7 +166,7 @@ call javaapi#class('StringMonitor', 'Monitor', [
   \ javaapi#method(0,1,'setNotifyMatch(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getNotifyDiffer(', ')', 'boolean'),
   \ javaapi#method(0,1,'setNotifyDiffer(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'getDerivedGauge(', 'ObjectName)', 'Object'),
   \ ])
 

@@ -42,7 +42,7 @@ call javaapi#interface('PrimitiveType', 'TypeMirror', [
 call javaapi#interface('ReferenceType', 'TypeMirror', [
   \ ])
 
-call javaapi#class('TypeKind', 'TypeKind>', [
+call javaapi#class('TypeKind', 'Enum', [
   \ javaapi#field(1,1,'BOOLEAN', 'TypeKind'),
   \ javaapi#field(1,1,'BYTE', 'TypeKind'),
   \ javaapi#field(1,1,'SHORT', 'TypeKind'),
@@ -63,7 +63,7 @@ call javaapi#class('TypeKind', 'TypeKind>', [
   \ javaapi#field(1,1,'EXECUTABLE', 'TypeKind'),
   \ javaapi#field(1,1,'OTHER', 'TypeKind'),
   \ javaapi#field(1,1,'UNION', 'TypeKind'),
-  \ javaapi#method(1,1,'values(', ')', 'TypeKind[]'),
+  \ javaapi#method(1,1,'values(', ')', 'TypeKind'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'TypeKind'),
   \ javaapi#method(0,1,'isPrimitive(', ')', 'boolean'),
   \ ])
@@ -82,7 +82,7 @@ call javaapi#interface('TypeVariable', 'ReferenceType', [
   \ javaapi#method(0,1,'getLowerBound(', ')', 'TypeMirror'),
   \ ])
 
-call javaapi#interface('TypeVisitor<R,P>', '', [
+call javaapi#interface('TypeVisitor', '', [
   \ javaapi#method(0,1,'visit(', 'TypeMirror, P)', 'R'),
   \ javaapi#method(0,1,'visit(', 'TypeMirror)', 'R'),
   \ javaapi#method(0,1,'visitPrimitive(', 'PrimitiveType, P)', 'R'),

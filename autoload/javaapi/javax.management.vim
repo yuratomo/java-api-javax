@@ -33,15 +33,15 @@ call javaapi#class('AttributeChangeNotificationFilter', 'NotificationFilter', [
   \ javaapi#method(0,1,'enableAttribute(', 'String) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'disableAttribute(', 'String)', 'void'),
   \ javaapi#method(0,1,'disableAllAttributes(', ')', 'void'),
-  \ javaapi#method(0,1,'getEnabledAttributes(', ')', 'String>'),
+  \ javaapi#method(0,1,'getEnabledAttributes(', ')', 'Vector'),
   \ ])
 
-call javaapi#class('AttributeList', 'Object>', [
+call javaapi#class('AttributeList', 'ArrayList', [
   \ javaapi#method(0,1,'AttributeList(', ')', ''),
   \ javaapi#method(0,1,'AttributeList(', 'int)', ''),
   \ javaapi#method(0,1,'AttributeList(', 'AttributeList)', ''),
   \ javaapi#method(0,1,'AttributeList(', 'List<Attribute>)', ''),
-  \ javaapi#method(0,1,'asList(', ')', 'Attribute>'),
+  \ javaapi#method(0,1,'asList(', ')', 'List'),
   \ javaapi#method(0,1,'add(', 'Attribute)', 'void'),
   \ javaapi#method(0,1,'add(', 'int, Attribute)', 'void'),
   \ javaapi#method(0,1,'set(', 'int, Attribute)', 'void'),
@@ -132,16 +132,16 @@ call javaapi#class('ClassAttributeValueExp', 'AttributeValueExp', [
 
 call javaapi#class('DefaultLoaderRepository', '', [
   \ javaapi#method(0,1,'DefaultLoaderRepository(', ')', ''),
-  \ javaapi#method(1,1,'loadClass(', 'String) throws ClassNotFoundException', 'Class<?>'),
-  \ javaapi#method(1,1,'loadClassWithout(', 'ClassLoader, String) throws ClassNotFoundException', 'Class<?>'),
+  \ javaapi#method(1,1,'loadClass(', 'String) throws ClassNotFoundException', 'Class'),
+  \ javaapi#method(1,1,'loadClassWithout(', 'ClassLoader, String) throws ClassNotFoundException', 'Class'),
   \ ])
 
 call javaapi#interface('Descriptor', 'Cloneable', [
   \ javaapi#method(0,1,'getFieldValue(', 'String) throws RuntimeOperationsException', 'Object'),
   \ javaapi#method(0,1,'setField(', 'String, Object) throws RuntimeOperationsException', 'void'),
-  \ javaapi#method(0,1,'getFields(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getFieldNames(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getFieldValues(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getFields(', ')', 'String'),
+  \ javaapi#method(0,1,'getFieldNames(', ')', 'String'),
+  \ javaapi#method(0,1,'getFieldValues(', ')', 'Object'),
   \ javaapi#method(0,1,'removeField(', 'String)', 'void'),
   \ javaapi#method(0,1,'setFields(', 'String[], Object[]) throws RuntimeOperationsException', 'void'),
   \ javaapi#method(0,1,'clone(', ') throws RuntimeOperationsException', 'Object'),
@@ -178,9 +178,9 @@ call javaapi#class('ImmutableDescriptor', 'Descriptor', [
   \ javaapi#method(0,1,'ImmutableDescriptor(', 'Map<String, ?>)', ''),
   \ javaapi#method(1,1,'union(', ')', 'ImmutableDescriptor'),
   \ javaapi#method(0,1,'getFieldValue(', 'String)', 'Object'),
-  \ javaapi#method(0,1,'getFields(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getFieldValues(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'getFieldNames(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getFields(', ')', 'String'),
+  \ javaapi#method(0,1,'getFieldValues(', ')', 'Object'),
+  \ javaapi#method(0,1,'getFieldNames(', ')', 'String'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -196,7 +196,7 @@ call javaapi#class('InQueryExp', 'QueryEval', [
   \ javaapi#method(0,1,'InQueryExp(', ')', ''),
   \ javaapi#method(0,1,'InQueryExp(', 'ValueExp, ValueExp[])', ''),
   \ javaapi#method(0,1,'getCheckedValue(', ')', 'ValueExp'),
-  \ javaapi#method(0,1,'getExplicitValues(', ')', 'ValueExp[]'),
+  \ javaapi#method(0,1,'getExplicitValues(', ')', 'ValueExp'),
   \ javaapi#method(0,1,'apply(', 'ObjectName) throws BadStringOperationException, BadBinaryOpValueExpException, BadAttributeValueExpException, InvalidApplicationException', 'boolean'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
@@ -283,7 +283,7 @@ call javaapi#class('MBeanConstructorInfo', 'MBeanFeatureInfo', [
   \ javaapi#method(0,1,'MBeanConstructorInfo(', 'String, String, MBeanParameterInfo[])', ''),
   \ javaapi#method(0,1,'MBeanConstructorInfo(', 'String, String, MBeanParameterInfo[], Descriptor)', ''),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
-  \ javaapi#method(0,1,'getSignature(', ')', 'MBeanParameterInfo[]'),
+  \ javaapi#method(0,1,'getSignature(', ')', 'MBeanParameterInfo'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -314,10 +314,10 @@ call javaapi#class('MBeanInfo', 'DescriptorRead', [
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'getClassName(', ')', 'String'),
   \ javaapi#method(0,1,'getDescription(', ')', 'String'),
-  \ javaapi#method(0,1,'getAttributes(', ')', 'MBeanAttributeInfo[]'),
-  \ javaapi#method(0,1,'getOperations(', ')', 'MBeanOperationInfo[]'),
-  \ javaapi#method(0,1,'getConstructors(', ')', 'MBeanConstructorInfo[]'),
-  \ javaapi#method(0,1,'getNotifications(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getAttributes(', ')', 'MBeanAttributeInfo'),
+  \ javaapi#method(0,1,'getOperations(', ')', 'MBeanOperationInfo'),
+  \ javaapi#method(0,1,'getConstructors(', ')', 'MBeanConstructorInfo'),
+  \ javaapi#method(0,1,'getNotifications(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'getDescriptor(', ')', 'Descriptor'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
@@ -328,7 +328,7 @@ call javaapi#class('MBeanNotificationInfo', 'MBeanFeatureInfo', [
   \ javaapi#method(0,1,'MBeanNotificationInfo(', 'String[], String, String)', ''),
   \ javaapi#method(0,1,'MBeanNotificationInfo(', 'String[], String, String, Descriptor)', ''),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
-  \ javaapi#method(0,1,'getNotifTypes(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getNotifTypes(', ')', 'String'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -344,7 +344,7 @@ call javaapi#class('MBeanOperationInfo', 'MBeanFeatureInfo', [
   \ javaapi#method(0,1,'MBeanOperationInfo(', 'String, String, MBeanParameterInfo[], String, int, Descriptor)', ''),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'getReturnType(', ')', 'String'),
-  \ javaapi#method(0,1,'getSignature(', ')', 'MBeanParameterInfo[]'),
+  \ javaapi#method(0,1,'getSignature(', ')', 'MBeanParameterInfo'),
   \ javaapi#method(0,1,'getImpact(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
@@ -390,8 +390,8 @@ call javaapi#interface('MBeanServer', 'MBeanServerConnection', [
   \ javaapi#method(0,1,'registerMBean(', 'Object, ObjectName) throws InstanceAlreadyExistsException, MBeanRegistrationException, NotCompliantMBeanException', 'ObjectInstance'),
   \ javaapi#method(0,1,'unregisterMBean(', 'ObjectName) throws InstanceNotFoundException, MBeanRegistrationException', 'void'),
   \ javaapi#method(0,1,'getObjectInstance(', 'ObjectName) throws InstanceNotFoundException', 'ObjectInstance'),
-  \ javaapi#method(0,1,'queryMBeans(', 'ObjectName, QueryExp)', 'ObjectInstance>'),
-  \ javaapi#method(0,1,'queryNames(', 'ObjectName, QueryExp)', 'ObjectName>'),
+  \ javaapi#method(0,1,'queryMBeans(', 'ObjectName, QueryExp)', 'Set'),
+  \ javaapi#method(0,1,'queryNames(', 'ObjectName, QueryExp)', 'Set'),
   \ javaapi#method(0,1,'isRegistered(', 'ObjectName)', 'boolean'),
   \ javaapi#method(0,1,'getMBeanCount(', ')', 'Integer'),
   \ javaapi#method(0,1,'getAttribute(', 'ObjectName, String) throws MBeanException, AttributeNotFoundException, InstanceNotFoundException, ReflectionException', 'Object'),
@@ -400,7 +400,7 @@ call javaapi#interface('MBeanServer', 'MBeanServerConnection', [
   \ javaapi#method(0,1,'setAttributes(', 'ObjectName, AttributeList) throws InstanceNotFoundException, ReflectionException', 'AttributeList'),
   \ javaapi#method(0,1,'invoke(', 'ObjectName, String, Object[], String[]) throws InstanceNotFoundException, MBeanException, ReflectionException', 'Object'),
   \ javaapi#method(0,1,'getDefaultDomain(', ')', 'String'),
-  \ javaapi#method(0,1,'getDomains(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getDomains(', ')', 'String'),
   \ javaapi#method(0,1,'addNotificationListener(', 'ObjectName, NotificationListener, NotificationFilter, Object) throws InstanceNotFoundException', 'void'),
   \ javaapi#method(0,1,'addNotificationListener(', 'ObjectName, ObjectName, NotificationFilter, Object) throws InstanceNotFoundException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, ObjectName) throws InstanceNotFoundException, ListenerNotFoundException', 'void'),
@@ -434,8 +434,8 @@ call javaapi#interface('MBeanServerConnection', '', [
   \ javaapi#method(0,1,'createMBean(', 'String, ObjectName, ObjectName, Object[], String[]) throws ReflectionException, InstanceAlreadyExistsException, MBeanRegistrationException, MBeanException, NotCompliantMBeanException, InstanceNotFoundException, IOException', 'ObjectInstance'),
   \ javaapi#method(0,1,'unregisterMBean(', 'ObjectName) throws InstanceNotFoundException, MBeanRegistrationException, IOException', 'void'),
   \ javaapi#method(0,1,'getObjectInstance(', 'ObjectName) throws InstanceNotFoundException, IOException', 'ObjectInstance'),
-  \ javaapi#method(0,1,'queryMBeans(', 'ObjectName, QueryExp) throws IOException', 'ObjectInstance>'),
-  \ javaapi#method(0,1,'queryNames(', 'ObjectName, QueryExp) throws IOException', 'ObjectName>'),
+  \ javaapi#method(0,1,'queryMBeans(', 'ObjectName, QueryExp) throws IOException', 'Set'),
+  \ javaapi#method(0,1,'queryNames(', 'ObjectName, QueryExp) throws IOException', 'Set'),
   \ javaapi#method(0,1,'isRegistered(', 'ObjectName) throws IOException', 'boolean'),
   \ javaapi#method(0,1,'getMBeanCount(', ') throws IOException', 'Integer'),
   \ javaapi#method(0,1,'getAttribute(', 'ObjectName, String) throws MBeanException, AttributeNotFoundException, InstanceNotFoundException, ReflectionException, IOException', 'Object'),
@@ -444,7 +444,7 @@ call javaapi#interface('MBeanServerConnection', '', [
   \ javaapi#method(0,1,'setAttributes(', 'ObjectName, AttributeList) throws InstanceNotFoundException, ReflectionException, IOException', 'AttributeList'),
   \ javaapi#method(0,1,'invoke(', 'ObjectName, String, Object[], String[]) throws InstanceNotFoundException, MBeanException, ReflectionException, IOException', 'Object'),
   \ javaapi#method(0,1,'getDefaultDomain(', ') throws IOException', 'String'),
-  \ javaapi#method(0,1,'getDomains(', ') throws IOException', 'String[]'),
+  \ javaapi#method(0,1,'getDomains(', ') throws IOException', 'String'),
   \ javaapi#method(0,1,'addNotificationListener(', 'ObjectName, NotificationListener, NotificationFilter, Object) throws InstanceNotFoundException, IOException', 'void'),
   \ javaapi#method(0,1,'addNotificationListener(', 'ObjectName, ObjectName, NotificationFilter, Object) throws InstanceNotFoundException, IOException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'ObjectName, ObjectName) throws InstanceNotFoundException, ListenerNotFoundException, IOException', 'void'),
@@ -465,7 +465,7 @@ call javaapi#class('MBeanServerDelegate', 'NotificationEmitter', [
   \ javaapi#method(0,1,'getImplementationName(', ')', 'String'),
   \ javaapi#method(0,1,'getImplementationVersion(', ')', 'String'),
   \ javaapi#method(0,1,'getImplementationVendor(', ')', 'String'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'addNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws ListenerNotFoundException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener) throws ListenerNotFoundException', 'void'),
@@ -488,7 +488,7 @@ call javaapi#class('MBeanServerFactory', '', [
   \ javaapi#method(1,1,'createMBeanServer(', 'String)', 'MBeanServer'),
   \ javaapi#method(1,1,'newMBeanServer(', ')', 'MBeanServer'),
   \ javaapi#method(1,1,'newMBeanServer(', 'String)', 'MBeanServer'),
-  \ javaapi#method(1,1,'findMBeanServer(', 'String)', 'MBeanServer>'),
+  \ javaapi#method(1,1,'findMBeanServer(', 'String)', 'ArrayList'),
   \ javaapi#method(1,1,'getClassLoaderRepository(', 'MBeanServer)', 'ClassLoaderRepository'),
   \ ])
 
@@ -522,7 +522,7 @@ call javaapi#class('MBeanServerPermission', 'BasicPermission', [
 call javaapi#class('MBeanServerPermissionCollection', 'PermissionCollection', [
   \ javaapi#method(0,1,'add(', 'Permission)', 'void'),
   \ javaapi#method(0,1,'implies(', 'Permission)', 'boolean'),
-  \ javaapi#method(0,1,'elements(', ')', 'Permission>'),
+  \ javaapi#method(0,1,'elements(', ')', 'Enumeration'),
   \ ])
 
 call javaapi#class('MBeanTrustPermission', 'BasicPermission', [
@@ -582,7 +582,7 @@ call javaapi#class('Notification', 'EventObject', [
 call javaapi#interface('NotificationBroadcaster', '', [
   \ javaapi#method(0,1,'addNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener) throws ListenerNotFoundException', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ ])
 
 call javaapi#class('NotificationBroadcasterSupport', 'NotificationEmitter', [
@@ -593,7 +593,7 @@ call javaapi#class('NotificationBroadcasterSupport', 'NotificationEmitter', [
   \ javaapi#method(0,1,'addNotificationListener(', 'NotificationListener, NotificationFilter, Object)', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener) throws ListenerNotFoundException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws ListenerNotFoundException', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'sendNotification(', 'Notification)', 'void'),
   \ javaapi#method(0,0,'handleNotification(', 'NotificationListener, Notification, Object)', 'void'),
   \ ])
@@ -612,7 +612,7 @@ call javaapi#class('NotificationFilterSupport', 'NotificationFilter', [
   \ javaapi#method(0,1,'enableType(', 'String) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'disableType(', 'String)', 'void'),
   \ javaapi#method(0,1,'disableAllTypes(', ')', 'void'),
-  \ javaapi#method(0,1,'getEnabledTypes(', ')', 'String>'),
+  \ javaapi#method(0,1,'getEnabledTypes(', ')', 'Vector'),
   \ ])
 
 call javaapi#interface('NotificationListener', 'EventListener', [
@@ -792,7 +792,7 @@ call javaapi#class('StandardEmitterMBean', 'StandardMBean', [
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener) throws ListenerNotFoundException', 'void'),
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws ListenerNotFoundException', 'void'),
   \ javaapi#method(0,1,'addNotificationListener(', 'NotificationListener, NotificationFilter, Object)', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'sendNotification(', 'Notification)', 'void'),
   \ ])
 
@@ -803,8 +803,8 @@ call javaapi#class('StandardMBean', 'MBeanRegistration', [
   \ javaapi#method(0,0,'StandardMBean(', 'Class<?>, boolean)', ''),
   \ javaapi#method(0,1,'setImplementation(', 'Object) throws NotCompliantMBeanException', 'void'),
   \ javaapi#method(0,1,'getImplementation(', ')', 'Object'),
-  \ javaapi#method(0,1,'getMBeanInterface(', ')', 'Class<?>'),
-  \ javaapi#method(0,1,'getImplementationClass(', ')', 'Class<?>'),
+  \ javaapi#method(0,1,'getMBeanInterface(', ')', 'Class'),
+  \ javaapi#method(0,1,'getImplementationClass(', ')', 'Class'),
   \ javaapi#method(0,1,'getAttribute(', 'String) throws AttributeNotFoundException, MBeanException, ReflectionException', 'Object'),
   \ javaapi#method(0,1,'setAttribute(', 'Attribute) throws AttributeNotFoundException, InvalidAttributeValueException, MBeanException, ReflectionException', 'void'),
   \ javaapi#method(0,1,'getAttributes(', 'String[])', 'AttributeList'),
@@ -822,7 +822,7 @@ call javaapi#class('StandardMBean', 'MBeanRegistration', [
   \ javaapi#method(0,0,'getImpact(', 'MBeanOperationInfo)', 'int'),
   \ javaapi#method(0,0,'getParameterName(', 'MBeanOperationInfo, MBeanParameterInfo, int)', 'String'),
   \ javaapi#method(0,0,'getDescription(', 'MBeanOperationInfo, MBeanParameterInfo, int)', 'String'),
-  \ javaapi#method(0,0,'getConstructors(', 'MBeanConstructorInfo[], Object)', 'MBeanConstructorInfo[]'),
+  \ javaapi#method(0,0,'getConstructors(', 'MBeanConstructorInfo[], Object)', 'MBeanConstructorInfo'),
   \ javaapi#method(0,0,'getCachedMBeanInfo(', ')', 'MBeanInfo'),
   \ javaapi#method(0,0,'cacheMBeanInfo(', 'MBeanInfo)', 'void'),
   \ javaapi#method(0,1,'preRegister(', 'MBeanServer, ObjectName) throws Exception', 'ObjectName'),

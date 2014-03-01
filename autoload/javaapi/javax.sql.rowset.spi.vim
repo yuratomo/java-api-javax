@@ -26,7 +26,7 @@ call javaapi#class('SyncFactory', '', [
   \ javaapi#method(1,1,'getSyncFactory(', ')', 'SyncFactory'),
   \ javaapi#method(1,1,'unregisterProvider(', 'String) throws SyncFactoryException', 'void'),
   \ javaapi#method(1,1,'getInstance(', 'String) throws SyncFactoryException', 'SyncProvider'),
-  \ javaapi#method(1,1,'getRegisteredProviders(', ') throws SyncFactoryException', 'SyncProvider>'),
+  \ javaapi#method(1,1,'getRegisteredProviders(', ') throws SyncFactoryException', 'Enumeration'),
   \ javaapi#method(1,1,'setLogger(', 'Logger)', 'void'),
   \ javaapi#method(1,1,'setLogger(', 'Logger, Level)', 'void'),
   \ javaapi#method(1,1,'getLogger(', ') throws SyncFactoryException', 'Logger'),

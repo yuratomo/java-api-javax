@@ -50,7 +50,7 @@ call javaapi#interface('XAResource', '', [
   \ javaapi#method(0,1,'getTransactionTimeout(', ') throws XAException', 'int'),
   \ javaapi#method(0,1,'isSameRM(', 'XAResource) throws XAException', 'boolean'),
   \ javaapi#method(0,1,'prepare(', 'Xid) throws XAException', 'int'),
-  \ javaapi#method(0,1,'recover(', 'int) throws XAException', 'Xid[]'),
+  \ javaapi#method(0,1,'recover(', 'int) throws XAException', 'Xid'),
   \ javaapi#method(0,1,'rollback(', 'Xid) throws XAException', 'void'),
   \ javaapi#method(0,1,'setTransactionTimeout(', 'int) throws XAException', 'boolean'),
   \ javaapi#method(0,1,'start(', 'Xid, int) throws XAException', 'void'),
@@ -60,7 +60,7 @@ call javaapi#interface('Xid', '', [
   \ javaapi#field(1,1,'MAXGTRIDSIZE', 'int'),
   \ javaapi#field(1,1,'MAXBQUALSIZE', 'int'),
   \ javaapi#method(0,1,'getFormatId(', ')', 'int'),
-  \ javaapi#method(0,1,'getGlobalTransactionId(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getBranchQualifier(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getGlobalTransactionId(', ')', 'byte'),
+  \ javaapi#method(0,1,'getBranchQualifier(', ')', 'byte'),
   \ ])
 

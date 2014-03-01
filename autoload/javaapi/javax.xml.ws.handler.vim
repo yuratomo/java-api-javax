@@ -7,7 +7,7 @@ call javaapi#interface('Handler<C', 'MessageContext>', [
   \ ])
 
 call javaapi#interface('HandlerResolver', '', [
-  \ javaapi#method(0,1,'getHandlerChain(', 'PortInfo)', 'Handler>'),
+  \ javaapi#method(0,1,'getHandlerChain(', 'PortInfo)', 'List'),
   \ ])
 
 call javaapi#interface('LogicalHandler<C', 'LogicalMessageContext>', [
@@ -17,7 +17,7 @@ call javaapi#interface('LogicalMessageContext', 'MessageContext', [
   \ javaapi#method(0,1,'getMessage(', ')', 'LogicalMessage'),
   \ ])
 
-call javaapi#interface('MessageContext', 'Object>', [
+call javaapi#interface('MessageContext', 'Map', [
   \ javaapi#field(1,1,'MESSAGE_OUTBOUND_PROPERTY', 'String'),
   \ javaapi#field(1,1,'INBOUND_MESSAGE_ATTACHMENTS', 'String'),
   \ javaapi#field(1,1,'OUTBOUND_MESSAGE_ATTACHMENTS', 'String'),

@@ -290,7 +290,7 @@ call javaapi#class('SynthCheckBoxUI', 'SynthRadioButtonUI', [
 call javaapi#class('SynthColorChooserUI', 'BasicColorChooserUI', [
   \ javaapi#method(0,1,'SynthColorChooserUI(', ')', ''),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,0,'createDefaultChoosers(', ')', 'AbstractColorChooserPanel[]'),
+  \ javaapi#method(0,0,'createDefaultChoosers(', ')', 'AbstractColorChooserPanel'),
   \ javaapi#method(0,0,'installDefaults(', ')', 'void'),
   \ javaapi#method(0,0,'uninstallDefaults(', ')', 'void'),
   \ javaapi#method(0,0,'installListeners(', ')', 'void'),

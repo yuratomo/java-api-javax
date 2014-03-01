@@ -10,12 +10,12 @@ call javaapi#interface('CallbackHandler', '', [
 call javaapi#class('ChoiceCallback', 'Serializable', [
   \ javaapi#method(0,1,'ChoiceCallback(', 'String, String[], int, boolean)', ''),
   \ javaapi#method(0,1,'getPrompt(', ')', 'String'),
-  \ javaapi#method(0,1,'getChoices(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getChoices(', ')', 'String'),
   \ javaapi#method(0,1,'getDefaultChoice(', ')', 'int'),
   \ javaapi#method(0,1,'allowMultipleSelections(', ')', 'boolean'),
   \ javaapi#method(0,1,'setSelectedIndex(', 'int)', 'void'),
   \ javaapi#method(0,1,'setSelectedIndexes(', 'int[])', 'void'),
-  \ javaapi#method(0,1,'getSelectedIndexes(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getSelectedIndexes(', ')', 'int'),
   \ ])
 
 call javaapi#class('ConfirmationCallback', 'Serializable', [
@@ -37,7 +37,7 @@ call javaapi#class('ConfirmationCallback', 'Serializable', [
   \ javaapi#method(0,1,'getPrompt(', ')', 'String'),
   \ javaapi#method(0,1,'getMessageType(', ')', 'int'),
   \ javaapi#method(0,1,'getOptionType(', ')', 'int'),
-  \ javaapi#method(0,1,'getOptions(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getOptions(', ')', 'String'),
   \ javaapi#method(0,1,'getDefaultOption(', ')', 'int'),
   \ javaapi#method(0,1,'setSelectedIndex(', 'int)', 'void'),
   \ javaapi#method(0,1,'getSelectedIndex(', ')', 'int'),
@@ -63,7 +63,7 @@ call javaapi#class('PasswordCallback', 'Serializable', [
   \ javaapi#method(0,1,'getPrompt(', ')', 'String'),
   \ javaapi#method(0,1,'isEchoOn(', ')', 'boolean'),
   \ javaapi#method(0,1,'setPassword(', 'char[])', 'void'),
-  \ javaapi#method(0,1,'getPassword(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getPassword(', ')', 'char'),
   \ javaapi#method(0,1,'clearPassword(', ')', 'void'),
   \ ])
 

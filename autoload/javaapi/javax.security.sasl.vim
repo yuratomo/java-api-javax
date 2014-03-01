@@ -41,24 +41,24 @@ call javaapi#class('Sasl', '', [
   \ javaapi#field(1,1,'CREDENTIALS', 'String'),
   \ javaapi#method(1,1,'createSaslClient(', 'String[], String, String, String, Map<String, ?>, CallbackHandler) throws SaslException', 'SaslClient'),
   \ javaapi#method(1,1,'createSaslServer(', 'String, String, String, Map<String, ?>, CallbackHandler) throws SaslException', 'SaslServer'),
-  \ javaapi#method(1,1,'getSaslClientFactories(', ')', 'SaslClientFactory>'),
-  \ javaapi#method(1,1,'getSaslServerFactories(', ')', 'SaslServerFactory>'),
+  \ javaapi#method(1,1,'getSaslClientFactories(', ')', 'Enumeration'),
+  \ javaapi#method(1,1,'getSaslServerFactories(', ')', 'Enumeration'),
   \ ])
 
 call javaapi#interface('SaslClient', '', [
   \ javaapi#method(0,1,'getMechanismName(', ')', 'String'),
   \ javaapi#method(0,1,'hasInitialResponse(', ')', 'boolean'),
-  \ javaapi#method(0,1,'evaluateChallenge(', 'byte[]) throws SaslException', 'byte[]'),
+  \ javaapi#method(0,1,'evaluateChallenge(', 'byte[]) throws SaslException', 'byte'),
   \ javaapi#method(0,1,'isComplete(', ')', 'boolean'),
-  \ javaapi#method(0,1,'unwrap(', 'byte[], int, int) throws SaslException', 'byte[]'),
-  \ javaapi#method(0,1,'wrap(', 'byte[], int, int) throws SaslException', 'byte[]'),
+  \ javaapi#method(0,1,'unwrap(', 'byte[], int, int) throws SaslException', 'byte'),
+  \ javaapi#method(0,1,'wrap(', 'byte[], int, int) throws SaslException', 'byte'),
   \ javaapi#method(0,1,'getNegotiatedProperty(', 'String)', 'Object'),
   \ javaapi#method(0,1,'dispose(', ') throws SaslException', 'void'),
   \ ])
 
 call javaapi#interface('SaslClientFactory', '', [
   \ javaapi#method(0,1,'createSaslClient(', 'String[], String, String, String, Map<String, ?>, CallbackHandler) throws SaslException', 'SaslClient'),
-  \ javaapi#method(0,1,'getMechanismNames(', 'Map<String, ?>)', 'String[]'),
+  \ javaapi#method(0,1,'getMechanismNames(', 'Map<String, ?>)', 'String'),
   \ ])
 
 call javaapi#class('SaslException', 'IOException', [
@@ -72,17 +72,17 @@ call javaapi#class('SaslException', 'IOException', [
 
 call javaapi#interface('SaslServer', '', [
   \ javaapi#method(0,1,'getMechanismName(', ')', 'String'),
-  \ javaapi#method(0,1,'evaluateResponse(', 'byte[]) throws SaslException', 'byte[]'),
+  \ javaapi#method(0,1,'evaluateResponse(', 'byte[]) throws SaslException', 'byte'),
   \ javaapi#method(0,1,'isComplete(', ')', 'boolean'),
   \ javaapi#method(0,1,'getAuthorizationID(', ')', 'String'),
-  \ javaapi#method(0,1,'unwrap(', 'byte[], int, int) throws SaslException', 'byte[]'),
-  \ javaapi#method(0,1,'wrap(', 'byte[], int, int) throws SaslException', 'byte[]'),
+  \ javaapi#method(0,1,'unwrap(', 'byte[], int, int) throws SaslException', 'byte'),
+  \ javaapi#method(0,1,'wrap(', 'byte[], int, int) throws SaslException', 'byte'),
   \ javaapi#method(0,1,'getNegotiatedProperty(', 'String)', 'Object'),
   \ javaapi#method(0,1,'dispose(', ') throws SaslException', 'void'),
   \ ])
 
 call javaapi#interface('SaslServerFactory', '', [
   \ javaapi#method(0,1,'createSaslServer(', 'String, String, String, Map<String, ?>, CallbackHandler) throws SaslException', 'SaslServer'),
-  \ javaapi#method(0,1,'getMechanismNames(', 'Map<String, ?>)', 'String[]'),
+  \ javaapi#method(0,1,'getMechanismNames(', 'Map<String, ?>)', 'String'),
   \ ])
 

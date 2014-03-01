@@ -1,8 +1,8 @@
 call javaapi#namespace('javax.print')
 
 call javaapi#interface('AttributeException', '', [
-  \ javaapi#method(0,1,'getUnsupportedAttributes(', ')', 'Class[]'),
-  \ javaapi#method(0,1,'getUnsupportedValues(', ')', 'Attribute[]'),
+  \ javaapi#method(0,1,'getUnsupportedAttributes(', ')', 'Class'),
+  \ javaapi#method(0,1,'getUnsupportedValues(', ')', 'Attribute'),
   \ ])
 
 call javaapi#interface('CancelablePrintJob', 'DocPrintJob', [
@@ -41,7 +41,7 @@ call javaapi#interface('DocPrintJob', '', [
   \ ])
 
 call javaapi#interface('FlavorException', '', [
-  \ javaapi#method(0,1,'getUnsupportedFlavors(', ')', 'DocFlavor[]'),
+  \ javaapi#method(0,1,'getUnsupportedFlavors(', ')', 'DocFlavor'),
   \ ])
 
 call javaapi#class('MimeType', 'Cloneable', [
@@ -82,9 +82,9 @@ call javaapi#interface('PrintService', '', [
   \ javaapi#method(0,1,'removePrintServiceAttributeListener(', 'PrintServiceAttributeListener)', 'void'),
   \ javaapi#method(0,1,'getAttributes(', ')', 'PrintServiceAttributeSet'),
   \ javaapi#method(0,1,'getAttribute(', 'Class<T>)', 'T'),
-  \ javaapi#method(0,1,'getSupportedDocFlavors(', ')', 'DocFlavor[]'),
+  \ javaapi#method(0,1,'getSupportedDocFlavors(', ')', 'DocFlavor'),
   \ javaapi#method(0,1,'isDocFlavorSupported(', 'DocFlavor)', 'boolean'),
-  \ javaapi#method(0,1,'getSupportedAttributeCategories(', ')', 'Class<?>[]'),
+  \ javaapi#method(0,1,'getSupportedAttributeCategories(', ')', 'Class'),
   \ javaapi#method(0,1,'isAttributeCategorySupported(', 'Class<? extends Attribute>)', 'boolean'),
   \ javaapi#method(0,1,'getDefaultAttributeValue(', 'Class<? extends Attribute>)', 'Object'),
   \ javaapi#method(0,1,'getSupportedAttributeValues(', 'Class<? extends Attribute>, DocFlavor, AttributeSet)', 'Object'),
@@ -97,14 +97,14 @@ call javaapi#interface('PrintService', '', [
 
 call javaapi#class('PrintServiceLookup', '', [
   \ javaapi#method(0,1,'PrintServiceLookup(', ')', ''),
-  \ javaapi#method(1,1,'lookupPrintServices(', 'DocFlavor, AttributeSet)', 'PrintService[]'),
-  \ javaapi#method(1,1,'lookupMultiDocPrintServices(', 'DocFlavor[], AttributeSet)', 'MultiDocPrintService[]'),
+  \ javaapi#method(1,1,'lookupPrintServices(', 'DocFlavor, AttributeSet)', 'PrintService'),
+  \ javaapi#method(1,1,'lookupMultiDocPrintServices(', 'DocFlavor[], AttributeSet)', 'MultiDocPrintService'),
   \ javaapi#method(1,1,'lookupDefaultPrintService(', ')', 'PrintService'),
   \ javaapi#method(1,1,'registerServiceProvider(', 'PrintServiceLookup)', 'boolean'),
   \ javaapi#method(1,1,'registerService(', 'PrintService)', 'boolean'),
-  \ javaapi#method(0,1,'getPrintServices(', 'DocFlavor, AttributeSet)', 'PrintService[]'),
-  \ javaapi#method(0,1,'getPrintServices(', ')', 'PrintService[]'),
-  \ javaapi#method(0,1,'getMultiDocPrintServices(', 'DocFlavor[], AttributeSet)', 'MultiDocPrintService[]'),
+  \ javaapi#method(0,1,'getPrintServices(', 'DocFlavor, AttributeSet)', 'PrintService'),
+  \ javaapi#method(0,1,'getPrintServices(', ')', 'PrintService'),
+  \ javaapi#method(0,1,'getMultiDocPrintServices(', 'DocFlavor[], AttributeSet)', 'MultiDocPrintService'),
   \ javaapi#method(0,1,'getDefaultPrintService(', ')', 'PrintService'),
   \ ])
 
@@ -124,7 +124,7 @@ call javaapi#class('ServiceUIFactory', '', [
   \ javaapi#field(1,1,'RESERVED_UIROLE', 'int'),
   \ javaapi#method(0,1,'ServiceUIFactory(', ')', ''),
   \ javaapi#method(0,1,'getUI(', 'int, String)', 'Object'),
-  \ javaapi#method(0,1,'getUIClassNamesForRole(', 'int)', 'String[]'),
+  \ javaapi#method(0,1,'getUIClassNamesForRole(', 'int)', 'String'),
   \ ])
 
 call javaapi#class('SimpleDoc', 'Doc', [
@@ -146,9 +146,9 @@ call javaapi#class('StreamPrintService', 'PrintService', [
 
 call javaapi#class('StreamPrintServiceFactory', '', [
   \ javaapi#method(0,1,'StreamPrintServiceFactory(', ')', ''),
-  \ javaapi#method(1,1,'lookupStreamPrintServiceFactories(', 'DocFlavor, String)', 'StreamPrintServiceFactory[]'),
+  \ javaapi#method(1,1,'lookupStreamPrintServiceFactories(', 'DocFlavor, String)', 'StreamPrintServiceFactory'),
   \ javaapi#method(0,1,'getOutputFormat(', ')', 'String'),
-  \ javaapi#method(0,1,'getSupportedDocFlavors(', ')', 'DocFlavor[]'),
+  \ javaapi#method(0,1,'getSupportedDocFlavors(', ')', 'DocFlavor'),
   \ javaapi#method(0,1,'getPrintService(', 'OutputStream)', 'StreamPrintService'),
   \ ])
 

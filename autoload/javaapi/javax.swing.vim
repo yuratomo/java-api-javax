@@ -5,9 +5,9 @@ call javaapi#class('AbstractSpinnerModel', 'Serializable', [
   \ javaapi#method(0,1,'AbstractSpinnerModel(', ')', ''),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
-  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T[]'),
+  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T'),
   \ ])
 
 call javaapi#class('ActionPropertyChangeListener<T', 'JComponent>', [
@@ -25,12 +25,12 @@ call javaapi#class('Autoscroller', 'ActionListener', [
   \ javaapi#method(0,1,'actionPerformed(', 'ActionEvent)', 'void'),
   \ ])
 
-call javaapi#class('ClientPropertyKey', 'ClientPropertyKey>', [
+call javaapi#class('ClientPropertyKey', 'Enum', [
   \ javaapi#field(1,1,'JComponent_INPUT_VERIFIER', 'ClientPropertyKey'),
   \ javaapi#field(1,1,'JComponent_TRANSFER_HANDLER', 'ClientPropertyKey'),
   \ javaapi#field(1,1,'JComponent_ANCESTOR_NOTIFIER', 'ClientPropertyKey'),
   \ javaapi#field(1,1,'PopupFactory_FORCE_HEAVYWEIGHT_POPUP', 'ClientPropertyKey'),
-  \ javaapi#method(1,1,'values(', ')', 'ClientPropertyKey[]'),
+  \ javaapi#method(1,1,'values(', ')', 'ClientPropertyKey'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'ClientPropertyKey'),
   \ javaapi#method(0,1,'getReportValueNotSerializable(', ')', 'boolean'),
   \ ])
@@ -49,7 +49,7 @@ call javaapi#class('ColorTracker', 'Serializable', [
   \ javaapi#method(0,1,'getColor(', ')', 'Color'),
   \ ])
 
-call javaapi#class('CompareTabOrderComparator', 'Component>', [
+call javaapi#class('CompareTabOrderComparator', 'Comparator', [
   \ javaapi#method(0,1,'compare(', 'Component, Component)', 'int'),
   \ javaapi#method(0,1,'compare(', 'Object, Object)', 'int'),
   \ ])
@@ -163,7 +163,7 @@ call javaapi#class('DefaultFocusManager', 'FocusManager', [
   \ javaapi#method(0,1,'compareTabOrder(', 'Component, Component)', 'boolean'),
   \ ])
 
-call javaapi#class('DefaultRowSorter<M,I>', 'RowSorter<M>', [
+call javaapi#class('DefaultRowSorter', 'RowSorter', [
   \ javaapi#method(0,1,'DefaultRowSorter(', ')', ''),
   \ javaapi#method(0,0,'setModelWrapper(', 'ModelWrapper<M, I>)', 'void'),
   \ javaapi#method(0,0,'getModelWrapper(', ')', 'I>'),
@@ -184,7 +184,7 @@ call javaapi#class('DefaultRowSorter<M,I>', 'RowSorter<M>', [
   \ javaapi#method(0,1,'sort(', ')', 'void'),
   \ javaapi#method(0,0,'useToString(', 'int)', 'boolean'),
   \ javaapi#method(0,1,'setComparator(', 'int, Comparator<?>)', 'void'),
-  \ javaapi#method(0,1,'getComparator(', 'int)', 'Comparator<?>'),
+  \ javaapi#method(0,1,'getComparator(', 'int)', 'Comparator'),
   \ javaapi#method(0,1,'getViewRowCount(', ')', 'int'),
   \ javaapi#method(0,1,'getModelRowCount(', ')', 'int'),
   \ javaapi#method(0,1,'modelStructureChanged(', ')', 'void'),
@@ -207,7 +207,7 @@ call javaapi#class('DelegatingDefaultFocusManager', 'DefaultFocusManager', [
   \ javaapi#method(0,1,'getDefaultFocusTraversalPolicy(', ')', 'FocusTraversalPolicy'),
   \ javaapi#method(0,1,'setDefaultFocusTraversalPolicy(', 'FocusTraversalPolicy)', 'void'),
   \ javaapi#method(0,1,'setDefaultFocusTraversalKeys(', 'int, Set<? extends AWTKeyStroke>)', 'void'),
-  \ javaapi#method(0,1,'getDefaultFocusTraversalKeys(', 'int)', 'AWTKeyStroke>'),
+  \ javaapi#method(0,1,'getDefaultFocusTraversalKeys(', 'int)', 'Set'),
   \ javaapi#method(0,1,'getCurrentFocusCycleRoot(', ')', 'Container'),
   \ javaapi#method(0,1,'setGlobalCurrentFocusCycleRoot(', 'Container)', 'void'),
   \ javaapi#method(0,1,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
@@ -320,7 +320,7 @@ call javaapi#class('JColorChooser', 'JComponent', [
   \ javaapi#method(0,1,'addChooserPanel(', 'AbstractColorChooserPanel)', 'void'),
   \ javaapi#method(0,1,'removeChooserPanel(', 'AbstractColorChooserPanel)', 'AbstractColorChooserPanel'),
   \ javaapi#method(0,1,'setChooserPanels(', 'AbstractColorChooserPanel[])', 'void'),
-  \ javaapi#method(0,1,'getChooserPanels(', ')', 'AbstractColorChooserPanel[]'),
+  \ javaapi#method(0,1,'getChooserPanels(', ')', 'AbstractColorChooserPanel'),
   \ javaapi#method(0,1,'getSelectionModel(', ')', 'ColorSelectionModel'),
   \ javaapi#method(0,1,'setSelectionModel(', 'ColorSelectionModel)', 'void'),
   \ javaapi#method(0,0,'paramString(', ')', 'String'),
@@ -339,10 +339,10 @@ call javaapi#class('JDesktopPane', 'JLayeredPane', [
   \ javaapi#method(0,1,'setDesktopManager(', 'DesktopManager)', 'void'),
   \ javaapi#method(0,1,'updateUI(', ')', 'void'),
   \ javaapi#method(0,1,'getUIClassID(', ')', 'String'),
-  \ javaapi#method(0,1,'getAllFrames(', ')', 'JInternalFrame[]'),
+  \ javaapi#method(0,1,'getAllFrames(', ')', 'JInternalFrame'),
   \ javaapi#method(0,1,'getSelectedFrame(', ')', 'JInternalFrame'),
   \ javaapi#method(0,1,'setSelectedFrame(', 'JInternalFrame)', 'void'),
-  \ javaapi#method(0,1,'getAllFramesInLayer(', 'int)', 'JInternalFrame[]'),
+  \ javaapi#method(0,1,'getAllFramesInLayer(', 'int)', 'JInternalFrame'),
   \ javaapi#method(0,1,'selectFrame(', 'boolean)', 'JInternalFrame'),
   \ javaapi#method(0,0,'addImpl(', 'Component, Object, int)', 'void'),
   \ javaapi#method(0,1,'remove(', 'int)', 'void'),
@@ -394,7 +394,7 @@ call javaapi#class('JFileChooser', 'JComponent', [
   \ javaapi#method(0,1,'getDragEnabled(', ')', 'boolean'),
   \ javaapi#method(0,1,'getSelectedFile(', ')', 'File'),
   \ javaapi#method(0,1,'setSelectedFile(', 'File)', 'void'),
-  \ javaapi#method(0,1,'getSelectedFiles(', ')', 'File[]'),
+  \ javaapi#method(0,1,'getSelectedFiles(', ')', 'File'),
   \ javaapi#method(0,1,'setSelectedFiles(', 'File[])', 'void'),
   \ javaapi#method(0,1,'getCurrentDirectory(', ')', 'File'),
   \ javaapi#method(0,1,'setCurrentDirectory(', 'File)', 'void'),
@@ -418,7 +418,7 @@ call javaapi#class('JFileChooser', 'JComponent', [
   \ javaapi#method(0,1,'setApproveButtonMnemonic(', 'char)', 'void'),
   \ javaapi#method(0,1,'setApproveButtonText(', 'String)', 'void'),
   \ javaapi#method(0,1,'getApproveButtonText(', ')', 'String'),
-  \ javaapi#method(0,1,'getChoosableFileFilters(', ')', 'FileFilter[]'),
+  \ javaapi#method(0,1,'getChoosableFileFilters(', ')', 'FileFilter'),
   \ javaapi#method(0,1,'addChoosableFileFilter(', 'FileFilter)', 'void'),
   \ javaapi#method(0,1,'removeChoosableFileFilter(', 'FileFilter)', 'boolean'),
   \ javaapi#method(0,1,'resetChoosableFileFilters(', ')', 'void'),
@@ -451,7 +451,7 @@ call javaapi#class('JFileChooser', 'JComponent', [
   \ javaapi#method(0,1,'cancelSelection(', ')', 'void'),
   \ javaapi#method(0,1,'addActionListener(', 'ActionListener)', 'void'),
   \ javaapi#method(0,1,'removeActionListener(', 'ActionListener)', 'void'),
-  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener[]'),
+  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener'),
   \ javaapi#method(0,0,'fireActionPerformed(', 'String)', 'void'),
   \ javaapi#method(0,1,'updateUI(', ')', 'void'),
   \ javaapi#method(0,1,'getUIClassID(', ')', 'String'),
@@ -484,7 +484,7 @@ call javaapi#class('JFormattedTextField', 'JTextField', [
   \ javaapi#method(0,0,'invalidEdit(', ')', 'void'),
   \ javaapi#method(0,0,'processInputMethodEvent(', 'InputMethodEvent)', 'void'),
   \ javaapi#method(0,0,'processFocusEvent(', 'FocusEvent)', 'void'),
-  \ javaapi#method(0,1,'getActions(', ')', 'Action[]'),
+  \ javaapi#method(0,1,'getActions(', ')', 'Action'),
   \ javaapi#method(0,1,'getUIClassID(', ')', 'String'),
   \ javaapi#method(0,1,'setDocument(', 'Document)', 'void'),
   \ ])
@@ -554,12 +554,12 @@ call javaapi#class('JOptionPane', 'JComponent', [
   \ javaapi#field(1,1,'WANTS_INPUT_PROPERTY', 'String'),
   \ javaapi#field(0,0,'icon', 'Icon'),
   \ javaapi#field(0,0,'message', 'Object'),
-  \ javaapi#field(0,0,'options', 'Object[]'),
+  \ javaapi#field(0,0,'options', 'Object'),
   \ javaapi#field(0,0,'initialValue', 'Object'),
   \ javaapi#field(0,0,'messageType', 'int'),
   \ javaapi#field(0,0,'optionType', 'int'),
   \ javaapi#field(0,0,'value', 'Object'),
-  \ javaapi#field(0,0,'selectionValues', 'Object[]'),
+  \ javaapi#field(0,0,'selectionValues', 'Object'),
   \ javaapi#field(0,0,'inputValue', 'Object'),
   \ javaapi#field(0,0,'initialSelectionValue', 'Object'),
   \ javaapi#field(0,0,'wantsInput', 'boolean'),
@@ -613,7 +613,7 @@ call javaapi#class('JOptionPane', 'JComponent', [
   \ javaapi#method(0,1,'setValue(', 'Object)', 'void'),
   \ javaapi#method(0,1,'getValue(', ')', 'Object'),
   \ javaapi#method(0,1,'setOptions(', 'Object[])', 'void'),
-  \ javaapi#method(0,1,'getOptions(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getOptions(', ')', 'Object'),
   \ javaapi#method(0,1,'setInitialValue(', 'Object)', 'void'),
   \ javaapi#method(0,1,'getInitialValue(', ')', 'Object'),
   \ javaapi#method(0,1,'setMessageType(', 'int)', 'void'),
@@ -621,7 +621,7 @@ call javaapi#class('JOptionPane', 'JComponent', [
   \ javaapi#method(0,1,'setOptionType(', 'int)', 'void'),
   \ javaapi#method(0,1,'getOptionType(', ')', 'int'),
   \ javaapi#method(0,1,'setSelectionValues(', 'Object[])', 'void'),
-  \ javaapi#method(0,1,'getSelectionValues(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getSelectionValues(', ')', 'Object'),
   \ javaapi#method(0,1,'setInitialSelectionValue(', 'Object)', 'void'),
   \ javaapi#method(0,1,'getInitialSelectionValue(', ')', 'Object'),
   \ javaapi#method(0,1,'setInputValue(', 'Object)', 'void'),
@@ -649,7 +649,7 @@ call javaapi#class('JSpinner', 'JComponent', [
   \ javaapi#method(0,1,'getNextValue(', ')', 'Object'),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
   \ javaapi#method(0,1,'getPreviousValue(', ')', 'Object'),
   \ javaapi#method(0,1,'setEditor(', 'JComponent)', 'void'),
@@ -718,7 +718,7 @@ call javaapi#class('OverlayLayout', 'Serializable', [
   \ javaapi#method(0,1,'layoutContainer(', 'Container)', 'void'),
   \ ])
 
-call javaapi#interface('Painter<T>', '', [
+call javaapi#interface('Painter', '', [
   \ javaapi#method(0,1,'paint(', 'Graphics2D, T, int, int)', 'void'),
   \ ])
 
@@ -764,7 +764,7 @@ call javaapi#interface('Renderer', '', [
   \ javaapi#method(0,1,'getComponent(', ')', 'Component'),
   \ ])
 
-call javaapi#class('RowFilter<M,I>', '', [
+call javaapi#class('RowFilter', '', [
   \ javaapi#method(0,1,'RowFilter(', ')', ''),
   \ javaapi#method(1,1,'regexFilter(', 'String, )', 'I>'),
   \ javaapi#method(1,1,'dateFilter(', 'ComparisonType, Date, )', 'I>'),
@@ -775,7 +775,7 @@ call javaapi#class('RowFilter<M,I>', '', [
   \ javaapi#method(0,1,'include(', 'Entry<? extends M, ? extends I>)', 'boolean'),
   \ ])
 
-call javaapi#class('RowSorter<M>', '', [
+call javaapi#class('RowSorter', '', [
   \ javaapi#method(0,1,'RowSorter(', ')', ''),
   \ javaapi#method(0,1,'getModel(', ')', 'M'),
   \ javaapi#method(0,1,'toggleSortOrder(', 'int)', 'void'),
@@ -803,7 +803,7 @@ call javaapi#class('SizeSequence', '', [
   \ javaapi#method(0,1,'SizeSequence(', 'int, int)', ''),
   \ javaapi#method(0,1,'SizeSequence(', 'int[])', ''),
   \ javaapi#method(0,1,'setSizes(', 'int[])', 'void'),
-  \ javaapi#method(0,1,'getSizes(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getSizes(', ')', 'int'),
   \ javaapi#method(0,1,'getPosition(', 'int)', 'int'),
   \ javaapi#method(0,1,'getIndex(', 'int)', 'int'),
   \ javaapi#method(0,1,'getSize(', 'int)', 'int'),
@@ -812,11 +812,11 @@ call javaapi#class('SizeSequence', '', [
   \ javaapi#method(0,1,'removeEntries(', 'int, int)', 'void'),
   \ ])
 
-call javaapi#class('SortOrder', 'SortOrder>', [
+call javaapi#class('SortOrder', 'Enum', [
   \ javaapi#field(1,1,'ASCENDING', 'SortOrder'),
   \ javaapi#field(1,1,'DESCENDING', 'SortOrder'),
   \ javaapi#field(1,1,'UNSORTED', 'SortOrder'),
-  \ javaapi#method(1,1,'values(', ')', 'SortOrder[]'),
+  \ javaapi#method(1,1,'values(', ')', 'SortOrder'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'SortOrder'),
   \ ])
 
@@ -840,7 +840,7 @@ call javaapi#class('SpinnerListModel', 'AbstractSpinnerModel', [
   \ javaapi#method(0,1,'SpinnerListModel(', 'List<?>)', ''),
   \ javaapi#method(0,1,'SpinnerListModel(', 'Object[])', ''),
   \ javaapi#method(0,1,'SpinnerListModel(', ')', ''),
-  \ javaapi#method(0,1,'getList(', ')', 'List<?>'),
+  \ javaapi#method(0,1,'getList(', ')', 'List'),
   \ javaapi#method(0,1,'setList(', 'List<?>)', 'void'),
   \ javaapi#method(0,1,'getValue(', ')', 'Object'),
   \ javaapi#method(0,1,'setValue(', 'Object)', 'void'),
@@ -920,7 +920,7 @@ call javaapi#class('SpringLayout', 'LayoutManager2', [
   \ javaapi#method(0,1,'layoutContainer(', 'Container)', 'void'),
   \ ])
 
-call javaapi#class('SwingWorker<T,V>', 'RunnableFuture<T>', [
+call javaapi#class('SwingWorker', 'RunnableFuture', [
   \ javaapi#method(0,1,'SwingWorker(', ')', ''),
   \ javaapi#method(0,0,'doInBackground(', ') throws Exception', 'T'),
   \ javaapi#method(0,1,'run(', ')', 'void'),
@@ -1011,7 +1011,7 @@ call javaapi#class('JRadioButtonMenuItem', 'JMenuItem', [
 
 call javaapi#namespace('javax.swing')
 
-call javaapi#class('DefaultListModel<E>', 'AbstractListModel<E>', [
+call javaapi#class('DefaultListModel', 'AbstractListModel', [
   \ javaapi#method(0,1,'DefaultListModel(', ')', ''),
   \ javaapi#method(0,1,'getSize(', ')', 'int'),
   \ javaapi#method(0,1,'getElementAt(', 'int)', 'E'),
@@ -1022,7 +1022,7 @@ call javaapi#class('DefaultListModel<E>', 'AbstractListModel<E>', [
   \ javaapi#method(0,1,'capacity(', ')', 'int'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'elements(', ')', 'Enumeration<E>'),
+  \ javaapi#method(0,1,'elements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'contains(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'indexOf(', 'Object)', 'int'),
   \ javaapi#method(0,1,'indexOf(', 'Object, int)', 'int'),
@@ -1038,7 +1038,7 @@ call javaapi#class('DefaultListModel<E>', 'AbstractListModel<E>', [
   \ javaapi#method(0,1,'removeElement(', 'Object)', 'boolean'),
   \ javaapi#method(0,1,'removeAllElements(', ')', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ javaapi#method(0,1,'toArray(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'Object'),
   \ javaapi#method(0,1,'get(', 'int)', 'E'),
   \ javaapi#method(0,1,'set(', 'int, E)', 'E'),
   \ javaapi#method(0,1,'add(', 'int, E)', 'void'),
@@ -1070,7 +1070,7 @@ call javaapi#class('JSlider', 'JComponent', [
   \ javaapi#method(0,0,'createChangeListener(', ')', 'ChangeListener'),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
   \ javaapi#method(0,1,'getModel(', ')', 'BoundedRangeModel'),
   \ javaapi#method(0,1,'setModel(', 'BoundedRangeModel)', 'void'),
@@ -1123,7 +1123,7 @@ call javaapi#class('AbstractCellEditor', 'Serializable', [
   \ javaapi#method(0,1,'cancelCellEditing(', ')', 'void'),
   \ javaapi#method(0,1,'addCellEditorListener(', 'CellEditorListener)', 'void'),
   \ javaapi#method(0,1,'removeCellEditorListener(', 'CellEditorListener)', 'void'),
-  \ javaapi#method(0,1,'getCellEditorListeners(', ')', 'CellEditorListener[]'),
+  \ javaapi#method(0,1,'getCellEditorListeners(', ')', 'CellEditorListener'),
   \ javaapi#method(0,0,'fireEditingStopped(', ')', 'void'),
   \ javaapi#method(0,0,'fireEditingCanceled(', ')', 'void'),
   \ ])
@@ -1269,15 +1269,15 @@ call javaapi#class('JTree', 'JComponent', [
   \ javaapi#method(0,1,'getLeadSelectionPath(', ')', 'TreePath'),
   \ javaapi#method(0,1,'getAnchorSelectionPath(', ')', 'TreePath'),
   \ javaapi#method(0,1,'getSelectionPath(', ')', 'TreePath'),
-  \ javaapi#method(0,1,'getSelectionPaths(', ')', 'TreePath[]'),
-  \ javaapi#method(0,1,'getSelectionRows(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getSelectionPaths(', ')', 'TreePath'),
+  \ javaapi#method(0,1,'getSelectionRows(', ')', 'int'),
   \ javaapi#method(0,1,'getSelectionCount(', ')', 'int'),
   \ javaapi#method(0,1,'getMinSelectionRow(', ')', 'int'),
   \ javaapi#method(0,1,'getMaxSelectionRow(', ')', 'int'),
   \ javaapi#method(0,1,'getLeadSelectionRow(', ')', 'int'),
   \ javaapi#method(0,1,'isPathSelected(', 'TreePath)', 'boolean'),
   \ javaapi#method(0,1,'isRowSelected(', 'int)', 'boolean'),
-  \ javaapi#method(0,1,'getExpandedDescendants(', 'TreePath)', 'TreePath>'),
+  \ javaapi#method(0,1,'getExpandedDescendants(', 'TreePath)', 'Enumeration'),
   \ javaapi#method(0,1,'hasBeenExpanded(', 'TreePath)', 'boolean'),
   \ javaapi#method(0,1,'isExpanded(', 'TreePath)', 'boolean'),
   \ javaapi#method(0,1,'isExpanded(', 'int)', 'boolean'),
@@ -1306,7 +1306,7 @@ call javaapi#class('JTree', 'JComponent', [
   \ javaapi#method(0,1,'getEditingPath(', ')', 'TreePath'),
   \ javaapi#method(0,1,'setSelectionModel(', 'TreeSelectionModel)', 'void'),
   \ javaapi#method(0,1,'getSelectionModel(', ')', 'TreeSelectionModel'),
-  \ javaapi#method(0,0,'getPathBetweenRows(', 'int, int)', 'TreePath[]'),
+  \ javaapi#method(0,0,'getPathBetweenRows(', 'int, int)', 'TreePath'),
   \ javaapi#method(0,1,'setSelectionInterval(', 'int, int)', 'void'),
   \ javaapi#method(0,1,'addSelectionInterval(', 'int, int)', 'void'),
   \ javaapi#method(0,1,'removeSelectionInterval(', 'int, int)', 'void'),
@@ -1318,17 +1318,17 @@ call javaapi#class('JTree', 'JComponent', [
   \ javaapi#method(0,1,'isSelectionEmpty(', ')', 'boolean'),
   \ javaapi#method(0,1,'addTreeExpansionListener(', 'TreeExpansionListener)', 'void'),
   \ javaapi#method(0,1,'removeTreeExpansionListener(', 'TreeExpansionListener)', 'void'),
-  \ javaapi#method(0,1,'getTreeExpansionListeners(', ')', 'TreeExpansionListener[]'),
+  \ javaapi#method(0,1,'getTreeExpansionListeners(', ')', 'TreeExpansionListener'),
   \ javaapi#method(0,1,'addTreeWillExpandListener(', 'TreeWillExpandListener)', 'void'),
   \ javaapi#method(0,1,'removeTreeWillExpandListener(', 'TreeWillExpandListener)', 'void'),
-  \ javaapi#method(0,1,'getTreeWillExpandListeners(', ')', 'TreeWillExpandListener[]'),
+  \ javaapi#method(0,1,'getTreeWillExpandListeners(', ')', 'TreeWillExpandListener'),
   \ javaapi#method(0,1,'fireTreeExpanded(', 'TreePath)', 'void'),
   \ javaapi#method(0,1,'fireTreeCollapsed(', 'TreePath)', 'void'),
   \ javaapi#method(0,1,'fireTreeWillExpand(', 'TreePath) throws ExpandVetoException', 'void'),
   \ javaapi#method(0,1,'fireTreeWillCollapse(', 'TreePath) throws ExpandVetoException', 'void'),
   \ javaapi#method(0,1,'addTreeSelectionListener(', 'TreeSelectionListener)', 'void'),
   \ javaapi#method(0,1,'removeTreeSelectionListener(', 'TreeSelectionListener)', 'void'),
-  \ javaapi#method(0,1,'getTreeSelectionListeners(', ')', 'TreeSelectionListener[]'),
+  \ javaapi#method(0,1,'getTreeSelectionListeners(', ')', 'TreeSelectionListener'),
   \ javaapi#method(0,0,'fireValueChanged(', 'TreeSelectionEvent)', 'void'),
   \ javaapi#method(0,1,'treeDidChange(', ')', 'void'),
   \ javaapi#method(0,1,'setVisibleRowCount(', 'int)', 'void'),
@@ -1340,7 +1340,7 @@ call javaapi#class('JTree', 'JComponent', [
   \ javaapi#method(0,1,'getScrollableTracksViewportWidth(', ')', 'boolean'),
   \ javaapi#method(0,1,'getScrollableTracksViewportHeight(', ')', 'boolean'),
   \ javaapi#method(0,0,'setExpandedState(', 'TreePath, boolean)', 'void'),
-  \ javaapi#method(0,0,'getDescendantToggledPaths(', 'TreePath)', 'TreePath>'),
+  \ javaapi#method(0,0,'getDescendantToggledPaths(', 'TreePath)', 'Enumeration'),
   \ javaapi#method(0,0,'removeDescendantToggledPaths(', 'Enumeration<TreePath>)', 'void'),
   \ javaapi#method(0,0,'clearToggledPaths(', ')', 'void'),
   \ javaapi#method(0,0,'createTreeModelListener(', ')', 'TreeModelListener'),
@@ -1381,7 +1381,7 @@ call javaapi#class('JProgressBar', 'JComponent', [
   \ javaapi#method(0,0,'createChangeListener(', ')', 'ChangeListener'),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
   \ javaapi#method(0,1,'getModel(', ')', 'BoundedRangeModel'),
   \ javaapi#method(0,1,'setModel(', 'BoundedRangeModel)', 'void'),
@@ -1444,7 +1444,7 @@ call javaapi#class('JTabbedPane', 'JComponent', [
   \ javaapi#method(0,0,'createChangeListener(', ')', 'ChangeListener'),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
   \ javaapi#method(0,1,'getModel(', ')', 'SingleSelectionModel'),
   \ javaapi#method(0,1,'setModel(', 'SingleSelectionModel)', 'void'),
@@ -1617,8 +1617,8 @@ call javaapi#class('JTable', 'JComponent', [
   \ javaapi#method(0,1,'removeColumnSelectionInterval(', 'int, int)', 'void'),
   \ javaapi#method(0,1,'getSelectedRow(', ')', 'int'),
   \ javaapi#method(0,1,'getSelectedColumn(', ')', 'int'),
-  \ javaapi#method(0,1,'getSelectedRows(', ')', 'int[]'),
-  \ javaapi#method(0,1,'getSelectedColumns(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getSelectedRows(', ')', 'int'),
+  \ javaapi#method(0,1,'getSelectedColumns(', ')', 'int'),
   \ javaapi#method(0,1,'getSelectedRowCount(', ')', 'int'),
   \ javaapi#method(0,1,'getSelectedColumnCount(', ')', 'int'),
   \ javaapi#method(0,1,'isRowSelected(', 'int)', 'boolean'),
@@ -1637,7 +1637,7 @@ call javaapi#class('JTable', 'JComponent', [
   \ javaapi#method(0,1,'getRowCount(', ')', 'int'),
   \ javaapi#method(0,1,'getColumnCount(', ')', 'int'),
   \ javaapi#method(0,1,'getColumnName(', 'int)', 'String'),
-  \ javaapi#method(0,1,'getColumnClass(', 'int)', 'Class<?>'),
+  \ javaapi#method(0,1,'getColumnClass(', 'int)', 'Class'),
   \ javaapi#method(0,1,'getValueAt(', 'int, int)', 'Object'),
   \ javaapi#method(0,1,'setValueAt(', 'Object, int, int)', 'void'),
   \ javaapi#method(0,1,'isCellEditable(', 'int, int)', 'boolean'),
@@ -1776,7 +1776,7 @@ call javaapi#class('SizeRequirements', 'Serializable', [
   \ javaapi#method(1,1,'calculateTiledPositions(', 'int, SizeRequirements, SizeRequirements[], int[], int[], boolean)', 'void'),
   \ javaapi#method(1,1,'calculateAlignedPositions(', 'int, SizeRequirements, SizeRequirements[], int[], int[])', 'void'),
   \ javaapi#method(1,1,'calculateAlignedPositions(', 'int, SizeRequirements, SizeRequirements[], int[], int[], boolean)', 'void'),
-  \ javaapi#method(1,1,'adjustSizes(', 'int, SizeRequirements[])', 'int[]'),
+  \ javaapi#method(1,1,'adjustSizes(', 'int, SizeRequirements[])', 'int'),
   \ ])
 
 call javaapi#namespace('javax.swing')
@@ -1790,7 +1790,7 @@ call javaapi#class('JEditorPane', 'JTextComponent', [
   \ javaapi#method(0,1,'JEditorPane(', 'String, String)', ''),
   \ javaapi#method(0,1,'addHyperlinkListener(', 'HyperlinkListener)', 'void'),
   \ javaapi#method(0,1,'removeHyperlinkListener(', 'HyperlinkListener)', 'void'),
-  \ javaapi#method(0,1,'getHyperlinkListeners(', ')', 'HyperlinkListener[]'),
+  \ javaapi#method(0,1,'getHyperlinkListeners(', ')', 'HyperlinkListener'),
   \ javaapi#method(0,1,'fireHyperlinkUpdate(', 'HyperlinkEvent)', 'void'),
   \ javaapi#method(0,1,'setPage(', 'URL) throws IOException', 'void'),
   \ javaapi#method(0,1,'read(', 'InputStream, Object) throws IOException', 'void'),
@@ -1869,11 +1869,11 @@ call javaapi#class('AbstractAction', 'Serializable', [
   \ javaapi#method(0,1,'putValue(', 'String, Object)', 'void'),
   \ javaapi#method(0,1,'isEnabled(', ')', 'boolean'),
   \ javaapi#method(0,1,'setEnabled(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getKeys(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getKeys(', ')', 'Object'),
   \ javaapi#method(0,0,'firePropertyChange(', 'String, Object, Object)', 'void'),
   \ javaapi#method(0,1,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
   \ javaapi#method(0,1,'removePropertyChangeListener(', 'PropertyChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener[]'),
+  \ javaapi#method(0,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener'),
   \ javaapi#method(0,0,'clone(', ') throws CloneNotSupportedException', 'Object'),
   \ ])
 
@@ -1943,7 +1943,7 @@ call javaapi#class('JViewport', 'JComponent', [
   \ javaapi#method(0,0,'createLayoutManager(', ')', 'LayoutManager'),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
   \ javaapi#method(0,1,'repaint(', 'long, int, int, int, int)', 'void'),
   \ javaapi#method(0,0,'paramString(', ')', 'String'),
@@ -2154,11 +2154,11 @@ call javaapi#class('DefaultListSelectionModel', 'Serializable', [
   \ javaapi#method(0,1,'isSelectionEmpty(', ')', 'boolean'),
   \ javaapi#method(0,1,'addListSelectionListener(', 'ListSelectionListener)', 'void'),
   \ javaapi#method(0,1,'removeListSelectionListener(', 'ListSelectionListener)', 'void'),
-  \ javaapi#method(0,1,'getListSelectionListeners(', ')', 'ListSelectionListener[]'),
+  \ javaapi#method(0,1,'getListSelectionListeners(', ')', 'ListSelectionListener'),
   \ javaapi#method(0,0,'fireValueChanged(', 'boolean)', 'void'),
   \ javaapi#method(0,0,'fireValueChanged(', 'int, int)', 'void'),
   \ javaapi#method(0,0,'fireValueChanged(', 'int, int, boolean)', 'void'),
-  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T[]'),
+  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T'),
   \ javaapi#method(0,1,'setLeadAnchorNotificationEnabled(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'isLeadAnchorNotificationEnabled(', ')', 'boolean'),
   \ javaapi#method(0,1,'clearSelection(', ')', 'void'),
@@ -2177,7 +2177,7 @@ call javaapi#class('DefaultListSelectionModel', 'Serializable', [
   \ javaapi#method(0,1,'setLeadSelectionIndex(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('DropMode', 'DropMode>', [
+call javaapi#class('DropMode', 'Enum', [
   \ javaapi#field(1,1,'USE_SELECTION', 'DropMode'),
   \ javaapi#field(1,1,'ON', 'DropMode'),
   \ javaapi#field(1,1,'INSERT', 'DropMode'),
@@ -2186,11 +2186,11 @@ call javaapi#class('DropMode', 'DropMode>', [
   \ javaapi#field(1,1,'ON_OR_INSERT', 'DropMode'),
   \ javaapi#field(1,1,'ON_OR_INSERT_ROWS', 'DropMode'),
   \ javaapi#field(1,1,'ON_OR_INSERT_COLS', 'DropMode'),
-  \ javaapi#method(1,1,'values(', ')', 'DropMode[]'),
+  \ javaapi#method(1,1,'values(', ')', 'DropMode'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'DropMode'),
   \ ])
 
-call javaapi#class('JList<E>', 'JComponent', [
+call javaapi#class('JList', 'JComponent', [
   \ javaapi#field(1,1,'VERTICAL', 'int'),
   \ javaapi#field(1,1,'VERTICAL_WRAP', 'int'),
   \ javaapi#field(1,1,'HORIZONTAL_WRAP', 'int'),
@@ -2231,7 +2231,7 @@ call javaapi#class('JList<E>', 'JComponent', [
   \ javaapi#method(0,1,'locationToIndex(', 'Point)', 'int'),
   \ javaapi#method(0,1,'indexToLocation(', 'int)', 'Point'),
   \ javaapi#method(0,1,'getCellBounds(', 'int, int)', 'Rectangle'),
-  \ javaapi#method(0,1,'getModel(', ')', 'ListModel<E>'),
+  \ javaapi#method(0,1,'getModel(', ')', 'ListModel'),
   \ javaapi#method(0,1,'setModel(', 'ListModel<E>)', 'void'),
   \ javaapi#method(0,1,'setListData(', 'E[])', 'void'),
   \ javaapi#method(0,1,'setListData(', 'Vector<? extends E>)', 'void'),
@@ -2240,7 +2240,7 @@ call javaapi#class('JList<E>', 'JComponent', [
   \ javaapi#method(0,0,'fireSelectionValueChanged(', 'int, int, boolean)', 'void'),
   \ javaapi#method(0,1,'addListSelectionListener(', 'ListSelectionListener)', 'void'),
   \ javaapi#method(0,1,'removeListSelectionListener(', 'ListSelectionListener)', 'void'),
-  \ javaapi#method(0,1,'getListSelectionListeners(', ')', 'ListSelectionListener[]'),
+  \ javaapi#method(0,1,'getListSelectionListeners(', ')', 'ListSelectionListener'),
   \ javaapi#method(0,1,'setSelectionModel(', 'ListSelectionModel)', 'void'),
   \ javaapi#method(0,1,'setSelectionMode(', 'int)', 'void'),
   \ javaapi#method(0,1,'getSelectionMode(', ')', 'int'),
@@ -2256,11 +2256,11 @@ call javaapi#class('JList<E>', 'JComponent', [
   \ javaapi#method(0,1,'removeSelectionInterval(', 'int, int)', 'void'),
   \ javaapi#method(0,1,'setValueIsAdjusting(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'getValueIsAdjusting(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getSelectedIndices(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getSelectedIndices(', ')', 'int'),
   \ javaapi#method(0,1,'setSelectedIndex(', 'int)', 'void'),
   \ javaapi#method(0,1,'setSelectedIndices(', 'int[])', 'void'),
-  \ javaapi#method(0,1,'getSelectedValues(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'getSelectedValuesList(', ')', 'List<E>'),
+  \ javaapi#method(0,1,'getSelectedValues(', ')', 'Object'),
+  \ javaapi#method(0,1,'getSelectedValuesList(', ')', 'List'),
   \ javaapi#method(0,1,'getSelectedIndex(', ')', 'int'),
   \ javaapi#method(0,1,'getSelectedValue(', ')', 'E'),
   \ javaapi#method(0,1,'setSelectedValue(', 'Object, boolean)', 'void'),
@@ -2286,26 +2286,26 @@ call javaapi#class('AncestorNotifier', 'Serializable', [
   \ javaapi#method(0,1,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ ])
 
-call javaapi#class('AbstractListModel<E>', 'Serializable', [
+call javaapi#class('AbstractListModel', 'Serializable', [
   \ javaapi#field(0,0,'listenerList', 'EventListenerList'),
   \ javaapi#method(0,1,'AbstractListModel(', ')', ''),
   \ javaapi#method(0,1,'addListDataListener(', 'ListDataListener)', 'void'),
   \ javaapi#method(0,1,'removeListDataListener(', 'ListDataListener)', 'void'),
-  \ javaapi#method(0,1,'getListDataListeners(', ')', 'ListDataListener[]'),
+  \ javaapi#method(0,1,'getListDataListeners(', ')', 'ListDataListener'),
   \ javaapi#method(0,0,'fireContentsChanged(', 'Object, int, int)', 'void'),
   \ javaapi#method(0,0,'fireIntervalAdded(', 'Object, int, int)', 'void'),
   \ javaapi#method(0,0,'fireIntervalRemoved(', 'Object, int, int)', 'void'),
-  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T[]'),
+  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T'),
   \ ])
 
-call javaapi#interface('MutableComboBoxModel<E>', 'ComboBoxModel<E>', [
+call javaapi#interface('MutableComboBoxModel', 'ComboBoxModel', [
   \ javaapi#method(0,1,'addElement(', 'E)', 'void'),
   \ javaapi#method(0,1,'removeElement(', 'Object)', 'void'),
   \ javaapi#method(0,1,'insertElementAt(', 'E, int)', 'void'),
   \ javaapi#method(0,1,'removeElementAt(', 'int)', 'void'),
   \ ])
 
-call javaapi#class('DefaultComboBoxModel<E>', 'AbstractListModel<E>', [
+call javaapi#class('DefaultComboBoxModel', 'AbstractListModel', [
   \ javaapi#method(0,1,'DefaultComboBoxModel(', ')', ''),
   \ javaapi#method(0,1,'DefaultComboBoxModel(', 'E[])', ''),
   \ javaapi#method(0,1,'DefaultComboBoxModel(', 'Vector<E>)', ''),
@@ -2321,18 +2321,18 @@ call javaapi#class('DefaultComboBoxModel<E>', 'AbstractListModel<E>', [
   \ javaapi#method(0,1,'removeAllElements(', ')', 'void'),
   \ ])
 
-call javaapi#interface('ListCellRenderer<E>', '', [
+call javaapi#interface('ListCellRenderer', '', [
   \ javaapi#method(0,1,'getListCellRendererComponent(', 'JList<? extends E>, E, int, boolean, boolean)', 'Component'),
   \ ])
 
-call javaapi#interface('ListModel<E>', '', [
+call javaapi#interface('ListModel', '', [
   \ javaapi#method(0,1,'getSize(', ')', 'int'),
   \ javaapi#method(0,1,'getElementAt(', 'int)', 'E'),
   \ javaapi#method(0,1,'addListDataListener(', 'ListDataListener)', 'void'),
   \ javaapi#method(0,1,'removeListDataListener(', 'ListDataListener)', 'void'),
   \ ])
 
-call javaapi#interface('ComboBoxModel<E>', 'ListModel<E>', [
+call javaapi#interface('ComboBoxModel', 'ListModel', [
   \ javaapi#method(0,1,'setSelectedItem(', 'Object)', 'void'),
   \ javaapi#method(0,1,'getSelectedItem(', ')', 'Object'),
   \ ])
@@ -2388,10 +2388,10 @@ call javaapi#class('DefaultBoundedRangeModel', 'Serializable', [
   \ javaapi#method(0,1,'setRangeProperties(', 'int, int, int, int, boolean)', 'void'),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
-  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T[]'),
+  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T'),
   \ ])
 
 call javaapi#namespace('javax.swing')
@@ -2431,7 +2431,7 @@ call javaapi#class('JScrollBar', 'JComponent', [
   \ javaapi#method(0,1,'setValues(', 'int, int, int, int)', 'void'),
   \ javaapi#method(0,1,'addAdjustmentListener(', 'AdjustmentListener)', 'void'),
   \ javaapi#method(0,1,'removeAdjustmentListener(', 'AdjustmentListener)', 'void'),
-  \ javaapi#method(0,1,'getAdjustmentListeners(', ')', 'AdjustmentListener[]'),
+  \ javaapi#method(0,1,'getAdjustmentListeners(', ')', 'AdjustmentListener'),
   \ javaapi#method(0,0,'fireAdjustmentValueChanged(', 'int, int, int)', 'void'),
   \ javaapi#method(0,1,'getMinimumSize(', ')', 'Dimension'),
   \ javaapi#method(0,1,'getMaximumSize(', ')', 'Dimension'),
@@ -2442,8 +2442,8 @@ call javaapi#class('JScrollBar', 'JComponent', [
 
 call javaapi#namespace('javax.swing')
 
-call javaapi#class('JComboBox<E>', 'JComponent', [
-  \ javaapi#field(0,0,'dataModel', 'ComboBoxModel<E>'),
+call javaapi#class('JComboBox', 'JComponent', [
+  \ javaapi#field(0,0,'dataModel', 'ComboBoxModel'),
   \ javaapi#field(0,0,'renderer', 'E>'),
   \ javaapi#field(0,0,'editor', 'ComboBoxEditor'),
   \ javaapi#field(0,0,'maximumRowCount', 'int'),
@@ -2462,7 +2462,7 @@ call javaapi#class('JComboBox<E>', 'JComponent', [
   \ javaapi#method(0,1,'getUIClassID(', ')', 'String'),
   \ javaapi#method(0,1,'getUI(', ')', 'ComboBoxUI'),
   \ javaapi#method(0,1,'setModel(', 'ComboBoxModel<E>)', 'void'),
-  \ javaapi#method(0,1,'getModel(', ')', 'ComboBoxModel<E>'),
+  \ javaapi#method(0,1,'getModel(', ')', 'ComboBoxModel'),
   \ javaapi#method(0,1,'setLightWeightPopupEnabled(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'isLightWeightPopupEnabled(', ')', 'boolean'),
   \ javaapi#method(0,1,'setEditable(', 'boolean)', 'void'),
@@ -2490,13 +2490,13 @@ call javaapi#class('JComboBox<E>', 'JComponent', [
   \ javaapi#method(0,1,'isPopupVisible(', ')', 'boolean'),
   \ javaapi#method(0,1,'addItemListener(', 'ItemListener)', 'void'),
   \ javaapi#method(0,1,'removeItemListener(', 'ItemListener)', 'void'),
-  \ javaapi#method(0,1,'getItemListeners(', ')', 'ItemListener[]'),
+  \ javaapi#method(0,1,'getItemListeners(', ')', 'ItemListener'),
   \ javaapi#method(0,1,'addActionListener(', 'ActionListener)', 'void'),
   \ javaapi#method(0,1,'removeActionListener(', 'ActionListener)', 'void'),
-  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener[]'),
+  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener'),
   \ javaapi#method(0,1,'addPopupMenuListener(', 'PopupMenuListener)', 'void'),
   \ javaapi#method(0,1,'removePopupMenuListener(', 'PopupMenuListener)', 'void'),
-  \ javaapi#method(0,1,'getPopupMenuListeners(', ')', 'PopupMenuListener[]'),
+  \ javaapi#method(0,1,'getPopupMenuListeners(', ')', 'PopupMenuListener'),
   \ javaapi#method(0,1,'firePopupMenuWillBecomeVisible(', ')', 'void'),
   \ javaapi#method(0,1,'firePopupMenuWillBecomeInvisible(', ')', 'void'),
   \ javaapi#method(0,1,'firePopupMenuCanceled(', ')', 'void'),
@@ -2510,7 +2510,7 @@ call javaapi#class('JComboBox<E>', 'JComponent', [
   \ javaapi#method(0,0,'fireItemStateChanged(', 'ItemEvent)', 'void'),
   \ javaapi#method(0,0,'fireActionEvent(', ')', 'void'),
   \ javaapi#method(0,0,'selectedItemChanged(', ')', 'void'),
-  \ javaapi#method(0,1,'getSelectedObjects(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getSelectedObjects(', ')', 'Object'),
   \ javaapi#method(0,1,'actionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,1,'contentsChanged(', 'ListDataEvent)', 'void'),
   \ javaapi#method(0,1,'intervalAdded(', 'ListDataEvent)', 'void'),
@@ -2551,11 +2551,11 @@ call javaapi#class('MenuSelectionManager', '', [
   \ javaapi#method(0,1,'MenuSelectionManager(', ')', ''),
   \ javaapi#method(1,1,'defaultManager(', ')', 'MenuSelectionManager'),
   \ javaapi#method(0,1,'setSelectedPath(', 'MenuElement[])', 'void'),
-  \ javaapi#method(0,1,'getSelectedPath(', ')', 'MenuElement[]'),
+  \ javaapi#method(0,1,'getSelectedPath(', ')', 'MenuElement'),
   \ javaapi#method(0,1,'clearSelectedPath(', ')', 'void'),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
   \ javaapi#method(0,1,'processMouseEvent(', 'MouseEvent)', 'void'),
   \ javaapi#method(0,1,'componentForPoint(', 'Component, Point)', 'Component'),
@@ -2593,10 +2593,10 @@ call javaapi#class('JPopupMenu', 'JComponent', [
   \ javaapi#method(0,1,'insert(', 'Component, int)', 'void'),
   \ javaapi#method(0,1,'addPopupMenuListener(', 'PopupMenuListener)', 'void'),
   \ javaapi#method(0,1,'removePopupMenuListener(', 'PopupMenuListener)', 'void'),
-  \ javaapi#method(0,1,'getPopupMenuListeners(', ')', 'PopupMenuListener[]'),
+  \ javaapi#method(0,1,'getPopupMenuListeners(', ')', 'PopupMenuListener'),
   \ javaapi#method(0,1,'addMenuKeyListener(', 'MenuKeyListener)', 'void'),
   \ javaapi#method(0,1,'removeMenuKeyListener(', 'MenuKeyListener)', 'void'),
-  \ javaapi#method(0,1,'getMenuKeyListeners(', ')', 'MenuKeyListener[]'),
+  \ javaapi#method(0,1,'getMenuKeyListeners(', ')', 'MenuKeyListener'),
   \ javaapi#method(0,0,'firePopupMenuWillBecomeVisible(', ')', 'void'),
   \ javaapi#method(0,0,'firePopupMenuWillBecomeInvisible(', ')', 'void'),
   \ javaapi#method(0,0,'firePopupMenuCanceled(', ')', 'void'),
@@ -2621,7 +2621,7 @@ call javaapi#class('JPopupMenu', 'JComponent', [
   \ javaapi#method(0,1,'processMouseEvent(', 'MouseEvent, MenuElement[], MenuSelectionManager)', 'void'),
   \ javaapi#method(0,1,'processKeyEvent(', 'KeyEvent, MenuElement[], MenuSelectionManager)', 'void'),
   \ javaapi#method(0,1,'menuSelectionChanged(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getSubElements(', ')', 'MenuElement[]'),
+  \ javaapi#method(0,1,'getSubElements(', ')', 'MenuElement'),
   \ javaapi#method(0,1,'getComponent(', ')', 'Component'),
   \ javaapi#method(0,1,'isPopupTrigger(', 'MouseEvent)', 'boolean'),
   \ ])
@@ -2660,9 +2660,9 @@ call javaapi#class('DefaultSingleSelectionModel', 'Serializable', [
   \ javaapi#method(0,1,'isSelected(', ')', 'boolean'),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
-  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T[]'),
+  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T'),
   \ ])
 
 call javaapi#class('JMenuBar', 'JComponent', [
@@ -2690,7 +2690,7 @@ call javaapi#class('JMenuBar', 'JComponent', [
   \ javaapi#method(0,1,'processMouseEvent(', 'MouseEvent, MenuElement[], MenuSelectionManager)', 'void'),
   \ javaapi#method(0,1,'processKeyEvent(', 'KeyEvent, MenuElement[], MenuSelectionManager)', 'void'),
   \ javaapi#method(0,1,'menuSelectionChanged(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getSubElements(', ')', 'MenuElement[]'),
+  \ javaapi#method(0,1,'getSubElements(', ')', 'MenuElement'),
   \ javaapi#method(0,1,'getComponent(', ')', 'Component'),
   \ javaapi#method(0,0,'paramString(', ')', 'String'),
   \ javaapi#method(0,1,'getAccessibleContext(', ')', 'AccessibleContext'),
@@ -2737,12 +2737,12 @@ call javaapi#class('Box', 'JComponent', [
 call javaapi#namespace('javax.swing')
 
 call javaapi#class('ButtonGroup', 'Serializable', [
-  \ javaapi#field(0,0,'buttons', 'AbstractButton>'),
+  \ javaapi#field(0,0,'buttons', 'Vector'),
   \ javaapi#method(0,1,'ButtonGroup(', ')', ''),
   \ javaapi#method(0,1,'add(', 'AbstractButton)', 'void'),
   \ javaapi#method(0,1,'remove(', 'AbstractButton)', 'void'),
   \ javaapi#method(0,1,'clearSelection(', ')', 'void'),
-  \ javaapi#method(0,1,'getElements(', ')', 'AbstractButton>'),
+  \ javaapi#method(0,1,'getElements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getSelection(', ')', 'ButtonModel'),
   \ javaapi#method(0,1,'setSelected(', 'ButtonModel, boolean)', 'void'),
   \ javaapi#method(0,1,'isSelected(', 'ButtonModel)', 'boolean'),
@@ -2804,18 +2804,18 @@ call javaapi#class('DefaultButtonModel', 'Serializable', [
   \ javaapi#method(0,1,'getMnemonic(', ')', 'int'),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
   \ javaapi#method(0,1,'addActionListener(', 'ActionListener)', 'void'),
   \ javaapi#method(0,1,'removeActionListener(', 'ActionListener)', 'void'),
-  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener[]'),
+  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener'),
   \ javaapi#method(0,0,'fireActionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,1,'addItemListener(', 'ItemListener)', 'void'),
   \ javaapi#method(0,1,'removeItemListener(', 'ItemListener)', 'void'),
-  \ javaapi#method(0,1,'getItemListeners(', ')', 'ItemListener[]'),
+  \ javaapi#method(0,1,'getItemListeners(', ')', 'ItemListener'),
   \ javaapi#method(0,0,'fireItemStateChanged(', 'ItemEvent)', 'void'),
-  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T[]'),
-  \ javaapi#method(0,1,'getSelectedObjects(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T'),
+  \ javaapi#method(0,1,'getSelectedObjects(', ')', 'Object'),
   \ javaapi#method(0,1,'setGroup(', 'ButtonGroup)', 'void'),
   \ javaapi#method(0,1,'getGroup(', ')', 'ButtonGroup'),
   \ ])
@@ -2998,9 +2998,9 @@ call javaapi#class('Timer', 'Serializable', [
   \ javaapi#method(0,1,'Timer(', 'int, ActionListener)', ''),
   \ javaapi#method(0,1,'addActionListener(', 'ActionListener)', 'void'),
   \ javaapi#method(0,1,'removeActionListener(', 'ActionListener)', 'void'),
-  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener[]'),
+  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener'),
   \ javaapi#method(0,0,'fireActionPerformed(', 'ActionEvent)', 'void'),
-  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T[]'),
+  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T'),
   \ javaapi#method(1,1,'setLogTimers(', 'boolean)', 'void'),
   \ javaapi#method(1,1,'getLogTimers(', ')', 'boolean'),
   \ javaapi#method(0,1,'setDelay(', 'int)', 'void'),
@@ -3169,7 +3169,7 @@ call javaapi#class('JCheckBoxMenuItem', 'JMenuItem', [
   \ javaapi#method(0,1,'getUIClassID(', ')', 'String'),
   \ javaapi#method(0,1,'getState(', ')', 'boolean'),
   \ javaapi#method(0,1,'setState(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getSelectedObjects(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getSelectedObjects(', ')', 'Object'),
   \ javaapi#method(0,0,'paramString(', ')', 'String'),
   \ javaapi#method(0,1,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ ])
@@ -3271,11 +3271,11 @@ call javaapi#class('AbstractButton', 'JComponent', [
   \ javaapi#method(0,1,'setLayout(', 'LayoutManager)', 'void'),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
   \ javaapi#method(0,1,'addActionListener(', 'ActionListener)', 'void'),
   \ javaapi#method(0,1,'removeActionListener(', 'ActionListener)', 'void'),
-  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener[]'),
+  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener'),
   \ javaapi#method(0,0,'createChangeListener(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireActionPerformed(', 'ActionEvent)', 'void'),
   \ javaapi#method(0,0,'fireItemStateChanged(', 'ItemEvent)', 'void'),
@@ -3286,8 +3286,8 @@ call javaapi#class('AbstractButton', 'JComponent', [
   \ javaapi#method(0,1,'setLabel(', 'String)', 'void'),
   \ javaapi#method(0,1,'addItemListener(', 'ItemListener)', 'void'),
   \ javaapi#method(0,1,'removeItemListener(', 'ItemListener)', 'void'),
-  \ javaapi#method(0,1,'getItemListeners(', ')', 'ItemListener[]'),
-  \ javaapi#method(0,1,'getSelectedObjects(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getItemListeners(', ')', 'ItemListener'),
+  \ javaapi#method(0,1,'getSelectedObjects(', ')', 'Object'),
   \ javaapi#method(0,0,'init(', 'String, Icon)', 'void'),
   \ javaapi#method(0,1,'imageUpdate(', 'Image, int, int, int, int, int)', 'boolean'),
   \ javaapi#method(0,0,'paramString(', ')', 'String'),
@@ -3324,14 +3324,14 @@ call javaapi#class('JMenuItem', 'AbstractButton', [
   \ javaapi#method(0,0,'fireMenuKeyReleased(', 'MenuKeyEvent)', 'void'),
   \ javaapi#method(0,0,'fireMenuKeyTyped(', 'MenuKeyEvent)', 'void'),
   \ javaapi#method(0,1,'menuSelectionChanged(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getSubElements(', ')', 'MenuElement[]'),
+  \ javaapi#method(0,1,'getSubElements(', ')', 'MenuElement'),
   \ javaapi#method(0,1,'getComponent(', ')', 'Component'),
   \ javaapi#method(0,1,'addMenuDragMouseListener(', 'MenuDragMouseListener)', 'void'),
   \ javaapi#method(0,1,'removeMenuDragMouseListener(', 'MenuDragMouseListener)', 'void'),
-  \ javaapi#method(0,1,'getMenuDragMouseListeners(', ')', 'MenuDragMouseListener[]'),
+  \ javaapi#method(0,1,'getMenuDragMouseListeners(', ')', 'MenuDragMouseListener'),
   \ javaapi#method(0,1,'addMenuKeyListener(', 'MenuKeyListener)', 'void'),
   \ javaapi#method(0,1,'removeMenuKeyListener(', 'MenuKeyListener)', 'void'),
-  \ javaapi#method(0,1,'getMenuKeyListeners(', ')', 'MenuKeyListener[]'),
+  \ javaapi#method(0,1,'getMenuKeyListeners(', ')', 'MenuKeyListener'),
   \ javaapi#method(0,0,'paramString(', ')', 'String'),
   \ javaapi#method(0,1,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ ])
@@ -3340,7 +3340,7 @@ call javaapi#interface('MenuElement', '', [
   \ javaapi#method(0,1,'processMouseEvent(', 'MouseEvent, MenuElement[], MenuSelectionManager)', 'void'),
   \ javaapi#method(0,1,'processKeyEvent(', 'KeyEvent, MenuElement[], MenuSelectionManager)', 'void'),
   \ javaapi#method(0,1,'menuSelectionChanged(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getSubElements(', ')', 'MenuElement[]'),
+  \ javaapi#method(0,1,'getSubElements(', ')', 'MenuElement'),
   \ javaapi#method(0,1,'getComponent(', ')', 'Component'),
   \ ])
 
@@ -3382,19 +3382,19 @@ call javaapi#class('JMenu', 'JMenuItem', [
   \ javaapi#method(0,1,'removeAll(', ')', 'void'),
   \ javaapi#method(0,1,'getMenuComponentCount(', ')', 'int'),
   \ javaapi#method(0,1,'getMenuComponent(', 'int)', 'Component'),
-  \ javaapi#method(0,1,'getMenuComponents(', ')', 'Component[]'),
+  \ javaapi#method(0,1,'getMenuComponents(', ')', 'Component'),
   \ javaapi#method(0,1,'isTopLevelMenu(', ')', 'boolean'),
   \ javaapi#method(0,1,'isMenuComponent(', 'Component)', 'boolean'),
   \ javaapi#method(0,1,'getPopupMenu(', ')', 'JPopupMenu'),
   \ javaapi#method(0,1,'addMenuListener(', 'MenuListener)', 'void'),
   \ javaapi#method(0,1,'removeMenuListener(', 'MenuListener)', 'void'),
-  \ javaapi#method(0,1,'getMenuListeners(', ')', 'MenuListener[]'),
+  \ javaapi#method(0,1,'getMenuListeners(', ')', 'MenuListener'),
   \ javaapi#method(0,0,'fireMenuSelected(', ')', 'void'),
   \ javaapi#method(0,0,'fireMenuDeselected(', ')', 'void'),
   \ javaapi#method(0,0,'fireMenuCanceled(', ')', 'void'),
   \ javaapi#method(0,0,'createWinListener(', 'JPopupMenu)', 'WinListener'),
   \ javaapi#method(0,1,'menuSelectionChanged(', 'boolean)', 'void'),
-  \ javaapi#method(0,1,'getSubElements(', ')', 'MenuElement[]'),
+  \ javaapi#method(0,1,'getSubElements(', ')', 'MenuElement'),
   \ javaapi#method(0,1,'getComponent(', ')', 'Component'),
   \ javaapi#method(0,1,'applyComponentOrientation(', 'ComponentOrientation)', 'void'),
   \ javaapi#method(0,1,'setComponentOrientation(', 'ComponentOrientation)', 'void'),
@@ -3415,9 +3415,9 @@ call javaapi#class('ActionMap', 'Serializable', [
   \ javaapi#method(0,1,'get(', 'Object)', 'Action'),
   \ javaapi#method(0,1,'remove(', 'Object)', 'void'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
-  \ javaapi#method(0,1,'keys(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'keys(', ')', 'Object'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'allKeys(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'allKeys(', ')', 'Object'),
   \ ])
 
 call javaapi#namespace('javax.swing')
@@ -3442,9 +3442,9 @@ call javaapi#class('InputMap', 'Serializable', [
   \ javaapi#method(0,1,'get(', 'KeyStroke)', 'Object'),
   \ javaapi#method(0,1,'remove(', 'KeyStroke)', 'void'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
-  \ javaapi#method(0,1,'keys(', ')', 'KeyStroke[]'),
+  \ javaapi#method(0,1,'keys(', ')', 'KeyStroke'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'allKeys(', ')', 'KeyStroke[]'),
+  \ javaapi#method(0,1,'allKeys(', ')', 'KeyStroke'),
   \ ])
 
 call javaapi#class('ComponentInputMap', 'InputMap', [
@@ -3559,7 +3559,7 @@ call javaapi#class('JInternalFrame', 'JComponent', [
   \ javaapi#method(0,1,'reshape(', 'int, int, int, int)', 'void'),
   \ javaapi#method(0,1,'addInternalFrameListener(', 'InternalFrameListener)', 'void'),
   \ javaapi#method(0,1,'removeInternalFrameListener(', 'InternalFrameListener)', 'void'),
-  \ javaapi#method(0,1,'getInternalFrameListeners(', ')', 'InternalFrameListener[]'),
+  \ javaapi#method(0,1,'getInternalFrameListeners(', ')', 'InternalFrameListener'),
   \ javaapi#method(0,0,'fireInternalFrameEvent(', 'int)', 'void'),
   \ javaapi#method(0,1,'doDefaultCloseAction(', ')', 'void'),
   \ javaapi#method(0,1,'setDefaultCloseOperation(', 'int)', 'void'),
@@ -3587,7 +3587,7 @@ call javaapi#class('ArrayTable', 'Cloneable', [
   \ javaapi#method(0,1,'remove(', 'Object)', 'Object'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
-  \ javaapi#method(0,1,'getKeys(', 'Object[])', 'Object[]'),
+  \ javaapi#method(0,1,'getKeys(', 'Object[])', 'Object'),
   \ ])
 
 call javaapi#class('JLayeredPane', 'JComponent', [
@@ -3617,7 +3617,7 @@ call javaapi#class('JLayeredPane', 'JComponent', [
   \ javaapi#method(0,1,'highestLayer(', ')', 'int'),
   \ javaapi#method(0,1,'lowestLayer(', ')', 'int'),
   \ javaapi#method(0,1,'getComponentCountInLayer(', 'int)', 'int'),
-  \ javaapi#method(0,1,'getComponentsInLayer(', 'int)', 'Component[]'),
+  \ javaapi#method(0,1,'getComponentsInLayer(', 'int)', 'Component'),
   \ javaapi#method(0,1,'paint(', 'Graphics)', 'void'),
   \ javaapi#method(0,0,'getComponentToLayer(', ')', 'Integer>'),
   \ javaapi#method(0,0,'getObjectForLayer(', 'int)', 'Integer'),
@@ -3656,7 +3656,7 @@ call javaapi#class('JTextField', 'JTextComponent', [
   \ javaapi#method(0,1,'setFont(', 'Font)', 'void'),
   \ javaapi#method(0,1,'addActionListener(', 'ActionListener)', 'void'),
   \ javaapi#method(0,1,'removeActionListener(', 'ActionListener)', 'void'),
-  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener[]'),
+  \ javaapi#method(0,1,'getActionListeners(', ')', 'ActionListener'),
   \ javaapi#method(0,0,'fireActionPerformed(', ')', 'void'),
   \ javaapi#method(0,1,'setActionCommand(', 'String)', 'void'),
   \ javaapi#method(0,1,'setAction(', 'Action)', 'void'),
@@ -3664,7 +3664,7 @@ call javaapi#class('JTextField', 'JTextComponent', [
   \ javaapi#method(0,0,'configurePropertiesFromAction(', 'Action)', 'void'),
   \ javaapi#method(0,0,'actionPropertyChanged(', 'Action, String)', 'void'),
   \ javaapi#method(0,0,'createActionPropertyChangeListener(', 'Action)', 'PropertyChangeListener'),
-  \ javaapi#method(0,1,'getActions(', ')', 'Action[]'),
+  \ javaapi#method(0,1,'getActions(', ')', 'Action'),
   \ javaapi#method(0,1,'postActionEvent(', ')', 'void'),
   \ javaapi#method(0,1,'getHorizontalVisibility(', ')', 'BoundedRangeModel'),
   \ javaapi#method(0,1,'getScrollOffset(', ')', 'int'),
@@ -3689,7 +3689,7 @@ call javaapi#class('JPasswordField', 'JTextField', [
   \ javaapi#method(0,1,'copy(', ')', 'void'),
   \ javaapi#method(0,1,'getText(', ')', 'String'),
   \ javaapi#method(0,1,'getText(', 'int, int) throws BadLocationException', 'String'),
-  \ javaapi#method(0,1,'getPassword(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getPassword(', ')', 'char'),
   \ javaapi#method(0,0,'paramString(', ')', 'String'),
   \ javaapi#method(0,1,'getAccessibleContext(', ')', 'AccessibleContext'),
   \ ])
@@ -3787,7 +3787,7 @@ call javaapi#class('LookAndFeel', '', [
   \ javaapi#method(1,1,'installBorder(', 'JComponent, String)', 'void'),
   \ javaapi#method(1,1,'uninstallBorder(', 'JComponent)', 'void'),
   \ javaapi#method(1,1,'installProperty(', 'JComponent, String, Object)', 'void'),
-  \ javaapi#method(1,1,'makeKeyBindings(', 'Object[])', 'KeyBinding[]'),
+  \ javaapi#method(1,1,'makeKeyBindings(', 'Object[])', 'KeyBinding'),
   \ javaapi#method(1,1,'makeInputMap(', 'Object[])', 'InputMap'),
   \ javaapi#method(1,1,'makeComponentInputMap(', 'JComponent, Object[])', 'ComponentInputMap'),
   \ javaapi#method(1,1,'loadKeyBindings(', 'InputMap, Object[])', 'void'),
@@ -3818,8 +3818,8 @@ call javaapi#class('MultiUIDefaults', 'UIDefaults', [
   \ javaapi#method(0,1,'get(', 'Object, Locale)', 'Object'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'keys(', ')', 'Object>'),
-  \ javaapi#method(0,1,'elements(', ')', 'Object>'),
+  \ javaapi#method(0,1,'keys(', ')', 'Enumeration'),
+  \ javaapi#method(0,1,'elements(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'entrySet(', ')', 'Object>>'),
   \ javaapi#method(0,0,'getUIError(', 'String)', 'void'),
   \ javaapi#method(0,1,'remove(', 'Object)', 'Object'),
@@ -3827,7 +3827,7 @@ call javaapi#class('MultiUIDefaults', 'UIDefaults', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('UIDefaults', 'Object>', [
+call javaapi#class('UIDefaults', 'Hashtable', [
   \ javaapi#method(0,1,'UIDefaults(', ')', ''),
   \ javaapi#method(0,1,'UIDefaults(', 'int, float)', ''),
   \ javaapi#method(0,1,'UIDefaults(', 'Object[])', ''),
@@ -3859,7 +3859,7 @@ call javaapi#class('UIDefaults', 'Object>', [
   \ javaapi#method(0,1,'getUI(', 'JComponent)', 'ComponentUI'),
   \ javaapi#method(0,1,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
   \ javaapi#method(0,1,'removePropertyChangeListener(', 'PropertyChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener[]'),
+  \ javaapi#method(0,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener'),
   \ javaapi#method(0,0,'firePropertyChange(', 'String, Object, Object)', 'void'),
   \ javaapi#method(0,1,'addResourceBundle(', 'String)', 'void'),
   \ javaapi#method(0,1,'removeResourceBundle(', 'String)', 'void'),
@@ -3871,7 +3871,7 @@ call javaapi#namespace('javax.swing')
 
 call javaapi#class('UIManager', 'Serializable', [
   \ javaapi#method(0,1,'UIManager(', ')', ''),
-  \ javaapi#method(1,1,'getInstalledLookAndFeels(', ')', 'LookAndFeelInfo[]'),
+  \ javaapi#method(1,1,'getInstalledLookAndFeels(', ')', 'LookAndFeelInfo'),
   \ javaapi#method(1,1,'setInstalledLookAndFeels(', 'LookAndFeelInfo[]) throws SecurityException', 'void'),
   \ javaapi#method(1,1,'installLookAndFeel(', 'LookAndFeelInfo)', 'void'),
   \ javaapi#method(1,1,'installLookAndFeel(', 'String, String)', 'void'),
@@ -3906,10 +3906,10 @@ call javaapi#class('UIManager', 'Serializable', [
   \ javaapi#method(1,1,'getLookAndFeelDefaults(', ')', 'UIDefaults'),
   \ javaapi#method(1,1,'addAuxiliaryLookAndFeel(', 'LookAndFeel)', 'void'),
   \ javaapi#method(1,1,'removeAuxiliaryLookAndFeel(', 'LookAndFeel)', 'boolean'),
-  \ javaapi#method(1,1,'getAuxiliaryLookAndFeels(', ')', 'LookAndFeel[]'),
+  \ javaapi#method(1,1,'getAuxiliaryLookAndFeels(', ')', 'LookAndFeel'),
   \ javaapi#method(1,1,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
   \ javaapi#method(1,1,'removePropertyChangeListener(', 'PropertyChangeListener)', 'void'),
-  \ javaapi#method(1,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener[]'),
+  \ javaapi#method(1,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener'),
   \ ])
 
 call javaapi#namespace('javax.swing')
@@ -3996,7 +3996,7 @@ call javaapi#class('SwingUtilities', 'SwingConstants', [
   \ javaapi#method(1,1,'isDescendingFrom(', 'Component, Component)', 'boolean'),
   \ javaapi#method(1,1,'computeIntersection(', 'int, int, int, int, Rectangle)', 'Rectangle'),
   \ javaapi#method(1,1,'computeUnion(', 'int, int, int, int, Rectangle)', 'Rectangle'),
-  \ javaapi#method(1,1,'computeDifference(', 'Rectangle, Rectangle)', 'Rectangle[]'),
+  \ javaapi#method(1,1,'computeDifference(', 'Rectangle, Rectangle)', 'Rectangle'),
   \ javaapi#method(1,1,'isLeftMouseButton(', 'MouseEvent)', 'boolean'),
   \ javaapi#method(1,1,'isMiddleMouseButton(', 'MouseEvent)', 'boolean'),
   \ javaapi#method(1,1,'isRightMouseButton(', 'MouseEvent)', 'boolean'),
@@ -4094,7 +4094,7 @@ call javaapi#class('JComponent', 'Container', [
   \ javaapi#method(0,1,'registerKeyboardAction(', 'ActionListener, String, KeyStroke, int)', 'void'),
   \ javaapi#method(0,1,'registerKeyboardAction(', 'ActionListener, KeyStroke, int)', 'void'),
   \ javaapi#method(0,1,'unregisterKeyboardAction(', 'KeyStroke)', 'void'),
-  \ javaapi#method(0,1,'getRegisteredKeyStrokes(', ')', 'KeyStroke[]'),
+  \ javaapi#method(0,1,'getRegisteredKeyStrokes(', ')', 'KeyStroke'),
   \ javaapi#method(0,1,'getConditionForKeyStroke(', 'KeyStroke)', 'int'),
   \ javaapi#method(0,1,'getActionForKeyStroke(', 'KeyStroke)', 'ActionListener'),
   \ javaapi#method(0,1,'resetKeyboardActions(', ')', 'void'),
@@ -4154,12 +4154,12 @@ call javaapi#class('JComponent', 'Container', [
   \ javaapi#method(0,0,'fireVetoableChange(', 'String, Object, Object) throws PropertyVetoException', 'void'),
   \ javaapi#method(0,1,'addVetoableChangeListener(', 'VetoableChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeVetoableChangeListener(', 'VetoableChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getVetoableChangeListeners(', ')', 'VetoableChangeListener[]'),
+  \ javaapi#method(0,1,'getVetoableChangeListeners(', ')', 'VetoableChangeListener'),
   \ javaapi#method(0,1,'getTopLevelAncestor(', ')', 'Container'),
   \ javaapi#method(0,1,'addAncestorListener(', 'AncestorListener)', 'void'),
   \ javaapi#method(0,1,'removeAncestorListener(', 'AncestorListener)', 'void'),
-  \ javaapi#method(0,1,'getAncestorListeners(', ')', 'AncestorListener[]'),
-  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T[]'),
+  \ javaapi#method(0,1,'getAncestorListeners(', ')', 'AncestorListener'),
+  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T'),
   \ javaapi#method(0,1,'addNotify(', ')', 'void'),
   \ javaapi#method(0,1,'removeNotify(', ')', 'void'),
   \ javaapi#method(0,1,'repaint(', 'long, int, int, int, int)', 'void'),

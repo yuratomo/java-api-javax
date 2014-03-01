@@ -3,7 +3,7 @@ call javaapi#namespace('javax.swing.text.html.parser')
 call javaapi#class('AttributeList', 'Serializable', [
   \ javaapi#field(0,1,'name', 'String'),
   \ javaapi#field(0,1,'type', 'int'),
-  \ javaapi#field(0,1,'values', 'Vector<?>'),
+  \ javaapi#field(0,1,'values', 'Vector'),
   \ javaapi#field(0,1,'modifier', 'int'),
   \ javaapi#field(0,1,'value', 'String'),
   \ javaapi#field(0,1,'next', 'AttributeList'),
@@ -12,7 +12,7 @@ call javaapi#class('AttributeList', 'Serializable', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getType(', ')', 'int'),
   \ javaapi#method(0,1,'getModifier(', ')', 'int'),
-  \ javaapi#method(0,1,'getValues(', ')', 'Enumeration<?>'),
+  \ javaapi#method(0,1,'getValues(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'getValue(', ')', 'String'),
   \ javaapi#method(0,1,'getNext(', ')', 'AttributeList'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -45,7 +45,7 @@ call javaapi#class('ContentModelState', '', [
 
 call javaapi#class('DTD', 'DTDConstants', [
   \ javaapi#field(0,1,'name', 'String'),
-  \ javaapi#field(0,1,'elements', 'Element>'),
+  \ javaapi#field(0,1,'elements', 'Vector'),
   \ javaapi#field(0,1,'elementHash', 'Element>'),
   \ javaapi#field(0,1,'entityHash', 'Entity>'),
   \ javaapi#field(0,1,'pcdata', 'Element'),
@@ -157,13 +157,13 @@ call javaapi#class('Element', 'Serializable', [
 call javaapi#class('Entity', 'DTDConstants', [
   \ javaapi#field(0,1,'name', 'String'),
   \ javaapi#field(0,1,'type', 'int'),
-  \ javaapi#field(0,1,'data', 'char[]'),
+  \ javaapi#field(0,1,'data', 'char'),
   \ javaapi#method(0,1,'Entity(', 'String, int, char[])', ''),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'getType(', ')', 'int'),
   \ javaapi#method(0,1,'isParameter(', ')', 'boolean'),
   \ javaapi#method(0,1,'isGeneral(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getData(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'char'),
   \ javaapi#method(0,1,'getString(', ')', 'String'),
   \ javaapi#method(1,1,'name2type(', 'String)', 'int'),
   \ ])

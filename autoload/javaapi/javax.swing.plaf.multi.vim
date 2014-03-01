@@ -3,7 +3,7 @@ call javaapi#namespace('javax.swing.plaf.multi')
 call javaapi#class('MultiButtonUI', 'ButtonUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiButtonUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -20,7 +20,7 @@ call javaapi#class('MultiButtonUI', 'ButtonUI', [
 call javaapi#class('MultiColorChooserUI', 'ColorChooserUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiColorChooserUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -37,7 +37,7 @@ call javaapi#class('MultiColorChooserUI', 'ColorChooserUI', [
 call javaapi#class('MultiComboBoxUI', 'ComboBoxUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiComboBoxUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'isFocusTraversable(', 'JComboBox)', 'boolean'),
   \ javaapi#method(0,1,'setPopupVisible(', 'JComboBox, boolean)', 'void'),
   \ javaapi#method(0,1,'isPopupVisible(', 'JComboBox)', 'boolean'),
@@ -57,7 +57,7 @@ call javaapi#class('MultiComboBoxUI', 'ComboBoxUI', [
 call javaapi#class('MultiDesktopIconUI', 'DesktopIconUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiDesktopIconUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -74,7 +74,7 @@ call javaapi#class('MultiDesktopIconUI', 'DesktopIconUI', [
 call javaapi#class('MultiDesktopPaneUI', 'DesktopPaneUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiDesktopPaneUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -91,7 +91,7 @@ call javaapi#class('MultiDesktopPaneUI', 'DesktopPaneUI', [
 call javaapi#class('MultiFileChooserUI', 'FileChooserUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiFileChooserUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'getAcceptAllFileFilter(', 'JFileChooser)', 'FileFilter'),
   \ javaapi#method(0,1,'getFileView(', 'JFileChooser)', 'FileView'),
   \ javaapi#method(0,1,'getApproveButtonText(', 'JFileChooser)', 'String'),
@@ -114,7 +114,7 @@ call javaapi#class('MultiFileChooserUI', 'FileChooserUI', [
 call javaapi#class('MultiInternalFrameUI', 'InternalFrameUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiInternalFrameUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -131,7 +131,7 @@ call javaapi#class('MultiInternalFrameUI', 'InternalFrameUI', [
 call javaapi#class('MultiLabelUI', 'LabelUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiLabelUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -148,7 +148,7 @@ call javaapi#class('MultiLabelUI', 'LabelUI', [
 call javaapi#class('MultiListUI', 'ListUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiListUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'locationToIndex(', 'JList, Point)', 'int'),
   \ javaapi#method(0,1,'indexToLocation(', 'JList, int)', 'Point'),
   \ javaapi#method(0,1,'getCellBounds(', 'JList, int, int)', 'Rectangle'),
@@ -174,13 +174,13 @@ call javaapi#class('MultiLookAndFeel', 'LookAndFeel', [
   \ javaapi#method(0,1,'isSupportedLookAndFeel(', ')', 'boolean'),
   \ javaapi#method(0,1,'getDefaults(', ')', 'UIDefaults'),
   \ javaapi#method(1,1,'createUIs(', 'ComponentUI, Vector, JComponent)', 'ComponentUI'),
-  \ javaapi#method(1,0,'uisToArray(', 'Vector)', 'ComponentUI[]'),
+  \ javaapi#method(1,0,'uisToArray(', 'Vector)', 'ComponentUI'),
   \ ])
 
 call javaapi#class('MultiMenuBarUI', 'MenuBarUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiMenuBarUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -197,7 +197,7 @@ call javaapi#class('MultiMenuBarUI', 'MenuBarUI', [
 call javaapi#class('MultiMenuItemUI', 'MenuItemUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiMenuItemUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -214,7 +214,7 @@ call javaapi#class('MultiMenuItemUI', 'MenuItemUI', [
 call javaapi#class('MultiOptionPaneUI', 'OptionPaneUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiOptionPaneUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'selectInitialValue(', 'JOptionPane)', 'void'),
   \ javaapi#method(0,1,'containsCustomComponents(', 'JOptionPane)', 'boolean'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -233,7 +233,7 @@ call javaapi#class('MultiOptionPaneUI', 'OptionPaneUI', [
 call javaapi#class('MultiPanelUI', 'PanelUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiPanelUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -250,7 +250,7 @@ call javaapi#class('MultiPanelUI', 'PanelUI', [
 call javaapi#class('MultiPopupMenuUI', 'PopupMenuUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiPopupMenuUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'isPopupTrigger(', 'MouseEvent)', 'boolean'),
   \ javaapi#method(0,1,'getPopup(', 'JPopupMenu, int, int)', 'Popup'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
@@ -269,7 +269,7 @@ call javaapi#class('MultiPopupMenuUI', 'PopupMenuUI', [
 call javaapi#class('MultiProgressBarUI', 'ProgressBarUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiProgressBarUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -286,7 +286,7 @@ call javaapi#class('MultiProgressBarUI', 'ProgressBarUI', [
 call javaapi#class('MultiRootPaneUI', 'RootPaneUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiRootPaneUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -303,7 +303,7 @@ call javaapi#class('MultiRootPaneUI', 'RootPaneUI', [
 call javaapi#class('MultiScrollBarUI', 'ScrollBarUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiScrollBarUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -320,7 +320,7 @@ call javaapi#class('MultiScrollBarUI', 'ScrollBarUI', [
 call javaapi#class('MultiScrollPaneUI', 'ScrollPaneUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiScrollPaneUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -337,7 +337,7 @@ call javaapi#class('MultiScrollPaneUI', 'ScrollPaneUI', [
 call javaapi#class('MultiSeparatorUI', 'SeparatorUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiSeparatorUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -354,7 +354,7 @@ call javaapi#class('MultiSeparatorUI', 'SeparatorUI', [
 call javaapi#class('MultiSliderUI', 'SliderUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiSliderUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -371,7 +371,7 @@ call javaapi#class('MultiSliderUI', 'SliderUI', [
 call javaapi#class('MultiSpinnerUI', 'SpinnerUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiSpinnerUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -388,7 +388,7 @@ call javaapi#class('MultiSpinnerUI', 'SpinnerUI', [
 call javaapi#class('MultiSplitPaneUI', 'SplitPaneUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiSplitPaneUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'resetToPreferredSizes(', 'JSplitPane)', 'void'),
   \ javaapi#method(0,1,'setDividerLocation(', 'JSplitPane, int)', 'void'),
   \ javaapi#method(0,1,'getDividerLocation(', 'JSplitPane)', 'int'),
@@ -411,7 +411,7 @@ call javaapi#class('MultiSplitPaneUI', 'SplitPaneUI', [
 call javaapi#class('MultiTabbedPaneUI', 'TabbedPaneUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiTabbedPaneUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'tabForCoordinate(', 'JTabbedPane, int, int)', 'int'),
   \ javaapi#method(0,1,'getTabBounds(', 'JTabbedPane, int)', 'Rectangle'),
   \ javaapi#method(0,1,'getTabRunCount(', 'JTabbedPane)', 'int'),
@@ -431,7 +431,7 @@ call javaapi#class('MultiTabbedPaneUI', 'TabbedPaneUI', [
 call javaapi#class('MultiTableHeaderUI', 'TableHeaderUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiTableHeaderUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -448,7 +448,7 @@ call javaapi#class('MultiTableHeaderUI', 'TableHeaderUI', [
 call javaapi#class('MultiTableUI', 'TableUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiTableUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -465,7 +465,7 @@ call javaapi#class('MultiTableUI', 'TableUI', [
 call javaapi#class('MultiTextUI', 'TextUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiTextUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'getToolTipText(', 'JTextComponent, Point)', 'String'),
   \ javaapi#method(0,1,'modelToView(', 'JTextComponent, int) throws BadLocationException', 'Rectangle'),
   \ javaapi#method(0,1,'modelToView(', 'JTextComponent, int, Bias) throws BadLocationException', 'Rectangle'),
@@ -492,7 +492,7 @@ call javaapi#class('MultiTextUI', 'TextUI', [
 call javaapi#class('MultiToolBarUI', 'ToolBarUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiToolBarUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -509,7 +509,7 @@ call javaapi#class('MultiToolBarUI', 'ToolBarUI', [
 call javaapi#class('MultiToolTipUI', 'ToolTipUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiToolTipUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
@@ -526,7 +526,7 @@ call javaapi#class('MultiToolTipUI', 'ToolTipUI', [
 call javaapi#class('MultiTreeUI', 'TreeUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiTreeUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'getPathBounds(', 'JTree, TreePath)', 'Rectangle'),
   \ javaapi#method(0,1,'getPathForRow(', 'JTree, int)', 'TreePath'),
   \ javaapi#method(0,1,'getRowForPath(', 'JTree, TreePath)', 'int'),
@@ -557,7 +557,7 @@ call javaapi#class('MultiUIDefaults', 'UIDefaults', [
 call javaapi#class('MultiViewportUI', 'ViewportUI', [
   \ javaapi#field(0,0,'uis', 'Vector'),
   \ javaapi#method(0,1,'MultiViewportUI(', ')', ''),
-  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI[]'),
+  \ javaapi#method(0,1,'getUIs(', ')', 'ComponentUI'),
   \ javaapi#method(0,1,'contains(', 'JComponent, int, int)', 'boolean'),
   \ javaapi#method(0,1,'update(', 'Graphics, JComponent)', 'void'),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),

@@ -1,7 +1,7 @@
 call javaapi#namespace('javax.annotation')
 
 call javaapi#interface('Generated', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'String[]'),
+  \ javaapi#method(0,1,'value(', ')', 'String'),
   \ javaapi#method(0,1,'date(', ')', 'String'),
   \ javaapi#method(0,1,'comments(', ')', 'String'),
   \ ])
@@ -23,6 +23,6 @@ call javaapi#interface('Resource', 'Annotation', [
   \ ])
 
 call javaapi#interface('Resources', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'Resource[]'),
+  \ javaapi#method(0,1,'value(', ')', 'Resource'),
   \ ])
 

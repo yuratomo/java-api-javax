@@ -63,7 +63,7 @@ call javaapi#class('CompositeName', 'Name', [
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getAll(', ')', 'String>'),
+  \ javaapi#method(0,1,'getAll(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'get(', 'int)', 'String'),
   \ javaapi#method(0,1,'getPrefix(', 'int)', 'Name'),
   \ javaapi#method(0,1,'getSuffix(', 'int)', 'Name'),
@@ -88,7 +88,7 @@ call javaapi#class('CompoundName', 'Name', [
   \ javaapi#method(0,1,'compareTo(', 'Object)', 'int'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getAll(', ')', 'String>'),
+  \ javaapi#method(0,1,'getAll(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'get(', 'int)', 'String'),
   \ javaapi#method(0,1,'getPrefix(', 'int)', 'Name'),
   \ javaapi#method(0,1,'getSuffix(', 'int)', 'Name'),
@@ -132,10 +132,10 @@ call javaapi#interface('Context', '', [
   \ javaapi#method(0,1,'unbind(', 'String) throws NamingException', 'void'),
   \ javaapi#method(0,1,'rename(', 'Name, Name) throws NamingException', 'void'),
   \ javaapi#method(0,1,'rename(', 'String, String) throws NamingException', 'void'),
-  \ javaapi#method(0,1,'list(', 'Name) throws NamingException', 'NameClassPair>'),
-  \ javaapi#method(0,1,'list(', 'String) throws NamingException', 'NameClassPair>'),
-  \ javaapi#method(0,1,'listBindings(', 'Name) throws NamingException', 'Binding>'),
-  \ javaapi#method(0,1,'listBindings(', 'String) throws NamingException', 'Binding>'),
+  \ javaapi#method(0,1,'list(', 'Name) throws NamingException', 'NamingEnumeration'),
+  \ javaapi#method(0,1,'list(', 'String) throws NamingException', 'NamingEnumeration'),
+  \ javaapi#method(0,1,'listBindings(', 'Name) throws NamingException', 'NamingEnumeration'),
+  \ javaapi#method(0,1,'listBindings(', 'String) throws NamingException', 'NamingEnumeration'),
   \ javaapi#method(0,1,'destroySubcontext(', 'Name) throws NamingException', 'void'),
   \ javaapi#method(0,1,'destroySubcontext(', 'String) throws NamingException', 'void'),
   \ javaapi#method(0,1,'createSubcontext(', 'Name) throws NamingException', 'Context'),
@@ -181,10 +181,10 @@ call javaapi#class('InitialContext', 'Context', [
   \ javaapi#method(0,1,'unbind(', 'Name) throws NamingException', 'void'),
   \ javaapi#method(0,1,'rename(', 'String, String) throws NamingException', 'void'),
   \ javaapi#method(0,1,'rename(', 'Name, Name) throws NamingException', 'void'),
-  \ javaapi#method(0,1,'list(', 'String) throws NamingException', 'NameClassPair>'),
-  \ javaapi#method(0,1,'list(', 'Name) throws NamingException', 'NameClassPair>'),
-  \ javaapi#method(0,1,'listBindings(', 'String) throws NamingException', 'Binding>'),
-  \ javaapi#method(0,1,'listBindings(', 'Name) throws NamingException', 'Binding>'),
+  \ javaapi#method(0,1,'list(', 'String) throws NamingException', 'NamingEnumeration'),
+  \ javaapi#method(0,1,'list(', 'Name) throws NamingException', 'NamingEnumeration'),
+  \ javaapi#method(0,1,'listBindings(', 'String) throws NamingException', 'NamingEnumeration'),
+  \ javaapi#method(0,1,'listBindings(', 'Name) throws NamingException', 'NamingEnumeration'),
   \ javaapi#method(0,1,'destroySubcontext(', 'String) throws NamingException', 'void'),
   \ javaapi#method(0,1,'destroySubcontext(', 'Name) throws NamingException', 'void'),
   \ javaapi#method(0,1,'createSubcontext(', 'String) throws NamingException', 'Context'),
@@ -257,13 +257,13 @@ call javaapi#class('MalformedLinkException', 'LinkException', [
   \ javaapi#method(0,1,'MalformedLinkException(', ')', ''),
   \ ])
 
-call javaapi#interface('Name', 'Object>', [
+call javaapi#interface('Name', 'Comparable', [
   \ javaapi#field(1,1,'serialVersionUID', 'long'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'compareTo(', 'Object)', 'int'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getAll(', ')', 'String>'),
+  \ javaapi#method(0,1,'getAll(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'get(', 'int)', 'String'),
   \ javaapi#method(0,1,'getPrefix(', 'int)', 'Name'),
   \ javaapi#method(0,1,'getSuffix(', 'int)', 'Name'),
@@ -329,7 +329,7 @@ call javaapi#interface('NameParser', '', [
   \ javaapi#method(0,1,'parse(', 'String) throws NamingException', 'Name'),
   \ ])
 
-call javaapi#interface('NamingEnumeration<T>', 'Enumeration<T>', [
+call javaapi#interface('NamingEnumeration', 'Enumeration', [
   \ javaapi#method(0,1,'next(', ') throws NamingException', 'T'),
   \ javaapi#method(0,1,'hasMore(', ') throws NamingException', 'boolean'),
   \ javaapi#method(0,1,'close(', ') throws NamingException', 'void'),
@@ -401,7 +401,7 @@ call javaapi#class('RefAddr', 'Serializable', [
 
 call javaapi#class('Reference', 'Serializable', [
   \ javaapi#field(0,0,'className', 'String'),
-  \ javaapi#field(0,0,'addrs', 'RefAddr>'),
+  \ javaapi#field(0,0,'addrs', 'Vector'),
   \ javaapi#field(0,0,'classFactory', 'String'),
   \ javaapi#field(0,0,'classFactoryLocation', 'String'),
   \ javaapi#method(0,1,'Reference(', 'String)', ''),
@@ -413,7 +413,7 @@ call javaapi#class('Reference', 'Serializable', [
   \ javaapi#method(0,1,'getFactoryClassLocation(', ')', 'String'),
   \ javaapi#method(0,1,'get(', 'String)', 'RefAddr'),
   \ javaapi#method(0,1,'get(', 'int)', 'RefAddr'),
-  \ javaapi#method(0,1,'getAll(', ')', 'RefAddr>'),
+  \ javaapi#method(0,1,'getAll(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'add(', 'RefAddr)', 'void'),
   \ javaapi#method(0,1,'add(', 'int, RefAddr)', 'void'),

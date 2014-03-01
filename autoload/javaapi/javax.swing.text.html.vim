@@ -30,7 +30,7 @@ call javaapi#class('BlockView', 'BoxView', [
 
 call javaapi#class('CSS', 'Serializable', [
   \ javaapi#method(0,1,'CSS(', ')', ''),
-  \ javaapi#method(1,1,'getAllAttributeKeys(', ')', 'Attribute[]'),
+  \ javaapi#method(1,1,'getAllAttributeKeys(', ')', 'Attribute'),
   \ javaapi#method(1,1,'getAttribute(', 'String)', 'Attribute'),
   \ ])
 
@@ -74,7 +74,7 @@ call javaapi#class('FormView', 'ComponentView', [
 call javaapi#class('FrameSetView', 'BoxView', [
   \ javaapi#method(0,1,'FrameSetView(', 'Element, int)', ''),
   \ javaapi#method(0,0,'layoutMajorAxis(', 'int, int, int[], int[])', 'void'),
-  \ javaapi#method(0,0,'getChildRequests(', 'int, int)', 'SizeRequirements[]'),
+  \ javaapi#method(0,0,'getChildRequests(', 'int, int)', 'SizeRequirements'),
   \ ])
 
 call javaapi#class('FrameView', 'ComponentView', [
@@ -105,10 +105,10 @@ call javaapi#class('HRuleView', 'View', [
 call javaapi#class('HTML', '', [
   \ javaapi#field(1,1,'NULL_ATTRIBUTE_VALUE', 'String'),
   \ javaapi#method(0,1,'HTML(', ')', ''),
-  \ javaapi#method(1,1,'getAllTags(', ')', 'Tag[]'),
+  \ javaapi#method(1,1,'getAllTags(', ')', 'Tag'),
   \ javaapi#method(1,1,'getTag(', 'String)', 'Tag'),
   \ javaapi#method(1,1,'getIntegerAttributeValue(', 'AttributeSet, Attribute, int)', 'int'),
-  \ javaapi#method(1,1,'getAllAttributeKeys(', ')', 'Attribute[]'),
+  \ javaapi#method(1,1,'getAllAttributeKeys(', ')', 'Attribute'),
   \ javaapi#method(1,1,'getAttributeKey(', 'String)', 'Attribute'),
   \ ])
 
@@ -174,7 +174,7 @@ call javaapi#class('HTMLEditorKit', 'StyledEditorKit', [
   \ javaapi#method(0,1,'deinstall(', 'JEditorPane)', 'void'),
   \ javaapi#method(0,1,'setStyleSheet(', 'StyleSheet)', 'void'),
   \ javaapi#method(0,1,'getStyleSheet(', ')', 'StyleSheet'),
-  \ javaapi#method(0,1,'getActions(', ')', 'Action[]'),
+  \ javaapi#method(0,1,'getActions(', ')', 'Action'),
   \ javaapi#method(0,0,'createInputAttributes(', 'Element, MutableAttributeSet)', 'void'),
   \ javaapi#method(0,1,'getInputAttributes(', ')', 'MutableAttributeSet'),
   \ javaapi#method(0,1,'setDefaultCursor(', 'Cursor)', 'void'),
@@ -298,10 +298,10 @@ call javaapi#class('Map', 'Serializable', [
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ javaapi#method(0,1,'addArea(', 'AttributeSet)', 'void'),
   \ javaapi#method(0,1,'removeArea(', 'AttributeSet)', 'void'),
-  \ javaapi#method(0,1,'getAreas(', ')', 'AttributeSet[]'),
+  \ javaapi#method(0,1,'getAreas(', ')', 'AttributeSet'),
   \ javaapi#method(0,1,'getArea(', 'int, int, int, int)', 'AttributeSet'),
   \ javaapi#method(0,0,'createRegionContainment(', 'AttributeSet)', 'RegionContainment'),
-  \ javaapi#method(1,0,'extractCoords(', 'Object)', 'int[]'),
+  \ javaapi#method(1,0,'extractCoords(', 'Object)', 'int'),
   \ ])
 
 call javaapi#class('MinimalHTMLWriter', 'AbstractWriter', [
@@ -333,7 +333,7 @@ call javaapi#class('MuxingAttributeSet', 'Serializable', [
   \ javaapi#method(0,1,'MuxingAttributeSet(', 'AttributeSet[])', ''),
   \ javaapi#method(0,0,'MuxingAttributeSet(', ')', ''),
   \ javaapi#method(0,0,'setAttributes(', 'AttributeSet[])', 'void'),
-  \ javaapi#method(0,0,'getAttributes(', ')', 'AttributeSet[]'),
+  \ javaapi#method(0,0,'getAttributes(', ')', 'AttributeSet'),
   \ javaapi#method(0,0,'insertAttributeSetAt(', 'AttributeSet, int)', 'void'),
   \ javaapi#method(0,0,'removeAttributeSetAt(', 'int)', 'void'),
   \ javaapi#method(0,1,'getAttributeCount(', ')', 'int'),
@@ -391,7 +391,7 @@ call javaapi#class('OptionListModel', 'DefaultListModel', [
   \ javaapi#method(0,1,'isSelectionEmpty(', ')', 'boolean'),
   \ javaapi#method(0,1,'addListSelectionListener(', 'ListSelectionListener)', 'void'),
   \ javaapi#method(0,1,'removeListSelectionListener(', 'ListSelectionListener)', 'void'),
-  \ javaapi#method(0,1,'getListSelectionListeners(', ')', 'ListSelectionListener[]'),
+  \ javaapi#method(0,1,'getListSelectionListeners(', ')', 'ListSelectionListener'),
   \ javaapi#method(0,0,'fireValueChanged(', 'boolean)', 'void'),
   \ javaapi#method(0,0,'fireValueChanged(', 'int, int)', 'void'),
   \ javaapi#method(0,0,'fireValueChanged(', 'int, int, boolean)', 'void'),
@@ -444,7 +444,7 @@ call javaapi#class('StyleSheet', 'StyleContext', [
   \ javaapi#method(0,1,'removeStyle(', 'String)', 'void'),
   \ javaapi#method(0,1,'addStyleSheet(', 'StyleSheet)', 'void'),
   \ javaapi#method(0,1,'removeStyleSheet(', 'StyleSheet)', 'void'),
-  \ javaapi#method(0,1,'getStyleSheets(', ')', 'StyleSheet[]'),
+  \ javaapi#method(0,1,'getStyleSheets(', ')', 'StyleSheet'),
   \ javaapi#method(0,1,'importStyleSheet(', 'URL)', 'void'),
   \ javaapi#method(0,1,'setBase(', 'URL)', 'void'),
   \ javaapi#method(0,1,'getBase(', ')', 'URL'),

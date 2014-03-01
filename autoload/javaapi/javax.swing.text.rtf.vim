@@ -1,8 +1,8 @@
 call javaapi#namespace('javax.swing.text.rtf')
 
 call javaapi#class('AbstractFilter', 'OutputStream', [
-  \ javaapi#field(0,0,'translationTable', 'char[]'),
-  \ javaapi#field(0,0,'specialsTable', 'boolean[]'),
+  \ javaapi#field(0,0,'translationTable', 'char'),
+  \ javaapi#field(0,0,'specialsTable', 'boolean'),
   \ javaapi#method(0,1,'readFromStream(', 'InputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'readFromReader(', 'Reader) throws IOException', 'void'),
   \ javaapi#method(0,1,'AbstractFilter(', ')', ''),
@@ -68,7 +68,7 @@ call javaapi#class('RTFGenerator', '', [
   \ javaapi#field(1,1,'defaultRTFColor', 'Color'),
   \ javaapi#field(1,1,'defaultFontSize', 'float'),
   \ javaapi#field(1,1,'defaultFontFamily', 'String'),
-  \ javaapi#field(1,0,'textKeywords', 'CharacterKeywordPair[]'),
+  \ javaapi#field(1,0,'textKeywords', 'CharacterKeywordPair'),
   \ javaapi#method(1,1,'writeDocument(', 'Document, OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'RTFGenerator(', 'OutputStream)', ''),
   \ javaapi#method(0,1,'examineElement(', 'Element)', 'void'),

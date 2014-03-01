@@ -59,13 +59,13 @@ call javaapi#class('UndoManager', 'CompoundEdit', [
 call javaapi#class('UndoableEditSupport', '', [
   \ javaapi#field(0,0,'updateLevel', 'int'),
   \ javaapi#field(0,0,'compoundEdit', 'CompoundEdit'),
-  \ javaapi#field(0,0,'listeners', 'UndoableEditListener>'),
+  \ javaapi#field(0,0,'listeners', 'Vector'),
   \ javaapi#field(0,0,'realSource', 'Object'),
   \ javaapi#method(0,1,'UndoableEditSupport(', ')', ''),
   \ javaapi#method(0,1,'UndoableEditSupport(', 'Object)', ''),
   \ javaapi#method(0,1,'addUndoableEditListener(', 'UndoableEditListener)', 'void'),
   \ javaapi#method(0,1,'removeUndoableEditListener(', 'UndoableEditListener)', 'void'),
-  \ javaapi#method(0,1,'getUndoableEditListeners(', ')', 'UndoableEditListener[]'),
+  \ javaapi#method(0,1,'getUndoableEditListeners(', ')', 'UndoableEditListener'),
   \ javaapi#method(0,0,'_postEdit(', 'UndoableEdit)', 'void'),
   \ javaapi#method(0,1,'postEdit(', 'UndoableEdit)', 'void'),
   \ javaapi#method(0,1,'getUpdateLevel(', ')', 'int'),
@@ -78,7 +78,7 @@ call javaapi#class('UndoableEditSupport', '', [
 call javaapi#namespace('javax.swing.undo')
 
 call javaapi#class('CompoundEdit', 'AbstractUndoableEdit', [
-  \ javaapi#field(0,0,'edits', 'UndoableEdit>'),
+  \ javaapi#field(0,0,'edits', 'Vector'),
   \ javaapi#method(0,1,'CompoundEdit(', ')', ''),
   \ javaapi#method(0,1,'undo(', ') throws CannotUndoException', 'void'),
   \ javaapi#method(0,1,'redo(', ') throws CannotRedoException', 'void'),

@@ -3,12 +3,12 @@ call javaapi#namespace('javax.naming.ldap')
 call javaapi#class('BasicControl', 'Control', [
   \ javaapi#field(0,0,'id', 'String'),
   \ javaapi#field(0,0,'criticality', 'boolean'),
-  \ javaapi#field(0,0,'value', 'byte[]'),
+  \ javaapi#field(0,0,'value', 'byte'),
   \ javaapi#method(0,1,'BasicControl(', 'String)', ''),
   \ javaapi#method(0,1,'BasicControl(', 'String, boolean, byte[])', ''),
   \ javaapi#method(0,1,'getID(', ')', 'String'),
   \ javaapi#method(0,1,'isCritical(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte'),
   \ ])
 
 call javaapi#interface('Control', 'Serializable', [
@@ -16,7 +16,7 @@ call javaapi#interface('Control', 'Serializable', [
   \ javaapi#field(1,1,'NONCRITICAL', 'boolean'),
   \ javaapi#method(0,1,'getID(', ')', 'String'),
   \ javaapi#method(0,1,'isCritical(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte'),
   \ ])
 
 call javaapi#class('ControlFactory', '', [
@@ -27,17 +27,17 @@ call javaapi#class('ControlFactory', '', [
 
 call javaapi#interface('ExtendedRequest', 'Serializable', [
   \ javaapi#method(0,1,'getID(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte'),
   \ javaapi#method(0,1,'createExtendedResponse(', 'String, byte[], int, int) throws NamingException', 'ExtendedResponse'),
   \ ])
 
 call javaapi#interface('ExtendedResponse', 'Serializable', [
   \ javaapi#method(0,1,'getID(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte'),
   \ ])
 
 call javaapi#interface('HasControls', '', [
-  \ javaapi#method(0,1,'getControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getControls(', ') throws NamingException', 'Control'),
   \ ])
 
 call javaapi#class('InitialLdapContext', 'InitialDirContext', [
@@ -46,10 +46,10 @@ call javaapi#class('InitialLdapContext', 'InitialDirContext', [
   \ javaapi#method(0,1,'extendedOperation(', 'ExtendedRequest) throws NamingException', 'ExtendedResponse'),
   \ javaapi#method(0,1,'newInstance(', 'Control[]) throws NamingException', 'LdapContext'),
   \ javaapi#method(0,1,'reconnect(', 'Control[]) throws NamingException', 'void'),
-  \ javaapi#method(0,1,'getConnectControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getConnectControls(', ') throws NamingException', 'Control'),
   \ javaapi#method(0,1,'setRequestControls(', 'Control[]) throws NamingException', 'void'),
-  \ javaapi#method(0,1,'getRequestControls(', ') throws NamingException', 'Control[]'),
-  \ javaapi#method(0,1,'getResponseControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getRequestControls(', ') throws NamingException', 'Control'),
+  \ javaapi#method(0,1,'getResponseControls(', ') throws NamingException', 'Control'),
   \ ])
 
 call javaapi#interface('LdapContext', 'DirContext', [
@@ -57,10 +57,10 @@ call javaapi#interface('LdapContext', 'DirContext', [
   \ javaapi#method(0,1,'extendedOperation(', 'ExtendedRequest) throws NamingException', 'ExtendedResponse'),
   \ javaapi#method(0,1,'newInstance(', 'Control[]) throws NamingException', 'LdapContext'),
   \ javaapi#method(0,1,'reconnect(', 'Control[]) throws NamingException', 'void'),
-  \ javaapi#method(0,1,'getConnectControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getConnectControls(', ') throws NamingException', 'Control'),
   \ javaapi#method(0,1,'setRequestControls(', 'Control[]) throws NamingException', 'void'),
-  \ javaapi#method(0,1,'getRequestControls(', ') throws NamingException', 'Control[]'),
-  \ javaapi#method(0,1,'getResponseControls(', ') throws NamingException', 'Control[]'),
+  \ javaapi#method(0,1,'getRequestControls(', ') throws NamingException', 'Control'),
+  \ javaapi#method(0,1,'getResponseControls(', ') throws NamingException', 'Control'),
   \ ])
 
 call javaapi#class('LdapName', 'Name', [
@@ -68,7 +68,7 @@ call javaapi#class('LdapName', 'Name', [
   \ javaapi#method(0,1,'LdapName(', 'List<Rdn>)', ''),
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'isEmpty(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getAll(', ')', 'String>'),
+  \ javaapi#method(0,1,'getAll(', ')', 'Enumeration'),
   \ javaapi#method(0,1,'get(', 'int)', 'String'),
   \ javaapi#method(0,1,'getRdn(', 'int)', 'Rdn'),
   \ javaapi#method(0,1,'getPrefix(', 'int)', 'Name'),
@@ -86,7 +86,7 @@ call javaapi#class('LdapName', 'Name', [
   \ javaapi#method(0,1,'add(', 'int, String) throws InvalidNameException', 'Name'),
   \ javaapi#method(0,1,'add(', 'int, Rdn)', 'Name'),
   \ javaapi#method(0,1,'remove(', 'int) throws InvalidNameException', 'Object'),
-  \ javaapi#method(0,1,'getRdns(', ')', 'Rdn>'),
+  \ javaapi#method(0,1,'getRdns(', ')', 'List'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'equals(', 'Object)', 'boolean'),
@@ -118,10 +118,10 @@ call javaapi#class('PagedResultsResponseControl', 'BasicControl', [
   \ javaapi#field(1,1,'OID', 'String'),
   \ javaapi#method(0,1,'PagedResultsResponseControl(', 'String, boolean, byte[]) throws IOException', ''),
   \ javaapi#method(0,1,'getResultSize(', ')', 'int'),
-  \ javaapi#method(0,1,'getCookie(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getCookie(', ')', 'byte'),
   \ ])
 
-call javaapi#class('Rdn', 'Object>', [
+call javaapi#class('Rdn', 'Comparable', [
   \ javaapi#method(0,1,'Rdn(', 'Attributes) throws InvalidNameException', ''),
   \ javaapi#method(0,1,'Rdn(', 'String) throws InvalidNameException', ''),
   \ javaapi#method(0,1,'Rdn(', 'Rdn)', ''),
@@ -169,7 +169,7 @@ call javaapi#class('StartTlsRequest', 'ExtendedRequest', [
   \ javaapi#field(1,1,'OID', 'String'),
   \ javaapi#method(0,1,'StartTlsRequest(', ')', ''),
   \ javaapi#method(0,1,'getID(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte'),
   \ javaapi#method(0,1,'createExtendedResponse(', 'String, byte[], int, int) throws NamingException', 'ExtendedResponse'),
   \ ])
 
@@ -177,7 +177,7 @@ call javaapi#class('StartTlsResponse', 'ExtendedResponse', [
   \ javaapi#field(1,1,'OID', 'String'),
   \ javaapi#method(0,0,'StartTlsResponse(', ')', ''),
   \ javaapi#method(0,1,'getID(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEncodedValue(', ')', 'byte'),
   \ javaapi#method(0,1,'setEnabledCipherSuites(', 'String[])', 'void'),
   \ javaapi#method(0,1,'setHostnameVerifier(', 'HostnameVerifier)', 'void'),
   \ javaapi#method(0,1,'negotiate(', ') throws IOException', 'SSLSession'),
@@ -186,7 +186,7 @@ call javaapi#class('StartTlsResponse', 'ExtendedResponse', [
   \ ])
 
 call javaapi#interface('UnsolicitedNotification', 'HasControls', [
-  \ javaapi#method(0,1,'getReferrals(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getReferrals(', ')', 'String'),
   \ javaapi#method(0,1,'getException(', ')', 'NamingException'),
   \ ])
 

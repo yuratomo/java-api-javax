@@ -94,14 +94,14 @@ call javaapi#class('AccessibleRelation', 'AccessibleBundle', [
   \ javaapi#method(0,1,'AccessibleRelation(', 'String, Object)', ''),
   \ javaapi#method(0,1,'AccessibleRelation(', 'String, Object[])', ''),
   \ javaapi#method(0,1,'getKey(', ')', 'String'),
-  \ javaapi#method(0,1,'getTarget(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getTarget(', ')', 'Object'),
   \ javaapi#method(0,1,'setTarget(', 'Object)', 'void'),
   \ javaapi#method(0,1,'setTarget(', 'Object[])', 'void'),
   \ ])
 
 call javaapi#class('AccessibleResourceBundle', 'ListResourceBundle', [
   \ javaapi#method(0,1,'AccessibleResourceBundle(', ')', ''),
-  \ javaapi#method(0,1,'getContents(', ')', 'Object[][]'),
+  \ javaapi#method(0,1,'getContents(', ')', 'Object[]'),
   \ ])
 
 call javaapi#class('AccessibleRole', 'AccessibleBundle', [
@@ -182,7 +182,7 @@ call javaapi#interface('AccessibleSelection', '', [
   \ ])
 
 call javaapi#interface('AccessibleStreamable', '', [
-  \ javaapi#method(0,1,'getMimeTypes(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getMimeTypes(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getStream(', 'DataFlavor)', 'InputStream'),
   \ ])
 
@@ -207,8 +207,8 @@ call javaapi#interface('AccessibleTable', '', [
   \ javaapi#method(0,1,'isAccessibleSelected(', 'int, int)', 'boolean'),
   \ javaapi#method(0,1,'isAccessibleRowSelected(', 'int)', 'boolean'),
   \ javaapi#method(0,1,'isAccessibleColumnSelected(', 'int)', 'boolean'),
-  \ javaapi#method(0,1,'getSelectedAccessibleRows(', ')', 'int[]'),
-  \ javaapi#method(0,1,'getSelectedAccessibleColumns(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getSelectedAccessibleRows(', ')', 'int'),
+  \ javaapi#method(0,1,'getSelectedAccessibleColumns(', ')', 'int'),
   \ ])
 
 call javaapi#interface('AccessibleTableModelChange', '', [
@@ -274,7 +274,7 @@ call javaapi#class('AccessibleState', 'AccessibleBundle', [
   \ ])
 
 call javaapi#class('AccessibleRelationSet', '', [
-  \ javaapi#field(0,0,'relations', 'AccessibleRelation>'),
+  \ javaapi#field(0,0,'relations', 'Vector'),
   \ javaapi#method(0,1,'AccessibleRelationSet(', ')', ''),
   \ javaapi#method(0,1,'AccessibleRelationSet(', 'AccessibleRelation[])', ''),
   \ javaapi#method(0,1,'add(', 'AccessibleRelation)', 'boolean'),
@@ -284,7 +284,7 @@ call javaapi#class('AccessibleRelationSet', '', [
   \ javaapi#method(0,1,'size(', ')', 'int'),
   \ javaapi#method(0,1,'contains(', 'String)', 'boolean'),
   \ javaapi#method(0,1,'get(', 'String)', 'AccessibleRelation'),
-  \ javaapi#method(0,1,'toArray(', ')', 'AccessibleRelation[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'AccessibleRelation'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
@@ -362,7 +362,7 @@ call javaapi#interface('AccessibleAction', '', [
 call javaapi#namespace('javax.accessibility')
 
 call javaapi#class('AccessibleStateSet', '', [
-  \ javaapi#field(0,0,'states', 'AccessibleState>'),
+  \ javaapi#field(0,0,'states', 'Vector'),
   \ javaapi#method(0,1,'AccessibleStateSet(', ')', ''),
   \ javaapi#method(0,1,'AccessibleStateSet(', 'AccessibleState[])', ''),
   \ javaapi#method(0,1,'add(', 'AccessibleState)', 'boolean'),
@@ -370,7 +370,7 @@ call javaapi#class('AccessibleStateSet', '', [
   \ javaapi#method(0,1,'remove(', 'AccessibleState)', 'boolean'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
   \ javaapi#method(0,1,'contains(', 'AccessibleState)', 'boolean'),
-  \ javaapi#method(0,1,'toArray(', ')', 'AccessibleState[]'),
+  \ javaapi#method(0,1,'toArray(', ')', 'AccessibleState'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
@@ -423,7 +423,7 @@ call javaapi#class('AccessibleContext', '', [
   \ javaapi#method(0,1,'getAccessibleText(', ')', 'AccessibleText'),
   \ javaapi#method(0,1,'getAccessibleEditableText(', ')', 'AccessibleEditableText'),
   \ javaapi#method(0,1,'getAccessibleValue(', ')', 'AccessibleValue'),
-  \ javaapi#method(0,1,'getAccessibleIcon(', ')', 'AccessibleIcon[]'),
+  \ javaapi#method(0,1,'getAccessibleIcon(', ')', 'AccessibleIcon'),
   \ javaapi#method(0,1,'getAccessibleRelationSet(', ')', 'AccessibleRelationSet'),
   \ javaapi#method(0,1,'getAccessibleTable(', ')', 'AccessibleTable'),
   \ javaapi#method(0,1,'firePropertyChange(', 'String, Object, Object)', 'void'),

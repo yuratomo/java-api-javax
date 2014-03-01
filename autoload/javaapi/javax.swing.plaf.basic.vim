@@ -8,12 +8,12 @@ call javaapi#class('BasicCheckBoxUI', 'BasicRadioButtonUI', [
 
 call javaapi#class('BasicColorChooserUI', 'ColorChooserUI', [
   \ javaapi#field(0,0,'chooser', 'JColorChooser'),
-  \ javaapi#field(0,0,'defaultChoosers', 'AbstractColorChooserPanel[]'),
+  \ javaapi#field(0,0,'defaultChoosers', 'AbstractColorChooserPanel'),
   \ javaapi#field(0,0,'previewListener', 'ChangeListener'),
   \ javaapi#field(0,0,'propertyChangeListener', 'PropertyChangeListener'),
   \ javaapi#method(0,1,'BasicColorChooserUI(', ')', ''),
   \ javaapi#method(1,1,'createUI(', 'JComponent)', 'ComponentUI'),
-  \ javaapi#method(0,0,'createDefaultChoosers(', ')', 'AbstractColorChooserPanel[]'),
+  \ javaapi#method(0,0,'createDefaultChoosers(', ')', 'AbstractColorChooserPanel'),
   \ javaapi#method(0,0,'uninstallDefaultChoosers(', ')', 'void'),
   \ javaapi#method(0,1,'installUI(', 'JComponent)', 'void'),
   \ javaapi#method(0,1,'uninstallUI(', 'JComponent)', 'void'),
@@ -77,12 +77,12 @@ call javaapi#class('BasicDesktopPaneUI', 'DesktopPaneUI', [
   \ javaapi#method(0,0,'createPropertyChangeListener(', ')', 'PropertyChangeListener'),
   \ ])
 
-call javaapi#class('BasicDirectoryModel', 'Object>', [
+call javaapi#class('BasicDirectoryModel', 'AbstractListModel', [
   \ javaapi#method(0,1,'BasicDirectoryModel(', 'JFileChooser)', ''),
   \ javaapi#method(0,1,'propertyChange(', 'PropertyChangeEvent)', 'void'),
   \ javaapi#method(0,1,'invalidateFileCache(', ')', 'void'),
-  \ javaapi#method(0,1,'getDirectories(', ')', 'File>'),
-  \ javaapi#method(0,1,'getFiles(', ')', 'File>'),
+  \ javaapi#method(0,1,'getDirectories(', ')', 'Vector'),
+  \ javaapi#method(0,1,'getFiles(', ')', 'Vector'),
   \ javaapi#method(0,1,'validateFileCache(', ')', 'void'),
   \ javaapi#method(0,1,'renameFile(', 'File, File)', 'boolean'),
   \ javaapi#method(0,1,'fireContentsChanged(', ')', 'void'),
@@ -96,7 +96,7 @@ call javaapi#class('BasicDirectoryModel', 'Object>', [
   \ javaapi#method(0,0,'lt(', 'File, File)', 'boolean'),
   \ javaapi#method(0,1,'addPropertyChangeListener(', 'PropertyChangeListener)', 'void'),
   \ javaapi#method(0,1,'removePropertyChangeListener(', 'PropertyChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener[]'),
+  \ javaapi#method(0,1,'getPropertyChangeListeners(', ')', 'PropertyChangeListener'),
   \ javaapi#method(0,0,'firePropertyChange(', 'String, Object, Object)', 'void'),
   \ ])
 
@@ -349,7 +349,7 @@ call javaapi#class('BasicOptionPaneUI', 'OptionPaneUI', [
   \ javaapi#method(0,0,'createButtonArea(', ')', 'Container'),
   \ javaapi#method(0,0,'addButtonComponents(', 'Container, Object[], int)', 'void'),
   \ javaapi#method(0,0,'createButtonActionListener(', 'int)', 'ActionListener'),
-  \ javaapi#method(0,0,'getButtons(', ')', 'Object[]'),
+  \ javaapi#method(0,0,'getButtons(', ')', 'Object'),
   \ javaapi#method(0,0,'getSizeButtonsToSameWidth(', ')', 'boolean'),
   \ javaapi#method(0,0,'getInitialValueIndex(', ')', 'int'),
   \ javaapi#method(0,0,'resetInputValue(', ')', 'void'),
@@ -415,11 +415,11 @@ call javaapi#class('BasicTransferable', 'UIResource', [
   \ javaapi#field(0,0,'plainData', 'String'),
   \ javaapi#field(0,0,'htmlData', 'String'),
   \ javaapi#method(0,1,'BasicTransferable(', 'String, String)', ''),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'isDataFlavorSupported(', 'DataFlavor)', 'boolean'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor) throws UnsupportedFlavorException, IOException', 'Object'),
   \ javaapi#method(0,0,'isRicherFlavor(', 'DataFlavor)', 'boolean'),
-  \ javaapi#method(0,0,'getRicherFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,0,'getRicherFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,0,'getRicherData(', 'DataFlavor) throws UnsupportedFlavorException', 'Object'),
   \ javaapi#method(0,0,'isHTMLFlavor(', 'DataFlavor)', 'boolean'),
   \ javaapi#method(0,0,'isHTMLSupported(', ')', 'boolean'),
@@ -1007,10 +1007,10 @@ call javaapi#class('BasicTabbedPaneUI', 'TabbedPaneUI', [
   \ javaapi#field(0,0,'downKey', 'KeyStroke'),
   \ javaapi#field(0,0,'leftKey', 'KeyStroke'),
   \ javaapi#field(0,0,'rightKey', 'KeyStroke'),
-  \ javaapi#field(0,0,'tabRuns', 'int[]'),
+  \ javaapi#field(0,0,'tabRuns', 'int'),
   \ javaapi#field(0,0,'runCount', 'int'),
   \ javaapi#field(0,0,'selectedRun', 'int'),
-  \ javaapi#field(0,0,'rects', 'Rectangle[]'),
+  \ javaapi#field(0,0,'rects', 'Rectangle'),
   \ javaapi#field(0,0,'maxTabHeight', 'int'),
   \ javaapi#field(0,0,'maxTabWidth', 'int'),
   \ javaapi#field(0,0,'tabChangeListener', 'ChangeListener'),
@@ -1328,7 +1328,7 @@ call javaapi#class('BasicListUI', 'ListUI', [
   \ javaapi#field(0,0,'listSelectionListener', 'ListSelectionListener'),
   \ javaapi#field(0,0,'listDataListener', 'ListDataListener'),
   \ javaapi#field(0,0,'propertyChangeListener', 'PropertyChangeListener'),
-  \ javaapi#field(0,0,'cellHeights', 'int[]'),
+  \ javaapi#field(0,0,'cellHeights', 'int'),
   \ javaapi#field(0,0,'cellHeight', 'int'),
   \ javaapi#field(0,0,'cellWidth', 'int'),
   \ javaapi#field(0,0,'updateLayoutStateNeeded', 'int'),
@@ -1696,7 +1696,7 @@ call javaapi#class('BasicMenuItemUI', 'MenuItemUI', [
   \ javaapi#method(0,0,'paintMenuItem(', 'Graphics, JComponent, Icon, Icon, Color, Color, int)', 'void'),
   \ javaapi#method(0,0,'paintBackground(', 'Graphics, JMenuItem, Color)', 'void'),
   \ javaapi#method(0,0,'paintText(', 'Graphics, JMenuItem, Rectangle, String)', 'void'),
-  \ javaapi#method(0,1,'getPath(', ')', 'MenuElement[]'),
+  \ javaapi#method(0,1,'getPath(', ')', 'MenuElement'),
   \ javaapi#method(0,0,'doClick(', 'MenuSelectionManager)', 'void'),
   \ ])
 
@@ -1864,9 +1864,9 @@ call javaapi#class('LazyActionMap', 'ActionMapUIResource', [
   \ javaapi#method(0,1,'get(', 'Object)', 'Action'),
   \ javaapi#method(0,1,'remove(', 'Object)', 'void'),
   \ javaapi#method(0,1,'clear(', ')', 'void'),
-  \ javaapi#method(0,1,'keys(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'keys(', ')', 'Object'),
   \ javaapi#method(0,1,'size(', ')', 'int'),
-  \ javaapi#method(0,1,'allKeys(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'allKeys(', ')', 'Object'),
   \ javaapi#method(0,1,'setParent(', 'ActionMap)', 'void'),
   \ ])
 

@@ -1,6 +1,6 @@
 call javaapi#namespace('javax.tools')
 
-call javaapi#interface('Diagnostic<S>', '', [
+call javaapi#interface('Diagnostic', '', [
   \ javaapi#field(1,1,'NOPOS', 'long'),
   \ javaapi#method(0,1,'getKind(', ')', 'Kind'),
   \ javaapi#method(0,1,'getSource(', ')', 'S'),
@@ -13,13 +13,13 @@ call javaapi#interface('Diagnostic<S>', '', [
   \ javaapi#method(0,1,'getMessage(', 'Locale)', 'String'),
   \ ])
 
-call javaapi#class('DiagnosticCollector<S>', 'DiagnosticListener<S>', [
+call javaapi#class('DiagnosticCollector', 'DiagnosticListener', [
   \ javaapi#method(0,1,'DiagnosticCollector(', ')', ''),
   \ javaapi#method(0,1,'report(', 'Diagnostic<? extends S>)', 'void'),
   \ javaapi#method(0,1,'getDiagnostics(', ')', 'S>>'),
   \ ])
 
-call javaapi#interface('DiagnosticListener<S>', '', [
+call javaapi#interface('DiagnosticListener', '', [
   \ javaapi#method(0,1,'report(', 'Diagnostic<? extends S>)', 'void'),
   \ ])
 
@@ -53,7 +53,7 @@ call javaapi#class('ForwardingJavaFileManager<M', 'JavaFileManager>', [
   \ javaapi#field(0,0,'fileManager', 'M'),
   \ javaapi#method(0,0,'ForwardingJavaFileManager(', 'M)', ''),
   \ javaapi#method(0,1,'getClassLoader(', 'Location)', 'ClassLoader'),
-  \ javaapi#method(0,1,'list(', 'Location, String, Set<Kind>, boolean) throws IOException', 'JavaFileObject>'),
+  \ javaapi#method(0,1,'list(', 'Location, String, Set<Kind>, boolean) throws IOException', 'Iterable'),
   \ javaapi#method(0,1,'inferBinaryName(', 'Location, JavaFileObject)', 'String'),
   \ javaapi#method(0,1,'isSameFile(', 'FileObject, FileObject)', 'boolean'),
   \ javaapi#method(0,1,'handleOption(', 'String, Iterator<String>)', 'boolean'),
@@ -82,7 +82,7 @@ call javaapi#interface('JavaCompiler', 'OptionChecker', [
 
 call javaapi#interface('JavaFileManager', 'OptionChecker', [
   \ javaapi#method(0,1,'getClassLoader(', 'Location)', 'ClassLoader'),
-  \ javaapi#method(0,1,'list(', 'Location, String, Set<Kind>, boolean) throws IOException', 'JavaFileObject>'),
+  \ javaapi#method(0,1,'list(', 'Location, String, Set<Kind>, boolean) throws IOException', 'Iterable'),
   \ javaapi#method(0,1,'inferBinaryName(', 'Location, JavaFileObject)', 'String'),
   \ javaapi#method(0,1,'isSameFile(', 'FileObject, FileObject)', 'boolean'),
   \ javaapi#method(0,1,'handleOption(', 'String, Iterator<String>)', 'boolean'),
@@ -136,14 +136,14 @@ call javaapi#interface('StandardJavaFileManager', 'JavaFileManager', [
   \ javaapi#method(0,1,'getLocation(', 'Location)', 'File>'),
   \ ])
 
-call javaapi#class('StandardLocation', 'StandardLocation>', [
+call javaapi#class('StandardLocation', 'Enum', [
   \ javaapi#field(1,1,'CLASS_OUTPUT', 'StandardLocation'),
   \ javaapi#field(1,1,'SOURCE_OUTPUT', 'StandardLocation'),
   \ javaapi#field(1,1,'CLASS_PATH', 'StandardLocation'),
   \ javaapi#field(1,1,'SOURCE_PATH', 'StandardLocation'),
   \ javaapi#field(1,1,'ANNOTATION_PROCESSOR_PATH', 'StandardLocation'),
   \ javaapi#field(1,1,'PLATFORM_CLASS_PATH', 'StandardLocation'),
-  \ javaapi#method(1,1,'values(', ')', 'StandardLocation[]'),
+  \ javaapi#method(1,1,'values(', ')', 'StandardLocation'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'StandardLocation'),
   \ javaapi#method(1,1,'locationFor(', 'String)', 'Location'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
@@ -152,7 +152,7 @@ call javaapi#class('StandardLocation', 'StandardLocation>', [
 
 call javaapi#interface('Tool', '', [
   \ javaapi#method(0,1,'run(', 'InputStream, OutputStream, OutputStream, )', 'int'),
-  \ javaapi#method(0,1,'getSourceVersions(', ')', 'SourceVersion>'),
+  \ javaapi#method(0,1,'getSourceVersions(', ')', 'Set'),
   \ ])
 
 call javaapi#class('ToolProvider', '', [

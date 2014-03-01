@@ -57,7 +57,7 @@ call javaapi#class('Util', '', [
   \ javaapi#method(1,1,'loadClass(', 'String, String, ClassLoader) throws ClassNotFoundException', 'Class'),
   \ javaapi#method(1,1,'isLocal(', 'Stub) throws RemoteException', 'boolean'),
   \ javaapi#method(1,1,'wrapException(', 'Throwable)', 'RemoteException'),
-  \ javaapi#method(1,1,'copyObjects(', 'Object[], ORB) throws RemoteException', 'Object[]'),
+  \ javaapi#method(1,1,'copyObjects(', 'Object[], ORB) throws RemoteException', 'Object'),
   \ javaapi#method(1,1,'copyObject(', 'Object, ORB) throws RemoteException', 'Object'),
   \ ])
 
@@ -76,7 +76,7 @@ call javaapi#interface('UtilDelegate', '', [
   \ javaapi#method(0,1,'isLocal(', 'Stub) throws RemoteException', 'boolean'),
   \ javaapi#method(0,1,'wrapException(', 'Throwable)', 'RemoteException'),
   \ javaapi#method(0,1,'copyObject(', 'Object, ORB) throws RemoteException', 'Object'),
-  \ javaapi#method(0,1,'copyObjects(', 'Object[], ORB) throws RemoteException', 'Object[]'),
+  \ javaapi#method(0,1,'copyObjects(', 'Object[], ORB) throws RemoteException', 'Object'),
   \ ])
 
 call javaapi#interface('ValueHandler', '', [

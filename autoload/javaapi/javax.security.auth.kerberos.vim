@@ -10,7 +10,7 @@ call javaapi#class('DelegationPermission', 'BasicPermission', [
   \ ])
 
 call javaapi#class('JavaxSecurityAuthKerberosAccessImpl', 'JavaxSecurityAuthKerberosAccess', [
-  \ javaapi#method(0,1,'keyTabGetEncryptionKeys(', 'KeyTab, PrincipalName)', 'EncryptionKey[]'),
+  \ javaapi#method(0,1,'keyTabGetEncryptionKeys(', 'KeyTab, PrincipalName)', 'EncryptionKey'),
   \ ])
 
 call javaapi#class('KerberosKey', 'Destroyable', [
@@ -21,7 +21,7 @@ call javaapi#class('KerberosKey', 'Destroyable', [
   \ javaapi#method(0,1,'getKeyType(', ')', 'int'),
   \ javaapi#method(0,1,'getAlgorithm(', ')', 'String'),
   \ javaapi#method(0,1,'getFormat(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoded(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEncoded(', ')', 'byte'),
   \ javaapi#method(0,1,'destroy(', ') throws DestroyFailedException', 'void'),
   \ javaapi#method(0,1,'isDestroyed(', ')', 'boolean'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -59,13 +59,13 @@ call javaapi#class('KerberosTicket', 'Serializable', [
   \ javaapi#method(0,1,'isPostdated(', ')', 'boolean'),
   \ javaapi#method(0,1,'isRenewable(', ')', 'boolean'),
   \ javaapi#method(0,1,'isInitial(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getFlags(', ')', 'boolean[]'),
+  \ javaapi#method(0,1,'getFlags(', ')', 'boolean'),
   \ javaapi#method(0,1,'getAuthTime(', ')', 'Date'),
   \ javaapi#method(0,1,'getStartTime(', ')', 'Date'),
   \ javaapi#method(0,1,'getEndTime(', ')', 'Date'),
   \ javaapi#method(0,1,'getRenewTill(', ')', 'Date'),
-  \ javaapi#method(0,1,'getClientAddresses(', ')', 'InetAddress[]'),
-  \ javaapi#method(0,1,'getEncoded(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getClientAddresses(', ')', 'InetAddress'),
+  \ javaapi#method(0,1,'getEncoded(', ')', 'byte'),
   \ javaapi#method(0,1,'isCurrent(', ')', 'boolean'),
   \ javaapi#method(0,1,'refresh(', ') throws RefreshFailedException', 'void'),
   \ javaapi#method(0,1,'destroy(', ') throws DestroyFailedException', 'void'),
@@ -81,7 +81,7 @@ call javaapi#class('KeyImpl', 'Serializable', [
   \ javaapi#method(0,1,'getKeyType(', ')', 'int'),
   \ javaapi#method(0,1,'getAlgorithm(', ')', 'String'),
   \ javaapi#method(0,1,'getFormat(', ')', 'String'),
-  \ javaapi#method(0,1,'getEncoded(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getEncoded(', ')', 'byte'),
   \ javaapi#method(0,1,'destroy(', ') throws DestroyFailedException', 'void'),
   \ javaapi#method(0,1,'isDestroyed(', ')', 'boolean'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -92,7 +92,7 @@ call javaapi#class('KeyImpl', 'Serializable', [
 call javaapi#class('KeyTab', '', [
   \ javaapi#method(1,1,'getInstance(', 'File)', 'KeyTab'),
   \ javaapi#method(1,1,'getInstance(', ')', 'KeyTab'),
-  \ javaapi#method(0,1,'getKeys(', 'KerberosPrincipal)', 'KerberosKey[]'),
+  \ javaapi#method(0,1,'getKeys(', 'KerberosPrincipal)', 'KerberosKey'),
   \ javaapi#method(0,1,'exists(', ')', 'boolean'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ javaapi#method(0,1,'hashCode(', ')', 'int'),
@@ -103,14 +103,14 @@ call javaapi#class('KrbDelegationPermissionCollection', 'PermissionCollection', 
   \ javaapi#method(0,1,'KrbDelegationPermissionCollection(', ')', ''),
   \ javaapi#method(0,1,'implies(', 'Permission)', 'boolean'),
   \ javaapi#method(0,1,'add(', 'Permission)', 'void'),
-  \ javaapi#method(0,1,'elements(', ')', 'Permission>'),
+  \ javaapi#method(0,1,'elements(', ')', 'Enumeration'),
   \ ])
 
 call javaapi#class('KrbServicePermissionCollection', 'PermissionCollection', [
   \ javaapi#method(0,1,'KrbServicePermissionCollection(', ')', ''),
   \ javaapi#method(0,1,'implies(', 'Permission)', 'boolean'),
   \ javaapi#method(0,1,'add(', 'Permission)', 'void'),
-  \ javaapi#method(0,1,'elements(', ')', 'Permission>'),
+  \ javaapi#method(0,1,'elements(', ')', 'Enumeration'),
   \ ])
 
 call javaapi#class('ServicePermission', 'Permission', [

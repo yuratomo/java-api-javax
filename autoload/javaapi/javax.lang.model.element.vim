@@ -11,7 +11,7 @@ call javaapi#interface('AnnotationValue', '', [
   \ javaapi#method(0,1,'accept(', 'AnnotationValueVisitor<R, P>, P)', 'R'),
   \ ])
 
-call javaapi#interface('AnnotationValueVisitor<R,P>', '', [
+call javaapi#interface('AnnotationValueVisitor', '', [
   \ javaapi#method(0,1,'visit(', 'AnnotationValue, P)', 'R'),
   \ javaapi#method(0,1,'visit(', 'AnnotationValue)', 'R'),
   \ javaapi#method(0,1,'visitBoolean(', 'boolean, P)', 'R'),
@@ -35,7 +35,7 @@ call javaapi#interface('Element', '', [
   \ javaapi#method(0,1,'getKind(', ')', 'ElementKind'),
   \ javaapi#method(0,1,'getAnnotationMirrors(', ')', 'AnnotationMirror>'),
   \ javaapi#method(0,1,'getAnnotation(', 'Class<A>)', 'A'),
-  \ javaapi#method(0,1,'getModifiers(', ')', 'Modifier>'),
+  \ javaapi#method(0,1,'getModifiers(', ')', 'Set'),
   \ javaapi#method(0,1,'getSimpleName(', ')', 'Name'),
   \ javaapi#method(0,1,'getEnclosingElement(', ')', 'Element'),
   \ javaapi#method(0,1,'getEnclosedElements(', ')', 'Element>'),
@@ -44,7 +44,7 @@ call javaapi#interface('Element', '', [
   \ javaapi#method(0,1,'accept(', 'ElementVisitor<R, P>, P)', 'R'),
   \ ])
 
-call javaapi#class('ElementKind', 'ElementKind>', [
+call javaapi#class('ElementKind', 'Enum', [
   \ javaapi#field(1,1,'PACKAGE', 'ElementKind'),
   \ javaapi#field(1,1,'ENUM', 'ElementKind'),
   \ javaapi#field(1,1,'CLASS', 'ElementKind'),
@@ -62,14 +62,14 @@ call javaapi#class('ElementKind', 'ElementKind>', [
   \ javaapi#field(1,1,'TYPE_PARAMETER', 'ElementKind'),
   \ javaapi#field(1,1,'OTHER', 'ElementKind'),
   \ javaapi#field(1,1,'RESOURCE_VARIABLE', 'ElementKind'),
-  \ javaapi#method(1,1,'values(', ')', 'ElementKind[]'),
+  \ javaapi#method(1,1,'values(', ')', 'ElementKind'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'ElementKind'),
   \ javaapi#method(0,1,'isClass(', ')', 'boolean'),
   \ javaapi#method(0,1,'isInterface(', ')', 'boolean'),
   \ javaapi#method(0,1,'isField(', ')', 'boolean'),
   \ ])
 
-call javaapi#interface('ElementVisitor<R,P>', '', [
+call javaapi#interface('ElementVisitor', '', [
   \ javaapi#method(0,1,'visit(', 'Element, P)', 'R'),
   \ javaapi#method(0,1,'visit(', 'Element)', 'R'),
   \ javaapi#method(0,1,'visitPackage(', 'PackageElement, P)', 'R'),
@@ -90,7 +90,7 @@ call javaapi#interface('ExecutableElement', 'Parameterizable', [
   \ javaapi#method(0,1,'getSimpleName(', ')', 'Name'),
   \ ])
 
-call javaapi#class('Modifier', 'Modifier>', [
+call javaapi#class('Modifier', 'Enum', [
   \ javaapi#field(1,1,'PUBLIC', 'Modifier'),
   \ javaapi#field(1,1,'PROTECTED', 'Modifier'),
   \ javaapi#field(1,1,'PRIVATE', 'Modifier'),
@@ -102,7 +102,7 @@ call javaapi#class('Modifier', 'Modifier>', [
   \ javaapi#field(1,1,'SYNCHRONIZED', 'Modifier'),
   \ javaapi#field(1,1,'NATIVE', 'Modifier'),
   \ javaapi#field(1,1,'STRICTFP', 'Modifier'),
-  \ javaapi#method(1,1,'values(', ')', 'Modifier[]'),
+  \ javaapi#method(1,1,'values(', ')', 'Modifier'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'Modifier'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
@@ -113,12 +113,12 @@ call javaapi#interface('Name', 'CharSequence', [
   \ javaapi#method(0,1,'contentEquals(', 'CharSequence)', 'boolean'),
   \ ])
 
-call javaapi#class('NestingKind', 'NestingKind>', [
+call javaapi#class('NestingKind', 'Enum', [
   \ javaapi#field(1,1,'TOP_LEVEL', 'NestingKind'),
   \ javaapi#field(1,1,'MEMBER', 'NestingKind'),
   \ javaapi#field(1,1,'LOCAL', 'NestingKind'),
   \ javaapi#field(1,1,'ANONYMOUS', 'NestingKind'),
-  \ javaapi#method(1,1,'values(', ')', 'NestingKind[]'),
+  \ javaapi#method(1,1,'values(', ')', 'NestingKind'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'NestingKind'),
   \ javaapi#method(0,1,'isNested(', ')', 'boolean'),
   \ ])

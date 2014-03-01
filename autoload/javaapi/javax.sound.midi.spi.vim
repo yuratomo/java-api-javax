@@ -3,7 +3,7 @@ call javaapi#namespace('javax.sound.midi.spi')
 call javaapi#class('MidiDeviceProvider', '', [
   \ javaapi#method(0,1,'MidiDeviceProvider(', ')', ''),
   \ javaapi#method(0,1,'isDeviceSupported(', 'Info)', 'boolean'),
-  \ javaapi#method(0,1,'getDeviceInfo(', ')', 'Info[]'),
+  \ javaapi#method(0,1,'getDeviceInfo(', ')', 'Info'),
   \ javaapi#method(0,1,'getDevice(', 'Info)', 'MidiDevice'),
   \ ])
 
@@ -19,8 +19,8 @@ call javaapi#class('MidiFileReader', '', [
 
 call javaapi#class('MidiFileWriter', '', [
   \ javaapi#method(0,1,'MidiFileWriter(', ')', ''),
-  \ javaapi#method(0,1,'getMidiFileTypes(', ')', 'int[]'),
-  \ javaapi#method(0,1,'getMidiFileTypes(', 'Sequence)', 'int[]'),
+  \ javaapi#method(0,1,'getMidiFileTypes(', ')', 'int'),
+  \ javaapi#method(0,1,'getMidiFileTypes(', 'Sequence)', 'int'),
   \ javaapi#method(0,1,'isFileTypeSupported(', 'int)', 'boolean'),
   \ javaapi#method(0,1,'isFileTypeSupported(', 'int, Sequence)', 'boolean'),
   \ javaapi#method(0,1,'write(', 'Sequence, int, OutputStream) throws IOException', 'int'),

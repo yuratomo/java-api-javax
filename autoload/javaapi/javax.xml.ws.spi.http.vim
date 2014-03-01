@@ -6,7 +6,7 @@ call javaapi#class('HttpContext', '', [
   \ javaapi#method(0,1,'setHandler(', 'HttpHandler)', 'void'),
   \ javaapi#method(0,1,'getPath(', ')', 'String'),
   \ javaapi#method(0,1,'getAttribute(', 'String)', 'Object'),
-  \ javaapi#method(0,1,'getAttributeNames(', ')', 'String>'),
+  \ javaapi#method(0,1,'getAttributeNames(', ')', 'Set'),
   \ ])
 
 call javaapi#class('HttpExchange', '', [
@@ -14,9 +14,9 @@ call javaapi#class('HttpExchange', '', [
   \ javaapi#field(1,1,'REQUEST_KEY_SIZE', 'String'),
   \ javaapi#field(1,1,'REQUEST_X509CERTIFICATE', 'String'),
   \ javaapi#method(0,1,'HttpExchange(', ')', ''),
-  \ javaapi#method(0,1,'getRequestHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getRequestHeaders(', ')', 'List'),
   \ javaapi#method(0,1,'getRequestHeader(', 'String)', 'String'),
-  \ javaapi#method(0,1,'getResponseHeaders(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getResponseHeaders(', ')', 'List'),
   \ javaapi#method(0,1,'addResponseHeader(', 'String, String)', 'void'),
   \ javaapi#method(0,1,'getRequestURI(', ')', 'String'),
   \ javaapi#method(0,1,'getContextPath(', ')', 'String'),
@@ -33,7 +33,7 @@ call javaapi#class('HttpExchange', '', [
   \ javaapi#method(0,1,'getPathInfo(', ')', 'String'),
   \ javaapi#method(0,1,'getQueryString(', ')', 'String'),
   \ javaapi#method(0,1,'getAttribute(', 'String)', 'Object'),
-  \ javaapi#method(0,1,'getAttributeNames(', ')', 'String>'),
+  \ javaapi#method(0,1,'getAttributeNames(', ')', 'Set'),
   \ javaapi#method(0,1,'getUserPrincipal(', ')', 'Principal'),
   \ javaapi#method(0,1,'isUserInRole(', 'String)', 'boolean'),
   \ ])

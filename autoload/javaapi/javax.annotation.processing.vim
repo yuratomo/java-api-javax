@@ -3,8 +3,8 @@ call javaapi#namespace('javax.annotation.processing')
 call javaapi#class('AbstractProcessor', 'Processor', [
   \ javaapi#field(0,0,'processingEnv', 'ProcessingEnvironment'),
   \ javaapi#method(0,0,'AbstractProcessor(', ')', ''),
-  \ javaapi#method(0,1,'getSupportedOptions(', ')', 'String>'),
-  \ javaapi#method(0,1,'getSupportedAnnotationTypes(', ')', 'String>'),
+  \ javaapi#method(0,1,'getSupportedOptions(', ')', 'Set'),
+  \ javaapi#method(0,1,'getSupportedAnnotationTypes(', ')', 'Set'),
   \ javaapi#method(0,1,'getSupportedSourceVersion(', ')', 'SourceVersion'),
   \ javaapi#method(0,1,'init(', 'ProcessingEnvironment)', 'void'),
   \ javaapi#method(0,1,'process(', 'Set<? extends TypeElement>, RoundEnvironment)', 'boolean'),
@@ -51,8 +51,8 @@ call javaapi#interface('ProcessingEnvironment', '', [
   \ ])
 
 call javaapi#interface('Processor', '', [
-  \ javaapi#method(0,1,'getSupportedOptions(', ')', 'String>'),
-  \ javaapi#method(0,1,'getSupportedAnnotationTypes(', ')', 'String>'),
+  \ javaapi#method(0,1,'getSupportedOptions(', ')', 'Set'),
+  \ javaapi#method(0,1,'getSupportedAnnotationTypes(', ')', 'Set'),
   \ javaapi#method(0,1,'getSupportedSourceVersion(', ')', 'SourceVersion'),
   \ javaapi#method(0,1,'init(', 'ProcessingEnvironment)', 'void'),
   \ javaapi#method(0,1,'process(', 'Set<? extends TypeElement>, RoundEnvironment)', 'boolean'),
@@ -68,11 +68,11 @@ call javaapi#interface('RoundEnvironment', '', [
   \ ])
 
 call javaapi#interface('SupportedAnnotationTypes', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'String[]'),
+  \ javaapi#method(0,1,'value(', ')', 'String'),
   \ ])
 
 call javaapi#interface('SupportedOptions', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'String[]'),
+  \ javaapi#method(0,1,'value(', ')', 'String'),
   \ ])
 
 call javaapi#interface('SupportedSourceVersion', 'Annotation', [

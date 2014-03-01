@@ -1,28 +1,28 @@
 call javaapi#namespace('javax.lang.model.util')
 
-call javaapi#class('AbstractAnnotationValueVisitor6<R,P>', 'AnnotationValueVisitor<R,P>', [
+call javaapi#class('AbstractAnnotationValueVisitor6', 'AnnotationValueVisitor', [
   \ javaapi#method(0,0,'AbstractAnnotationValueVisitor6(', ')', ''),
   \ javaapi#method(0,1,'visit(', 'AnnotationValue, P)', 'R'),
   \ javaapi#method(0,1,'visit(', 'AnnotationValue)', 'R'),
   \ javaapi#method(0,1,'visitUnknown(', 'AnnotationValue, P)', 'R'),
   \ ])
 
-call javaapi#class('AbstractAnnotationValueVisitor7<R,P>', 'AbstractAnnotationValueVisitor6<R,P>', [
+call javaapi#class('AbstractAnnotationValueVisitor7', 'AbstractAnnotationValueVisitor6', [
   \ javaapi#method(0,0,'AbstractAnnotationValueVisitor7(', ')', ''),
   \ ])
 
-call javaapi#class('AbstractElementVisitor6<R,P>', 'ElementVisitor<R,P>', [
+call javaapi#class('AbstractElementVisitor6', 'ElementVisitor', [
   \ javaapi#method(0,0,'AbstractElementVisitor6(', ')', ''),
   \ javaapi#method(0,1,'visit(', 'Element, P)', 'R'),
   \ javaapi#method(0,1,'visit(', 'Element)', 'R'),
   \ javaapi#method(0,1,'visitUnknown(', 'Element, P)', 'R'),
   \ ])
 
-call javaapi#class('AbstractElementVisitor7<R,P>', 'AbstractElementVisitor6<R,P>', [
+call javaapi#class('AbstractElementVisitor7', 'AbstractElementVisitor6', [
   \ javaapi#method(0,0,'AbstractElementVisitor7(', ')', ''),
   \ ])
 
-call javaapi#class('AbstractTypeVisitor6<R,P>', 'TypeVisitor<R,P>', [
+call javaapi#class('AbstractTypeVisitor6', 'TypeVisitor', [
   \ javaapi#method(0,0,'AbstractTypeVisitor6(', ')', ''),
   \ javaapi#method(0,1,'visit(', 'TypeMirror, P)', 'R'),
   \ javaapi#method(0,1,'visit(', 'TypeMirror)', 'R'),
@@ -30,25 +30,25 @@ call javaapi#class('AbstractTypeVisitor6<R,P>', 'TypeVisitor<R,P>', [
   \ javaapi#method(0,1,'visitUnknown(', 'TypeMirror, P)', 'R'),
   \ ])
 
-call javaapi#class('AbstractTypeVisitor7<R,P>', 'AbstractTypeVisitor6<R,P>', [
+call javaapi#class('AbstractTypeVisitor7', 'AbstractTypeVisitor6', [
   \ javaapi#method(0,0,'AbstractTypeVisitor7(', ')', ''),
   \ javaapi#method(0,1,'visitUnion(', 'UnionType, P)', 'R'),
   \ ])
 
 call javaapi#class('ElementFilter', '', [
-  \ javaapi#method(1,1,'fieldsIn(', 'Iterable<? extends Element>)', 'VariableElement>'),
-  \ javaapi#method(1,1,'fieldsIn(', 'Set<? extends Element>)', 'VariableElement>'),
-  \ javaapi#method(1,1,'constructorsIn(', 'Iterable<? extends Element>)', 'ExecutableElement>'),
-  \ javaapi#method(1,1,'constructorsIn(', 'Set<? extends Element>)', 'ExecutableElement>'),
-  \ javaapi#method(1,1,'methodsIn(', 'Iterable<? extends Element>)', 'ExecutableElement>'),
-  \ javaapi#method(1,1,'methodsIn(', 'Set<? extends Element>)', 'ExecutableElement>'),
-  \ javaapi#method(1,1,'typesIn(', 'Iterable<? extends Element>)', 'TypeElement>'),
-  \ javaapi#method(1,1,'typesIn(', 'Set<? extends Element>)', 'TypeElement>'),
-  \ javaapi#method(1,1,'packagesIn(', 'Iterable<? extends Element>)', 'PackageElement>'),
-  \ javaapi#method(1,1,'packagesIn(', 'Set<? extends Element>)', 'PackageElement>'),
+  \ javaapi#method(1,1,'fieldsIn(', 'Iterable<? extends Element>)', 'List'),
+  \ javaapi#method(1,1,'fieldsIn(', 'Set<? extends Element>)', 'Set'),
+  \ javaapi#method(1,1,'constructorsIn(', 'Iterable<? extends Element>)', 'List'),
+  \ javaapi#method(1,1,'constructorsIn(', 'Set<? extends Element>)', 'Set'),
+  \ javaapi#method(1,1,'methodsIn(', 'Iterable<? extends Element>)', 'List'),
+  \ javaapi#method(1,1,'methodsIn(', 'Set<? extends Element>)', 'Set'),
+  \ javaapi#method(1,1,'typesIn(', 'Iterable<? extends Element>)', 'List'),
+  \ javaapi#method(1,1,'typesIn(', 'Set<? extends Element>)', 'Set'),
+  \ javaapi#method(1,1,'packagesIn(', 'Iterable<? extends Element>)', 'List'),
+  \ javaapi#method(1,1,'packagesIn(', 'Set<? extends Element>)', 'Set'),
   \ ])
 
-call javaapi#class('ElementKindVisitor6<R,P>', 'SimpleElementVisitor6<R,P>', [
+call javaapi#class('ElementKindVisitor6', 'SimpleElementVisitor6', [
   \ javaapi#method(0,0,'ElementKindVisitor6(', ')', ''),
   \ javaapi#method(0,0,'ElementKindVisitor6(', 'R)', ''),
   \ javaapi#method(0,1,'visitPackage(', 'PackageElement, P)', 'R'),
@@ -72,13 +72,13 @@ call javaapi#class('ElementKindVisitor6<R,P>', 'SimpleElementVisitor6<R,P>', [
   \ javaapi#method(0,1,'visitTypeParameter(', 'TypeParameterElement, P)', 'R'),
   \ ])
 
-call javaapi#class('ElementKindVisitor7<R,P>', 'ElementKindVisitor6<R,P>', [
+call javaapi#class('ElementKindVisitor7', 'ElementKindVisitor6', [
   \ javaapi#method(0,0,'ElementKindVisitor7(', ')', ''),
   \ javaapi#method(0,0,'ElementKindVisitor7(', 'R)', ''),
   \ javaapi#method(0,1,'visitVariableAsResourceVariable(', 'VariableElement, P)', 'R'),
   \ ])
 
-call javaapi#class('ElementScanner6<R,P>', 'AbstractElementVisitor6<R,P>', [
+call javaapi#class('ElementScanner6', 'AbstractElementVisitor6', [
   \ javaapi#field(0,0,'DEFAULT_VALUE', 'R'),
   \ javaapi#method(0,0,'ElementScanner6(', ')', ''),
   \ javaapi#method(0,0,'ElementScanner6(', 'R)', ''),
@@ -92,7 +92,7 @@ call javaapi#class('ElementScanner6<R,P>', 'AbstractElementVisitor6<R,P>', [
   \ javaapi#method(0,1,'visitTypeParameter(', 'TypeParameterElement, P)', 'R'),
   \ ])
 
-call javaapi#class('ElementScanner7<R,P>', 'ElementScanner6<R,P>', [
+call javaapi#class('ElementScanner7', 'ElementScanner6', [
   \ javaapi#method(0,0,'ElementScanner7(', ')', ''),
   \ javaapi#method(0,0,'ElementScanner7(', 'R)', ''),
   \ javaapi#method(0,1,'visitVariable(', 'VariableElement, P)', 'R'),
@@ -115,7 +115,7 @@ call javaapi#interface('Elements', '', [
   \ javaapi#method(0,1,'getName(', 'CharSequence)', 'Name'),
   \ ])
 
-call javaapi#class('SimpleAnnotationValueVisitor6<R,P>', 'AbstractAnnotationValueVisitor6<R,P>', [
+call javaapi#class('SimpleAnnotationValueVisitor6', 'AbstractAnnotationValueVisitor6', [
   \ javaapi#field(0,0,'DEFAULT_VALUE', 'R'),
   \ javaapi#method(0,0,'SimpleAnnotationValueVisitor6(', ')', ''),
   \ javaapi#method(0,0,'SimpleAnnotationValueVisitor6(', 'R)', ''),
@@ -135,12 +135,12 @@ call javaapi#class('SimpleAnnotationValueVisitor6<R,P>', 'AbstractAnnotationValu
   \ javaapi#method(0,1,'visitArray(', 'List<? extends AnnotationValue>, P)', 'R'),
   \ ])
 
-call javaapi#class('SimpleAnnotationValueVisitor7<R,P>', 'SimpleAnnotationValueVisitor6<R,P>', [
+call javaapi#class('SimpleAnnotationValueVisitor7', 'SimpleAnnotationValueVisitor6', [
   \ javaapi#method(0,0,'SimpleAnnotationValueVisitor7(', ')', ''),
   \ javaapi#method(0,0,'SimpleAnnotationValueVisitor7(', 'R)', ''),
   \ ])
 
-call javaapi#class('SimpleElementVisitor6<R,P>', 'AbstractElementVisitor6<R,P>', [
+call javaapi#class('SimpleElementVisitor6', 'AbstractElementVisitor6', [
   \ javaapi#field(0,0,'DEFAULT_VALUE', 'R'),
   \ javaapi#method(0,0,'SimpleElementVisitor6(', ')', ''),
   \ javaapi#method(0,0,'SimpleElementVisitor6(', 'R)', ''),
@@ -152,13 +152,13 @@ call javaapi#class('SimpleElementVisitor6<R,P>', 'AbstractElementVisitor6<R,P>',
   \ javaapi#method(0,1,'visitTypeParameter(', 'TypeParameterElement, P)', 'R'),
   \ ])
 
-call javaapi#class('SimpleElementVisitor7<R,P>', 'SimpleElementVisitor6<R,P>', [
+call javaapi#class('SimpleElementVisitor7', 'SimpleElementVisitor6', [
   \ javaapi#method(0,0,'SimpleElementVisitor7(', ')', ''),
   \ javaapi#method(0,0,'SimpleElementVisitor7(', 'R)', ''),
   \ javaapi#method(0,1,'visitVariable(', 'VariableElement, P)', 'R'),
   \ ])
 
-call javaapi#class('SimpleTypeVisitor6<R,P>', 'AbstractTypeVisitor6<R,P>', [
+call javaapi#class('SimpleTypeVisitor6', 'AbstractTypeVisitor6', [
   \ javaapi#field(0,0,'DEFAULT_VALUE', 'R'),
   \ javaapi#method(0,0,'SimpleTypeVisitor6(', ')', ''),
   \ javaapi#method(0,0,'SimpleTypeVisitor6(', 'R)', ''),
@@ -174,13 +174,13 @@ call javaapi#class('SimpleTypeVisitor6<R,P>', 'AbstractTypeVisitor6<R,P>', [
   \ javaapi#method(0,1,'visitNoType(', 'NoType, P)', 'R'),
   \ ])
 
-call javaapi#class('SimpleTypeVisitor7<R,P>', 'SimpleTypeVisitor6<R,P>', [
+call javaapi#class('SimpleTypeVisitor7', 'SimpleTypeVisitor6', [
   \ javaapi#method(0,0,'SimpleTypeVisitor7(', ')', ''),
   \ javaapi#method(0,0,'SimpleTypeVisitor7(', 'R)', ''),
   \ javaapi#method(0,1,'visitUnion(', 'UnionType, P)', 'R'),
   \ ])
 
-call javaapi#class('TypeKindVisitor6<R,P>', 'SimpleTypeVisitor6<R,P>', [
+call javaapi#class('TypeKindVisitor6', 'SimpleTypeVisitor6', [
   \ javaapi#method(0,0,'TypeKindVisitor6(', ')', ''),
   \ javaapi#method(0,0,'TypeKindVisitor6(', 'R)', ''),
   \ javaapi#method(0,1,'visitPrimitive(', 'PrimitiveType, P)', 'R'),
@@ -198,7 +198,7 @@ call javaapi#class('TypeKindVisitor6<R,P>', 'SimpleTypeVisitor6<R,P>', [
   \ javaapi#method(0,1,'visitNoTypeAsNone(', 'NoType, P)', 'R'),
   \ ])
 
-call javaapi#class('TypeKindVisitor7<R,P>', 'TypeKindVisitor6<R,P>', [
+call javaapi#class('TypeKindVisitor7', 'TypeKindVisitor6', [
   \ javaapi#method(0,0,'TypeKindVisitor7(', ')', ''),
   \ javaapi#method(0,0,'TypeKindVisitor7(', 'R)', ''),
   \ javaapi#method(0,1,'visitUnion(', 'UnionType, P)', 'R'),

@@ -25,7 +25,7 @@ call javaapi#class('CenterLayout', 'Serializable', [
   \ ])
 
 call javaapi#class('ColorChooserComponentFactory', '', [
-  \ javaapi#method(1,1,'getDefaultChooserPanels(', ')', 'AbstractColorChooserPanel[]'),
+  \ javaapi#method(1,1,'getDefaultChooserPanels(', ')', 'AbstractColorChooserPanel'),
   \ javaapi#method(1,1,'getPreviewPanel(', ')', 'JComponent'),
   \ ])
 
@@ -73,7 +73,7 @@ call javaapi#class('DefaultColorSelectionModel', 'Serializable', [
   \ javaapi#method(0,1,'setSelectedColor(', 'Color)', 'void'),
   \ javaapi#method(0,1,'addChangeListener(', 'ChangeListener)', 'void'),
   \ javaapi#method(0,1,'removeChangeListener(', 'ChangeListener)', 'void'),
-  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener[]'),
+  \ javaapi#method(0,1,'getChangeListeners(', ')', 'ChangeListener'),
   \ javaapi#method(0,0,'fireStateChanged(', ')', 'void'),
   \ ])
 
@@ -131,7 +131,7 @@ call javaapi#class('SmartGridLayout', 'Serializable', [
   \ ])
 
 call javaapi#class('SwatchPanel', 'JPanel', [
-  \ javaapi#field(0,0,'colors', 'Color[]'),
+  \ javaapi#field(0,0,'colors', 'Color'),
   \ javaapi#field(0,0,'swatchSize', 'Dimension'),
   \ javaapi#field(0,0,'numSwatches', 'Dimension'),
   \ javaapi#field(0,0,'gap', 'Dimension'),

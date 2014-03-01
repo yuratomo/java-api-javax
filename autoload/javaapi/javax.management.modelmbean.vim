@@ -9,9 +9,9 @@ call javaapi#class('DescriptorSupport', 'Descriptor', [
   \ javaapi#method(0,1,'DescriptorSupport(', ')', ''),
   \ javaapi#method(0,1,'getFieldValue(', 'String) throws RuntimeOperationsException', 'Object'),
   \ javaapi#method(0,1,'setField(', 'String, Object) throws RuntimeOperationsException', 'void'),
-  \ javaapi#method(0,1,'getFields(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getFieldNames(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getFieldValues(', ')', 'Object[]'),
+  \ javaapi#method(0,1,'getFields(', ')', 'String'),
+  \ javaapi#method(0,1,'getFieldNames(', ')', 'String'),
+  \ javaapi#method(0,1,'getFieldValues(', ')', 'Object'),
   \ javaapi#method(0,1,'setFields(', 'String[], Object[]) throws RuntimeOperationsException', 'void'),
   \ javaapi#method(0,1,'clone(', ') throws RuntimeOperationsException', 'Object'),
   \ javaapi#method(0,1,'removeField(', 'String)', 'void'),
@@ -57,7 +57,7 @@ call javaapi#class('ModelMBeanConstructorInfo', 'MBeanConstructorInfo', [
   \ ])
 
 call javaapi#interface('ModelMBeanInfo', '', [
-  \ javaapi#method(0,1,'getDescriptors(', 'String) throws MBeanException, RuntimeOperationsException', 'Descriptor[]'),
+  \ javaapi#method(0,1,'getDescriptors(', 'String) throws MBeanException, RuntimeOperationsException', 'Descriptor'),
   \ javaapi#method(0,1,'setDescriptors(', 'Descriptor[]) throws MBeanException, RuntimeOperationsException', 'void'),
   \ javaapi#method(0,1,'getDescriptor(', 'String, String) throws MBeanException, RuntimeOperationsException', 'Descriptor'),
   \ javaapi#method(0,1,'setDescriptor(', 'Descriptor, String) throws MBeanException, RuntimeOperationsException', 'void'),
@@ -67,12 +67,12 @@ call javaapi#interface('ModelMBeanInfo', '', [
   \ javaapi#method(0,1,'getOperation(', 'String) throws MBeanException, RuntimeOperationsException', 'ModelMBeanOperationInfo'),
   \ javaapi#method(0,1,'getNotification(', 'String) throws MBeanException, RuntimeOperationsException', 'ModelMBeanNotificationInfo'),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
-  \ javaapi#method(0,1,'getAttributes(', ')', 'MBeanAttributeInfo[]'),
+  \ javaapi#method(0,1,'getAttributes(', ')', 'MBeanAttributeInfo'),
   \ javaapi#method(0,1,'getClassName(', ')', 'String'),
-  \ javaapi#method(0,1,'getConstructors(', ')', 'MBeanConstructorInfo[]'),
+  \ javaapi#method(0,1,'getConstructors(', ')', 'MBeanConstructorInfo'),
   \ javaapi#method(0,1,'getDescription(', ')', 'String'),
-  \ javaapi#method(0,1,'getNotifications(', ')', 'MBeanNotificationInfo[]'),
-  \ javaapi#method(0,1,'getOperations(', ')', 'MBeanOperationInfo[]'),
+  \ javaapi#method(0,1,'getNotifications(', ')', 'MBeanNotificationInfo'),
+  \ javaapi#method(0,1,'getOperations(', ')', 'MBeanOperationInfo'),
   \ ])
 
 call javaapi#class('ModelMBeanInfoSupport', 'MBeanInfo', [
@@ -80,7 +80,7 @@ call javaapi#class('ModelMBeanInfoSupport', 'MBeanInfo', [
   \ javaapi#method(0,1,'ModelMBeanInfoSupport(', 'String, String, ModelMBeanAttributeInfo[], ModelMBeanConstructorInfo[], ModelMBeanOperationInfo[], ModelMBeanNotificationInfo[])', ''),
   \ javaapi#method(0,1,'ModelMBeanInfoSupport(', 'String, String, ModelMBeanAttributeInfo[], ModelMBeanConstructorInfo[], ModelMBeanOperationInfo[], ModelMBeanNotificationInfo[], Descriptor)', ''),
   \ javaapi#method(0,1,'clone(', ')', 'Object'),
-  \ javaapi#method(0,1,'getDescriptors(', 'String) throws MBeanException, RuntimeOperationsException', 'Descriptor[]'),
+  \ javaapi#method(0,1,'getDescriptors(', 'String) throws MBeanException, RuntimeOperationsException', 'Descriptor'),
   \ javaapi#method(0,1,'setDescriptors(', 'Descriptor[]) throws MBeanException, RuntimeOperationsException', 'void'),
   \ javaapi#method(0,1,'getDescriptor(', 'String) throws MBeanException, RuntimeOperationsException', 'Descriptor'),
   \ javaapi#method(0,1,'getDescriptor(', 'String, String) throws MBeanException, RuntimeOperationsException', 'Descriptor'),
@@ -143,7 +143,7 @@ call javaapi#class('RequiredModelMBean', 'NotificationEmitter', [
   \ javaapi#method(0,1,'removeNotificationListener(', 'NotificationListener, NotificationFilter, Object) throws ListenerNotFoundException', 'void'),
   \ javaapi#method(0,1,'sendNotification(', 'Notification) throws MBeanException, RuntimeOperationsException', 'void'),
   \ javaapi#method(0,1,'sendNotification(', 'String) throws MBeanException, RuntimeOperationsException', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ javaapi#method(0,1,'addAttributeChangeNotificationListener(', 'NotificationListener, String, Object) throws MBeanException, RuntimeOperationsException, IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'removeAttributeChangeNotificationListener(', 'NotificationListener, String) throws MBeanException, RuntimeOperationsException, ListenerNotFoundException', 'void'),
   \ javaapi#method(0,1,'sendAttributeChangeNotification(', 'AttributeChangeNotification) throws MBeanException, RuntimeOperationsException', 'void'),

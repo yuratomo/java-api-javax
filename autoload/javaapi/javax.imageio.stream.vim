@@ -52,7 +52,7 @@ call javaapi#class('FileImageOutputStream', 'ImageOutputStreamImpl', [
 
 call javaapi#class('IIOByteBuffer', '', [
   \ javaapi#method(0,1,'IIOByteBuffer(', 'byte[], int, int)', ''),
-  \ javaapi#method(0,1,'getData(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getData(', ')', 'byte'),
   \ javaapi#method(0,1,'setData(', 'byte[])', 'void'),
   \ javaapi#method(0,1,'getOffset(', ')', 'int'),
   \ javaapi#method(0,1,'setOffset(', 'int)', 'void'),

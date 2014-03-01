@@ -3,15 +3,15 @@ call javaapi#namespace('javax.xml.ws')
 call javaapi#interface('Action', 'Annotation', [
   \ javaapi#method(0,1,'input(', ')', 'String'),
   \ javaapi#method(0,1,'output(', ')', 'String'),
-  \ javaapi#method(0,1,'fault(', ')', 'FaultAction[]'),
+  \ javaapi#method(0,1,'fault(', ')', 'FaultAction'),
   \ ])
 
-call javaapi#interface('AsyncHandler<T>', '', [
+call javaapi#interface('AsyncHandler', '', [
   \ javaapi#method(0,1,'handleResponse(', 'Response<T>)', 'void'),
   \ ])
 
 call javaapi#interface('Binding', '', [
-  \ javaapi#method(0,1,'getHandlerChain(', ')', 'Handler>'),
+  \ javaapi#method(0,1,'getHandlerChain(', ')', 'List'),
   \ javaapi#method(0,1,'setHandlerChain(', 'List<Handler>)', 'void'),
   \ javaapi#method(0,1,'getBindingID(', ')', 'String'),
   \ ])
@@ -34,10 +34,10 @@ call javaapi#interface('BindingType', 'Annotation', [
   \ javaapi#method(0,1,'value(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Dispatch<T>', 'BindingProvider', [
+call javaapi#interface('Dispatch', 'BindingProvider', [
   \ javaapi#method(0,1,'invoke(', 'T)', 'T'),
-  \ javaapi#method(0,1,'invokeAsync(', 'T)', 'Response<T>'),
-  \ javaapi#method(0,1,'invokeAsync(', 'T, AsyncHandler<T>)', 'Future<?>'),
+  \ javaapi#method(0,1,'invokeAsync(', 'T)', 'Response'),
+  \ javaapi#method(0,1,'invokeAsync(', 'T, AsyncHandler<T>)', 'Future'),
   \ javaapi#method(0,1,'invokeOneWay(', 'T)', 'void'),
   \ ])
 
@@ -58,7 +58,7 @@ call javaapi#class('Endpoint', '', [
   \ javaapi#method(0,1,'publish(', 'HttpContext)', 'void'),
   \ javaapi#method(0,1,'stop(', ')', 'void'),
   \ javaapi#method(0,1,'isPublished(', ')', 'boolean'),
-  \ javaapi#method(0,1,'getMetadata(', ')', 'Source>'),
+  \ javaapi#method(0,1,'getMetadata(', ')', 'List'),
   \ javaapi#method(0,1,'setMetadata(', 'List<Source>)', 'void'),
   \ javaapi#method(0,1,'getExecutor(', ')', 'Executor'),
   \ javaapi#method(0,1,'setExecutor(', 'Executor)', 'void'),
@@ -71,7 +71,7 @@ call javaapi#class('Endpoint', '', [
 
 call javaapi#class('EndpointContext', '', [
   \ javaapi#method(0,1,'EndpointContext(', ')', ''),
-  \ javaapi#method(0,1,'getEndpoints(', ')', 'Endpoint>'),
+  \ javaapi#method(0,1,'getEndpoints(', ')', 'Set'),
   \ ])
 
 call javaapi#class('EndpointReference', '', [
@@ -87,7 +87,7 @@ call javaapi#interface('FaultAction', 'Annotation', [
   \ javaapi#method(0,1,'value(', ')', 'String'),
   \ ])
 
-call javaapi#class('Holder<T>', 'Serializable', [
+call javaapi#class('Holder', 'Serializable', [
   \ javaapi#field(0,1,'value', 'T'),
   \ javaapi#method(0,1,'Holder(', ')', ''),
   \ javaapi#method(0,1,'Holder(', 'T)', ''),
@@ -107,7 +107,7 @@ call javaapi#class('ProtocolException', 'WebServiceException', [
   \ javaapi#method(0,1,'ProtocolException(', 'Throwable)', ''),
   \ ])
 
-call javaapi#interface('Provider<T>', '', [
+call javaapi#interface('Provider', '', [
   \ javaapi#method(0,1,'invoke(', 'T)', 'T'),
   \ ])
 
@@ -129,7 +129,7 @@ call javaapi#class('RespectBindingFeature', 'WebServiceFeature', [
   \ javaapi#method(0,1,'getID(', ')', 'String'),
   \ ])
 
-call javaapi#interface('Response<T>', 'Future<T>', [
+call javaapi#interface('Response', 'Future', [
   \ javaapi#method(0,1,'getContext(', ')', 'Object>'),
   \ ])
 
@@ -149,14 +149,14 @@ call javaapi#class('Service', '', [
   \ javaapi#method(0,1,'getPort(', 'Class<T>, )', 'T'),
   \ javaapi#method(0,1,'getPort(', 'EndpointReference, Class<T>, )', 'T'),
   \ javaapi#method(0,1,'addPort(', 'QName, String, String)', 'void'),
-  \ javaapi#method(0,1,'createDispatch(', 'QName, Class<T>, Mode)', 'Dispatch<T>'),
-  \ javaapi#method(0,1,'createDispatch(', 'QName, Class<T>, Mode, )', 'Dispatch<T>'),
-  \ javaapi#method(0,1,'createDispatch(', 'EndpointReference, Class<T>, Mode, )', 'Dispatch<T>'),
-  \ javaapi#method(0,1,'createDispatch(', 'QName, JAXBContext, Mode)', 'Object>'),
-  \ javaapi#method(0,1,'createDispatch(', 'QName, JAXBContext, Mode, )', 'Object>'),
-  \ javaapi#method(0,1,'createDispatch(', 'EndpointReference, JAXBContext, Mode, )', 'Object>'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, Class<T>, Mode)', 'Dispatch'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, Class<T>, Mode, )', 'Dispatch'),
+  \ javaapi#method(0,1,'createDispatch(', 'EndpointReference, Class<T>, Mode, )', 'Dispatch'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, JAXBContext, Mode)', 'Dispatch'),
+  \ javaapi#method(0,1,'createDispatch(', 'QName, JAXBContext, Mode, )', 'Dispatch'),
+  \ javaapi#method(0,1,'createDispatch(', 'EndpointReference, JAXBContext, Mode, )', 'Dispatch'),
   \ javaapi#method(0,1,'getServiceName(', ')', 'QName'),
-  \ javaapi#method(0,1,'getPorts(', ')', 'QName>'),
+  \ javaapi#method(0,1,'getPorts(', ')', 'Iterator'),
   \ javaapi#method(0,1,'getWSDLDocumentLocation(', ')', 'URL'),
   \ javaapi#method(0,1,'getHandlerResolver(', ')', 'HandlerResolver'),
   \ javaapi#method(0,1,'setHandlerResolver(', 'HandlerResolver)', 'void'),
@@ -225,7 +225,7 @@ call javaapi#interface('WebServiceProvider', 'Annotation', [
 
 call javaapi#interface('WebServiceRef', 'Annotation', [
   \ javaapi#method(0,1,'name(', ')', 'String'),
-  \ javaapi#method(0,1,'type(', ')', 'Class<?>'),
+  \ javaapi#method(0,1,'type(', ')', 'Class'),
   \ javaapi#method(0,1,'mappedName(', ')', 'String'),
   \ javaapi#method(0,1,'value(', ')', 'Service>'),
   \ javaapi#method(0,1,'wsdlLocation(', ')', 'String'),
@@ -233,6 +233,6 @@ call javaapi#interface('WebServiceRef', 'Annotation', [
   \ ])
 
 call javaapi#interface('WebServiceRefs', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'WebServiceRef[]'),
+  \ javaapi#method(0,1,'value(', ')', 'WebServiceRef'),
   \ ])
 

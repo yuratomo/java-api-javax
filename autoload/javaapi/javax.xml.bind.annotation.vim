@@ -6,7 +6,7 @@ call javaapi#interface('DomHandler<ElementT,ResultT', 'Result>', [
   \ javaapi#method(0,1,'marshal(', 'ElementT, ValidationEventHandler)', 'Source'),
   \ ])
 
-call javaapi#class('W3CDomHandler', 'DOMResult>', [
+call javaapi#class('W3CDomHandler', 'DomHandler', [
   \ javaapi#method(0,1,'W3CDomHandler(', ')', ''),
   \ javaapi#method(0,1,'W3CDomHandler(', 'DocumentBuilder)', ''),
   \ javaapi#method(0,1,'getBuilder(', ')', 'DocumentBuilder'),
@@ -19,19 +19,19 @@ call javaapi#class('W3CDomHandler', 'DOMResult>', [
   \ javaapi#method(0,1,'createUnmarshaller(', 'ValidationEventHandler)', 'Result'),
   \ ])
 
-call javaapi#class('XmlAccessOrder', 'XmlAccessOrder>', [
+call javaapi#class('XmlAccessOrder', 'Enum', [
   \ javaapi#field(1,1,'UNDEFINED', 'XmlAccessOrder'),
   \ javaapi#field(1,1,'ALPHABETICAL', 'XmlAccessOrder'),
-  \ javaapi#method(1,1,'values(', ')', 'XmlAccessOrder[]'),
+  \ javaapi#method(1,1,'values(', ')', 'XmlAccessOrder'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'XmlAccessOrder'),
   \ ])
 
-call javaapi#class('XmlAccessType', 'XmlAccessType>', [
+call javaapi#class('XmlAccessType', 'Enum', [
   \ javaapi#field(1,1,'PROPERTY', 'XmlAccessType'),
   \ javaapi#field(1,1,'FIELD', 'XmlAccessType'),
   \ javaapi#field(1,1,'PUBLIC_MEMBER', 'XmlAccessType'),
   \ javaapi#field(1,1,'NONE', 'XmlAccessType'),
-  \ javaapi#method(1,1,'values(', ')', 'XmlAccessType[]'),
+  \ javaapi#method(1,1,'values(', ')', 'XmlAccessType'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'XmlAccessType'),
   \ ])
 
@@ -86,7 +86,7 @@ call javaapi#interface('XmlElementRef', 'Annotation', [
   \ ])
 
 call javaapi#interface('XmlElementRefs', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'XmlElementRef[]'),
+  \ javaapi#method(0,1,'value(', ')', 'XmlElementRef'),
   \ ])
 
 call javaapi#interface('XmlElementWrapper', 'Annotation', [
@@ -97,11 +97,11 @@ call javaapi#interface('XmlElementWrapper', 'Annotation', [
   \ ])
 
 call javaapi#interface('XmlElements', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'XmlElement[]'),
+  \ javaapi#method(0,1,'value(', ')', 'XmlElement'),
   \ ])
 
 call javaapi#interface('XmlEnum', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'Class<?>'),
+  \ javaapi#method(0,1,'value(', ')', 'Class'),
   \ ])
 
 call javaapi#interface('XmlEnumValue', 'Annotation', [
@@ -132,11 +132,11 @@ call javaapi#interface('XmlNs', 'Annotation', [
   \ javaapi#method(0,1,'namespaceURI(', ')', 'String'),
   \ ])
 
-call javaapi#class('XmlNsForm', 'XmlNsForm>', [
+call javaapi#class('XmlNsForm', 'Enum', [
   \ javaapi#field(1,1,'UNQUALIFIED', 'XmlNsForm'),
   \ javaapi#field(1,1,'QUALIFIED', 'XmlNsForm'),
   \ javaapi#field(1,1,'UNSET', 'XmlNsForm'),
-  \ javaapi#method(1,1,'values(', ')', 'XmlNsForm[]'),
+  \ javaapi#method(1,1,'values(', ')', 'XmlNsForm'),
   \ javaapi#method(1,1,'valueOf(', 'String)', 'XmlNsForm'),
   \ ])
 
@@ -150,7 +150,7 @@ call javaapi#interface('XmlRootElement', 'Annotation', [
 
 call javaapi#interface('XmlSchema', 'Annotation', [
   \ javaapi#field(1,1,'NO_LOCATION', 'String'),
-  \ javaapi#method(0,1,'xmlns(', ')', 'XmlNs[]'),
+  \ javaapi#method(0,1,'xmlns(', ')', 'XmlNs'),
   \ javaapi#method(0,1,'namespace(', ')', 'String'),
   \ javaapi#method(0,1,'elementFormDefault(', ')', 'XmlNsForm'),
   \ javaapi#method(0,1,'attributeFormDefault(', ')', 'XmlNsForm'),
@@ -164,11 +164,11 @@ call javaapi#interface('XmlSchemaType', 'Annotation', [
   \ ])
 
 call javaapi#interface('XmlSchemaTypes', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'XmlSchemaType[]'),
+  \ javaapi#method(0,1,'value(', ')', 'XmlSchemaType'),
   \ ])
 
 call javaapi#interface('XmlSeeAlso', 'Annotation', [
-  \ javaapi#method(0,1,'value(', ')', 'Class[]'),
+  \ javaapi#method(0,1,'value(', ')', 'Class'),
   \ ])
 
 call javaapi#interface('XmlTransient', 'Annotation', [
@@ -176,7 +176,7 @@ call javaapi#interface('XmlTransient', 'Annotation', [
 
 call javaapi#interface('XmlType', 'Annotation', [
   \ javaapi#method(0,1,'name(', ')', 'String'),
-  \ javaapi#method(0,1,'propOrder(', ')', 'String[]'),
+  \ javaapi#method(0,1,'propOrder(', ')', 'String'),
   \ javaapi#method(0,1,'namespace(', ')', 'String'),
   \ javaapi#method(0,1,'factoryClass(', ')', 'Class'),
   \ javaapi#method(0,1,'factoryMethod(', ')', 'String'),

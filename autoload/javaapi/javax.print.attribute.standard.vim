@@ -4,8 +4,8 @@ call javaapi#class('Chromaticity', 'EnumSyntax', [
   \ javaapi#field(1,1,'MONOCHROME', 'Chromaticity'),
   \ javaapi#field(1,1,'COLOR', 'Chromaticity'),
   \ javaapi#method(0,0,'Chromaticity(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -14,8 +14,8 @@ call javaapi#class('ColorSupported', 'EnumSyntax', [
   \ javaapi#field(1,1,'NOT_SUPPORTED', 'ColorSupported'),
   \ javaapi#field(1,1,'SUPPORTED', 'ColorSupported'),
   \ javaapi#method(0,0,'ColorSupported(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -26,8 +26,8 @@ call javaapi#class('Compression', 'EnumSyntax', [
   \ javaapi#field(1,1,'GZIP', 'Compression'),
   \ javaapi#field(1,1,'COMPRESS', 'Compression'),
   \ javaapi#method(0,0,'Compression(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -79,8 +79,8 @@ call javaapi#class('DialogTypeSelection', 'EnumSyntax', [
   \ javaapi#field(1,1,'NATIVE', 'DialogTypeSelection'),
   \ javaapi#field(1,1,'COMMON', 'DialogTypeSelection'),
   \ javaapi#method(0,0,'DialogTypeSelection(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Class'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -96,8 +96,8 @@ call javaapi#class('Fidelity', 'EnumSyntax', [
   \ javaapi#field(1,1,'FIDELITY_TRUE', 'Fidelity'),
   \ javaapi#field(1,1,'FIDELITY_FALSE', 'Fidelity'),
   \ javaapi#method(0,0,'Fidelity(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -122,8 +122,8 @@ call javaapi#class('Finishings', 'EnumSyntax', [
   \ javaapi#field(1,1,'STAPLE_DUAL_RIGHT', 'Finishings'),
   \ javaapi#field(1,1,'STAPLE_DUAL_BOTTOM', 'Finishings'),
   \ javaapi#method(0,0,'Finishings(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,0,'getOffset(', ')', 'int'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
@@ -238,8 +238,8 @@ call javaapi#class('JobSheets', 'EnumSyntax', [
   \ javaapi#field(1,1,'NONE', 'JobSheets'),
   \ javaapi#field(1,1,'STANDARD', 'JobSheets'),
   \ javaapi#method(0,0,'JobSheets(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -254,8 +254,8 @@ call javaapi#class('JobState', 'EnumSyntax', [
   \ javaapi#field(1,1,'ABORTED', 'JobState'),
   \ javaapi#field(1,1,'COMPLETED', 'JobState'),
   \ javaapi#method(0,0,'JobState(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -291,13 +291,13 @@ call javaapi#class('JobStateReason', 'EnumSyntax', [
   \ javaapi#field(1,1,'JOB_RESTARTABLE', 'JobStateReason'),
   \ javaapi#field(1,1,'QUEUED_IN_DEVICE', 'JobStateReason'),
   \ javaapi#method(0,0,'JobStateReason(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('JobStateReasons', 'JobStateReason>', [
+call javaapi#class('JobStateReasons', 'HashSet', [
   \ javaapi#method(0,1,'JobStateReasons(', ')', ''),
   \ javaapi#method(0,1,'JobStateReasons(', 'int)', ''),
   \ javaapi#method(0,1,'JobStateReasons(', 'int, float)', ''),
@@ -321,8 +321,8 @@ call javaapi#class('MediaName', 'Media', [
   \ javaapi#field(1,1,'ISO_A4_WHITE', 'MediaName'),
   \ javaapi#field(1,1,'ISO_A4_TRANSPARENT', 'MediaName'),
   \ javaapi#method(0,0,'MediaName(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ ])
 
 call javaapi#class('MediaPrintableArea', 'PrintJobAttribute', [
@@ -330,7 +330,7 @@ call javaapi#class('MediaPrintableArea', 'PrintJobAttribute', [
   \ javaapi#field(1,1,'MM', 'int'),
   \ javaapi#method(0,1,'MediaPrintableArea(', 'float, float, float, float, int)', ''),
   \ javaapi#method(0,1,'MediaPrintableArea(', 'int, int, int, int, int)', ''),
-  \ javaapi#method(0,1,'getPrintableArea(', 'int)', 'float[]'),
+  \ javaapi#method(0,1,'getPrintableArea(', 'int)', 'float'),
   \ javaapi#method(0,1,'getX(', 'int)', 'float'),
   \ javaapi#method(0,1,'getY(', 'int)', 'float'),
   \ javaapi#method(0,1,'getWidth(', 'int)', 'float'),
@@ -431,8 +431,8 @@ call javaapi#class('MediaSizeName', 'Media', [
   \ javaapi#field(1,1,'NA_5X7', 'MediaSizeName'),
   \ javaapi#field(1,1,'NA_8X10', 'MediaSizeName'),
   \ javaapi#method(0,0,'MediaSizeName(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ ])
 
 call javaapi#class('MediaTray', 'Media', [
@@ -445,8 +445,8 @@ call javaapi#class('MediaTray', 'Media', [
   \ javaapi#field(1,1,'MAIN', 'MediaTray'),
   \ javaapi#field(1,1,'SIDE', 'MediaTray'),
   \ javaapi#method(0,0,'MediaTray(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ ])
 
 call javaapi#class('MultipleDocumentHandling', 'EnumSyntax', [
@@ -455,8 +455,8 @@ call javaapi#class('MultipleDocumentHandling', 'EnumSyntax', [
   \ javaapi#field(1,1,'SEPARATE_DOCUMENTS_COLLATED_COPIES', 'MultipleDocumentHandling'),
   \ javaapi#field(1,1,'SINGLE_DOCUMENT_NEW_SHEET', 'MultipleDocumentHandling'),
   \ javaapi#method(0,0,'MultipleDocumentHandling(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -497,8 +497,8 @@ call javaapi#class('OrientationRequested', 'EnumSyntax', [
   \ javaapi#field(1,1,'REVERSE_LANDSCAPE', 'OrientationRequested'),
   \ javaapi#field(1,1,'REVERSE_PORTRAIT', 'OrientationRequested'),
   \ javaapi#method(0,0,'OrientationRequested(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,0,'getOffset(', ')', 'int'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
@@ -515,8 +515,8 @@ call javaapi#class('PDLOverrideSupported', 'EnumSyntax', [
   \ javaapi#field(1,1,'NOT_ATTEMPTED', 'PDLOverrideSupported'),
   \ javaapi#field(1,1,'ATTEMPTED', 'PDLOverrideSupported'),
   \ javaapi#method(0,0,'PDLOverrideSupported(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -554,8 +554,8 @@ call javaapi#class('PresentationDirection', 'EnumSyntax', [
   \ javaapi#field(1,1,'TORIGHT_TOTOP', 'PresentationDirection'),
   \ javaapi#field(1,1,'TOLEFT_TOBOTTOM', 'PresentationDirection'),
   \ javaapi#field(1,1,'TOLEFT_TOTOP', 'PresentationDirection'),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -565,8 +565,8 @@ call javaapi#class('PrintQuality', 'EnumSyntax', [
   \ javaapi#field(1,1,'NORMAL', 'PrintQuality'),
   \ javaapi#field(1,1,'HIGH', 'PrintQuality'),
   \ javaapi#method(0,0,'PrintQuality(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,0,'getOffset(', ')', 'int'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
@@ -583,8 +583,8 @@ call javaapi#class('PrinterIsAcceptingJobs', 'EnumSyntax', [
   \ javaapi#field(1,1,'NOT_ACCEPTING_JOBS', 'PrinterIsAcceptingJobs'),
   \ javaapi#field(1,1,'ACCEPTING_JOBS', 'PrinterIsAcceptingJobs'),
   \ javaapi#method(0,0,'PrinterIsAcceptingJobs(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -644,8 +644,8 @@ call javaapi#class('PrinterState', 'EnumSyntax', [
   \ javaapi#field(1,1,'PROCESSING', 'PrinterState'),
   \ javaapi#field(1,1,'STOPPED', 'PrinterState'),
   \ javaapi#method(0,0,'PrinterState(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -685,13 +685,13 @@ call javaapi#class('PrinterStateReason', 'EnumSyntax', [
   \ javaapi#field(1,1,'DEVELOPER_EMPTY', 'PrinterStateReason'),
   \ javaapi#field(1,1,'INTERPRETER_RESOURCE_UNAVAILABLE', 'PrinterStateReason'),
   \ javaapi#method(0,0,'PrinterStateReason(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
 
-call javaapi#class('PrinterStateReasons', 'Severity>', [
+call javaapi#class('PrinterStateReasons', 'HashMap', [
   \ javaapi#method(0,1,'PrinterStateReasons(', ')', ''),
   \ javaapi#method(0,1,'PrinterStateReasons(', 'int)', ''),
   \ javaapi#method(0,1,'PrinterStateReasons(', 'int, float)', ''),
@@ -699,7 +699,7 @@ call javaapi#class('PrinterStateReasons', 'Severity>', [
   \ javaapi#method(0,1,'put(', 'PrinterStateReason, Severity)', 'Severity'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
-  \ javaapi#method(0,1,'printerStateReasonSet(', 'Severity)', 'PrinterStateReason>'),
+  \ javaapi#method(0,1,'printerStateReasonSet(', 'Severity)', 'Set'),
   \ javaapi#method(0,1,'put(', 'Object, Object)', 'Object'),
   \ ])
 
@@ -727,8 +727,8 @@ call javaapi#class('ReferenceUriSchemesSupported', 'EnumSyntax', [
   \ javaapi#field(1,1,'WAIS', 'ReferenceUriSchemesSupported'),
   \ javaapi#field(1,1,'FILE', 'ReferenceUriSchemesSupported'),
   \ javaapi#method(0,0,'ReferenceUriSchemesSupported(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -745,8 +745,8 @@ call javaapi#class('Severity', 'EnumSyntax', [
   \ javaapi#field(1,1,'WARNING', 'Severity'),
   \ javaapi#field(1,1,'ERROR', 'Severity'),
   \ javaapi#method(0,0,'Severity(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -755,8 +755,8 @@ call javaapi#class('SheetCollate', 'EnumSyntax', [
   \ javaapi#field(1,1,'UNCOLLATED', 'SheetCollate'),
   \ javaapi#field(1,1,'COLLATED', 'SheetCollate'),
   \ javaapi#method(0,0,'SheetCollate(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])
@@ -768,8 +768,8 @@ call javaapi#class('Sides', 'EnumSyntax', [
   \ javaapi#field(1,1,'DUPLEX', 'Sides'),
   \ javaapi#field(1,1,'TUMBLE', 'Sides'),
   \ javaapi#method(0,0,'Sides(', 'int)', ''),
-  \ javaapi#method(0,0,'getStringTable(', ')', 'String[]'),
-  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax[]'),
+  \ javaapi#method(0,0,'getStringTable(', ')', 'String'),
+  \ javaapi#method(0,0,'getEnumValueTable(', ')', 'EnumSyntax'),
   \ javaapi#method(0,1,'getCategory(', ')', 'Attribute>'),
   \ javaapi#method(0,1,'getName(', ')', 'String'),
   \ ])

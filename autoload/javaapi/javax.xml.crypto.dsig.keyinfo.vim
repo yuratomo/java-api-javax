@@ -42,8 +42,8 @@ call javaapi#interface('KeyValue', 'XMLStructure', [
 
 call javaapi#interface('PGPData', 'XMLStructure', [
   \ javaapi#field(1,1,'TYPE', 'String'),
-  \ javaapi#method(0,1,'getKeyId(', ')', 'byte[]'),
-  \ javaapi#method(0,1,'getKeyPacket(', ')', 'byte[]'),
+  \ javaapi#method(0,1,'getKeyId(', ')', 'byte'),
+  \ javaapi#method(0,1,'getKeyPacket(', ')', 'byte'),
   \ javaapi#method(0,1,'getExternalElements(', ')', 'List'),
   \ ])
 

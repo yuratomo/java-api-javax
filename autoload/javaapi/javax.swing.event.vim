@@ -55,13 +55,13 @@ call javaapi#interface('InternalFrameListener', 'EventListener', [
 call javaapi#class('MenuDragMouseEvent', 'MouseEvent', [
   \ javaapi#method(0,1,'MenuDragMouseEvent(', 'Component, int, long, int, int, int, int, boolean, MenuElement[], MenuSelectionManager)', ''),
   \ javaapi#method(0,1,'MenuDragMouseEvent(', 'Component, int, long, int, int, int, int, int, int, boolean, MenuElement[], MenuSelectionManager)', ''),
-  \ javaapi#method(0,1,'getPath(', ')', 'MenuElement[]'),
+  \ javaapi#method(0,1,'getPath(', ')', 'MenuElement'),
   \ javaapi#method(0,1,'getMenuSelectionManager(', ')', 'MenuSelectionManager'),
   \ ])
 
 call javaapi#class('MenuKeyEvent', 'KeyEvent', [
   \ javaapi#method(0,1,'MenuKeyEvent(', 'Component, int, long, int, int, char, MenuElement[], MenuSelectionManager)', ''),
-  \ javaapi#method(0,1,'getPath(', ')', 'MenuElement[]'),
+  \ javaapi#method(0,1,'getPath(', ')', 'MenuElement'),
   \ javaapi#method(0,1,'getMenuSelectionManager(', ')', 'MenuSelectionManager'),
   \ ])
 
@@ -118,13 +118,13 @@ call javaapi#class('ListDataEvent', 'EventObject', [
 call javaapi#namespace('javax.swing.event')
 
 call javaapi#class('TreeSelectionEvent', 'EventObject', [
-  \ javaapi#field(0,0,'paths', 'TreePath[]'),
-  \ javaapi#field(0,0,'areNew', 'boolean[]'),
+  \ javaapi#field(0,0,'paths', 'TreePath'),
+  \ javaapi#field(0,0,'areNew', 'boolean'),
   \ javaapi#field(0,0,'oldLeadSelectionPath', 'TreePath'),
   \ javaapi#field(0,0,'newLeadSelectionPath', 'TreePath'),
   \ javaapi#method(0,1,'TreeSelectionEvent(', 'Object, TreePath[], boolean[], TreePath, TreePath)', ''),
   \ javaapi#method(0,1,'TreeSelectionEvent(', 'Object, TreePath, boolean, TreePath, TreePath)', ''),
-  \ javaapi#method(0,1,'getPaths(', ')', 'TreePath[]'),
+  \ javaapi#method(0,1,'getPaths(', ')', 'TreePath'),
   \ javaapi#method(0,1,'getPath(', ')', 'TreePath'),
   \ javaapi#method(0,1,'isAddedPath(', ')', 'boolean'),
   \ javaapi#method(0,1,'isAddedPath(', 'TreePath)', 'boolean'),
@@ -138,16 +138,16 @@ call javaapi#namespace('javax.swing.event')
 
 call javaapi#class('TreeModelEvent', 'EventObject', [
   \ javaapi#field(0,0,'path', 'TreePath'),
-  \ javaapi#field(0,0,'childIndices', 'int[]'),
-  \ javaapi#field(0,0,'children', 'Object[]'),
+  \ javaapi#field(0,0,'childIndices', 'int'),
+  \ javaapi#field(0,0,'children', 'Object'),
   \ javaapi#method(0,1,'TreeModelEvent(', 'Object, Object[], int[], Object[])', ''),
   \ javaapi#method(0,1,'TreeModelEvent(', 'Object, TreePath, int[], Object[])', ''),
   \ javaapi#method(0,1,'TreeModelEvent(', 'Object, Object[])', ''),
   \ javaapi#method(0,1,'TreeModelEvent(', 'Object, TreePath)', ''),
   \ javaapi#method(0,1,'getTreePath(', ')', 'TreePath'),
-  \ javaapi#method(0,1,'getPath(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'getChildren(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'getChildIndices(', ')', 'int[]'),
+  \ javaapi#method(0,1,'getPath(', ')', 'Object'),
+  \ javaapi#method(0,1,'getChildren(', ')', 'Object'),
+  \ javaapi#method(0,1,'getChildIndices(', ')', 'int'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
@@ -370,10 +370,10 @@ call javaapi#interface('DocumentEvent', '', [
 call javaapi#namespace('javax.swing.event')
 
 call javaapi#class('EventListenerList', 'Serializable', [
-  \ javaapi#field(0,0,'listenerList', 'Object[]'),
+  \ javaapi#field(0,0,'listenerList', 'Object'),
   \ javaapi#method(0,1,'EventListenerList(', ')', ''),
-  \ javaapi#method(0,1,'getListenerList(', ')', 'Object[]'),
-  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T[]'),
+  \ javaapi#method(0,1,'getListenerList(', ')', 'Object'),
+  \ javaapi#method(0,1,'getListeners(', 'Class<T>)', 'T'),
   \ javaapi#method(0,1,'getListenerCount(', ')', 'int'),
   \ javaapi#method(0,1,'getListenerCount(', 'Class<?>)', 'int'),
   \ javaapi#method(0,1,'add(', 'Class<T>, T)', 'void'),

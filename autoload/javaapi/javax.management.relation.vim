@@ -31,13 +31,13 @@ call javaapi#class('MBeanServerNotificationFilter', 'NotificationFilterSupport',
   \ javaapi#method(0,1,'disableObjectName(', 'ObjectName) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'enableAllObjectNames(', ')', 'void'),
   \ javaapi#method(0,1,'enableObjectName(', 'ObjectName) throws IllegalArgumentException', 'void'),
-  \ javaapi#method(0,1,'getEnabledObjectNames(', ')', 'ObjectName>'),
-  \ javaapi#method(0,1,'getDisabledObjectNames(', ')', 'ObjectName>'),
+  \ javaapi#method(0,1,'getEnabledObjectNames(', ')', 'Vector'),
+  \ javaapi#method(0,1,'getDisabledObjectNames(', ')', 'Vector'),
   \ javaapi#method(0,1,'isNotificationEnabled(', 'Notification) throws IllegalArgumentException', 'boolean'),
   \ ])
 
 call javaapi#interface('Relation', '', [
-  \ javaapi#method(0,1,'getRole(', 'String) throws IllegalArgumentException, RoleNotFoundException, RelationServiceNotRegisteredException', 'ObjectName>'),
+  \ javaapi#method(0,1,'getRole(', 'String) throws IllegalArgumentException, RoleNotFoundException, RelationServiceNotRegisteredException', 'List'),
   \ javaapi#method(0,1,'getRoles(', 'String[]) throws IllegalArgumentException, RelationServiceNotRegisteredException', 'RoleResult'),
   \ javaapi#method(0,1,'getRoleCardinality(', 'String) throws IllegalArgumentException, RoleNotFoundException', 'Integer'),
   \ javaapi#method(0,1,'getAllRoles(', ') throws RelationServiceNotRegisteredException', 'RoleResult'),
@@ -45,7 +45,7 @@ call javaapi#interface('Relation', '', [
   \ javaapi#method(0,1,'setRole(', 'Role) throws IllegalArgumentException, RoleNotFoundException, RelationTypeNotFoundException, InvalidRoleValueException, RelationServiceNotRegisteredException, RelationNotFoundException', 'void'),
   \ javaapi#method(0,1,'setRoles(', 'RoleList) throws IllegalArgumentException, RelationServiceNotRegisteredException, RelationTypeNotFoundException, RelationNotFoundException', 'RoleResult'),
   \ javaapi#method(0,1,'handleMBeanUnregistration(', 'ObjectName, String) throws IllegalArgumentException, RoleNotFoundException, InvalidRoleValueException, RelationServiceNotRegisteredException, RelationTypeNotFoundException, RelationNotFoundException', 'void'),
-  \ javaapi#method(0,1,'getReferencedMBeans(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getReferencedMBeans(', ')', 'List'),
   \ javaapi#method(0,1,'getRelationTypeName(', ')', 'String'),
   \ javaapi#method(0,1,'getRelationServiceName(', ')', 'ObjectName'),
   \ javaapi#method(0,1,'getRelationId(', ')', 'String'),
@@ -73,10 +73,10 @@ call javaapi#class('RelationNotification', 'Notification', [
   \ javaapi#method(0,1,'getRelationId(', ')', 'String'),
   \ javaapi#method(0,1,'getRelationTypeName(', ')', 'String'),
   \ javaapi#method(0,1,'getObjectName(', ')', 'ObjectName'),
-  \ javaapi#method(0,1,'getMBeansToUnregister(', ')', 'ObjectName>'),
+  \ javaapi#method(0,1,'getMBeansToUnregister(', ')', 'List'),
   \ javaapi#method(0,1,'getRoleName(', ')', 'String'),
-  \ javaapi#method(0,1,'getOldRoleValue(', ')', 'ObjectName>'),
-  \ javaapi#method(0,1,'getNewRoleValue(', ')', 'ObjectName>'),
+  \ javaapi#method(0,1,'getOldRoleValue(', ')', 'List'),
+  \ javaapi#method(0,1,'getNewRoleValue(', ')', 'List'),
   \ ])
 
 call javaapi#class('RelationService', 'NotificationBroadcasterSupport', [
@@ -90,8 +90,8 @@ call javaapi#class('RelationService', 'NotificationBroadcasterSupport', [
   \ javaapi#method(0,1,'setPurgeFlag(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'createRelationType(', 'String, RoleInfo[]) throws IllegalArgumentException, InvalidRelationTypeException', 'void'),
   \ javaapi#method(0,1,'addRelationType(', 'RelationType) throws IllegalArgumentException, InvalidRelationTypeException', 'void'),
-  \ javaapi#method(0,1,'getAllRelationTypeNames(', ')', 'String>'),
-  \ javaapi#method(0,1,'getRoleInfos(', 'String) throws IllegalArgumentException, RelationTypeNotFoundException', 'RoleInfo>'),
+  \ javaapi#method(0,1,'getAllRelationTypeNames(', ')', 'List'),
+  \ javaapi#method(0,1,'getRoleInfos(', 'String) throws IllegalArgumentException, RelationTypeNotFoundException', 'List'),
   \ javaapi#method(0,1,'getRoleInfo(', 'String, String) throws IllegalArgumentException, RelationTypeNotFoundException, RoleInfoNotFoundException', 'RoleInfo'),
   \ javaapi#method(0,1,'removeRelationType(', 'String) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationTypeNotFoundException', 'void'),
   \ javaapi#method(0,1,'createRelation(', 'String, String, RoleList) throws RelationServiceNotRegisteredException, IllegalArgumentException, RoleNotFoundException, InvalidRelationIdException, RelationTypeNotFoundException, InvalidRoleValueException', 'void'),
@@ -99,7 +99,7 @@ call javaapi#class('RelationService', 'NotificationBroadcasterSupport', [
   \ javaapi#method(0,1,'isRelationMBean(', 'String) throws IllegalArgumentException, RelationNotFoundException', 'ObjectName'),
   \ javaapi#method(0,1,'isRelation(', 'ObjectName) throws IllegalArgumentException', 'String'),
   \ javaapi#method(0,1,'hasRelation(', 'String) throws IllegalArgumentException', 'Boolean'),
-  \ javaapi#method(0,1,'getAllRelationIds(', ')', 'String>'),
+  \ javaapi#method(0,1,'getAllRelationIds(', ')', 'List'),
   \ javaapi#method(0,1,'checkRoleReading(', 'String, String) throws IllegalArgumentException, RelationTypeNotFoundException', 'Integer'),
   \ javaapi#method(0,1,'checkRoleWriting(', 'Role, String, Boolean) throws IllegalArgumentException, RelationTypeNotFoundException', 'Integer'),
   \ javaapi#method(0,1,'sendRelationCreationNotification(', 'String) throws IllegalArgumentException, RelationNotFoundException', 'void'),
@@ -108,19 +108,19 @@ call javaapi#class('RelationService', 'NotificationBroadcasterSupport', [
   \ javaapi#method(0,1,'updateRoleMap(', 'String, Role, List<ObjectName>) throws IllegalArgumentException, RelationServiceNotRegisteredException, RelationNotFoundException', 'void'),
   \ javaapi#method(0,1,'removeRelation(', 'String) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException', 'void'),
   \ javaapi#method(0,1,'purgeRelations(', ') throws RelationServiceNotRegisteredException', 'void'),
-  \ javaapi#method(0,1,'findReferencingRelations(', 'ObjectName, String, String) throws IllegalArgumentException', 'String>>'),
-  \ javaapi#method(0,1,'findAssociatedMBeans(', 'ObjectName, String, String) throws IllegalArgumentException', 'String>>'),
-  \ javaapi#method(0,1,'findRelationsOfType(', 'String) throws IllegalArgumentException, RelationTypeNotFoundException', 'String>'),
-  \ javaapi#method(0,1,'getRole(', 'String, String) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException, RoleNotFoundException', 'ObjectName>'),
+  \ javaapi#method(0,1,'findReferencingRelations(', 'ObjectName, String, String) throws IllegalArgumentException', 'List'),
+  \ javaapi#method(0,1,'findAssociatedMBeans(', 'ObjectName, String, String) throws IllegalArgumentException', 'List'),
+  \ javaapi#method(0,1,'findRelationsOfType(', 'String) throws IllegalArgumentException, RelationTypeNotFoundException', 'List'),
+  \ javaapi#method(0,1,'getRole(', 'String, String) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException, RoleNotFoundException', 'List'),
   \ javaapi#method(0,1,'getRoles(', 'String, String[]) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException', 'RoleResult'),
   \ javaapi#method(0,1,'getAllRoles(', 'String) throws IllegalArgumentException, RelationNotFoundException, RelationServiceNotRegisteredException', 'RoleResult'),
   \ javaapi#method(0,1,'getRoleCardinality(', 'String, String) throws IllegalArgumentException, RelationNotFoundException, RoleNotFoundException', 'Integer'),
   \ javaapi#method(0,1,'setRole(', 'String, Role) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException, RoleNotFoundException, InvalidRoleValueException', 'void'),
   \ javaapi#method(0,1,'setRoles(', 'String, RoleList) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException', 'RoleResult'),
-  \ javaapi#method(0,1,'getReferencedMBeans(', 'String) throws IllegalArgumentException, RelationNotFoundException', 'String>>'),
+  \ javaapi#method(0,1,'getReferencedMBeans(', 'String) throws IllegalArgumentException, RelationNotFoundException', 'List'),
   \ javaapi#method(0,1,'getRelationTypeName(', 'String) throws IllegalArgumentException, RelationNotFoundException', 'String'),
   \ javaapi#method(0,1,'handleNotification(', 'Notification, Object)', 'void'),
-  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo[]'),
+  \ javaapi#method(0,1,'getNotificationInfo(', ')', 'MBeanNotificationInfo'),
   \ ])
 
 call javaapi#interface('RelationServiceMBean', '', [
@@ -129,8 +129,8 @@ call javaapi#interface('RelationServiceMBean', '', [
   \ javaapi#method(0,1,'setPurgeFlag(', 'boolean)', 'void'),
   \ javaapi#method(0,1,'createRelationType(', 'String, RoleInfo[]) throws IllegalArgumentException, InvalidRelationTypeException', 'void'),
   \ javaapi#method(0,1,'addRelationType(', 'RelationType) throws IllegalArgumentException, InvalidRelationTypeException', 'void'),
-  \ javaapi#method(0,1,'getAllRelationTypeNames(', ')', 'String>'),
-  \ javaapi#method(0,1,'getRoleInfos(', 'String) throws IllegalArgumentException, RelationTypeNotFoundException', 'RoleInfo>'),
+  \ javaapi#method(0,1,'getAllRelationTypeNames(', ')', 'List'),
+  \ javaapi#method(0,1,'getRoleInfos(', 'String) throws IllegalArgumentException, RelationTypeNotFoundException', 'List'),
   \ javaapi#method(0,1,'getRoleInfo(', 'String, String) throws IllegalArgumentException, RelationTypeNotFoundException, RoleInfoNotFoundException', 'RoleInfo'),
   \ javaapi#method(0,1,'removeRelationType(', 'String) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationTypeNotFoundException', 'void'),
   \ javaapi#method(0,1,'createRelation(', 'String, String, RoleList) throws RelationServiceNotRegisteredException, IllegalArgumentException, RoleNotFoundException, InvalidRelationIdException, RelationTypeNotFoundException, InvalidRoleValueException', 'void'),
@@ -138,7 +138,7 @@ call javaapi#interface('RelationServiceMBean', '', [
   \ javaapi#method(0,1,'isRelationMBean(', 'String) throws IllegalArgumentException, RelationNotFoundException', 'ObjectName'),
   \ javaapi#method(0,1,'isRelation(', 'ObjectName) throws IllegalArgumentException', 'String'),
   \ javaapi#method(0,1,'hasRelation(', 'String) throws IllegalArgumentException', 'Boolean'),
-  \ javaapi#method(0,1,'getAllRelationIds(', ')', 'String>'),
+  \ javaapi#method(0,1,'getAllRelationIds(', ')', 'List'),
   \ javaapi#method(0,1,'checkRoleReading(', 'String, String) throws IllegalArgumentException, RelationTypeNotFoundException', 'Integer'),
   \ javaapi#method(0,1,'checkRoleWriting(', 'Role, String, Boolean) throws IllegalArgumentException, RelationTypeNotFoundException', 'Integer'),
   \ javaapi#method(0,1,'sendRelationCreationNotification(', 'String) throws IllegalArgumentException, RelationNotFoundException', 'void'),
@@ -147,16 +147,16 @@ call javaapi#interface('RelationServiceMBean', '', [
   \ javaapi#method(0,1,'updateRoleMap(', 'String, Role, List<ObjectName>) throws IllegalArgumentException, RelationServiceNotRegisteredException, RelationNotFoundException', 'void'),
   \ javaapi#method(0,1,'removeRelation(', 'String) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException', 'void'),
   \ javaapi#method(0,1,'purgeRelations(', ') throws RelationServiceNotRegisteredException', 'void'),
-  \ javaapi#method(0,1,'findReferencingRelations(', 'ObjectName, String, String) throws IllegalArgumentException', 'String>>'),
-  \ javaapi#method(0,1,'findAssociatedMBeans(', 'ObjectName, String, String) throws IllegalArgumentException', 'String>>'),
-  \ javaapi#method(0,1,'findRelationsOfType(', 'String) throws IllegalArgumentException, RelationTypeNotFoundException', 'String>'),
-  \ javaapi#method(0,1,'getRole(', 'String, String) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException, RoleNotFoundException', 'ObjectName>'),
+  \ javaapi#method(0,1,'findReferencingRelations(', 'ObjectName, String, String) throws IllegalArgumentException', 'List'),
+  \ javaapi#method(0,1,'findAssociatedMBeans(', 'ObjectName, String, String) throws IllegalArgumentException', 'List'),
+  \ javaapi#method(0,1,'findRelationsOfType(', 'String) throws IllegalArgumentException, RelationTypeNotFoundException', 'List'),
+  \ javaapi#method(0,1,'getRole(', 'String, String) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException, RoleNotFoundException', 'List'),
   \ javaapi#method(0,1,'getRoles(', 'String, String[]) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException', 'RoleResult'),
   \ javaapi#method(0,1,'getAllRoles(', 'String) throws IllegalArgumentException, RelationNotFoundException, RelationServiceNotRegisteredException', 'RoleResult'),
   \ javaapi#method(0,1,'getRoleCardinality(', 'String, String) throws IllegalArgumentException, RelationNotFoundException, RoleNotFoundException', 'Integer'),
   \ javaapi#method(0,1,'setRole(', 'String, Role) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException, RoleNotFoundException, InvalidRoleValueException, RelationTypeNotFoundException', 'void'),
   \ javaapi#method(0,1,'setRoles(', 'String, RoleList) throws RelationServiceNotRegisteredException, IllegalArgumentException, RelationNotFoundException', 'RoleResult'),
-  \ javaapi#method(0,1,'getReferencedMBeans(', 'String) throws IllegalArgumentException, RelationNotFoundException', 'String>>'),
+  \ javaapi#method(0,1,'getReferencedMBeans(', 'String) throws IllegalArgumentException, RelationNotFoundException', 'List'),
   \ javaapi#method(0,1,'getRelationTypeName(', 'String) throws IllegalArgumentException, RelationNotFoundException', 'String'),
   \ ])
 
@@ -168,7 +168,7 @@ call javaapi#class('RelationServiceNotRegisteredException', 'RelationException',
 call javaapi#class('RelationSupport', 'MBeanRegistration', [
   \ javaapi#method(0,1,'RelationSupport(', 'String, ObjectName, String, RoleList) throws InvalidRoleValueException, IllegalArgumentException', ''),
   \ javaapi#method(0,1,'RelationSupport(', 'String, ObjectName, MBeanServer, String, RoleList) throws InvalidRoleValueException, IllegalArgumentException', ''),
-  \ javaapi#method(0,1,'getRole(', 'String) throws IllegalArgumentException, RoleNotFoundException, RelationServiceNotRegisteredException', 'ObjectName>'),
+  \ javaapi#method(0,1,'getRole(', 'String) throws IllegalArgumentException, RoleNotFoundException, RelationServiceNotRegisteredException', 'List'),
   \ javaapi#method(0,1,'getRoles(', 'String[]) throws IllegalArgumentException, RelationServiceNotRegisteredException', 'RoleResult'),
   \ javaapi#method(0,1,'getAllRoles(', ') throws RelationServiceNotRegisteredException', 'RoleResult'),
   \ javaapi#method(0,1,'retrieveAllRoles(', ')', 'RoleList'),
@@ -176,7 +176,7 @@ call javaapi#class('RelationSupport', 'MBeanRegistration', [
   \ javaapi#method(0,1,'setRole(', 'Role) throws IllegalArgumentException, RoleNotFoundException, RelationTypeNotFoundException, InvalidRoleValueException, RelationServiceNotRegisteredException, RelationNotFoundException', 'void'),
   \ javaapi#method(0,1,'setRoles(', 'RoleList) throws IllegalArgumentException, RelationServiceNotRegisteredException, RelationTypeNotFoundException, RelationNotFoundException', 'RoleResult'),
   \ javaapi#method(0,1,'handleMBeanUnregistration(', 'ObjectName, String) throws IllegalArgumentException, RoleNotFoundException, InvalidRoleValueException, RelationServiceNotRegisteredException, RelationTypeNotFoundException, RelationNotFoundException', 'void'),
-  \ javaapi#method(0,1,'getReferencedMBeans(', ')', 'String>>'),
+  \ javaapi#method(0,1,'getReferencedMBeans(', ')', 'List'),
   \ javaapi#method(0,1,'getRelationTypeName(', ')', 'String'),
   \ javaapi#method(0,1,'getRelationServiceName(', ')', 'ObjectName'),
   \ javaapi#method(0,1,'getRelationId(', ')', 'String'),
@@ -195,7 +195,7 @@ call javaapi#interface('RelationSupportMBean', 'Relation', [
 
 call javaapi#interface('RelationType', 'Serializable', [
   \ javaapi#method(0,1,'getRelationTypeName(', ')', 'String'),
-  \ javaapi#method(0,1,'getRoleInfos(', ')', 'RoleInfo>'),
+  \ javaapi#method(0,1,'getRoleInfos(', ')', 'List'),
   \ javaapi#method(0,1,'getRoleInfo(', 'String) throws IllegalArgumentException, RoleInfoNotFoundException', 'RoleInfo'),
   \ ])
 
@@ -208,7 +208,7 @@ call javaapi#class('RelationTypeSupport', 'RelationType', [
   \ javaapi#method(0,1,'RelationTypeSupport(', 'String, RoleInfo[]) throws IllegalArgumentException, InvalidRelationTypeException', ''),
   \ javaapi#method(0,0,'RelationTypeSupport(', 'String)', ''),
   \ javaapi#method(0,1,'getRelationTypeName(', ')', 'String'),
-  \ javaapi#method(0,1,'getRoleInfos(', ')', 'RoleInfo>'),
+  \ javaapi#method(0,1,'getRoleInfos(', ')', 'List'),
   \ javaapi#method(0,1,'getRoleInfo(', 'String) throws IllegalArgumentException, RoleInfoNotFoundException', 'RoleInfo'),
   \ javaapi#method(0,0,'addRoleInfo(', 'RoleInfo) throws IllegalArgumentException, InvalidRelationTypeException', 'void'),
   \ ])
@@ -216,7 +216,7 @@ call javaapi#class('RelationTypeSupport', 'RelationType', [
 call javaapi#class('Role', 'Serializable', [
   \ javaapi#method(0,1,'Role(', 'String, List<ObjectName>) throws IllegalArgumentException', ''),
   \ javaapi#method(0,1,'getRoleName(', ')', 'String'),
-  \ javaapi#method(0,1,'getRoleValue(', ')', 'ObjectName>'),
+  \ javaapi#method(0,1,'getRoleValue(', ')', 'List'),
   \ javaapi#method(0,1,'setRoleName(', 'String) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'setRoleValue(', 'List<ObjectName>) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'toString(', ')', 'String'),
@@ -247,11 +247,11 @@ call javaapi#class('RoleInfoNotFoundException', 'RelationException', [
   \ javaapi#method(0,1,'RoleInfoNotFoundException(', 'String)', ''),
   \ ])
 
-call javaapi#class('RoleList', 'Object>', [
+call javaapi#class('RoleList', 'ArrayList', [
   \ javaapi#method(0,1,'RoleList(', ')', ''),
   \ javaapi#method(0,1,'RoleList(', 'int)', ''),
   \ javaapi#method(0,1,'RoleList(', 'List<Role>) throws IllegalArgumentException', ''),
-  \ javaapi#method(0,1,'asList(', ')', 'Role>'),
+  \ javaapi#method(0,1,'asList(', ')', 'List'),
   \ javaapi#method(0,1,'add(', 'Role) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'add(', 'int, Role) throws IllegalArgumentException, IndexOutOfBoundsException', 'void'),
   \ javaapi#method(0,1,'set(', 'int, Role) throws IllegalArgumentException, IndexOutOfBoundsException', 'void'),
@@ -292,7 +292,7 @@ call javaapi#class('RoleStatus', '', [
 call javaapi#class('RoleUnresolved', 'Serializable', [
   \ javaapi#method(0,1,'RoleUnresolved(', 'String, List<ObjectName>, int) throws IllegalArgumentException', ''),
   \ javaapi#method(0,1,'getRoleName(', ')', 'String'),
-  \ javaapi#method(0,1,'getRoleValue(', ')', 'ObjectName>'),
+  \ javaapi#method(0,1,'getRoleValue(', ')', 'List'),
   \ javaapi#method(0,1,'getProblemType(', ')', 'int'),
   \ javaapi#method(0,1,'setRoleName(', 'String) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'setRoleValue(', 'List<ObjectName>)', 'void'),
@@ -301,11 +301,11 @@ call javaapi#class('RoleUnresolved', 'Serializable', [
   \ javaapi#method(0,1,'toString(', ')', 'String'),
   \ ])
 
-call javaapi#class('RoleUnresolvedList', 'Object>', [
+call javaapi#class('RoleUnresolvedList', 'ArrayList', [
   \ javaapi#method(0,1,'RoleUnresolvedList(', ')', ''),
   \ javaapi#method(0,1,'RoleUnresolvedList(', 'int)', ''),
   \ javaapi#method(0,1,'RoleUnresolvedList(', 'List<RoleUnresolved>) throws IllegalArgumentException', ''),
-  \ javaapi#method(0,1,'asList(', ')', 'RoleUnresolved>'),
+  \ javaapi#method(0,1,'asList(', ')', 'List'),
   \ javaapi#method(0,1,'add(', 'RoleUnresolved) throws IllegalArgumentException', 'void'),
   \ javaapi#method(0,1,'add(', 'int, RoleUnresolved) throws IllegalArgumentException, IndexOutOfBoundsException', 'void'),
   \ javaapi#method(0,1,'set(', 'int, RoleUnresolved) throws IllegalArgumentException, IndexOutOfBoundsException', 'void'),

@@ -217,7 +217,7 @@ call javaapi#interface('XMLStreamReader', 'XMLStreamConstants', [
   \ javaapi#method(0,1,'getNamespaceContext(', ')', 'NamespaceContext'),
   \ javaapi#method(0,1,'getEventType(', ')', 'int'),
   \ javaapi#method(0,1,'getText(', ')', 'String'),
-  \ javaapi#method(0,1,'getTextCharacters(', ')', 'char[]'),
+  \ javaapi#method(0,1,'getTextCharacters(', ')', 'char'),
   \ javaapi#method(0,1,'getTextCharacters(', 'int, char[], int, int) throws XMLStreamException', 'int'),
   \ javaapi#method(0,1,'getTextStart(', ')', 'int'),
   \ javaapi#method(0,1,'getTextLength(', ')', 'int'),

@@ -11,7 +11,7 @@ call javaapi#class('AttachmentMarshaller', '', [
 call javaapi#class('AttachmentUnmarshaller', '', [
   \ javaapi#method(0,1,'AttachmentUnmarshaller(', ')', ''),
   \ javaapi#method(0,1,'getAttachmentAsDataHandler(', 'String)', 'DataHandler'),
-  \ javaapi#method(0,1,'getAttachmentAsByteArray(', 'String)', 'byte[]'),
+  \ javaapi#method(0,1,'getAttachmentAsByteArray(', 'String)', 'byte'),
   \ javaapi#method(0,1,'isXOPPackage(', ')', 'boolean'),
   \ ])
 

@@ -1,9 +1,9 @@
 call javaapi#namespace('javax.xml.bind')
 
-call javaapi#class('Binder<XmlNode>', '', [
+call javaapi#class('Binder', '', [
   \ javaapi#method(0,1,'Binder(', ')', ''),
   \ javaapi#method(0,1,'unmarshal(', 'XmlNode) throws JAXBException', 'Object'),
-  \ javaapi#method(0,1,'unmarshal(', 'XmlNode, Class<T>) throws JAXBException', 'JAXBElement<T>'),
+  \ javaapi#method(0,1,'unmarshal(', 'XmlNode, Class<T>) throws JAXBException', 'JAXBElement'),
   \ javaapi#method(0,1,'marshal(', 'Object, XmlNode) throws JAXBException', 'void'),
   \ javaapi#method(0,1,'getXMLNode(', 'Object)', 'XmlNode'),
   \ javaapi#method(0,1,'getJAXBNode(', 'XmlNode)', 'Object'),
@@ -40,8 +40,8 @@ call javaapi#class('DatatypeConverter', '', [
   \ javaapi#method(1,1,'parseByte(', 'String)', 'byte'),
   \ javaapi#method(1,1,'parseQName(', 'String, NamespaceContext)', 'QName'),
   \ javaapi#method(1,1,'parseDateTime(', 'String)', 'Calendar'),
-  \ javaapi#method(1,1,'parseBase64Binary(', 'String)', 'byte[]'),
-  \ javaapi#method(1,1,'parseHexBinary(', 'String)', 'byte[]'),
+  \ javaapi#method(1,1,'parseBase64Binary(', 'String)', 'byte'),
+  \ javaapi#method(1,1,'parseHexBinary(', 'String)', 'byte'),
   \ javaapi#method(1,1,'parseUnsignedInt(', 'String)', 'long'),
   \ javaapi#method(1,1,'parseUnsignedShort(', 'String)', 'int'),
   \ javaapi#method(1,1,'parseTime(', 'String)', 'Calendar'),
@@ -106,8 +106,8 @@ call javaapi#class('DatatypeConverterImpl', 'DatatypeConverterInterface', [
   \ javaapi#method(1,1,'_parseDateTime(', 'CharSequence)', 'GregorianCalendar'),
   \ javaapi#method(0,1,'printDateTime(', 'Calendar)', 'String'),
   \ javaapi#method(1,1,'_printDateTime(', 'Calendar)', 'String'),
-  \ javaapi#method(0,1,'parseBase64Binary(', 'String)', 'byte[]'),
-  \ javaapi#method(0,1,'parseHexBinary(', 'String)', 'byte[]'),
+  \ javaapi#method(0,1,'parseBase64Binary(', 'String)', 'byte'),
+  \ javaapi#method(0,1,'parseHexBinary(', 'String)', 'byte'),
   \ javaapi#method(0,1,'printHexBinary(', 'byte[])', 'String'),
   \ javaapi#method(0,1,'parseUnsignedInt(', 'String)', 'long'),
   \ javaapi#method(0,1,'printUnsignedInt(', 'long)', 'String'),
@@ -133,7 +133,7 @@ call javaapi#class('DatatypeConverterImpl', 'DatatypeConverterInterface', [
   \ javaapi#method(0,1,'printUnsignedShort(', 'int)', 'String'),
   \ javaapi#method(0,1,'printAnySimpleType(', 'String)', 'String'),
   \ javaapi#method(1,1,'installHook(', 'String)', 'String'),
-  \ javaapi#method(1,1,'_parseBase64Binary(', 'String)', 'byte[]'),
+  \ javaapi#method(1,1,'_parseBase64Binary(', 'String)', 'byte'),
   \ javaapi#method(1,1,'encode(', 'int)', 'char'),
   \ javaapi#method(1,1,'encodeByte(', 'int)', 'byte'),
   \ javaapi#method(1,1,'_printBase64Binary(', 'byte[])', 'String'),
@@ -155,8 +155,8 @@ call javaapi#interface('DatatypeConverterInterface', '', [
   \ javaapi#method(0,1,'parseByte(', 'String)', 'byte'),
   \ javaapi#method(0,1,'parseQName(', 'String, NamespaceContext)', 'QName'),
   \ javaapi#method(0,1,'parseDateTime(', 'String)', 'Calendar'),
-  \ javaapi#method(0,1,'parseBase64Binary(', 'String)', 'byte[]'),
-  \ javaapi#method(0,1,'parseHexBinary(', 'String)', 'byte[]'),
+  \ javaapi#method(0,1,'parseBase64Binary(', 'String)', 'byte'),
+  \ javaapi#method(0,1,'parseHexBinary(', 'String)', 'byte'),
   \ javaapi#method(0,1,'parseUnsignedInt(', 'String)', 'long'),
   \ javaapi#method(0,1,'parseUnsignedShort(', 'String)', 'int'),
   \ javaapi#method(0,1,'parseTime(', 'String)', 'Calendar'),
@@ -186,7 +186,7 @@ call javaapi#interface('DatatypeConverterInterface', '', [
 call javaapi#interface('Element', '', [
   \ ])
 
-call javaapi#class('GetPropertyAction', 'String>', [
+call javaapi#class('GetPropertyAction', 'PrivilegedAction', [
   \ javaapi#method(0,1,'GetPropertyAction(', 'String)', ''),
   \ javaapi#method(0,1,'run(', ')', 'String'),
   \ javaapi#method(0,1,'run(', ')', 'Object'),
@@ -220,21 +220,21 @@ call javaapi#class('JAXBContext', '', [
   \ javaapi#method(0,1,'createUnmarshaller(', ') throws JAXBException', 'Unmarshaller'),
   \ javaapi#method(0,1,'createMarshaller(', ') throws JAXBException', 'Marshaller'),
   \ javaapi#method(0,1,'createValidator(', ') throws JAXBException', 'Validator'),
-  \ javaapi#method(0,1,'createBinder(', 'Class<T>)', 'Binder<T>'),
-  \ javaapi#method(0,1,'createBinder(', ')', 'Node>'),
+  \ javaapi#method(0,1,'createBinder(', 'Class<T>)', 'Binder'),
+  \ javaapi#method(0,1,'createBinder(', ')', 'Binder'),
   \ javaapi#method(0,1,'createJAXBIntrospector(', ')', 'JAXBIntrospector'),
   \ javaapi#method(0,1,'generateSchema(', 'SchemaOutputResolver) throws IOException', 'void'),
   \ ])
 
-call javaapi#class('JAXBElement<T>', 'Serializable', [
+call javaapi#class('JAXBElement', 'Serializable', [
   \ javaapi#field(0,0,'name', 'QName'),
-  \ javaapi#field(0,0,'declaredType', 'Class<T>'),
+  \ javaapi#field(0,0,'declaredType', 'Class'),
   \ javaapi#field(0,0,'scope', 'Class'),
   \ javaapi#field(0,0,'value', 'T'),
   \ javaapi#field(0,0,'nil', 'boolean'),
   \ javaapi#method(0,1,'JAXBElement(', 'QName, Class<T>, Class, T)', ''),
   \ javaapi#method(0,1,'JAXBElement(', 'QName, Class<T>, T)', ''),
-  \ javaapi#method(0,1,'getDeclaredType(', ')', 'Class<T>'),
+  \ javaapi#method(0,1,'getDeclaredType(', ')', 'Class'),
   \ javaapi#method(0,1,'getName(', ')', 'QName'),
   \ javaapi#method(0,1,'setValue(', 'T)', 'void'),
   \ javaapi#method(0,1,'getValue(', ')', 'T'),
@@ -365,13 +365,13 @@ call javaapi#interface('Unmarshaller', '', [
   \ javaapi#method(0,1,'unmarshal(', 'URL) throws JAXBException', 'Object'),
   \ javaapi#method(0,1,'unmarshal(', 'InputSource) throws JAXBException', 'Object'),
   \ javaapi#method(0,1,'unmarshal(', 'Node) throws JAXBException', 'Object'),
-  \ javaapi#method(0,1,'unmarshal(', 'Node, Class<T>) throws JAXBException', 'JAXBElement<T>'),
+  \ javaapi#method(0,1,'unmarshal(', 'Node, Class<T>) throws JAXBException', 'JAXBElement'),
   \ javaapi#method(0,1,'unmarshal(', 'Source) throws JAXBException', 'Object'),
-  \ javaapi#method(0,1,'unmarshal(', 'Source, Class<T>) throws JAXBException', 'JAXBElement<T>'),
+  \ javaapi#method(0,1,'unmarshal(', 'Source, Class<T>) throws JAXBException', 'JAXBElement'),
   \ javaapi#method(0,1,'unmarshal(', 'XMLStreamReader) throws JAXBException', 'Object'),
-  \ javaapi#method(0,1,'unmarshal(', 'XMLStreamReader, Class<T>) throws JAXBException', 'JAXBElement<T>'),
+  \ javaapi#method(0,1,'unmarshal(', 'XMLStreamReader, Class<T>) throws JAXBException', 'JAXBElement'),
   \ javaapi#method(0,1,'unmarshal(', 'XMLEventReader) throws JAXBException', 'Object'),
-  \ javaapi#method(0,1,'unmarshal(', 'XMLEventReader, Class<T>) throws JAXBException', 'JAXBElement<T>'),
+  \ javaapi#method(0,1,'unmarshal(', 'XMLEventReader, Class<T>) throws JAXBException', 'JAXBElement'),
   \ javaapi#method(0,1,'getUnmarshallerHandler(', ')', 'UnmarshallerHandler'),
   \ javaapi#method(0,1,'setValidating(', 'boolean) throws JAXBException', 'void'),
   \ javaapi#method(0,1,'isValidating(', ') throws JAXBException', 'boolean'),

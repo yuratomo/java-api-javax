@@ -25,15 +25,15 @@ call javaapi#class('CommandMap', '', [
   \ javaapi#method(0,1,'CommandMap(', ')', ''),
   \ javaapi#method(1,1,'getDefaultCommandMap(', ')', 'CommandMap'),
   \ javaapi#method(1,1,'setDefaultCommandMap(', 'CommandMap)', 'void'),
-  \ javaapi#method(0,1,'getPreferredCommands(', 'String)', 'CommandInfo[]'),
-  \ javaapi#method(0,1,'getPreferredCommands(', 'String, DataSource)', 'CommandInfo[]'),
-  \ javaapi#method(0,1,'getAllCommands(', 'String)', 'CommandInfo[]'),
-  \ javaapi#method(0,1,'getAllCommands(', 'String, DataSource)', 'CommandInfo[]'),
+  \ javaapi#method(0,1,'getPreferredCommands(', 'String)', 'CommandInfo'),
+  \ javaapi#method(0,1,'getPreferredCommands(', 'String, DataSource)', 'CommandInfo'),
+  \ javaapi#method(0,1,'getAllCommands(', 'String)', 'CommandInfo'),
+  \ javaapi#method(0,1,'getAllCommands(', 'String, DataSource)', 'CommandInfo'),
   \ javaapi#method(0,1,'getCommand(', 'String, String)', 'CommandInfo'),
   \ javaapi#method(0,1,'getCommand(', 'String, String, DataSource)', 'CommandInfo'),
   \ javaapi#method(0,1,'createDataContentHandler(', 'String)', 'DataContentHandler'),
   \ javaapi#method(0,1,'createDataContentHandler(', 'String, DataSource)', 'DataContentHandler'),
-  \ javaapi#method(0,1,'getMimeTypes(', ')', 'String[]'),
+  \ javaapi#method(0,1,'getMimeTypes(', ')', 'String'),
   \ ])
 
 call javaapi#interface('CommandObject', '', [
@@ -41,7 +41,7 @@ call javaapi#interface('CommandObject', '', [
   \ ])
 
 call javaapi#interface('DataContentHandler', '', [
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource) throws UnsupportedFlavorException, IOException', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
@@ -61,12 +61,12 @@ call javaapi#class('DataHandler', 'Transferable', [
   \ javaapi#method(0,1,'getInputStream(', ') throws IOException', 'InputStream'),
   \ javaapi#method(0,1,'writeTo(', 'OutputStream) throws IOException', 'void'),
   \ javaapi#method(0,1,'getOutputStream(', ') throws IOException', 'OutputStream'),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'isDataFlavorSupported(', 'DataFlavor)', 'boolean'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor) throws UnsupportedFlavorException, IOException', 'Object'),
   \ javaapi#method(0,1,'setCommandMap(', 'CommandMap)', 'void'),
-  \ javaapi#method(0,1,'getPreferredCommands(', ')', 'CommandInfo[]'),
-  \ javaapi#method(0,1,'getAllCommands(', ')', 'CommandInfo[]'),
+  \ javaapi#method(0,1,'getPreferredCommands(', ')', 'CommandInfo'),
+  \ javaapi#method(0,1,'getAllCommands(', ')', 'CommandInfo'),
   \ javaapi#method(0,1,'getCommand(', 'String)', 'CommandInfo'),
   \ javaapi#method(0,1,'getContent(', ') throws IOException', 'Object'),
   \ javaapi#method(0,1,'getBean(', 'CommandInfo)', 'Object'),
@@ -90,7 +90,7 @@ call javaapi#interface('DataSource', '', [
 
 call javaapi#class('DataSourceDataContentHandler', 'DataContentHandler', [
   \ javaapi#method(0,1,'DataSourceDataContentHandler(', 'DataContentHandler, DataSource)', ''),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource) throws UnsupportedFlavorException, IOException', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource) throws IOException', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
@@ -119,13 +119,13 @@ call javaapi#class('MailcapCommandMap', 'CommandMap', [
   \ javaapi#method(0,1,'MailcapCommandMap(', ')', ''),
   \ javaapi#method(0,1,'MailcapCommandMap(', 'String) throws IOException', ''),
   \ javaapi#method(0,1,'MailcapCommandMap(', 'InputStream)', ''),
-  \ javaapi#method(0,1,'getPreferredCommands(', 'String)', 'CommandInfo[]'),
-  \ javaapi#method(0,1,'getAllCommands(', 'String)', 'CommandInfo[]'),
+  \ javaapi#method(0,1,'getPreferredCommands(', 'String)', 'CommandInfo'),
+  \ javaapi#method(0,1,'getAllCommands(', 'String)', 'CommandInfo'),
   \ javaapi#method(0,1,'getCommand(', 'String, String)', 'CommandInfo'),
   \ javaapi#method(0,1,'addMailcap(', 'String)', 'void'),
   \ javaapi#method(0,1,'createDataContentHandler(', 'String)', 'DataContentHandler'),
-  \ javaapi#method(0,1,'getMimeTypes(', ')', 'String[]'),
-  \ javaapi#method(0,1,'getNativeCommands(', 'String)', 'String[]'),
+  \ javaapi#method(0,1,'getMimeTypes(', ')', 'String'),
+  \ javaapi#method(0,1,'getNativeCommands(', 'String)', 'String'),
   \ ])
 
 call javaapi#class('MimeType', 'Externalizable', [
@@ -178,7 +178,7 @@ call javaapi#class('MimetypesFileTypeMap', 'FileTypeMap', [
 call javaapi#class('ObjectDataContentHandler', 'DataContentHandler', [
   \ javaapi#method(0,1,'ObjectDataContentHandler(', 'DataContentHandler, Object, String)', ''),
   \ javaapi#method(0,1,'getDCH(', ')', 'DataContentHandler'),
-  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor[]'),
+  \ javaapi#method(0,1,'getTransferDataFlavors(', ')', 'DataFlavor'),
   \ javaapi#method(0,1,'getTransferData(', 'DataFlavor, DataSource) throws UnsupportedFlavorException, IOException', 'Object'),
   \ javaapi#method(0,1,'getContent(', 'DataSource)', 'Object'),
   \ javaapi#method(0,1,'writeTo(', 'Object, String, OutputStream) throws IOException', 'void'),
@@ -187,8 +187,8 @@ call javaapi#class('ObjectDataContentHandler', 'DataContentHandler', [
 call javaapi#class('SecuritySupport', '', [
   \ javaapi#method(1,1,'getContextClassLoader(', ')', 'ClassLoader'),
   \ javaapi#method(1,1,'getResourceAsStream(', 'Class, String) throws IOException', 'InputStream'),
-  \ javaapi#method(1,1,'getResources(', 'ClassLoader, String)', 'URL[]'),
-  \ javaapi#method(1,1,'getSystemResources(', 'String)', 'URL[]'),
+  \ javaapi#method(1,1,'getResources(', 'ClassLoader, String)', 'URL'),
+  \ javaapi#method(1,1,'getSystemResources(', 'String)', 'URL'),
   \ javaapi#method(1,1,'openStream(', 'URL) throws IOException', 'InputStream'),
   \ ])
 

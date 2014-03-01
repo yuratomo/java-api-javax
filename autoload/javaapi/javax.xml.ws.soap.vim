@@ -39,7 +39,7 @@ call javaapi#interface('SOAPBinding', 'Binding', [
   \ javaapi#field(1,1,'SOAP12HTTP_BINDING', 'String'),
   \ javaapi#field(1,1,'SOAP11HTTP_MTOM_BINDING', 'String'),
   \ javaapi#field(1,1,'SOAP12HTTP_MTOM_BINDING', 'String'),
-  \ javaapi#method(0,1,'getRoles(', ')', 'String>'),
+  \ javaapi#method(0,1,'getRoles(', ')', 'Set'),
   \ javaapi#method(0,1,'setRoles(', 'Set<String>)', 'void'),
   \ javaapi#method(0,1,'isMTOMEnabled(', ')', 'boolean'),
   \ javaapi#method(0,1,'setMTOMEnabled(', 'boolean)', 'void'),
